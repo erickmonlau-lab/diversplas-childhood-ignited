@@ -6,6 +6,7 @@
 
 @theme {
   --font-display: "Clash Display", "Inter", sans-serif;
+  --font-condensed: "Barlow Condensed", "Clash Display", sans-serif;
   --font-sans: "General Sans", "Inter", sans-serif;
   --color-ink: #0a0a0a;
   --color-paper: #ffffff;

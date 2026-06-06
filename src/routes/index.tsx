@@ -47,25 +47,37 @@ const TRUST_SLIDES = [
     headline: "+20 AÑOS",
     sub: "DE EXPERIENCIA",
     description: "Llevamos más de dos décadas creando experiencias que marcan a los niños y a sus familias.",
-    icon: "★",
-    bg: "#1D2F8C",
-    blob: "#2540a8",
+    icon: "🌟",
+    bg: "#35D0BA",
+    blob: "#52DCC6",
+    dark: false,
   },
   {
     headline: "CONFIADOS",
     sub: "& RECOMENDADOS",
     description: "Más de 50 colegios y AMPAs del área metropolitana de Barcelona confían en nosotros cada curso.",
     icon: "✓",
-    bg: "#3055C7",
-    blob: "#3d65d8",
+    bg: "#D8E600",
+    blob: "#E8F520",
+    dark: true,
   },
   {
     headline: "RESULTADOS",
     sub: "COMPROBADOS",
     description: "Niños más felices, más activos y con mayores habilidades sociales. Eso es lo que medimos.",
-    icon: "▲",
-    bg: "#1D2F8C",
-    blob: "#2540a8",
+    icon: "🚀",
+    bg: "#FF7B72",
+    blob: "#FF9590",
+    dark: false,
+  },
+  {
+    headline: "DISEÑO",
+    sub: "PERSONALIZADO",
+    description: "Cada programa es único. Adaptado al centro, a los alumnos y al equipo docente.",
+    icon: "🎨",
+    bg: "#FF9D42",
+    blob: "#FFB468",
+    dark: false,
   },
 ];
 
@@ -160,42 +172,50 @@ function Hero() {
       />
 
       {/* Soft color blobs */}
-      <div className="pointer-events-none absolute top-20 -left-20 h-72 w-72 rounded-full bg-[#D8E600] blur-3xl opacity-30" />
-      <div className="pointer-events-none absolute bottom-10 right-0 h-80 w-80 rounded-full bg-[#3055C7] blur-3xl opacity-15" />
+      <div className="pointer-events-none absolute top-20 -left-20 h-72 w-72 rounded-full bg-[#D8E600] blur-3xl opacity-25" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-80 w-80 rounded-full bg-[#3055C7] blur-3xl opacity-10" />
 
       {/* Floating mascot — desktop right */}
       <motion.div
-        className="pointer-events-none absolute right-[4%] top-1/2 -translate-y-1/2 w-[28%] max-w-[300px] hidden lg:block"
+        className="pointer-events-none absolute right-[3%] top-1/2 -translate-y-1/2 w-[26%] max-w-[280px] hidden lg:block"
         animate={{ y: [0, -22, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img
-          src={mascotAsset.url}
-          alt=""
-          className="w-full h-auto drop-shadow-[0_24px_36px_rgba(29,47,140,0.3)]"
-        />
+        <img src={mascotAsset.url} alt="" className="w-full h-auto drop-shadow-[0_24px_36px_rgba(29,47,140,0.3)]" />
       </motion.div>
 
-      {/* Decorative shapes */}
-      <motion.div
-        className="pointer-events-none absolute top-32 left-[8%] h-10 w-10 rounded-full bg-[#D8E600] border-2 border-black"
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="pointer-events-none absolute top-52 right-[8%] lg:right-[36%] h-7 w-7 rotate-45 bg-[#FF7B72] border-2 border-black"
-        animate={{ rotate: [45, 90, 45] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="pointer-events-none absolute bottom-36 left-[5%] h-8 w-8 rounded-full bg-[#35D0BA] border-2 border-black"
-        animate={{ scale: [1, 1.2, 1] }}
+      {/* ── Floating Stickers ── */}
+      {/* Soccer ball — top left */}
+      <motion.img
+        src="/sticker-ball.png"
+        alt=""
+        className="pointer-events-none absolute top-28 left-[6%] w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
+        animate={{ y: [0, -14, 0], rotate: [0, 15, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
-        className="pointer-events-none absolute bottom-28 right-[10%] lg:right-[38%] h-6 w-6 bg-[#9C7BFF] border-2 border-black rounded-sm"
-        animate={{ rotate: [0, 20, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      {/* Star — top right (stays visible next to mascot on smaller screens) */}
+      <motion.img
+        src="/sticker-star.png"
+        alt=""
+        className="pointer-events-none absolute top-36 right-[7%] lg:right-[32%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg"
+        animate={{ y: [0, -10, 0], rotate: [0, -12, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+      />
+      {/* Palette — bottom left */}
+      <motion.img
+        src="/sticker-palette.png"
+        alt=""
+        className="pointer-events-none absolute bottom-28 left-[4%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg"
+        animate={{ y: [0, -12, 0], rotate: [-5, 8, -5] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+      />
+      {/* Ball again (small) — bottom right center */}
+      <motion.img
+        src="/sticker-star.png"
+        alt=""
+        className="pointer-events-none absolute bottom-24 right-[12%] lg:right-[36%] w-10 h-10 drop-shadow-lg opacity-80"
+        animate={{ y: [0, -8, 0], rotate: [10, -10, 10] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
       {/* Content */}
@@ -551,11 +571,17 @@ function CtaMarquee() {
   );
 }
 
-/* ─── Trust Section (blue blobs + carousel) ─────────────── */
+/* ─── Trust Section (Slush-style colored slides) ────────── */
 function TrustSection() {
   const [current, setCurrent] = useState(0);
   const slides = TRUST_SLIDES;
   const slide = slides[current];
+  const textColor = slide.dark ? "text-black" : "text-white";
+  const subColor  = slide.dark ? "text-black/50" : "text-white/50";
+  const descColor = slide.dark ? "text-black/70" : "text-white/75";
+  const btnBorder = slide.dark ? "border-black/30 text-black hover:bg-black hover:text-white" : "border-white/40 text-white hover:bg-white hover:text-black";
+  const dotActive = slide.dark ? "bg-black" : "bg-white";
+  const dotInactive= slide.dark ? "bg-black/25" : "bg-white/35";
 
   useEffect(() => {
     const id = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000);
@@ -564,72 +590,174 @@ function TrustSection() {
 
   return (
     <section
-      className="relative overflow-hidden border-b-2 border-black transition-colors duration-700"
-      style={{ backgroundColor: slide.bg }}
+      className="relative overflow-hidden border-b-2 border-black"
+      style={{ backgroundColor: slide.bg, transition: "background-color 0.6s ease" }}
     >
-      {/* Blobs */}
-      <motion.div
-        className="absolute -top-1/4 -right-1/4 w-[70%] aspect-square rounded-full opacity-40 pointer-events-none"
-        style={{ backgroundColor: slide.blob }}
-        animate={{ scale: [1, 1.06, 1], x: [0, 30, 0], y: [0, -20, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute -bottom-1/3 -left-1/4 w-[65%] aspect-square rounded-full opacity-25 pointer-events-none"
-        style={{ backgroundColor: slide.blob }}
-        animate={{ scale: [1, 1.09, 1], x: [0, -25, 0], y: [0, 25, 0] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+      {/* Flowing ribbon blob — same color, slightly lighter */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Large S-curve ribbon */}
+        <div
+          className="absolute"
+          style={{
+            width: "140%",
+            height: "55%",
+            top: "22%",
+            left: "-20%",
+            backgroundColor: slide.blob,
+            borderRadius: "50% 60% 40% 70% / 60% 30% 70% 40%",
+            transform: "rotate(-12deg)",
+            opacity: 0.45,
+          }}
+        />
+        {/* Top-right circle blob */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "28%",
+            height: "45%",
+            top: "-12%",
+            right: "4%",
+            backgroundColor: slide.blob,
+            opacity: 0.38,
+          }}
+        />
+        {/* Bottom-left circle blob */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "22%",
+            height: "35%",
+            bottom: "-10%",
+            left: "6%",
+            backgroundColor: slide.blob,
+            opacity: 0.3,
+          }}
+        />
+      </div>
 
-      <div className="relative z-10 py-28 md:py-40 px-6 text-white text-center">
+      {/* Fixed side arrows */}
+      <button
+        aria-label="Anterior"
+        onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border-2 flex items-center justify-center transition-colors text-lg ${btnBorder}`}
+      >
+        ←
+      </button>
+      <button
+        aria-label="Siguiente"
+        onClick={() => setCurrent((c) => (c + 1) % slides.length)}
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border-2 flex items-center justify-center transition-colors text-lg ${btnBorder}`}
+      >
+        →
+      </button>
+
+      {/* Content */}
+      <div className="relative z-10 py-28 md:py-40 px-16 text-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.5 }}
             className="max-w-2xl mx-auto"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/50 mb-6">Nuestra historia</p>
+            <p className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${subColor}`}>Nuestra historia</p>
             <h2
-              className="uppercase leading-[0.85] tracking-tight text-[16vw] md:text-[10vw] lg:text-[110px]"
+              className={`uppercase leading-[0.85] tracking-tight text-[16vw] md:text-[10vw] lg:text-[110px] ${textColor}`}
               style={condensedItalic}
             >
               {slide.headline}
               <span className="block" style={condensed}>{slide.sub}</span>
             </h2>
-            <p className="mt-6 text-white/75 text-lg max-w-sm mx-auto leading-relaxed">{slide.description}</p>
+            <p className={`mt-6 text-lg max-w-sm mx-auto leading-relaxed ${descColor}`}>{slide.description}</p>
             <div className="mt-6 text-5xl">{slide.icon}</div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Nav */}
-        <div className="flex items-center justify-center gap-5 mt-14">
-          <button
-            aria-label="Anterior"
-            onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
-            className="h-11 w-11 rounded-full border-2 border-white/40 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors text-lg"
+        {/* Dot nav */}
+        <div className="flex items-center justify-center gap-2.5 mt-14">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Slide ${i + 1}`}
+              onClick={() => setCurrent(i)}
+              className={`rounded-full h-2 transition-all duration-300 ${i === current ? `w-8 ${dotActive}` : `w-2 ${dotInactive}`}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Partners Section ──────────────────────────────────── */
+const PARTNER_TYPES = [
+  { name: "Colegios Públicos",             color: "#FF7B72" },
+  { name: "Colegios Concertados",          color: "#FF9D42" },
+  { name: "AMPAs",                         color: "#D8E600", dark: true },
+  { name: "Centros Cívicos",              color: "#35D0BA" },
+  { name: "Ludotecas",                    color: "#9C7BFF" },
+  { name: "Escuelas Educación Infantil",  color: "#3055C7", light: true },
+  { name: "Campus de Verano",             color: "#FF7B72" },
+  { name: "Centros de Educación Especial",color: "#35D0BA" },
+];
+
+function PartnersSection() {
+  return (
+    <section className="bg-white py-20 md:py-28 border-b-2 border-black">
+      <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        {/* Left */}
+        <div>
+          <h2
+            className="uppercase leading-[0.9] tracking-tight text-[12vw] md:text-[7vw] mb-6 text-black"
+            style={condensed}
           >
-            ←
-          </button>
-          <div className="flex gap-2.5">
-            {slides.map((_, i) => (
-              <button
+            Centros que
+            <span className="block" style={condensedItalic}>
+              ya nos <span className="text-[#1D2F8C]">eligen.</span>
+            </span>
+          </h2>
+          <p className="text-black/70 text-lg leading-relaxed max-w-sm mb-8">
+            Trabajamos con todo tipo de centros educativos del área metropolitana de Barcelona. ¿Será el tuyo el próximo?
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-colors text-sm uppercase shadow-[4px_4px_0_0_#1D2F8C]"
+            style={condensed}
+          >
+            SOLICITAR CITA ↗
+          </a>
+        </div>
+
+        {/* Right — faded pill list */}
+        <div
+          className="relative"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+          }}
+        >
+          <motion.div
+            animate={{ y: [0, -32, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col gap-3 py-6"
+          >
+            {[...PARTNER_TYPES, ...PARTNER_TYPES].map((p, i) => (
+              <div
                 key={i}
-                aria-label={`Slide ${i + 1}`}
-                onClick={() => setCurrent(i)}
-                className={`rounded-full h-2 transition-all duration-300 ${i === current ? "w-8 bg-white" : "w-2 bg-white/35"}`}
-              />
+                style={{ backgroundColor: p.color }}
+                className="flex items-center gap-3 rounded-full border-2 border-black px-5 py-3 shadow-[4px_4px_0_0_#000]"
+              >
+                <span
+                  className="text-sm font-bold"
+                  style={{ color: p.light ? "#fff" : p.dark ? "#000" : "#000" }}
+                >
+                  {p.name}
+                </span>
+              </div>
             ))}
-          </div>
-          <button
-            aria-label="Siguiente"
-            onClick={() => setCurrent((c) => (c + 1) % slides.length)}
-            className="h-11 w-11 rounded-full border-2 border-white/40 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors text-lg"
-          >
-            →
-          </button>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -751,7 +879,7 @@ function ContactForm() {
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-      className="rounded-3xl border-2 border-white/20 bg-white/5 backdrop-blur-md p-6 md:p-8 space-y-5"
+      className="rounded-3xl border-2 border-white/20 bg-white/8 p-6 md:p-8 space-y-5"
     >
       {[
         ["Nombre",           "text",  "nombre"],
@@ -789,10 +917,11 @@ function ContactForm() {
   );
 }
 
-/* ─── CTA Section ───────────────────────────────────────── */
+/* ─── CTA Section ──────────────────────────────────────────── */
 function CTA() {
   return (
     <section id="contact" className="relative bg-[#1D2F8C] text-white py-20 md:py-28 overflow-hidden border-b-2 border-black">
+      {/* Animated background */}
       <motion.div
         className="absolute inset-0 opacity-25 pointer-events-none"
         animate={{
@@ -804,63 +933,195 @@ function CTA() {
         }}
         transition={{ duration: 9, repeat: Infinity }}
       />
-      <div className="relative mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="uppercase leading-[0.85] tracking-tight text-[22vw] md:text-[12vw]"
+
+      {/* Floating stickers */}
+      <motion.img
+        src="/sticker-ball.png" alt=""
+        className="pointer-events-none absolute bottom-10 right-10 w-20 h-20 opacity-80 drop-shadow-xl"
+        animate={{ y: [0, -14, 0], rotate: [0, 12, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.img
+        src="/sticker-palette.png" alt=""
+        className="pointer-events-none absolute top-12 left-10 w-16 h-16 opacity-75 drop-shadow-xl"
+        animate={{ y: [0, -10, 0], rotate: [-8, 8, -8] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.img
+        src="/sticker-star.png" alt=""
+        className="pointer-events-none absolute bottom-16 left-1/4 w-12 h-12 opacity-60 drop-shadow-xl"
+        animate={{ y: [0, -8, 0], rotate: [5, -10, 5] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
+      <div className="relative mx-auto max-w-[1400px] px-6">
+        {/* Title — full-width, no overlap */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-10"
+        >
+          <h2
+            className="uppercase leading-[0.82] tracking-tight text-[16vw] md:text-[12vw] lg:text-[140px]"
             style={condensed}
           >
             ¿Hablamos<span className="text-[#D8E600]">?</span>
-          </motion.h2>
-          <p className="mt-6 text-lg text-white/75 max-w-md leading-relaxed">
+          </h2>
+        </motion.div>
+
+        {/* Description + Form — separate row */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <p className="text-lg text-white/75 max-w-md leading-relaxed">
             Descubre cómo podemos transformar las actividades de tu centro educativo. Sin compromiso.
           </p>
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
     </section>
   );
 }
 
-/* ─── Footer ────────────────────────────────────────────── */
-function Footer() {
+
+/* ─── Footer (two Slush-style colored cards) ────────────── */
+function FooterCard({
+  bg, blob, headline, headlineItalic, dark = false, children,
+}: {
+  bg: string; blob: string; headline: string; headlineItalic: string;
+  dark?: boolean; children: ReactNode;
+}) {
+  const tc = dark ? "text-black" : "text-white";
   return (
-    <footer className="bg-white py-16">
-      <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-3 gap-10">
-        <div>
-          <div className="flex items-center gap-3">
-            <img src={mascotAsset.url} alt="Diversplas" className="h-12 w-12" />
-            <div className="text-2xl uppercase" style={condensed}>DIVERSPLAS</div>
-          </div>
-          <p className="mt-3 italic text-black/60 text-sm">Un mundo lleno de actividades.</p>
-        </div>
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-black/40 mb-4">Navegación</div>
-          <ul className="space-y-2 font-medium text-sm">
-            {[["Manifiesto", "#manifesto"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"], ["Contacto", "#contact"]].map(([l, h]) => (
-              <li key={h}><a href={h} className="hover:text-[#1D2F8C] transition-colors">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-black/40 mb-4">Contacto</div>
-          <ul className="space-y-2 font-medium text-sm">
-            <li>Barcelona, España</li>
-            <li>hola@diversplas.com</li>
-            <li className="flex gap-3 pt-2">
-              <a className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">IG</a>
-              <a className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">in</a>
-            </li>
-          </ul>
-        </div>
+    <div
+      className="relative rounded-3xl border-2 border-black overflow-hidden p-8 md:p-10 flex flex-col justify-between min-h-[340px]"
+      style={{ backgroundColor: bg }}
+    >
+      {/* Blob decoration */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute"
+          style={{
+            width: "110%", height: "55%", top: "20%", left: "-5%",
+            backgroundColor: blob,
+            borderRadius: "50% 60% 40% 70% / 60% 30% 70% 40%",
+            transform: "rotate(-10deg)",
+            opacity: 0.4,
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{ width: "25%", height: "40%", top: "-8%", right: "8%", backgroundColor: blob, opacity: 0.3 }}
+        />
       </div>
-      <div className="mx-auto max-w-[1400px] px-6 mt-10 pt-6 border-t border-black/10 flex justify-between text-xs text-black/40">
-        <span>© {new Date().getFullYear()} Diversplas</span>
-        <span>+20 años · Barcelona</span>
+      {/* Content */}
+      <div className="relative z-10">
+        <h3
+          className={`uppercase leading-[0.85] tracking-tight text-[10vw] md:text-[5vw] lg:text-[54px] ${tc}`}
+          style={condensed}
+        >
+          {headline}
+          <span className="block" style={condensedItalic}>{headlineItalic}</span>
+        </h3>
+      </div>
+      <div className={`relative z-10 mt-6 ${tc}`}>{children}</div>
+    </div>
+  );
+}
+
+function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  return (
+    <footer>
+      {/* Two colored cards */}
+      <div className="bg-white border-b-2 border-black px-4 md:px-6 py-6 grid md:grid-cols-2 gap-4">
+        {/* Card 1 — purple, newsletter/contact */}
+        <FooterCard
+          bg="#9C7BFF"
+          blob="#B49AFF"
+          headline="TU CENTRO"
+          headlineItalic="YA LO MERECE"
+        >
+          <p className="text-white/80 text-sm leading-relaxed mb-5">
+            Escríbenos y diseñamos el programa extraescolar perfecto para tu centro. Sin compromiso.
+          </p>
+          {subscribed ? (
+            <div className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2 font-bold text-sm" style={condensed}>
+              ✓ ¡Mensaje enviado!
+            </div>
+          ) : (
+            <form
+              className="flex gap-2"
+              onSubmit={(e) => { e.preventDefault(); setSubscribed(true); }}
+            >
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Tu email"
+                className="flex-1 rounded-full border-2 border-black bg-white/20 text-white placeholder:text-white/50 px-4 py-2 text-sm outline-none focus:bg-white/30 transition-colors"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-black text-white px-5 py-2 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase"
+                style={condensed}
+              >
+                ENVIAR
+              </button>
+            </form>
+          )}
+        </FooterCard>
+
+        {/* Card 2 — yellow, support/contact */}
+        <FooterCard
+          bg="#D8E600"
+          blob="#E8F520"
+          headline="SIEMPRE"
+          headlineItalic="AQUÍ PARA TI"
+          dark
+        >
+          <p className="text-black/70 text-sm leading-relaxed mb-5">
+            ¿Tienes dudas? Escríbenos y te respondemos antes de 24h laborables.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="mailto:hola@diversplas.com"
+              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-2 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase"
+              style={condensed}
+            >
+              ESCRIBIRNOS ↗
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2 font-bold text-sm border-2 border-black hover:bg-black hover:text-white transition-colors uppercase"
+              style={condensed}
+            >
+              SOLICITAR CITA ↗
+            </a>
+          </div>
+        </FooterCard>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="bg-white py-6 px-6">
+        <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
+          <div className="flex items-center gap-3">
+            <img src={mascotAsset.url} alt="Diversplas" className="h-9 w-9" />
+            <span className="text-sm font-bold uppercase" style={condensed}>DIVERSPLAS</span>
+          </div>
+          <div className="flex gap-4 text-sm">
+            {[["Manifiesto", "#manifesto"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (
+              <a key={h} href={h} className="text-black/50 hover:text-black transition-colors">{l}</a>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <a className="rounded-full border-2 border-black h-8 w-8 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">IG</a>
+            <a className="rounded-full border-2 border-black h-8 w-8 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">in</a>
+            <span className="text-xs text-black/40">© {new Date().getFullYear()} Diversplas</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -920,6 +1181,7 @@ function Index() {
 
       <CtaMarquee />
       <TrustSection />
+      <PartnersSection />
       <Manifesto />
       <Activities />
       <CTA />

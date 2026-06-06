@@ -4,6 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Clash Display", "Inter", sans-serif;
+  --font-sans: "General Sans", "Inter", sans-serif;
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-brand: #1d2f8c;
+  --color-brand-2: #3055c7;
+  --color-acid: #d8e600;
+  --color-coral: #ff7b72;
+  --color-turquoise: #35d0ba;
+  --color-orange: #ff9d42;
+  --color-purple: #9c7bff;
+}
+
 /*
  * Design system definition.
  *

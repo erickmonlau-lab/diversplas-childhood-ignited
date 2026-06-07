@@ -127,14 +127,7 @@ function Nav() {
         href="#top"
         className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
       >
-        <div className="overflow-hidden h-11" style={{ width: "120px" }}>
-          <img
-            src={logoAsset.url}
-            alt="DIVERSPLAS"
-            className="h-11 w-auto"
-            style={{ marginLeft: "-55%", minWidth: "220%" }}
-          />
-        </div>
+        <img src={logoAsset.url} alt="DIVERSPLAS" className="h-10 w-auto object-contain" />
       </a>
 
       {/* Links pill */}
@@ -143,7 +136,7 @@ function Nav() {
           ["Actividades", "#activities"],
           ["Proceso",     "#process"],
           ["Zonas",       "#zones"],
-          ["Manifiesto",  "#manifesto"],
+          ["Contacto", "#contact"],
         ].map(([label, href]) => (
           <a
             key={href}
@@ -187,7 +180,7 @@ function Hero() {
         animate={{ y: [0, -22, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={logoAsset.url} alt="Logo Diversplas" className="w-full h-auto drop-shadow-[0_24px_48px_rgba(29,47,140,0.35)]" />
+        <img src={mascotAsset.url} alt="" className="w-full h-auto drop-shadow-[0_24px_48px_rgba(29,47,140,0.35)]" />
       </motion.div>
 
       {/* ── Floating Stickers — spread across all 4 sides ── */}
@@ -1195,17 +1188,10 @@ function Footer() {
       <div className="bg-white py-6 px-6">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="overflow-hidden h-11" style={{ width: "120px" }}>
-          <img
-            src={logoAsset.url}
-            alt="DIVERSPLAS"
-            className="h-11 w-auto"
-            style={{ marginLeft: "-55%", minWidth: "220%" }}
-          />
-        </div>
+            <img src={logoAsset.url} alt="DIVERSPLAS" className="h-10 w-auto object-contain" />
           </div>
           <div className="flex gap-4 text-sm">
-            {[["Manifiesto", "#manifesto"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (
+            {[["Contacto", "#contact"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (
               <a key={h} href={h} className="text-black/50 hover:text-black transition-colors">{l}</a>
             ))}
           </div>

@@ -127,7 +127,7 @@ function Nav() {
         href="#top"
         className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
       >
-        <img src={logoAsset.url} alt="DIVERSPLAS" className="h-10 w-auto object-contain" />
+        <img src="/diversplas-logo.png" alt="DIVERSPLAS" className="h-12 w-auto" />
       </a>
 
       {/* Links pill */}
@@ -1188,7 +1188,7 @@ function Footer() {
       <div className="bg-white py-6 px-6">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="DIVERSPLAS" className="h-10 w-auto object-contain" />
+            <img src="/diversplas-logo.png" alt="DIVERSPLAS" className="h-12 w-auto" />
           </div>
           <div className="flex gap-4 text-sm">
             {[["Contacto", "#contact"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (

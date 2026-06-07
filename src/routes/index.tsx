@@ -332,10 +332,10 @@ function FeatureSection({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.75 }}
-      className="flex flex-col justify-center"
+      className="flex flex-col justify-center py-8 md:py-0"
     >
       <h2
-        className={`uppercase leading-[0.88] tracking-tight text-[11vw] md:text-[6.5vw] lg:text-[72px] mb-6 ${dark ? "text-white" : "text-black"}`}
+        className={`uppercase leading-[0.88] tracking-tight text-[12vw] md:text-[7vw] lg:text-[88px] mb-8 ${dark ? "text-white" : "text-black"}`}
         style={condensed}
       >
         {headline}
@@ -343,15 +343,15 @@ function FeatureSection({
           <span className="block text-[#1D2F8C]" style={condensedItalic}>{headlineItalic}</span>
         )}
       </h2>
-      <p className={`text-lg leading-relaxed max-w-sm ${dark ? "text-white/70" : "text-black/70"}`}>{description}</p>
-      {extra && <p className={`text-lg leading-relaxed max-w-sm mt-3 ${dark ? "text-white/70" : "text-black/70"}`}>{extra}</p>}
+      <p className={`text-xl md:text-2xl leading-relaxed max-w-lg ${dark ? "text-white/80" : "text-black/75"}`}>{description}</p>
+      {extra && <p className={`text-xl md:text-2xl leading-relaxed max-w-lg mt-4 ${dark ? "text-white/80" : "text-black/75"}`}>{extra}</p>}
       {links && (
-        <div className="flex flex-wrap gap-3 mt-8">
+        <div className="flex flex-wrap gap-4 mt-10">
           {links.map((l, i) => (
             <a
               key={i}
               href={l.href}
-              className={`rounded-full px-6 py-2.5 font-bold border-2 border-black text-sm uppercase transition-colors shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] ${
+              className={`rounded-full px-8 py-3.5 font-bold border-2 border-black text-base uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
                 i === 0
                   ? "bg-black text-white hover:bg-[#1D2F8C]"
                   : "bg-white text-black hover:bg-[#D8E600]"
@@ -380,9 +380,9 @@ function FeatureSection({
   return (
     <section
       id={id}
-      className={`border-b-2 border-black py-20 md:py-28 ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
+      className={`border-b-2 border-black py-28 md:py-40 ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
     >
-      <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
         {flip ? <>{vis}{text}</> : <>{text}{vis}</>}
       </div>
     </section>
@@ -393,26 +393,26 @@ function FeatureSection({
 
 function ActivityCardsVisual() {
   return (
-    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-6 md:p-8 overflow-hidden relative aspect-[4/3]">
+    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       {/* bg glow */}
       <div
         className="absolute inset-0 opacity-20"
         style={{ backgroundImage: "radial-gradient(circle at 25% 30%, #3055C7, transparent 55%), radial-gradient(circle at 75% 70%, #9C7BFF, transparent 55%)" }}
       />
       {/* Header */}
-      <div className="relative mb-4">
-        <div className="text-white/40 text-[10px] font-semibold uppercase tracking-widest">Actividades disponibles</div>
-        <div className="text-white font-bold text-xl mt-1" style={condensed}>+20 experiencias</div>
+      <div className="relative mb-6">
+        <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Actividades disponibles</div>
+        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>+20 experiencias</div>
       </div>
       {/* Tags */}
-      <div className="relative flex flex-wrap gap-2">
+      <div className="relative flex flex-wrap gap-2.5">
         {ACTIVITIES.slice(0, 14).map((a) => (
           <span
             key={a.name}
             style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-            className="rounded-full px-3 py-1 text-xs font-bold border border-black/20 whitespace-nowrap"
+            className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
           >
-            {a.name}
+            {a.icon} {a.name}
           </span>
         ))}
       </div>
@@ -429,19 +429,19 @@ function ProgramVisual() {
     { n: "05", t: "Mejoramos",    c: "#9C7BFF" },
   ];
   return (
-    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-6 md:p-8 overflow-hidden relative aspect-[4/3]">
-      <div className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-36 w-36 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
-      <div className="relative mb-5">
-        <div className="text-white/60 text-[10px] font-semibold uppercase tracking-widest">Tu programa</div>
-        <div className="text-white font-bold text-xl mt-1" style={condensed}>A medida, con propósito</div>
+    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+      <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
+      <div className="relative mb-7">
+        <div className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tu programa</div>
+        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>A medida, con propósito</div>
       </div>
-      <div className="relative space-y-2">
+      <div className="relative space-y-3">
         {steps.map((s) => (
-          <div key={s.n} className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl px-4 py-2.5 border border-white/10">
-            <span className="text-white/50 text-xs font-mono w-5">{s.n}</span>
-            <span className="h-2 w-2 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
-            <span className="text-white font-semibold text-sm">{s.t}</span>
+          <div key={s.n} className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3.5 border border-white/10">
+            <span className="text-white/50 text-sm font-mono w-6">{s.n}</span>
+            <span className="h-3 w-3 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
+            <span className="text-white font-bold text-lg">{s.t}</span>
           </div>
         ))}
       </div>
@@ -457,22 +457,22 @@ function StatsVisual() {
     { n: "100%", label: "Compromiso" },
   ];
   return (
-    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-6 md:p-8 overflow-hidden relative aspect-[4/3]">
-      <div className="pointer-events-none absolute bottom-0 left-0 h-52 w-52 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
-      <div className="relative mb-5">
-        <div className="text-black/50 text-[10px] font-semibold uppercase tracking-widest">Nuestro impacto</div>
-        <div className="text-black font-bold text-xl mt-1" style={condensed}>Resultados reales</div>
+    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+      <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
+      <div className="relative mb-7">
+        <div className="text-black/50 text-xs font-bold uppercase tracking-widest mb-1">Nuestro impacto</div>
+        <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>Resultados reales</div>
       </div>
-      <div className="relative grid grid-cols-2 gap-3">
+      <div className="relative grid grid-cols-2 gap-4">
         {stats.map((s) => (
-          <div key={s.label} className="bg-white/30 rounded-2xl p-4 text-center border border-black/10">
+          <div key={s.label} className="bg-white/30 rounded-2xl p-5 md:p-6 text-center border border-black/10">
             <div
-              className="text-4xl md:text-5xl leading-none text-black"
+              className="text-5xl md:text-6xl leading-none text-black font-black"
               style={condensed}
             >
               {s.n}
             </div>
-            <div className="text-[10px] font-bold text-black/60 mt-1 uppercase tracking-widest">{s.label}</div>
+            <div className="text-xs font-bold text-black/60 mt-2 uppercase tracking-widest">{s.label}</div>
           </div>
         ))}
       </div>
@@ -482,32 +482,32 @@ function StatsVisual() {
 
 function ZonesVisual() {
   const points = [
-    [200, 150, "Barcelona", 8],
-    [120, 100, "Santa Coloma", 5],
-    [280, 90,  "Badalona", 5],
-    [300, 200, "Mollet", 5],
-    [110, 210, "Sant Fost", 5],
+    [200, 150, "Barcelona", 10],
+    [120, 100, "Santa Coloma", 7],
+    [280, 90,  "Badalona", 7],
+    [300, 200, "Mollet", 7],
+    [110, 210, "Sant Fost", 7],
   ] as [number, number, string, number][];
 
   return (
-    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black overflow-hidden relative aspect-[4/3]">
+    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div
-        className="absolute inset-0 opacity-35"
+        className="absolute inset-0 opacity-40"
         style={{ backgroundImage: "radial-gradient(circle at 30% 40%, #1D2F8C, transparent 60%), radial-gradient(circle at 70% 70%, #3055C7, transparent 50%)" }}
       />
       <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full">
-        <g stroke="#D8E600" strokeWidth="1" fill="none" opacity="0.5">
+        <g stroke="#D8E600" strokeWidth="1.5" fill="none" opacity="0.6">
           {points.slice(1).map(([x, y], i) => (
             <line key={i} x1={200} y1={150} x2={x} y2={y} />
           ))}
         </g>
         {points.map(([x, y, name, r], i) => (
           <g key={i}>
-            <circle cx={x} cy={y} r={r + 7} fill="#D8E600" opacity="0.15">
-              <animate attributeName="r" values={`${r + 4};${r + 14};${r + 4}`} dur="3s" repeatCount="indefinite" />
+            <circle cx={x} cy={y} r={r + 8} fill="#D8E600" opacity="0.15">
+              <animate attributeName="r" values={`${r + 4};${r + 16};${r + 4}`} dur="3s" repeatCount="indefinite" />
             </circle>
             <circle cx={x} cy={y} r={r} fill="#D8E600" />
-            <text x={x + 10} y={y + 4} fill="#fff" fontSize="10" fontFamily="General Sans">{name}</text>
+            <text x={x + 13} y={y + 5} fill="#fff" fontSize="12" fontWeight="bold" fontFamily="sans-serif">{name}</text>
           </g>
         ))}
       </svg>

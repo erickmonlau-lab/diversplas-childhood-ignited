@@ -478,38 +478,58 @@ function StatsVisual() {
   );
 }
 
-function ZonesVisual() {
-  const points = [
-    [200, 150, "Barcelona", 10],
-    [120, 100, "Santa Coloma", 7],
-    [280, 90,  "Badalona", 7],
-    [300, 200, "Mollet", 7],
-    [110, 210, "Sant Fost", 7],
-  ] as [number, number, string, number][];
+function ZonesCardsVisual() {
+  const zones = [
+    { city: "Santa Coloma", sub: "de Gramenet", color: "#FF7B72", light: false, centers: 8 },
+    { city: "Badalona",     sub: "",             color: "#1D2F8C", light: true,  centers: 12 },
+    { city: "Mollet",       sub: "del Vallès",   color: "#D8E600", light: false, centers: 5 },
+    { city: "Sant Fost",    sub: "de Campsentelles", color: "#35D0BA", light: false, centers: 3 },
+  ];
+
+  const Card = ({ z, className = "" }: { z: typeof zones[0]; className?: string }) => (
+    <motion.div
+      style={{ backgroundColor: z.color }}
+      className={`rounded-2xl border-2 border-black p-6 flex flex-col justify-between shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default ${className}`}
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 320, damping: 22 }}
+    >
+      <div
+        className="uppercase leading-[0.88] text-3xl md:text-4xl"
+        style={{
+          fontFamily: "'Barlow Condensed', sans-serif",
+          fontWeight: 900,
+          color: z.light ? "#fff" : "#000",
+        }}
+      >
+        {z.city}
+        {z.sub && (
+          <span className="block text-xl md:text-2xl mt-0.5">{z.sub}</span>
+        )}
+      </div>
+      <div
+        className="text-xs font-bold mt-5 uppercase tracking-wider"
+        style={{ color: z.light ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.45)" }}
+      >
+        Zona activa · +{z.centers} centros
+      </div>
+    </motion.div>
+  );
 
   return (
-    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black overflow-hidden relative min-h-[380px] md:min-h-[440px]">
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{ backgroundImage: "radial-gradient(circle at 30% 40%, #1D2F8C, transparent 60%), radial-gradient(circle at 70% 70%, #3055C7, transparent 50%)" }}
-      />
-      <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full">
-        <g stroke="#D8E600" strokeWidth="1.5" fill="none" opacity="0.6">
-          {points.slice(1).map(([x, y], i) => (
-            <line key={i} x1={200} y1={150} x2={x} y2={y} />
-          ))}
-        </g>
-        {points.map(([x, y, name, r], i) => (
-          <g key={i}>
-            <circle cx={x} cy={y} r={r + 8} fill="#D8E600" opacity="0.15">
-              <animate attributeName="r" values={`${r + 4};${r + 16};${r + 4}`} dur="3s" repeatCount="indefinite" />
-            </circle>
-            <circle cx={x} cy={y} r={r} fill="#D8E600" />
-            <text x={x + 13} y={y + 5} fill="#fff" fontSize="12" fontWeight="bold" fontFamily="sans-serif">{name}</text>
-          </g>
+    <>
+      {/* Mobile: horizontal scroll */}
+      <div className="flex md:hidden gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2">
+        {zones.map((z) => (
+          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "200px" } as React.CSSProperties} />
         ))}
-      </svg>
-    </div>
+      </div>
+      {/* Desktop: 2×2 grid */}
+      <div className="hidden md:grid grid-cols-2 gap-4">
+        {zones.map((z) => (
+          <Card key={z.city} z={z} className="min-h-[190px]" />
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -1215,7 +1235,7 @@ function Index() {
         description="Santa Coloma de Gramenet, Badalona, Mollet del Vallès y Sant Fost de Campsentelles."
         extra="Siempre cerca de tu centro educativo."
         links={[{ label: "SOLICITAR CITA", href: "#contact" }]}
-        visual={<ZonesVisual />}
+        visual={<ZonesCardsVisual />}
         flip
       />
 

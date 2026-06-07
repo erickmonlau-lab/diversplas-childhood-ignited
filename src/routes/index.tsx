@@ -26,7 +26,7 @@ const ACTIVITIES = [
   { name: "Natación",         color: "#3055C7", light: true, icon: "🏊" },
   { name: "Hip Hop",          color: "#9C7BFF", icon: "🎤" },
   { name: "Teatro",           color: "#D8E600", icon: "🎭" },
-  { name: "Inglés",           color: "#FF7B72", icon: "🇬🇧" },
+  { name: "Inglés",           color: "#FF7B72", icon: "🌍" },
   { name: "Manualidades",     color: "#FF9D42", icon: "✂️" },
   { name: "Dibujo",           color: "#9C7BFF", icon: "🎨" },
   { name: "Juegos de Mesa",   color: "#D8E600", icon: "♟️" },
@@ -185,10 +185,10 @@ function Hero() {
 
       {/* ── Floating Stickers — spread across all 4 sides ── */}
 
-      {/* 1. Soccer ball — TOP LEFT, grande */}
+      {/* 1. Soccer ball — TOP LEFT, grande — mix-blend-multiply elimina fondo blanco */}
       <motion.img
         src="/sticker-ball.png" alt=""
-        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32 drop-shadow-xl"
+        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -18, 0], rotate: [0, 18, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -196,7 +196,7 @@ function Hero() {
       {/* 2. Trophy — TOP RIGHT */}
       <motion.img
         src="/sticker-trophy.png" alt=""
-        className="pointer-events-none absolute top-20 right-[4%] lg:right-[30%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl"
+        className="pointer-events-none absolute top-20 right-[4%] lg:right-[30%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       />
@@ -204,7 +204,7 @@ function Hero() {
       {/* 3. Palette — BOTTOM LEFT */}
       <motion.img
         src="/sticker-palette.png" alt=""
-        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl"
+        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -14, 0], rotate: [-8, 6, -8] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       />
@@ -212,31 +212,31 @@ function Hero() {
       {/* 4. Star — BOTTOM RIGHT */}
       <motion.img
         src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute bottom-16 right-[4%] lg:right-[28%] w-20 h-20 md:w-24 md:h-24 drop-shadow-xl"
+        className="pointer-events-none absolute bottom-16 right-[4%] lg:right-[28%] w-20 h-20 md:w-24 md:h-24 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -12, 0], rotate: [8, -8, 8] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      {/* 5. Karate — LEFT CENTER (mid-height) */}
+      {/* 5. Karate — LEFT CENTER */}
       <motion.img
         src="/sticker-karate.png" alt=""
-        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg"
+        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg mix-blend-multiply"
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
       />
 
-      {/* 6. Ball small — RIGHT CENTER (hidden on lg where mascot is) */}
+      {/* 6. Ball small — RIGHT CENTER (hidden on lg) */}
       <motion.img
         src="/sticker-ball.png" alt=""
-        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg lg:hidden"
+        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg lg:hidden mix-blend-multiply"
         animate={{ y: [0, -10, 0], rotate: [10, -10, 10] }}
         transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
       />
 
-      {/* 7. Star small — TOP CENTER-LEFT area */}
+      {/* 7. Star small — TOP CENTER-LEFT */}
       <motion.img
         src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute top-28 left-[32%] w-10 h-10 md:w-14 md:h-14 drop-shadow-lg opacity-80"
+        className="pointer-events-none absolute top-28 left-[32%] w-10 h-10 md:w-14 md:h-14 drop-shadow-lg opacity-80 mix-blend-multiply"
         animate={{ y: [0, -8, 0], rotate: [-10, 10, -10] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
       />
@@ -248,9 +248,9 @@ function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-white px-4 py-1.5 text-xs font-semibold mb-10"
+          className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-10 shadow-[3px_3px_0_0_#1D2F8C]"
         >
-          <span className="h-2 w-2 rounded-full bg-[#35D0BA] animate-pulse" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
           +20 años en Barcelona · Colegios · AMPAs · Centros
         </motion.div>
 
@@ -274,9 +274,9 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 text-lg md:text-xl text-black/70 max-w-md mx-auto"
+          className="mt-8 text-lg md:text-xl text-black/70 max-w-lg mx-auto"
         >
-          Diseñamos las extraescolares de tu centro como si fuera nuestro propio colegio.
+          Más de 20 años creando programas de actividades para colegios y AMPAs de Barcelona.
         </motion.p>
 
         {/* CTAs */}
@@ -351,7 +351,7 @@ function FeatureSection({
               className={`rounded-full px-8 py-3.5 font-bold border-2 border-black text-base uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
                 i === 0
                   ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
-                  : "bg-white text-black hover:bg-[#D8E600]"
+                  : "bg-transparent text-black hover:bg-black hover:text-white"
               }`}
               style={condensed}
             >
@@ -449,9 +449,9 @@ function ProgramVisual() {
 function StatsVisual() {
   const stats = [
     { n: "+20", label: "Años" },
-    { n: "+50", label: "Colegios" },
+    { n: "+30", label: "Centros" },
     { n: "+5k", label: "Alumnos" },
-    { n: "100%", label: "Compromiso" },
+    { n: "20+", label: "Actividades" },
   ];
   return (
     <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
@@ -473,6 +473,7 @@ function StatsVisual() {
           </div>
         ))}
       </div>
+      <p className="relative mt-4 text-black/40 text-xs font-medium">Datos reales desde 2005</p>
     </div>
   );
 }
@@ -514,35 +515,19 @@ function ZonesVisual() {
 
 /* ─── CTA Marquee (Slush-style black section) ───────────── */
 function CtaMarquee() {
-  const text = "ÚNETE A DIVERSPLAS";
-  const row = Array(10).fill(text);
+  const ROW1 = ["FÚTBOL","TEATRO","ROBÓTICA","INGLÉS","KARATE","HIP HOP","CIENCIA","MAGIA","NATACIÓN","AJEDREZ"];
+  const ROW2 = ["DIBUJO","PATINAJE","BÁSQUET","MANUALIDADES","MULTIDEPORTE","CAMPUS","INGLÉS","EXPRESIÓN CORP.","REFUERZO","CASALES"];
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">
-      {/* Floating mascots */}
-      <motion.img
-        src={mascotAsset.url}
-        alt=""
-        className="absolute left-[12%] top-1/2 -translate-y-1/2 h-14 w-14 z-10 pointer-events-none drop-shadow-lg"
-        animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.img
-        src={mascotAsset.url}
-        alt=""
-        className="absolute right-[18%] top-1/2 -translate-y-1/2 h-10 w-10 z-10 pointer-events-none drop-shadow-lg scale-x-[-1]"
-        animate={{ y: [0, -8, 0], rotate: [5, -5, 5] }}
-        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-
-      {/* Row 1 – scrolls left */}
+      {/* Row 1 – scrolls LEFT → */}
       <div className="relative overflow-hidden mb-3">
         <motion.div
           className="flex gap-4 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
-          {[...row, ...row].map((t, i) => {
+          {[...ROW1, ...ROW1].map((t, i) => {
             const c = MARQUEE_COLORS[i % MARQUEE_COLORS.length];
             const isLight = c === "#3055C7" || c === "#1D2F8C";
             return (
@@ -563,15 +548,15 @@ function CtaMarquee() {
         </motion.div>
       </div>
 
-      {/* Row 2 – scrolls right */}
+      {/* Row 2 – scrolls RIGHT ← (opposite direction) */}
       <div className="relative overflow-hidden">
         <motion.div
           className="flex gap-4 whitespace-nowrap"
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
         >
-          {[...row, ...row].map((t, i) => {
-            const c = MARQUEE_COLORS[(i + 3) % MARQUEE_COLORS.length];
+          {[...ROW2, ...ROW2].map((t, i) => {
+            const c = MARQUEE_COLORS[(i + 4) % MARQUEE_COLORS.length];
             const isLight = c === "#3055C7" || c === "#1D2F8C";
             return (
               <span
@@ -698,14 +683,18 @@ function TrustSection() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Dot nav */}
-        <div className="flex items-center justify-center gap-2.5 mt-14">
+        {/* Dot nav — bigger dots, more contrast */}
+        <div className="flex items-center justify-center gap-3 mt-14">
           {slides.map((_, i) => (
             <button
               key={i}
               aria-label={`Slide ${i + 1}`}
               onClick={() => setCurrent(i)}
-              className={`rounded-full h-2 transition-all duration-300 ${i === current ? `w-8 ${dotActive}` : `w-2 ${dotInactive}`}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? `w-12 h-4 ${dotActive}`
+                  : `w-4 h-4 ${dotInactive} hover:opacity-70`
+              }`}
             />
           ))}
         </div>
@@ -742,11 +731,12 @@ function PartnersSection() {
             </span>
           </h2>
           <p className="text-black/70 text-lg leading-relaxed max-w-sm mb-8">
-            Trabajamos con todo tipo de centros educativos del área metropolitana de Barcelona. ¿Será el tuyo el próximo?
+            Trabajamos con todo tipo de centros educativos del área metropolitana de Barcelona.{" "}
+            <strong>Tu centro educativo, a un mensaje de distancia.</strong>
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-colors text-sm uppercase shadow-[4px_4px_0_0_#1D2F8C]"
+            className="inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-6 py-3 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors text-sm uppercase shadow-[4px_4px_0_0_#000]"
             style={condensed}
           >
             SOLICITAR CITA ↗
@@ -817,9 +807,9 @@ function Manifesto() {
   ];
 
   return (
-    <section id="manifesto" className="bg-white py-24 md:py-40 border-b-2 border-black">
+    <section id="manifesto" className="bg-white pt-14 pb-24 md:pt-16 md:pb-40 border-b-2 border-black">
       <div className="mx-auto max-w-[1400px] px-6">
-        <div className="mb-12 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs font-bold">
+        <div className="mb-10 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs font-bold">
           MANIFIESTO
         </div>
         <div className="space-y-10 md:space-y-14">
@@ -848,6 +838,16 @@ function Manifesto() {
             </motion.div>
           ))}
         </div>
+        {/* Closing remate line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-16 text-black/40 text-lg md:text-xl font-medium"
+        >
+          Y llevamos más de 20 años demostrándolo.
+        </motion.p>
       </div>
     </section>
   );
@@ -866,7 +866,7 @@ function Activities() {
             Un universo{" "}
             <span style={condensedItalic} className="text-[#1D2F8C]">vivo.</span>
           </h2>
-          <p className="max-w-sm text-black/70">
+          <p className="max-w-sm text-black/70 text-lg">
             Veinte experiencias, una sola obsesión: que cada niño encuentre la suya.
           </p>
         </div>
@@ -959,7 +959,8 @@ function ContactForm() {
         <span className="text-sm font-bold uppercase tracking-widest text-white/80">Mensaje</span>
         <textarea
           name="mensaje"
-          rows={3}
+          rows={5}
+          style={{ minHeight: "120px" }}
           className="mt-2 w-full bg-transparent border-b-2 border-white/40 focus:border-[#D8E600] outline-none py-2.5 text-xl text-white transition-colors resize-none"
         />
       </label>
@@ -1046,11 +1047,11 @@ function CTA() {
                 <li key={t} className="text-lg font-semibold">{t}</li>
               ))}
             </ul>
-            {/* Mascot */}
+            {/* Mascot — usar fichero local para garantizar carga */}
             <motion.img
-              src={mascotAsset.url}
-              alt="Mascota Diversplas"
-              className="w-48 md:w-56 drop-shadow-2xl mt-4"
+              src="/diversplas-logo.jpeg"
+              alt="Diversplas"
+              className="w-40 md:w-48 drop-shadow-2xl mt-4 rounded-2xl"
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -1114,68 +1115,29 @@ function Footer() {
   const [subscribed, setSubscribed] = useState(false);
   return (
     <footer>
-      {/* Two colored cards */}
-      <div className="bg-white border-b-2 border-black px-4 md:px-6 py-6 grid md:grid-cols-2 gap-4">
-        {/* Card 1 — purple, newsletter/contact */}
-        <FooterCard
-          bg="#9C7BFF"
-          blob="#B49AFF"
-          headline="TU CENTRO"
-          headlineItalic="YA LO MERECE"
-        >
-          <p className="text-white/80 text-sm leading-relaxed mb-5">
-            Escríbenos y diseñamos el programa extraescolar perfecto para tu centro. Sin compromiso.
-          </p>
-          {subscribed ? (
-            <div className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2 font-bold text-sm" style={condensed}>
-              ✓ ¡Mensaje enviado!
-            </div>
-          ) : (
-            <form
-              className="flex gap-2"
-              onSubmit={(e) => { e.preventDefault(); setSubscribed(true); }}
-            >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Tu email"
-                className="flex-1 rounded-full border-2 border-black bg-white/20 text-white placeholder:text-white/50 px-4 py-2 text-sm outline-none focus:bg-white/30 transition-colors"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-black text-white px-5 py-2 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase"
-                style={condensed}
-              >
-                ENVIAR
-              </button>
-            </form>
-          )}
-        </FooterCard>
-
-        {/* Card 2 — yellow, support/contact */}
+      {/* Single unified CTA footer card — amarillo corporativo */}
+      <div className="bg-white border-b-2 border-black px-4 md:px-6 py-6">
         <FooterCard
           bg="#D8E600"
           blob="#E8F520"
-          headline="SIEMPRE"
-          headlineItalic="AQUÍ PARA TI"
+          headline="¿HABLAMOS"
+          headlineItalic="CONTIGO?"
           dark
         >
-          <p className="text-black/70 text-sm leading-relaxed mb-5">
-            ¿Tienes dudas? Escríbenos y te respondemos antes de 24h laborables.
+          <p className="text-black/70 text-base leading-relaxed mb-6 max-w-md">
+            ¿Tienes un centro educativo y quieres mejorar su oferta extraescolar? Estamos a un mensaje.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
               href="mailto:hola@diversplas.com"
-              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-2 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase"
+              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase shadow-[4px_4px_0_0_#1D2F8C]"
               style={condensed}
             >
-              ESCRIBIRNOS ↗
+              ESCRÍBENOS ↗
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2 font-bold text-sm border-2 border-black hover:bg-black hover:text-white transition-colors uppercase"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 font-bold text-sm border-2 border-black hover:bg-black hover:text-white transition-colors uppercase shadow-[4px_4px_0_0_#000]"
               style={condensed}
             >
               SOLICITAR CITA ↗
@@ -1219,7 +1181,6 @@ function Index() {
         headline="EMPIEZA AQUÍ:"
         headlineItalic="ACTIVIDADES"
         description="Más de 20 experiencias extraescolares diseñadas para que cada niño encuentre su pasión."
-        extra="Fútbol, karate, teatro, robótica, inglés y mucho más."
         links={[{ label: "VER TODO", href: "#activities" }, { label: "PREGUNTAS", href: "#contact" }]}
         visual={<ActivityCardsVisual />}
       />

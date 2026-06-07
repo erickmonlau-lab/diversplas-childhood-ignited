@@ -288,7 +288,7 @@ function Hero() {
         >
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-black text-white px-7 py-3.5 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-colors text-sm uppercase tracking-wide shadow-[4px_4px_0_0_#1D2F8C]"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors text-sm uppercase tracking-wide shadow-[4px_4px_0_0_#000]"
             style={condensed}
           >
             SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -350,7 +350,7 @@ function FeatureSection({
               href={l.href}
               className={`rounded-full px-8 py-3.5 font-bold border-2 border-black text-base uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
                 i === 0
-                  ? "bg-black text-white hover:bg-[#1D2F8C]"
+                  ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
                   : "bg-white text-black hover:bg-[#D8E600]"
               }`}
               style={condensed}
@@ -423,7 +423,7 @@ function ProgramVisual() {
     { n: "02", t: "Diseñamos",    c: "#FF9D42" },
     { n: "03", t: "Coordinamos",  c: "#D8E600" },
     { n: "04", t: "Acompañamos",  c: "#35D0BA" },
-    { n: "05", t: "Mejoramos",    c: "#9C7BFF" },
+    { n: "05", t: "Mejoramos",    c: "#ffffff" },
   ];
   return (
     <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">

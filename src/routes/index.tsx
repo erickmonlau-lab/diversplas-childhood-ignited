@@ -229,10 +229,10 @@ function Hero() {
         transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
       />
 
-      {/* 7. Star small — TOP CENTER-LEFT */}
+      {/* 7. Star small — TOP LEFT near edge */}
       <motion.img
         src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute top-28 left-[32%] w-10 h-10 md:w-14 md:h-14 drop-shadow-lg opacity-80 mix-blend-multiply"
+        className="pointer-events-none absolute top-28 left-[6%] w-10 h-10 md:w-14 md:h-14 drop-shadow-lg opacity-80 mix-blend-multiply"
         animate={{ y: [0, -8, 0], rotate: [-10, 10, -10] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
       />
@@ -286,9 +286,10 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 text-lg md:text-xl text-black/70 max-w-lg mx-auto"
+          className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
-          Más de 20 años creando programas de actividades para colegios y AMPAs de Barcelona.
+          Mucho más que rellenar las tardes. Un espacio para jugar, aprender y crecer.{" "}
+          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades extraescolares en Barcelona que despiertan la creatividad de los niños y ofrecen total tranquilidad a colegios y familias.</span>
         </motion.p>
 
         {/* CTAs */}

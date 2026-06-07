@@ -18,27 +18,27 @@ export const Route = createFileRoute("/")(({
 /* ─── Data ─────────────────────────────────────────────── */
 
 const ACTIVITIES = [
-  { name: "Fútbol",           color: "#FF7B72" },
-  { name: "Básquet",          color: "#FF9D42" },
-  { name: "Multideporte",     color: "#35D0BA" },
-  { name: "Karate",           color: "#1D2F8C", light: true },
-  { name: "Natación",         color: "#3055C7", light: true },
-  { name: "Hip Hop",          color: "#9C7BFF" },
-  { name: "Teatro",           color: "#D8E600" },
-  { name: "Inglés",           color: "#FF7B72" },
-  { name: "Manualidades",     color: "#FF9D42" },
-  { name: "Dibujo",           color: "#9C7BFF" },
-  { name: "Juegos de Mesa",   color: "#D8E600" },
-  { name: "Ciencia",          color: "#3055C7", light: true },
-  { name: "Robótica",         color: "#1D2F8C", light: true },
-  { name: "Magia",            color: "#FF7B72" },
-  { name: "Patinaje",         color: "#35D0BA" },
-  { name: "Casales",          color: "#FF9D42" },
-  { name: "Campus",           color: "#9C7BFF" },
-  { name: "Ajedrez",          color: "#D8E600" },
-  { name: "Expresión Corp.",  color: "#FF7B72" },
-  { name: "Refuerzo Escolar", color: "#3055C7", light: true },
-] as const;
+  { name: "Fútbol",           color: "#FF7B72", icon: "⚽" },
+  { name: "Básquet",          color: "#FF9D42", icon: "🏀" },
+  { name: "Multideporte",     color: "#35D0BA", icon: "🏃" },
+  { name: "Karate",           color: "#1D2F8C", light: true, icon: "🥋" },
+  { name: "Natación",         color: "#3055C7", light: true, icon: "🏊" },
+  { name: "Hip Hop",          color: "#9C7BFF", icon: "🎤" },
+  { name: "Teatro",           color: "#D8E600", icon: "🎭" },
+  { name: "Inglés",           color: "#FF7B72", icon: "🇬🇧" },
+  { name: "Manualidades",     color: "#FF9D42", icon: "✂️" },
+  { name: "Dibujo",           color: "#9C7BFF", icon: "🎨" },
+  { name: "Juegos de Mesa",   color: "#D8E600", icon: "♟️" },
+  { name: "Ciencia",          color: "#3055C7", light: true, icon: "🔬" },
+  { name: "Robótica",         color: "#1D2F8C", light: true, icon: "🤖" },
+  { name: "Magia",            color: "#FF7B72", icon: "🪄" },
+  { name: "Patinaje",         color: "#35D0BA", icon: "⛸️" },
+  { name: "Casales",          color: "#FF9D42", icon: "🏕️" },
+  { name: "Campus",           color: "#9C7BFF", icon: "⛺" },
+  { name: "Ajedrez",          color: "#D8E600", icon: "♟️" },
+  { name: "Expresión Corp.",  color: "#FF7B72", icon: "💃" },
+  { name: "Refuerzo Escolar", color: "#3055C7", light: true, icon: "📚" },
+];
 
 const MARQUEE_COLORS = ["#FF7B72", "#3055C7", "#FF9D42", "#35D0BA", "#9C7BFF", "#D8E600", "#1D2F8C"];
 
@@ -122,13 +122,15 @@ function Cursor() {
 function Nav() {
   return (
     <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
-      {/* Logo pill */}
+      {/* Logo pill: mascot + badge */}
       <a
         href="#top"
-        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-2 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
+        className="pointer-events-auto flex items-center gap-1 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
       >
-        <img src={mascotAsset.url} alt="Diversplas" className="h-7 w-7" />
-        <span className="text-xs font-bold tracking-tight hidden sm:inline" style={condensed}>DIVERSPLAS</span>
+        {/* Mascot character */}
+        <img src={mascotAsset.url} alt="Mascota Diversplas" className="h-9 w-9 -ml-0.5" />
+        {/* Oval badge */}
+        <img src="/logo-badge.png" alt="DIVERSPLAS" className="h-7 hidden sm:block" />
       </a>
 
       {/* Links pill */}
@@ -790,43 +792,64 @@ function PartnersSection() {
 
 /* ─── Manifesto ─────────────────────────────────────────── */
 function Manifesto() {
-  const lines: (string | { t: string; color?: string; italic?: boolean })[] = [
-    "No creemos en actividades que",
-    { t: "simplemente llenan horarios.", italic: true },
-    "Creemos en experiencias que",
-    { t: "despiertan curiosidad.", color: "#FF7B72" },
-    "Creemos en niños que",
-    { t: "descubren talentos.", color: "#1D2F8C", italic: true },
-    "Creemos en recuerdos que",
-    { t: "duran toda la vida.", color: "#35D0BA" },
+  const pairs = [
+    {
+      intro: "No creemos en actividades que",
+      punch: "simplemente llenan horarios.",
+      italic: true,
+      color: "#000",
+    },
+    {
+      intro: "Creemos en experiencias que",
+      punch: "despiertan curiosidad.",
+      italic: true,
+      color: "#FF7B72",
+    },
+    {
+      intro: "Creemos en niños que",
+      punch: "descubren talentos.",
+      italic: true,
+      color: "#1D2F8C",
+    },
+    {
+      intro: "Creemos en recuerdos que",
+      punch: "duran toda la vida.",
+      italic: true,
+      color: "#35D0BA",
+    },
   ];
 
   return (
     <section id="manifesto" className="bg-white py-24 md:py-40 border-b-2 border-black">
       <div className="mx-auto max-w-[1400px] px-6">
-        <div className="mb-10 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs font-bold">
+        <div className="mb-12 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs font-bold">
           MANIFIESTO
         </div>
-        <div className="space-y-1">
-          {lines.map((l, i) => {
-            const isStr = typeof l === "string";
-            const text = isStr ? l : l.t;
-            const color = isStr ? undefined : l.color;
-            const italic = !isStr && l.italic;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.65, delay: (i % 2) * 0.05 }}
-                className="uppercase leading-[0.9] tracking-tight text-[7.5vw] md:text-[5vw] lg:text-[56px]"
-                style={{ ...(italic ? condensedItalic : condensed), color }}
+        <div className="space-y-10 md:space-y-14">
+          {pairs.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.08 }}
+            >
+              {/* Regular intro line */}
+              <div
+                className="uppercase leading-[0.9] tracking-tight text-[8vw] md:text-[5.2vw] lg:text-[62px]"
+                style={condensed}
               >
-                {text}
-              </motion.div>
-            );
-          })}
+                {p.intro}
+              </div>
+              {/* Colored punch line */}
+              <div
+                className="uppercase leading-[0.9] tracking-tight text-[8vw] md:text-[5.2vw] lg:text-[62px]"
+                style={{ ...condensedItalic, color: p.color }}
+              >
+                {p.punch}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -860,18 +883,31 @@ function Activities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 10) * 0.04 }}
-              whileHover={{ y: -6, rotate: -1.5 }}
+              whileHover={{ y: -8, rotate: -1.5, scale: 1.03 }}
               style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-              className="group relative aspect-square rounded-2xl border-2 border-black p-4 flex flex-col justify-between overflow-hidden shadow-[6px_6px_0_0_#000] hover:shadow-[10px_10px_0_0_#000] transition-shadow"
+              className="group relative aspect-square rounded-2xl border-2 border-black p-4 flex flex-col justify-between overflow-hidden shadow-[6px_6px_0_0_#000] hover:shadow-[12px_12px_0_0_#000] transition-shadow"
             >
-              <span className="text-xs font-semibold opacity-60">{String(i + 1).padStart(2, "0")}</span>
+              {/* Number */}
+              <span className="text-xs font-bold opacity-50">{String(i + 1).padStart(2, "0")}</span>
+
+              {/* Big icon — center */}
               <span
-                className="uppercase leading-[0.9] text-2xl md:text-3xl"
+                className="text-5xl md:text-6xl text-center leading-none select-none"
+                style={{ filter: "drop-shadow(2px 3px 0px rgba(0,0,0,0.18))" }}
+              >
+                {a.icon}
+              </span>
+
+              {/* Name at bottom */}
+              <span
+                className="uppercase leading-[0.88] text-xl md:text-2xl pr-6"
                 style={condensed}
               >
                 {a.name}
               </span>
-              <span className="absolute bottom-3 right-3 text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">→</span>
+
+              {/* Arrow */}
+              <span className="absolute bottom-3 right-3 text-lg font-bold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">→</span>
             </motion.a>
           ))}
         </div>
@@ -903,7 +939,7 @@ function ContactForm() {
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-      className="rounded-3xl border-2 border-white/20 bg-white/8 p-6 md:p-8 space-y-5"
+      className="rounded-3xl border-2 border-white/30 bg-white/10 p-6 md:p-8 space-y-5"
     >
       {[
         ["Nombre",           "text",  "nombre"],
@@ -913,26 +949,26 @@ function ContactForm() {
         ["Email",            "email", "email"],
       ].map(([label, type, name]) => (
         <label key={name} className="block">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">{label}</span>
+          <span className="text-sm font-bold uppercase tracking-widest text-white/80">{label}</span>
           <input
             type={type}
             name={name}
             required
-            className="mt-1 w-full bg-transparent border-b-2 border-white/25 focus:border-[#D8E600] outline-none py-2 text-lg text-white transition-colors placeholder:text-white/20"
+            className="mt-2 w-full bg-transparent border-b-2 border-white/40 focus:border-[#D8E600] outline-none py-2.5 text-xl text-white transition-colors placeholder:text-white/20"
           />
         </label>
       ))}
       <label className="block">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">Mensaje</span>
+        <span className="text-sm font-bold uppercase tracking-widest text-white/80">Mensaje</span>
         <textarea
           name="mensaje"
           rows={3}
-          className="mt-1 w-full bg-transparent border-b-2 border-white/25 focus:border-[#D8E600] outline-none py-2 text-lg text-white transition-colors resize-none"
+          className="mt-2 w-full bg-transparent border-b-2 border-white/40 focus:border-[#D8E600] outline-none py-2.5 text-xl text-white transition-colors resize-none"
         />
       </label>
       <button
         type="submit"
-        className="mt-4 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase tracking-tight text-lg shadow-[4px_4px_0_0_#000]"
+        className="mt-4 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase tracking-tight text-xl shadow-[4px_4px_0_0_#000] font-black"
         style={condensed}
       >
         SOLICITAR CITA →
@@ -997,15 +1033,38 @@ function CTA() {
 
         {/* Description + Form — separate row */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <p className="text-lg text-white/75 max-w-md leading-relaxed">
-            Descubre cómo podemos transformar las actividades de tu centro educativo. Sin compromiso.
-          </p>
+          {/* Left: description + mascot */}
+          <div className="flex flex-col gap-8">
+            <p className="text-2xl text-white/90 max-w-md leading-relaxed font-medium">
+              Descubre cómo podemos transformar las actividades de tu centro educativo.{" "}
+              <span className="text-[#D8E600] font-bold">Sin compromiso.</span>
+            </p>
+            {/* Trust bullets */}
+            <ul className="space-y-3 text-white/75">
+              {[
+                "✓  Respuesta en menos de 24h",
+                "✓  Programa a medida sin coste",
+                "✓  +50 colegios confían en nosotros",
+              ].map((t) => (
+                <li key={t} className="text-lg font-semibold">{t}</li>
+              ))}
+            </ul>
+            {/* Mascot */}
+            <motion.img
+              src={mascotAsset.url}
+              alt="Mascota Diversplas"
+              className="w-48 md:w-56 drop-shadow-2xl mt-4"
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
           <ContactForm />
         </div>
       </div>
     </section>
   );
 }
+
 
 
 /* ─── Footer (two Slush-style colored cards) ────────────── */

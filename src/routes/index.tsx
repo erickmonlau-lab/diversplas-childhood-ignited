@@ -127,7 +127,14 @@ function Nav() {
         href="#top"
         className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
       >
-        <img src="/logo-badge.png" alt="DIVERSPLAS" className="h-10 w-auto" />
+        <div className="overflow-hidden h-11" style={{ width: "120px" }}>
+          <img
+            src={logoAsset.url}
+            alt="DIVERSPLAS"
+            className="h-11 w-auto"
+            style={{ marginLeft: "-55%", minWidth: "220%" }}
+          />
+        </div>
       </a>
 
       {/* Links pill */}
@@ -1188,7 +1195,14 @@ function Footer() {
       <div className="bg-white py-6 px-6">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <img src="/logo-badge.png" alt="DIVERSPLAS" className="h-10 w-auto" />
+            <div className="overflow-hidden h-11" style={{ width: "120px" }}>
+          <img
+            src={logoAsset.url}
+            alt="DIVERSPLAS"
+            className="h-11 w-auto"
+            style={{ marginLeft: "-55%", minWidth: "220%" }}
+          />
+        </div>
           </div>
           <div className="flex gap-4 text-sm">
             {[["Manifiesto", "#manifesto"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (

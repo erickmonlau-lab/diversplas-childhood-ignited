@@ -192,7 +192,7 @@ function Hero() {
       {/* 2. Trophy — TOP RIGHT */}
       <motion.img
         src="/sticker-trophy.png" alt=""
-        className="pointer-events-none absolute top-20 right-[4%] lg:right-[30%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
+        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       />
@@ -208,7 +208,7 @@ function Hero() {
       {/* 4. Star — BOTTOM RIGHT */}
       <motion.img
         src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute bottom-16 right-[4%] lg:right-[28%] w-20 h-20 md:w-24 md:h-24 drop-shadow-xl mix-blend-multiply"
+        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -12, 0], rotate: [8, -8, 8] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
@@ -240,7 +240,7 @@ function Hero() {
       {/* 8. Music note — RIGHT side mid-top */}
       <motion.img
         src="/sticker-music.png" alt=""
-        className="pointer-events-none absolute top-[30%] right-[2%] lg:right-[29%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
+        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -14, 0], rotate: [-8, 8, -8] }}
         transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
       />
@@ -248,7 +248,7 @@ function Hero() {
       {/* 9. Medal — RIGHT side mid-bottom */}
       <motion.img
         src="/sticker-medal.png" alt=""
-        className="pointer-events-none absolute bottom-[28%] right-[4%] lg:right-[27%] w-14 h-14 md:w-18 md:h-18 drop-shadow-xl mix-blend-multiply"
+        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
         animate={{ y: [0, -10, 0], rotate: [6, -6, 6] }}
         transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
       />

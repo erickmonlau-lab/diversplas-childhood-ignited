@@ -19,26 +19,22 @@ export const Route = createFileRoute("/")(({
 /* ─── Data ─────────────────────────────────────────────── */
 
 const ACTIVITIES = [
-  { name: "Fútbol",           color: "#FF7B72", icon: "⚽" },
-  { name: "Básquet",          color: "#FF9D42", icon: "🏀" },
-  { name: "Multideporte",     color: "#35D0BA", icon: "🏃" },
-  { name: "Karate",           color: "#1D2F8C", light: true, icon: "🥋" },
-  { name: "Natación",         color: "#3055C7", light: true, icon: "🏊" },
-  { name: "Hip Hop",          color: "#9C7BFF", icon: "🎤" },
-  { name: "Teatro",           color: "#D8E600", icon: "🎭" },
-  { name: "Inglés",           color: "#FF7B72", icon: "🌍" },
-  { name: "Manualidades",     color: "#FF9D42", icon: "✂️" },
-  { name: "Dibujo",           color: "#9C7BFF", icon: "🎨" },
-  { name: "Juegos de Mesa",   color: "#D8E600", icon: "♟️" },
-  { name: "Ciencia",          color: "#3055C7", light: true, icon: "🔬" },
-  { name: "Robótica",         color: "#1D2F8C", light: true, icon: "🤖" },
-  { name: "Magia",            color: "#FF7B72", icon: "🪄" },
-  { name: "Patinaje",         color: "#35D0BA", icon: "⛸️" },
-  { name: "Casales",          color: "#FF9D42", icon: "🏕️" },
-  { name: "Campus",           color: "#9C7BFF", icon: "⛺" },
-  { name: "Ajedrez",          color: "#D8E600", icon: "♟️" },
-  { name: "Expresión Corp.",  color: "#FF7B72", icon: "💃" },
-  { name: "Refuerzo Escolar", color: "#3055C7", light: true, icon: "📚" },
+  { name: "Fútbol",           color: "#FF7B72",                icon: "⚽" },
+  { name: "Básquet",          color: "#1D2F8C", light: true,  icon: "🏀" },
+  { name: "Multideporte",     color: "#D8E600",                icon: "🏃" },
+  { name: "Karate",           color: "#9C7BFF",                icon: "🥋" },
+  { name: "Natación",         color: "#FF9D42",                icon: "🏊" },
+  { name: "Baile",            color: "#35D0BA",                icon: "💃" },
+  { name: "Inglés",           color: "#3055C7", light: true,  icon: "🌍" },
+  { name: "Manualidades",     color: "#FF7B72",                icon: "✂️" },
+  { name: "Dibujo",           color: "#D8E600",                icon: "🎨" },
+  { name: "Juegos de Mesa",   color: "#9C7BFF",                icon: "♟️" },
+  { name: "Robótica",         color: "#FF9D42",                icon: "🤖" },
+  { name: "Magia",            color: "#1D2F8C", light: true,  icon: "🪄" },
+  { name: "Patinaje",         color: "#35D0BA",                icon: "⛸️" },
+  { name: "Casales",          color: "#FF7B72",                icon: "🏕️" },
+  { name: "Campus",           color: "#D8E600",                icon: "⛺" },
+  { name: "Refuerzo Escolar", color: "#3055C7", light: true,  icon: "📚" },
 ];
 
 const MARQUEE_COLORS = ["#FF7B72", "#3055C7", "#FF9D42", "#35D0BA", "#9C7BFF", "#D8E600", "#1D2F8C"];
@@ -151,7 +147,7 @@ function Nav() {
       {/* CTA */}
       <a
         href="#contact"
-        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-4 py-2 text-sm font-bold hover:bg-[#1D2F8C] transition-colors shadow-[3px_3px_0_0_#1D2F8C]"
+        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 text-sm font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
         style={condensed}
       >
         SOLICITAR CITA
@@ -241,6 +237,22 @@ function Hero() {
         transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
       />
 
+      {/* 8. Music note — RIGHT side mid-top */}
+      <motion.img
+        src="/sticker-music.png" alt=""
+        className="pointer-events-none absolute top-[30%] right-[2%] lg:right-[29%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
+        animate={{ y: [0, -14, 0], rotate: [-8, 8, -8] }}
+        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+      />
+
+      {/* 9. Medal — RIGHT side mid-bottom */}
+      <motion.img
+        src="/sticker-medal.png" alt=""
+        className="pointer-events-none absolute bottom-[28%] right-[4%] lg:right-[27%] w-14 h-14 md:w-18 md:h-18 drop-shadow-xl mix-blend-multiply"
+        animate={{ y: [0, -10, 0], rotate: [6, -6, 6] }}
+        transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
+      />
+
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Badge */}
@@ -265,7 +277,7 @@ function Hero() {
           <span className="block">No solo</span>
           <span className="block text-[#1D2F8C]" style={condensedItalic}>horarios.</span>
           <span className="block">
-            Crece<span className="text-[#D8E600]">.</span>
+            Aquí crecen<span className="text-[#D8E600]">.</span>
           </span>
         </motion.h1>
 
@@ -891,7 +903,7 @@ function Activities() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {ACTIVITIES.map((a, i) => (
             <motion.a
               key={a.name}

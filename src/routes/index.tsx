@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
+import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
 
 export const Route = createFileRoute("/")(({
   head: () => ({
@@ -122,15 +123,11 @@ function Cursor() {
 function Nav() {
   return (
     <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
-      {/* Logo pill: mascot + badge */}
       <a
         href="#top"
-        className="pointer-events-auto flex items-center gap-1 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
+        className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
       >
-        {/* Mascot character */}
-        <img src={mascotAsset.url} alt="Mascota Diversplas" className="h-9 w-9 -ml-0.5" />
-        {/* Oval badge */}
-        <img src="/logo-badge.png" alt="DIVERSPLAS" className="h-7 hidden sm:block" />
+        <img src={logoAsset.url} alt="Diversplas" className="h-10 w-auto object-contain" />
       </a>
 
       {/* Links pill */}
@@ -1191,8 +1188,7 @@ function Footer() {
       <div className="bg-white py-6 px-6">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <img src={mascotAsset.url} alt="Diversplas" className="h-9 w-9" />
-            <span className="text-sm font-bold uppercase" style={condensed}>DIVERSPLAS</span>
+            <img src={logoAsset.url} alt="Diversplas" className="h-10 w-auto object-contain" />
           </div>
           <div className="flex gap-4 text-sm">
             {[["Manifiesto", "#manifesto"], ["Actividades", "#activities"], ["Proceso", "#process"], ["Zonas", "#zones"]].map(([l, h]) => (

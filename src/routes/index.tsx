@@ -7,10 +7,10 @@ import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "Diversplas — No solo horarios. Crece." },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Colegios, AMPAs y centros educativos." },
-      { property: "og:title", content: "Diversplas — No solo horarios. Crece." },
-      { property: "og:description", content: "Experiencias extraescolares premium para colegios y AMPAs de Barcelona." },
+      { title: "Diversplas - Actividades extraescolares en Barcelona" },
+      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Tranquilidad y confianza a las familias. Colegios, AMPAs y centros educativos." },
+      { property: "og:title", content: "Diversplas - Actividades extraescolares en Barcelona" },
+      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AMPAs de Barcelona." },
     ],
   }),
   component: Index,
@@ -19,22 +19,22 @@ export const Route = createFileRoute("/")(({
 /* ─── Data ─────────────────────────────────────────────── */
 
 const ACTIVITIES = [
-  { name: "Fútbol",           color: "#FF7B72",                icon: "⚽" },
-  { name: "Básquet",          color: "#1D2F8C", light: true,  icon: "🏀" },
-  { name: "Multideporte",     color: "#D8E600",                icon: "🏃" },
-  { name: "Karate",           color: "#9C7BFF",                icon: "🥋" },
-  { name: "Natación",         color: "#FF9D42",                icon: "🏊" },
-  { name: "Baile",            color: "#35D0BA",                icon: "💃" },
-  { name: "Inglés",           color: "#3055C7", light: true,  icon: "🌍" },
-  { name: "Manualidades",     color: "#FF7B72",                icon: "✂️" },
-  { name: "Dibujo",           color: "#D8E600",                icon: "🎨" },
-  { name: "Juegos de Mesa",   color: "#9C7BFF",                icon: "♟️" },
-  { name: "Robótica",         color: "#FF9D42",                icon: "🤖" },
-  { name: "Magia",            color: "#1D2F8C", light: true,  icon: "🪄" },
-  { name: "Patinaje",         color: "#35D0BA",                icon: "⛸️" },
-  { name: "Casales",          color: "#FF7B72",                icon: "🏕️" },
-  { name: "Campus",           color: "#D8E600",                icon: "⛺" },
-  { name: "Refuerzo Escolar", color: "#3055C7", light: true,  icon: "📚" },
+  { name: "Fútbol",          color: "#FF7B72",                icon: "⚽" },
+  { name: "Básquet",         color: "#1D2F8C", light: true,  icon: "🏀" },
+  { name: "Multideporte",    color: "#D8E600",                icon: "🏃" },
+  { name: "Karate",          color: "#9C7BFF",                icon: "🥋" },
+  { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
+  { name: "Baile",           color: "#35D0BA",                icon: "💃" },
+  { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
+  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🌍" },
+  { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
+  { name: "Dibujo",          color: "#9C7BFF",                icon: "🎨" },
+  { name: "Juegos de Mesa",  color: "#FF9D42",                icon: "♟️" },
+  { name: "Ven a fer deures",color: "#35D0BA",                icon: "✏️" },
+  { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
+  { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
+  { name: "Campus",          color: "#D8E600",                icon: "⛺" },
+  { name: "Refuerzo",        color: "#9C7BFF",                icon: "📚" },
 ];
 
 const MARQUEE_COLORS = ["#FF7B72", "#3055C7", "#FF9D42", "#35D0BA", "#9C7BFF", "#D8E600", "#1D2F8C"];
@@ -236,14 +236,7 @@ function Hero() {
         <img src="/sticker-ball.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
-      {/* 7. Star small — TOP LEFT near edge */}
-      <motion.div
-        className="pointer-events-none absolute top-28 left-[6%] w-10 h-10 md:w-14 md:h-14 opacity-80"
-        animate={{ y: [0, -8, 0], rotate: [-10, 10, -10] }}
-        transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-      >
-        <img src="/sticker-star.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
-      </motion.div>
+      {/* 7. REMOVED — star on top of ball */}
 
       {/* 8. Music note — RIGHT mid-top */}
       <motion.div
@@ -284,8 +277,8 @@ function Hero() {
           className="uppercase leading-[0.85] tracking-tight text-[18vw] md:text-[15vw] lg:text-[170px]"
           style={condensed}
         >
-          <span className="block">No solo</span>
-          <span className="block text-[#1D2F8C]" style={condensedItalic}>horarios.</span>
+          <span className="block">Más que</span>
+          <span className="block text-[#1D2F8C]" style={condensedItalic}>las tardes.</span>
           <span className="block">
             Aquí crecen<span className="text-[#D8E600]">.</span>
           </span>
@@ -299,7 +292,7 @@ function Hero() {
           className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
           Mucho más que rellenar las tardes. Un espacio para jugar, aprender y crecer.{" "}
-          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades extraescolares en Barcelona que despiertan la creatividad de los niños y ofrecen total tranquilidad a colegios y familias.</span>
+          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona que ofrecen <em>Tranquilidad y confianza a las familias</em>.</span>
         </motion.p>
 
         {/* CTAs */}
@@ -558,8 +551,8 @@ function ZonesCardsVisual() {
 
 /* ─── CTA Marquee (Slush-style black section) ───────────── */
 function CtaMarquee() {
-  const ROW1 = ["FÚTBOL","TEATRO","ROBÓTICA","INGLÉS","KARATE","HIP HOP","CIENCIA","MAGIA","NATACIÓN","AJEDREZ"];
-  const ROW2 = ["DIBUJO","PATINAJE","BÁSQUET","MANUALIDADES","MULTIDEPORTE","CAMPUS","INGLÉS","EXPRESIÓN CORP.","REFUERZO","CASALES"];
+  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","JUEGOS DE MESA","CAMPUS","BÁSQUET"];
+  const ROW2 = ["DIBUJO","MANUALIDADES","MULTIDEPORTE","CASALES","VEN A FER DEURES","REFUERZO","INGLÉS","BAILE","FÚTBOL","KARATE"];
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">
@@ -825,7 +818,7 @@ function Manifesto() {
   const pairs = [
     {
       intro: "No creemos en actividades que",
-      punch: "simplemente llenan horarios.",
+      punch: "no dejan huella.",
       italic: true,
       color: "#000",
     },
@@ -1223,7 +1216,7 @@ function Index() {
       <FeatureSection
         headline="EMPIEZA AQUÍ:"
         headlineItalic="ACTIVIDADES"
-        description="Más de 20 experiencias extraescolares diseñadas para que cada niño encuentre su pasión."
+        description="Más de 20 experiencias diseñadas para que cada niño encuentre su pasión. Nos adaptamos a cualquier tipo de actividad."
         links={[{ label: "VER TODO", href: "#activities" }, { label: "PREGUNTAS", href: "#contact" }]}
         visual={<ActivityCardsVisual />}
       />

@@ -277,8 +277,8 @@ function Hero() {
           className="uppercase leading-[0.85] tracking-tight text-[18vw] md:text-[15vw] lg:text-[170px]"
           style={condensed}
         >
-          <span className="block">Más que</span>
-          <span className="block text-[#1D2F8C]" style={condensedItalic}>las tardes.</span>
+          <span className="block">No solo</span>
+          <span className="block text-[#1D2F8C]" style={condensedItalic}>extraescolares.</span>
           <span className="block">
             Aquí crecen<span className="text-[#D8E600]">.</span>
           </span>
@@ -292,7 +292,7 @@ function Hero() {
           className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
           Mucho más que rellenar las tardes. Un espacio para jugar, aprender y crecer.{" "}
-          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona que ofrecen <em>Tranquilidad y confianza a las familias</em>.</span>
+          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, y ofrecen total tranquilidad y confianza a las familias.</span>
         </motion.p>
 
         {/* CTAs */}

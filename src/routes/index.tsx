@@ -30,7 +30,6 @@ const ACTIVITIES = [
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
-  { name: "Campus",          color: "#D8E600",                icon: "⛺" },
   { name: "Refuerzo",        color: "#9C7BFF",                icon: "📚" },
 ];
 
@@ -354,8 +353,8 @@ function FeatureSection({
           <span className="block text-[#1D2F8C]" style={condensedItalic}>{headlineItalic}</span>
         )}
       </h2>
-      <p className={`text-xl md:text-2xl leading-relaxed max-w-lg ${dark ? "text-white/80" : "text-black/75"}`}>{description}</p>
-      {extra && <p className={`text-xl md:text-2xl leading-relaxed max-w-lg mt-4 ${dark ? "text-white/80" : "text-black/75"}`}>{extra}</p>}
+      <p className={`text-xl md:text-2xl leading-relaxed max-w-lg ${dark ? "text-white/90" : "text-black/75"}`}>{description}</p>
+      {extra && <p className={`text-xl md:text-2xl leading-relaxed max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`}>{extra}</p>}
       {links && (
         <div className="flex flex-wrap gap-4 mt-10">
           {links.map((l, i) => (
@@ -450,7 +449,7 @@ function ProgramVisual() {
       <div className="relative space-y-3">
         {steps.map((s) => (
           <div key={s.n} className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3.5 border border-white/10">
-            <span className="text-white/50 text-sm font-mono w-6">{s.n}</span>
+            <span className="text-white font-bold text-sm font-mono w-6">{s.n}</span>
             <span className="h-3 w-3 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
             <span className="text-white font-bold text-lg">{s.t}</span>
           </div>
@@ -549,8 +548,8 @@ function ZonesCardsVisual() {
 
 /* ─── CTA Marquee (Slush-style black section) ───────────── */
 function CtaMarquee() {
-  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","CAMPUS","BÁSQUET","MULTIDEPORTE"];
-  const ROW2 = ["MANUALIDADES","REFUERZO","CASALES","INGLÉS","BAILE","FÚTBOL","KARATE","ZUMBA","HIP HOP","CAMPUS"];
+  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","BÁSQUET","MULTIDEPORTE"];
+  const ROW2 = ["MANUALIDADES","REFUERZO","CASALES","INGLÉS","BAILE","FÚTBOL","KARATE","ZUMBA","HIP HOP"];
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">
@@ -620,8 +619,8 @@ function TrustSection() {
   const slide = slides[current];
   const textColor = slide.dark ? "text-black" : "text-white";
   const subColor  = slide.dark ? "text-black/50" : "text-white/50";
-  const descColor = slide.dark ? "text-black/70" : "text-white/75";
-  const btnBorder = slide.dark ? "border-black/30 text-black hover:bg-black hover:text-white" : "border-white/40 text-white hover:bg-white hover:text-black";
+  const descColor = slide.dark ? "text-black/70" : "text-white/90";
+  const btnBorder = "border-black bg-white text-black hover:bg-black hover:text-white";
   const dotActive = slide.dark ? "bg-black" : "bg-white";
   const dotInactive= slide.dark ? "bg-black/25" : "bg-white/35";
 
@@ -1076,7 +1075,7 @@ function CTA() {
               {[
                 "✓  Respuesta en menos de 24h",
                 "✓  Programa a medida sin coste",
-                "✓  +50 colegios confían en nosotros",
+                
               ].map((t) => (
                 <li key={t} className="text-lg font-semibold">{t}</li>
               ))}

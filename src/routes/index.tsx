@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -28,9 +28,6 @@ const ACTIVITIES = [
   { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
   { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🌍" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
-  { name: "Dibujo",          color: "#9C7BFF",                icon: "🎨" },
-  { name: "Juegos de Mesa",  color: "#FF9D42",                icon: "♟️" },
-  { name: "Ven a fer deures",color: "#35D0BA",                icon: "✏️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
   { name: "Campus",          color: "#D8E600",                icon: "⛺" },
@@ -127,7 +124,7 @@ function Nav() {
     <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
       <a
         href="#top"
-        className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow"
+        className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow overflow-hidden"
       >
         <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-14 w-auto" />
       </a>
@@ -293,7 +290,7 @@ function Hero() {
           className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
           Mucho más que rellenar las tardes. Un espacio para jugar, aprender y crecer.{" "}
-          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, y ofrecen total tranquilidad y confianza a las familias.</span>
+          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.</span>
         </motion.p>
 
         {/* CTAs */}
@@ -552,8 +549,8 @@ function ZonesCardsVisual() {
 
 /* ─── CTA Marquee (Slush-style black section) ───────────── */
 function CtaMarquee() {
-  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","JUEGOS DE MESA","CAMPUS","BÁSQUET"];
-  const ROW2 = ["DIBUJO","MANUALIDADES","MULTIDEPORTE","CASALES","VEN A FER DEURES","REFUERZO","INGLÉS","BAILE","FÚTBOL","KARATE"];
+  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","CAMPUS","BÁSQUET","MULTIDEPORTE"];
+  const ROW2 = ["MANUALIDADES","REFUERZO","CASALES","INGLÉS","BAILE","FÚTBOL","KARATE","ZUMBA","HIP HOP","CAMPUS"];
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">
@@ -562,7 +559,7 @@ function CtaMarquee() {
         <motion.div
           className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 42, repeat: Infinity, ease: "linear" }}
         >
           {[...ROW1, ...ROW1].map((t, i) => {
             const c = MARQUEE_COLORS[i % MARQUEE_COLORS.length];
@@ -590,7 +587,7 @@ function CtaMarquee() {
         <motion.div
           className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 44, repeat: Infinity, ease: "linear" }}
         >
           {[...ROW2, ...ROW2].map((t, i) => {
             const c = MARQUEE_COLORS[(i + 4) % MARQUEE_COLORS.length];

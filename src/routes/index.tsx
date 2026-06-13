@@ -179,79 +179,89 @@ function Hero() {
         <img src={mascotAsset.url} alt="" className="w-full h-auto drop-shadow-[0_24px_48px_rgba(29,47,140,0.35)]" />
       </motion.div>
 
-      {/* ── Floating Stickers — spread across all 4 sides ── */}
+      {/* ── Stickers: style="mix-blend-mode:multiply" inline fuerza la transparencia
+          incluso cuando Tailwind no genera la clase en este build ── */}
 
-      {/* 1. Soccer ball — TOP LEFT, grande — mix-blend-multiply elimina fondo blanco */}
-      <motion.img
-        src="/sticker-ball.png" alt=""
-        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32 drop-shadow-xl mix-blend-multiply"
+      {/* 1. Soccer ball — TOP LEFT */}
+      <motion.div
+        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32"
         animate={{ y: [0, -18, 0], rotate: [0, 18, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
+      >
+        <img src="/sticker-ball.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 2. Trophy — TOP RIGHT */}
-      <motion.img
-        src="/sticker-trophy.png" alt=""
-        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28"
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-      />
+      >
+        <img src="/sticker-trophy.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 3. Palette — BOTTOM LEFT */}
-      <motion.img
-        src="/sticker-palette.png" alt=""
-        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28 drop-shadow-xl mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28"
         animate={{ y: [0, -14, 0], rotate: [-8, 6, -8] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-      />
+      >
+        <img src="/sticker-palette.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 4. Star — BOTTOM RIGHT */}
-      <motion.img
-        src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24 drop-shadow-xl mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24"
         animate={{ y: [0, -12, 0], rotate: [8, -8, 8] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+      >
+        <img src="/sticker-star.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 5. Karate — LEFT CENTER */}
-      <motion.img
-        src="/sticker-karate.png" alt=""
-        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20"
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-      />
+      >
+        <img src="/sticker-karate.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 6. Ball small — RIGHT CENTER (hidden on lg) */}
-      <motion.img
-        src="/sticker-ball.png" alt=""
-        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-lg lg:hidden mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 lg:hidden"
         animate={{ y: [0, -10, 0], rotate: [10, -10, 10] }}
         transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
-      />
+      >
+        <img src="/sticker-ball.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* 7. Star small — TOP LEFT near edge */}
-      <motion.img
-        src="/sticker-star.png" alt=""
-        className="pointer-events-none absolute top-28 left-[6%] w-10 h-10 md:w-14 md:h-14 drop-shadow-lg opacity-80 mix-blend-multiply"
+      <motion.div
+        className="pointer-events-none absolute top-28 left-[6%] w-10 h-10 md:w-14 md:h-14 opacity-80"
         animate={{ y: [0, -8, 0], rotate: [-10, 10, -10] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-      />
+      >
+        <img src="/sticker-star.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
-      {/* 8. Music note — RIGHT side mid-top */}
-      <motion.img
-        src="/sticker-music.png" alt=""
-        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
+      {/* 8. Music note — RIGHT mid-top */}
+      <motion.div
+        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20"
         animate={{ y: [0, -14, 0], rotate: [-8, 8, -8] }}
         transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-      />
+      >
+        <img src="/sticker-music.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
-      {/* 9. Medal — RIGHT side mid-bottom */}
-      <motion.img
-        src="/sticker-medal.png" alt=""
-        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20 drop-shadow-xl mix-blend-multiply"
+      {/* 9. Medal — RIGHT mid-bottom */}
+      <motion.div
+        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20"
         animate={{ y: [0, -10, 0], rotate: [6, -6, 6] }}
         transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-      />
+      >
+        <img src="/sticker-medal.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">

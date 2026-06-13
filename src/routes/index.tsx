@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -88,6 +88,12 @@ const condensedItalic: React.CSSProperties = {
   fontWeight: 900,
   fontStyle: "italic",
 };
+const btnStyle: React.CSSProperties = {
+  fontFamily: "'Barlow Condensed', 'Clash Display', sans-serif",
+  fontWeight: 900,
+  letterSpacing: "0.06em",
+  fontSize: "1.05rem",
+};
 
 /* ─── Cursor ────────────────────────────────────────────── */
 function Cursor() {
@@ -147,8 +153,8 @@ function Nav() {
       {/* CTA */}
       <a
         href="#contact"
-        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 text-sm font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
-        style={condensed}
+        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
+        style={btnStyle}
       >
         SOLICITAR CITA
       </a>
@@ -364,12 +370,12 @@ function FeatureSection({
             <a
               key={i}
               href={l.href}
-              className={`rounded-full px-8 py-3.5 font-bold border-2 border-black text-base uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
+              className={`rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
                 i === 0
                   ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
                   : "bg-transparent text-black hover:bg-black hover:text-white"
               }`}
-              style={condensed}
+              style={btnStyle}
             >
               {l.label}
             </a>
@@ -559,7 +565,7 @@ function CtaMarquee() {
       {/* Row 1 – scrolls LEFT → */}
       <div className="relative overflow-hidden mb-3">
         <motion.div
-          className="flex gap-4 whitespace-nowrap"
+          className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
@@ -575,7 +581,7 @@ function CtaMarquee() {
                   fontFamily: "'Barlow Condensed', sans-serif",
                   fontWeight: 900,
                 }}
-                className="inline-flex items-center rounded-2xl border-2 border-white/10 px-8 py-4 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap flex-shrink-0"
+                className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap flex-shrink-0"
               >
                 {t}
               </span>
@@ -587,7 +593,7 @@ function CtaMarquee() {
       {/* Row 2 – scrolls RIGHT ← (opposite direction) */}
       <div className="relative overflow-hidden">
         <motion.div
-          className="flex gap-4 whitespace-nowrap"
+          className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["-50%", "0%"] }}
           transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
         >
@@ -603,7 +609,7 @@ function CtaMarquee() {
                   fontFamily: "'Barlow Condensed', sans-serif",
                   fontWeight: 900,
                 }}
-                className="inline-flex items-center rounded-2xl border-2 border-white/10 px-8 py-4 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap flex-shrink-0"
+                className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap flex-shrink-0"
               >
                 {t}
               </span>
@@ -772,8 +778,8 @@ function PartnersSection() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-6 py-3 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors text-sm uppercase shadow-[4px_4px_0_0_#000]"
-            style={condensed}
+            className="inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-6 py-3 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase shadow-[4px_4px_0_0_#000]"
+            style={btnStyle}
           >
             SOLICITAR CITA ↗
           </a>
@@ -902,8 +908,8 @@ function Activities() {
             Un universo{" "}
             <span style={condensedItalic} className="text-[#1D2F8C]">vivo.</span>
           </h2>
-          <p className="max-w-sm text-black/70 text-lg">
-            Veinte experiencias, una sola obsesión: que cada niño encuentre la suya.
+          <p className="max-w-sm text-black/70 text-xl md:text-2xl leading-snug font-medium">
+            Cada disciplina, una oportunidad de crecer.
           </p>
         </div>
 
@@ -1002,8 +1008,8 @@ function ContactForm() {
       </label>
       <button
         type="submit"
-        className="mt-4 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase tracking-tight text-xl shadow-[4px_4px_0_0_#000] font-black"
-        style={condensed}
+        className="mt-4 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase text-xl shadow-[4px_4px_0_0_#000] font-black"
+        style={btnStyle}
       >
         SOLICITAR CITA →
       </button>
@@ -1166,15 +1172,15 @@ function Footer() {
           <div className="flex flex-wrap gap-3">
             <a
               href="mailto:hola@diversplas.com"
-              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold text-sm border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase shadow-[4px_4px_0_0_#1D2F8C]"
-              style={condensed}
+              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase shadow-[4px_4px_0_0_#1D2F8C]"
+              style={btnStyle}
             >
               ESCRÍBENOS ↗
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 font-bold text-sm border-2 border-black hover:bg-black hover:text-white transition-colors uppercase shadow-[4px_4px_0_0_#000]"
-              style={condensed}
+              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 font-bold border-2 border-black hover:bg-black hover:text-white transition-colors uppercase shadow-[4px_4px_0_0_#000]"
+              style={btnStyle}
             >
               SOLICITAR CITA ↗
             </a>

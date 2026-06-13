@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -185,12 +185,9 @@ function Hero() {
         <img src={mascotAsset.url} alt="" className="w-full h-auto drop-shadow-[0_24px_48px_rgba(29,47,140,0.35)]" />
       </motion.div>
 
-      {/* ── Stickers: style="mix-blend-mode:multiply" inline fuerza la transparencia
-          incluso cuando Tailwind no genera la clase en este build ── */}
-
       {/* 1. Soccer ball — TOP LEFT */}
       <motion.div
-        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32"
+        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32 hidden md:block"
         animate={{ y: [0, -18, 0], rotate: [0, 18, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -199,7 +196,7 @@ function Hero() {
 
       {/* 2. Trophy — TOP RIGHT */}
       <motion.div
-        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28"
+        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28 hidden md:block"
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       >
@@ -208,7 +205,7 @@ function Hero() {
 
       {/* 3. Palette — BOTTOM LEFT */}
       <motion.div
-        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28"
+        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28 hidden md:block"
         animate={{ y: [0, -14, 0], rotate: [-8, 6, -8] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
@@ -217,7 +214,7 @@ function Hero() {
 
       {/* 4. Star — BOTTOM RIGHT */}
       <motion.div
-        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24"
+        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24 hidden md:block"
         animate={{ y: [0, -12, 0], rotate: [8, -8, 8] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       >
@@ -226,7 +223,7 @@ function Hero() {
 
       {/* 5. Karate — LEFT CENTER */}
       <motion.div
-        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20"
+        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
       >
@@ -235,18 +232,16 @@ function Hero() {
 
       {/* 6. Ball small — RIGHT CENTER (hidden on lg) */}
       <motion.div
-        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 lg:hidden"
+        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block lg:hidden"
         animate={{ y: [0, -10, 0], rotate: [10, -10, 10] }}
         transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
       >
         <img src="/sticker-ball.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
-      {/* 7. REMOVED — star on top of ball */}
-
       {/* 8. Music note — RIGHT mid-top */}
       <motion.div
-        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20"
+        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
         animate={{ y: [0, -14, 0], rotate: [-8, 8, -8] }}
         transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
       >
@@ -255,7 +250,7 @@ function Hero() {
 
       {/* 9. Medal — RIGHT mid-bottom */}
       <motion.div
-        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20"
+        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
         animate={{ y: [0, -10, 0], rotate: [6, -6, 6] }}
         transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
       >
@@ -263,7 +258,7 @@ function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto w-full">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -280,7 +275,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="uppercase leading-[0.85] tracking-tight text-[18vw] md:text-[15vw] lg:text-[170px]"
+          className="uppercase leading-[0.82] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px]"
           style={condensed}
         >
           <span className="block">No solo</span>
@@ -306,12 +301,12 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.65 }}
-          className="mt-8 flex flex-wrap gap-3 justify-center"
+          className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center"
         >
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors text-sm uppercase tracking-wide shadow-[4px_4px_0_0_#000]"
-            style={condensed}
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
+            style={btnStyle}
           >
             SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>

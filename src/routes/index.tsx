@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -117,44 +117,52 @@ function Cursor() {
   );
 }
 
-/* ─── Nav ───────────────────────────────────────────────── */
+/* --- Nav --- */
 function Nav() {
+  const [open, setOpen] = useState(false);
+  const links = [
+    ["Actividades", "#activities"],
+    ["Proceso",     "#process"],
+    ["Zonas",       "#zones"],
+    ["Contacto",    "#contact"],
+  ] as const;
+
   return (
-    <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
-      <a
-        href="#top"
-        className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow overflow-hidden"
-      >
-        <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-14 w-auto" />
-      </a>
-
-      {/* Links pill */}
-      <nav className="pointer-events-auto hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
-        {[
-          ["Actividades", "#activities"],
-          ["Proceso",     "#process"],
-          ["Zonas",       "#zones"],
-          ["Contacto", "#contact"],
-        ].map(([label, href]) => (
-          <a
-            key={href}
-            href={href}
-            className="px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-black hover:text-white transition-colors"
-          >
-            {label}
+    <>
+      <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
+        <a href="#top" onClick={() => setOpen(false)} className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow overflow-hidden">
+          <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-14 w-auto" />
+        </a>
+        <nav className="pointer-events-auto hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
+          {links.map(([label, href]) => (
+            <a key={href} href={href} className="px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-black hover:text-white transition-colors">{label}</a>
+          ))}
+        </nav>
+        <div className="pointer-events-auto flex items-center gap-2">
+          <a href="#contact" className="flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]" style={btnStyle} onClick={() => setOpen(false)}>
+            SOLICITAR CITA
           </a>
-        ))}
-      </nav>
-
-      {/* CTA */}
-      <a
-        href="#contact"
-        className="pointer-events-auto flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
-        style={btnStyle}
-      >
-        SOLICITAR CITA
-      </a>
-    </header>
+          <button aria-label={open ? "Cerrar menu" : "Abrir menu"} aria-expanded={open} onClick={() => setOpen((o) => !o)} className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border-2 border-black bg-white/95 shadow-[3px_3px_0_0_#000] hover:bg-black hover:text-white transition-colors">
+            <span className="text-xl leading-none font-bold select-none">{open ? "x" : "="}</span>
+          </button>
+        </div>
+      </header>
+      <AnimatePresence>
+        {open && (
+          <motion.div key="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.2 }} className="fixed top-24 left-4 right-4 z-40 rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] overflow-hidden">
+            <nav className="flex flex-col">
+              {links.map(([label, href], i) => (
+                <a key={href} href={href} onClick={() => setOpen(false)} className={`px-6 py-5 text-xl font-black uppercase tracking-wider hover:bg-[#D8E600] transition-colors flex items-center justify-between ${i < links.length - 1 ? "border-b-2 border-black/10" : ""}`} style={condensed}>
+                  <span>{label}</span>
+                  <span className="text-[#1D2F8C]">&#x2192;</span>
+                </a>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {open && <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />}
+    </>
   );
 }
 

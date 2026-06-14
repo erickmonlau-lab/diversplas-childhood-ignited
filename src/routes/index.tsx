@@ -270,6 +270,50 @@ function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto w-full flex flex-col items-center">
+        {/* Polaroid 1 - Top Left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
+          animate={{ opacity: 0.9, scale: 1, rotate: -8 }}
+          transition={{ duration: 0.8 }}
+          className="absolute -top-10 -left-16 w-44 p-2 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden xl:block"
+        >
+          <img src="/image_53ee82.png" alt="Acción" className="w-full h-28 object-cover border border-black/5" />
+          <div className="text-[10px] font-bold mt-2 text-black/60 font-mono tracking-tighter">PLAYTIME Rebels</div>
+        </motion.div>
+
+        {/* Polaroid 2 - Mid Right */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, rotate: 15 }}
+          animate={{ opacity: 0.9, scale: 1, rotate: 6 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute top-12 -right-20 w-44 p-2 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden xl:block"
+        >
+          <img src="/image_53d820.jpg" alt="Monitores" className="w-full h-28 object-cover border border-black/5" />
+          <div className="text-[10px] font-bold mt-2 text-black/60 font-mono tracking-tighter">Monitores 2026</div>
+        </motion.div>
+
+        {/* Polaroid 3 - Bottom Left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+          animate={{ opacity: 0.9, scale: 1, rotate: -4 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="absolute -bottom-8 -left-20 w-44 p-2 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden xl:block"
+        >
+          <img src="/image_53c921.jpg" alt="Clase" className="w-full h-28 object-cover border border-black/5" />
+          <div className="text-[10px] font-bold mt-2 text-black/60 font-mono tracking-tighter">Talleres reales</div>
+        </motion.div>
+
+        {/* Polaroid 4 - Bottom Right */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
+          animate={{ opacity: 0.9, scale: 1, rotate: 8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="absolute -bottom-12 -right-16 w-44 p-2 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden xl:block"
+        >
+          <img src="/image_53e780.jpg" alt="Zumba" className="w-full h-28 object-cover border border-black/5" />
+          <div className="text-[10px] font-bold mt-2 text-black/60 font-mono tracking-tighter">Ritmo total! 💃</div>
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -515,9 +559,9 @@ function ZonesCardsVisual() {
     { city: "Sant Fost",    sub: "de Campsentelles", color: "#35D0BA", light: false, centers: 3 },
   ];
 
-  const Card = ({ z, className = "" }: { z: typeof zones[0]; className?: string }) => (
+  const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => (
     <motion.div
-      style={{ backgroundColor: z.color }}
+      style={{ backgroundColor: z.color, ...style }}
       className={`rounded-2xl border-2 border-black p-6 flex flex-col justify-between shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default ${className}`}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 320, damping: 22 }}
@@ -547,9 +591,9 @@ function ZonesCardsVisual() {
   return (
     <>
       {/* Mobile: horizontal scroll — contained */}
-      <div className="flex md:hidden gap-3 overflow-x-auto pb-3 snap-x snap-mandatory" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px" }}>
+      <div className="flex md:hidden gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px" }}>
         {zones.map((z) => (
-          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "200px", maxWidth: "220px" } as React.CSSProperties} />
+          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "220px", maxWidth: "240px" }} />
         ))}
       </div>
       {/* Desktop: 2×2 grid */}
@@ -647,9 +691,14 @@ function TrustSection() {
   const textColor = slide.dark ? "text-black" : "text-white";
   const subColor  = slide.dark ? "text-black/50" : "text-white/50";
   const descColor = slide.dark ? "text-black/70" : "text-white/90";
-  const btnBorder = "border-black bg-white text-black hover:bg-black hover:text-white";
+  const btnBorder = "border-2 border-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-200 shadow-[3px_3px_0_0_#000]";
   const dotActive = slide.dark ? "bg-black" : "bg-white";
   const dotInactive= slide.dark ? "bg-black/25" : "bg-white/35";
+
+  useEffect(() => {
+    // Reset or ensure start is 0
+    setCurrent(0);
+  }, []);
 
   useEffect(() => {
     const id = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000);
@@ -707,14 +756,14 @@ function TrustSection() {
       <button
         aria-label="Anterior"
         onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
-        className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border-2 flex items-center justify-center transition-colors text-lg ${btnBorder}`}
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full flex items-center justify-center text-lg ${btnBorder}`}
       >
         ←
       </button>
       <button
         aria-label="Siguiente"
         onClick={() => setCurrent((c) => (c + 1) % slides.length)}
-        className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border-2 flex items-center justify-center transition-colors text-lg ${btnBorder}`}
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full flex items-center justify-center text-lg ${btnBorder}`}
       >
         →
       </button>

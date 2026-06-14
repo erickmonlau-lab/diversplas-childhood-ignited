@@ -731,9 +731,9 @@ function TrustSection() {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000);
+    const id = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 10000);
     return () => clearInterval(id);
-  }, [slides.length]);
+  }, [current, slides.length]);
 
   return (
     <section

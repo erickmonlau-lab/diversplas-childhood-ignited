@@ -402,7 +402,7 @@ function FeatureSection({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.75 }}
-      className="flex flex-col justify-center py-8 md:py-0"
+      className="flex flex-col justify-center py-8 md:py-0 min-w-0 w-full"
     >
       <h2
         className={`uppercase leading-[0.88] tracking-tight text-[12vw] md:text-[7vw] lg:text-[88px] mb-8 ${dark ? "text-white" : "text-black"}`}
@@ -413,8 +413,8 @@ function FeatureSection({
           <span className="block text-[#1D2F8C]" style={condensedItalic}>{headlineItalic}</span>
         )}
       </h2>
-      <p className={`text-xl md:text-2xl leading-relaxed max-w-lg ${dark ? "text-white/90" : "text-black/75"}`}>{description}</p>
-      {extra && <p className={`text-xl md:text-2xl leading-relaxed max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`}>{extra}</p>}
+      <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg overflow-wrap-anywhere ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{description}</p>
+      {extra && <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{extra}</p>}
       {links && (
         <div className="flex flex-wrap gap-4 mt-10">
           {links.map((l, i) => (
@@ -450,9 +450,9 @@ function FeatureSection({
   return (
     <section
       id={id}
-      className={`border-b-2 border-black py-16 md:py-28 lg:py-40 overflow-x-hidden ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
+      className={`border-b-2 border-black py-16 md:py-28 lg:py-40 overflow-hidden ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
     >
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
         {flip ? <>{vis}{text}</> : <>{text}{vis}</>}
       </div>
     </section>

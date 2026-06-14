@@ -201,7 +201,7 @@ a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
 /* Mobile Marquee dynamic fast timing override */
 @media (max-width: 768px) {
   div[class*="whitespace-nowrap"], div.flex.gap-6.whitespace-nowrap {
-    animation-duration: 10s !important;
+    animation-duration: 8s !important;
     animation-timing-function: linear !important;
     animation-iteration-count: infinite !important;
   }

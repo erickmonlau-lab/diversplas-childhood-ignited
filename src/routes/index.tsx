@@ -48,7 +48,7 @@ const TRUST_SLIDES = [
   {
     headline: "CONFIADOS",
     sub: "& RECOMENDADOS",
-    description: "Más de 50 colegios y AMPAs del área metropolitana de Barcelona confían en nosotros cada curso.",
+    description: "Colegios y AMPAs del área metropolitana de Barcelona confían en nosotros cada curso.",
     icon: "✓",
     bg: "#D8E600",
     blob: "#E8F520",
@@ -522,7 +522,7 @@ function ProgramVisual() {
 function StatsVisual() {
   const stats = [
     { n: "+20", label: "Años" },
-    { n: "+30", label: "Centros" },
+    { n: "✓", label: "Garantía" },
     { n: "+5k", label: "Alumnos" },
     { n: "20+", label: "Actividades" },
   ];
@@ -553,16 +553,16 @@ function StatsVisual() {
 
 function ZonesCardsVisual() {
   const zones = [
-    { city: "Santa Coloma", sub: "de Gramenet", color: "#FF7B72", light: false, centers: 8 },
-    { city: "Badalona",     sub: "",             color: "#1D2F8C", light: true,  centers: 12 },
-    { city: "Mollet",       sub: "del Vallès",   color: "#D8E600", light: false, centers: 5 },
-    { city: "Sant Fost",    sub: "de Campsentelles", color: "#35D0BA", light: false, centers: 3 },
+    { city: "Santa Coloma", sub: "de Gramenet", color: "#FF7B72", light: false },
+    { city: "Badalona",     sub: "",             color: "#1D2F8C", light: true  },
+    { city: "Mollet",       sub: "del Vallès",   color: "#D8E600", light: false },
+    { city: "Sant Fost",    sub: "de Campsentelles", color: "#35D0BA", light: false },
   ];
 
   const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => (
     <motion.div
       style={{ backgroundColor: z.color, ...style }}
-      className={`rounded-2xl border-2 border-black p-6 flex flex-col justify-between shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default ${className}`}
+      className={`rounded-2xl border-2 border-black p-6 flex flex-col justify-between shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default flex-shrink-0 scroll-snap-align-start ${className}`}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 320, damping: 22 }}
     >
@@ -583,7 +583,7 @@ function ZonesCardsVisual() {
         className="text-xs font-bold mt-5 uppercase tracking-wider"
         style={{ color: z.light ? "#ffffff" : "#000000" }}
       >
-        Zona activa · +{z.centers} centros
+        Zona activa
       </div>
     </motion.div>
   );
@@ -591,7 +591,7 @@ function ZonesCardsVisual() {
   return (
     <>
       {/* Mobile: horizontal scroll — contained */}
-      <div className="flex md:hidden gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px" }}>
+      <div className="flex md:hidden gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px", boxSizing: "border-box" }}>
         {zones.map((z) => (
           <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "220px", maxWidth: "240px" }} />
         ))}

@@ -442,6 +442,7 @@ function FeatureSection({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.75 }}
+      className="min-w-0 w-full overflow-hidden"
     >
       {visual}
     </motion.div>
@@ -590,10 +591,10 @@ function ZonesCardsVisual() {
 
   return (
     <>
-      {/* Mobile: horizontal scroll */}
-      <div className="flex md:hidden gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2">
+      {/* Mobile: horizontal scroll — contained */}
+      <div className="flex md:hidden gap-3 overflow-x-auto pb-3 snap-x snap-mandatory" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px" }}>
         {zones.map((z) => (
-          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "200px" } as React.CSSProperties} />
+          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "200px", maxWidth: "220px" } as React.CSSProperties} />
         ))}
       </div>
       {/* Desktop: 2×2 grid */}
@@ -1257,8 +1258,13 @@ function Footer() {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <a className="rounded-full border-2 border-black h-8 w-8 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">IG</a>
-            <a className="rounded-full border-2 border-black h-8 w-8 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors" href="#">in</a>
+            <a
+              className="rounded-full border-2 border-black h-8 w-8 inline-flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white transition-colors"
+              href="https://www.instagram.com/diversplas_extraescolares?igsh=aThlN3c4d21hdmR0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Diversplas"
+            >IG</a>
             <span className="text-xs text-black/40">© {new Date().getFullYear()} Diversplas</span>
           </div>
         </div>

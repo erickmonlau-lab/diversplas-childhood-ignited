@@ -183,9 +183,10 @@ a, button {
 }
 
 /* Yellow buttons hover scaling and color brightening */
-a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover {
-  transform: scale(1.05) translateY(-2px);
+a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover, button[type="submit"]:hover {
+  transform: scale(1.05) translateY(-2px) !important;
   background-color: #e9f710 !important;
+  color: #000000 !important;
   box-shadow: 6px 6px 0 0 #000 !important;
 }
 

@@ -221,7 +221,7 @@ function Nav() {
 /* ─── Hero ──────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="top" className="relative min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden pt-28 pb-20">
+    <section id="top" className="relative min-h-screen bg-white flex flex-col justify-center overflow-hidden pt-28 pb-20">
       {/* Dot grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -232,18 +232,9 @@ function Hero() {
       <div className="pointer-events-none absolute top-20 -left-20 h-72 w-72 rounded-full bg-[#D8E600] blur-3xl opacity-25" />
       <div className="pointer-events-none absolute bottom-10 right-0 h-80 w-80 rounded-full bg-[#3055C7] blur-3xl opacity-10" />
 
-      {/* Floating mascot — desktop right */}
-      <motion.div
-        className="pointer-events-none absolute right-[3%] top-1/2 -translate-y-1/2 w-[26%] max-w-[280px] hidden lg:block"
-        animate={{ y: [0, -22, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <img src={mascotAsset.url} alt="" className="w-full h-auto drop-shadow-[0_24px_48px_rgba(29,47,140,0.35)]" />
-      </motion.div>
-
       {/* 1. Soccer ball — TOP LEFT */}
       <motion.div
-        className="pointer-events-none absolute top-24 left-[4%] w-28 h-28 md:w-32 md:h-32 hidden md:block"
+        className="pointer-events-none absolute top-24 left-[2%] w-20 h-20 md:w-28 md:h-28 hidden md:block"
         animate={{ y: [0, -18, 0], rotate: [0, 18, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -252,7 +243,7 @@ function Hero() {
 
       {/* 2. Trophy — TOP RIGHT */}
       <motion.div
-        className="pointer-events-none absolute top-20 right-[4%] w-24 h-24 md:w-28 md:h-28 hidden md:block"
+        className="pointer-events-none absolute top-20 right-[2%] w-18 h-18 md:w-24 md:h-24 hidden md:block"
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       >
@@ -261,118 +252,106 @@ function Hero() {
 
       {/* 3. Palette — BOTTOM LEFT */}
       <motion.div
-        className="pointer-events-none absolute bottom-20 left-[4%] w-24 h-24 md:w-28 md:h-28 hidden md:block"
+        className="pointer-events-none absolute bottom-20 left-[2%] w-20 h-20 md:w-24 md:h-24 hidden md:block"
         animate={{ y: [0, -14, 0], rotate: [-8, 6, -8] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
         <img src="/sticker-palette.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
-      {/* 4. Star — BOTTOM RIGHT */}
-      <motion.div
-        className="pointer-events-none absolute bottom-16 right-[5%] w-20 h-20 md:w-24 md:h-24 hidden md:block"
-        animate={{ y: [0, -12, 0], rotate: [8, -8, 8] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      >
-        <img src="/sticker-star.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
-      </motion.div>
-
       {/* 5. Karate — LEFT CENTER */}
       <motion.div
-        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
+        className="pointer-events-none absolute top-[48%] -translate-y-1/2 left-[1%] w-14 h-14 md:w-18 md:h-18 hidden md:block"
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
       >
         <img src="/sticker-karate.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
-      {/* 6. Ball small — RIGHT CENTER (hidden on lg) */}
-      <motion.div
-        className="pointer-events-none absolute top-[45%] -translate-y-1/2 right-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block lg:hidden"
-        animate={{ y: [0, -10, 0], rotate: [10, -10, 10] }}
-        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
-      >
-        <img src="/sticker-ball.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
-      </motion.div>
-
-      {/* 8. Music note — RIGHT mid-top */}
-      <motion.div
-        className="pointer-events-none absolute top-[28%] right-[7%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
-        animate={{ y: [0, -14, 0], rotate: [-8, 8, -8] }}
-        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-      >
-        <img src="/sticker-music.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
-      </motion.div>
-
-      {/* 9. Medal — RIGHT mid-bottom */}
-      <motion.div
-        className="pointer-events-none absolute bottom-[30%] right-[3%] w-16 h-16 md:w-20 md:h-20 hidden md:block"
-        animate={{ y: [0, -10, 0], rotate: [6, -6, 6] }}
-        transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-      >
-        <img src="/sticker-medal.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
-      </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto w-full">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-10 shadow-[3px_3px_0_0_#1D2F8C]"
-        >
-          <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
-          +20 años en Barcelona · Colegios · AMPAs · Centros
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="uppercase leading-[0.82] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px]"
-          style={condensed}
-        >
-          <span className="block">No solo</span>
-          <span className="block text-[#1D2F8C]" style={condensedItalic}>extraescolares.</span>
-          <span className="block">
-            Aquí crecen<span className="text-[#D8E600]">.</span>
-          </span>
-        </motion.h1>
-
-        {/* Sub */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
-        >
-          Mucho más que rellenar las tardes. Un espacio para jugar, aprender y crecer.{" "}
-          <span className="text-black/90 font-semibold">Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.</span>
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65 }}
-          className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center"
-        >
-          <a
-            href="#contact"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
-            style={btnStyle}
+      {/* Content grid */}
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 w-full grid lg:grid-cols-12 gap-12 items-center">
+        {/* Left Column: Text */}
+        <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-8 shadow-[3px_3px_0_0_#1D2F8C] self-start"
           >
-            SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
-          </a>
-          <a
-            href="#activities"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
-            style={btnStyle}
+            <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
+            +20 años en Barcelona · Colegios · AMPAs · Centros
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="uppercase leading-[0.82] tracking-tight text-[11vw] sm:text-[10vw] md:text-[8vw] lg:text-[100px]"
+            style={condensed}
           >
-            VER ACTIVIDADES
-          </a>
+            <span className="block">No solo</span>
+            <span className="block text-[#1D2F8C]" style={condensedItalic}>extraescolares.</span>
+            <span className="block">
+              Aquí crecen<span className="text-[#D8E600]">.</span>
+            </span>
+          </motion.h1>
+
+          {/* Sub */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="mt-6 text-lg md:text-xl text-black/75 max-w-xl leading-relaxed"
+          >
+            <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
+            Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.65 }}
+            className="mt-8 flex flex-col sm:flex-row gap-3 items-center justify-start"
+          >
+            <a
+              href="#contact"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto text-center"
+              style={btnStyle}
+            >
+              SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <a
+              href="#activities"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto text-center"
+              style={btnStyle}
+            >
+              VER ACTIVIDADES
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right Column: Energetic action image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:col-span-5 relative flex justify-center w-full"
+        >
+          {/* Main Action Image */}
+          <div className="relative rounded-3xl border-2 border-black p-2 bg-white shadow-[8px_8px_0_0_#000] overflow-hidden max-w-[480px] w-full">
+            <img
+              src="/image_53ee82.png"
+              alt="Actividades extraescolares activas reales de Diversplas"
+              className="rounded-2xl w-full h-[320px] md:h-[400px] object-cover block"
+            />
+            {/* Action overlay sticker badge */}
+            <div className="absolute top-6 right-6 bg-black text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/20 shadow-md">
+              FOTOS REALES 📸
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -464,28 +443,42 @@ function FeatureSection({
 
 function ActivityCardsVisual() {
   return (
-    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
       {/* bg glow */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-25"
         style={{ backgroundImage: "radial-gradient(circle at 25% 30%, #3055C7, transparent 55%), radial-gradient(circle at 75% 70%, #9C7BFF, transparent 55%)" }}
       />
-      {/* Header */}
-      <div className="relative mb-6">
+      
+      {/* Top Section */}
+      <div className="relative">
         <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Actividades disponibles</div>
-        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>+20 experiencias</div>
+        <div className="text-white font-black text-3xl md:text-4xl mb-4" style={condensed}>+20 experiencias</div>
+        
+        {/* Tags */}
+        <div className="relative flex flex-wrap gap-2">
+          {ACTIVITIES.slice(0, 7).map((a) => (
+            <span
+              key={a.name}
+              style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
+              className="rounded-full px-3 py-1 text-xs font-bold border border-black/20 whitespace-nowrap"
+            >
+              {a.icon} {a.name}
+            </span>
+          ))}
+        </div>
       </div>
-      {/* Tags */}
-      <div className="relative flex flex-wrap gap-2.5">
-        {ACTIVITIES.slice(0, 14).map((a) => (
-          <span
-            key={a.name}
-            style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-            className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
-          >
-            {a.icon} {a.name}
-          </span>
-        ))}
+
+      {/* Real Action Image inside card */}
+      <div className="relative mt-4 rounded-xl border border-white/20 overflow-hidden h-36 md:h-44 shadow-inner">
+        <img
+          src="/image_53d820.jpg"
+          alt="Monitores reales de extraescolares"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute bottom-2 right-2 bg-black/85 text-white text-[9px] font-bold tracking-widest px-2 py-0.5 rounded border border-white/10">
+          NUESTROS MONITORES 🧑‍🏫
+        </div>
       </div>
     </div>
   );
@@ -500,21 +493,34 @@ function ProgramVisual() {
     { n: "05", t: "Mejoramos",    c: "#ffffff" },
   ];
   return (
-    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
       <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
-      <div className="relative mb-7">
+      
+      <div className="relative">
         <div className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tu programa</div>
-        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>A medida, con propósito</div>
+        <div className="text-white font-black text-2xl md:text-3xl mb-4" style={condensed}>A medida, con propósito</div>
       </div>
-      <div className="relative space-y-3">
-        {steps.map((s) => (
-          <div key={s.n} className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3.5 border border-white/10">
-            <span className="text-white font-bold text-sm font-mono w-6">{s.n}</span>
-            <span className="h-3 w-3 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
-            <span className="text-white font-bold text-lg">{s.t}</span>
-          </div>
-        ))}
+
+      {/* Grid: steps left, action image right */}
+      <div className="relative grid grid-cols-12 gap-3 items-center">
+        <div className="col-span-7 space-y-2">
+          {steps.slice(0, 4).map((s) => (
+            <div key={s.n} className="flex items-center gap-2.5 bg-white/15 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
+              <span className="text-white font-bold text-xs font-mono w-5">{s.n}</span>
+              <span className="h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
+              <span className="text-white font-bold text-sm">{s.t}</span>
+            </div>
+          ))}
+        </div>
+        
+        {/* Real photo inside program */}
+        <div className="col-span-5 rounded-xl border border-black/10 overflow-hidden h-28 md:h-36 shadow-md bg-white">
+          <img
+            src="/image_53c921.jpg"
+            alt="Niños en actividades"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
@@ -528,26 +534,36 @@ function StatsVisual() {
     { n: "20+", label: "Actividades" },
   ];
   return (
-    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
       <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
-      <div className="relative mb-7">
+      
+      <div className="relative">
         <div className="text-black/70 text-xs font-bold uppercase tracking-widest mb-1">Nuestro impacto</div>
-        <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>Resultados reales</div>
+        <div className="text-black font-black text-2xl md:text-3xl mb-4" style={condensed}>Resultados reales</div>
       </div>
-      <div className="relative grid grid-cols-2 gap-4">
-        {stats.map((s) => (
-          <div key={s.label} className="bg-white/30 rounded-2xl p-5 md:p-6 text-center border border-black/10">
-            <div
-              className="text-5xl md:text-6xl leading-none text-black font-black"
-              style={condensed}
-            >
-              {s.n}
+
+      {/* Grid: stats left, action image right */}
+      <div className="relative grid grid-cols-12 gap-3 items-center">
+        <div className="col-span-7 grid grid-cols-2 gap-2">
+          {stats.slice(0, 4).map((s) => (
+            <div key={s.label} className="bg-white/40 rounded-xl p-3 text-center border border-black/10">
+              <div className="text-2xl md:text-3xl leading-none text-black font-black" style={condensed}>{s.n}</div>
+              <div className="text-[10px] font-black text-black/80 mt-1 uppercase tracking-wider">{s.label}</div>
             </div>
-            <div className="text-xs font-black text-black/90 mt-2 uppercase tracking-widest">{s.label}</div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Real photo inside stats */}
+        <div className="col-span-5 rounded-xl border border-black p-0.5 bg-white overflow-hidden h-28 md:h-36 shadow-md">
+          <img
+            src="/image_53e780.jpg"
+            alt="Niños bailando Zumba"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
       </div>
-      <p className="relative mt-4 text-black/70 text-xs font-medium">Datos reales desde 2005</p>
+
+      <p className="relative mt-2 text-black/70 text-xs font-medium">Datos reales desde 2005</p>
     </div>
   );
 }
@@ -786,8 +802,17 @@ function TrustSection() {
                 overflowWrap: "break-word",
               }}
             >
-              {slide.headline}
-              <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
+              {slide.headline === "DISEÑO" ? (
+                <>
+                  <span className="text-[#D8E600]">{slide.headline}</span>
+                  <span className="block text-[#D8E600]" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
+                </>
+              ) : (
+                <>
+                  {slide.headline}
+                  <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
+                </>
+              )}
             </h2>
             <p className={`mt-6 text-lg max-w-sm mx-auto leading-relaxed ${descColor}`}>{slide.description}</p>
             <div className="mt-6 text-5xl">{slide.icon}</div>
@@ -841,17 +866,10 @@ function PartnersSection() {
               ya nos <span className="text-[#1D2F8C]">eligen.</span>
             </span>
           </h2>
-          <p className="text-black/70 text-lg leading-relaxed max-w-sm mb-8">
+          <p className="text-black/70 text-lg leading-relaxed max-w-sm">
             Trabajamos con todo tipo de centros educativos del área metropolitana de Barcelona.{" "}
             <strong>Tu centro educativo, a un mensaje de distancia.</strong>
           </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#D8E600] text-black px-6 py-3 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase shadow-[4px_4px_0_0_#000]"
-            style={btnStyle}
-          >
-            SOLICITAR CITA ↗
-          </a>
         </div>
 
         {/* Right — faded pill list */}
@@ -1172,8 +1190,7 @@ function CTA() {
           {/* Left: description + mascot */}
           <div className="flex flex-col justify-between gap-12 md:min-h-[540px]">
             <p className="text-2xl text-white/90 max-w-md leading-relaxed font-medium">
-              Descubre cómo podemos transformar las actividades de tu centro educativo.{" "}
-              <span className="text-[#D8E600] font-bold">Sin compromiso.</span>
+              Descubre cómo podemos transformar las actividades de tu centro educativo. Estamos <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded">a un mensaje de distancia.</span>
             </p>
             {/* Trust bullets */}
             <ul className="space-y-4 text-white/75">
@@ -1338,7 +1355,6 @@ function Index() {
         headlineItalic="TODO"
         description="Gestionamos equipos, materiales y comunicación con familias sin fricciones."
         extra="Presencia real cada semana. Sin emails de respuesta automática."
-        links={[{ label: "CONTACTAR", href: "#contact" }]}
         visual={<StatsVisual />}
       />
 
@@ -1349,7 +1365,7 @@ function Index() {
         headlineItalic="BARCELONA"
         description="Santa Coloma de Gramenet, Badalona, Mollet del Vallès y Sant Fost de Campsentelles."
         extra="Siempre cerca de tu centro educativo."
-        links={[{ label: "SOLICITAR CITA", href: "#contact" }]}
+        links={[{ label: "Ver todas las zonas", href: "#zones" }]}
         visual={<ZonesCardsVisual />}
         flip
       />

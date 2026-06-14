@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -129,30 +129,80 @@ function Nav() {
 
   return (
     <>
-      <header className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
-        <a href="#top" onClick={() => setOpen(false)} className="pointer-events-auto flex items-center rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[3px_3px_0_0_#000] hover:shadow-[5px_5px_0_0_#000] transition-shadow overflow-hidden">
-          <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-14 w-auto" />
+      {/* ── Header bar ── */}
+      <header
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
+        style={{
+          background: "rgba(255,255,255,0.88)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          borderBottom: "1.5px solid rgba(0,0,0,0.07)",
+          padding: "10px 16px",
+          boxSizing: "border-box",
+        }}
+      >
+        {/* Logo */}
+        <a
+          href="#top"
+          onClick={() => setOpen(false)}
+          className="flex items-center overflow-hidden rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-shadow bg-white"
+          style={{ padding: "2px 8px" }}
+        >
+          <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-12 w-auto block" />
         </a>
-        <nav className="pointer-events-auto hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
+
+        {/* Desktop links pill */}
+        <nav className="hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
           {links.map(([label, href]) => (
             <a key={href} href={href} className="px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-black hover:text-white transition-colors">{label}</a>
           ))}
         </nav>
-        <div className="pointer-events-auto flex items-center gap-2">
-          <a href="#contact" className="flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black px-4 py-2 font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]" style={btnStyle} onClick={() => setOpen(false)}>
+
+        {/* Right: CTA + hamburger */}
+        <div className="flex items-center" style={{ gap: "10px" }}>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
+            style={{ ...btnStyle, padding: "8px 14px", fontSize: "0.85rem" }}
+            onClick={() => setOpen(false)}
+          >
             SOLICITAR CITA
           </a>
-          <button aria-label={open ? "Cerrar menu" : "Abrir menu"} aria-expanded={open} onClick={() => setOpen((o) => !o)} className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border-2 border-black bg-white/95 shadow-[3px_3px_0_0_#000] hover:bg-black hover:text-white transition-colors">
-            <span className="text-xl leading-none font-bold select-none">{open ? "x" : "="}</span>
+          <button
+            aria-label={open ? "Cerrar menu" : "Abrir menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+            className="md:hidden flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000]"
+            style={{ width: 40, height: 40, flexShrink: 0 }}
+          >
+            <span className="text-lg leading-none font-black select-none">{open ? "✕" : "☰"}</span>
           </button>
         </div>
       </header>
+
+      {/* Mobile dropdown */}
       <AnimatePresence>
         {open && (
-          <motion.div key="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.2 }} className="fixed top-24 left-4 right-4 z-40 rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] overflow-hidden">
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+            className="fixed left-4 right-4 z-40 rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] overflow-hidden"
+            style={{ top: 76 }}
+          >
             <nav className="flex flex-col">
               {links.map(([label, href], i) => (
-                <a key={href} href={href} onClick={() => setOpen(false)} className={`px-6 py-5 text-xl font-black uppercase tracking-wider hover:bg-[#D8E600] transition-colors flex items-center justify-between ${i < links.length - 1 ? "border-b-2 border-black/10" : ""}`} style={condensed}>
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className={`px-6 py-5 text-xl font-black uppercase tracking-wider hover:bg-[#D8E600] transition-colors flex items-center justify-between ${
+                    i < links.length - 1 ? "border-b-2 border-black/10" : ""
+                  }`}
+                  style={condensed}
+                >
                   <span>{label}</span>
                   <span className="text-[#1D2F8C]">&#x2192;</span>
                 </a>
@@ -161,6 +211,8 @@ function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Backdrop */}
       {open && <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />}
     </>
   );
@@ -169,7 +221,7 @@ function Nav() {
 /* ─── Hero ──────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="top" className="relative min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden pt-24 pb-20">
+    <section id="top" className="relative min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden pt-28 pb-20">
       {/* Dot grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -398,9 +450,9 @@ function FeatureSection({
   return (
     <section
       id={id}
-      className={`border-b-2 border-black py-28 md:py-40 ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
+      className={`border-b-2 border-black py-16 md:py-28 lg:py-40 overflow-x-hidden ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}
     >
-      <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
         {flip ? <>{vis}{text}</> : <>{text}{vis}</>}
       </div>
     </section>

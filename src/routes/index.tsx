@@ -367,7 +367,7 @@ function Hero() {
               key={i}
               className="bg-white p-2 pb-6 border border-black/10 shadow-[4px_4px_0_0_rgba(0,0,0,0.15)] rounded-sm"
             >
-              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" />
+              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -853,6 +853,8 @@ function TrustSection() {
                 <img
                   src={slide.image}
                   alt={slide.headline}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '180px',
@@ -1319,7 +1321,7 @@ function CTA() {
             </ul>
             {/* Mascot — estático, sin animación */}
             <div className="w-36 md:w-44 rounded-xl overflow-hidden">
-              <img src="/diversplas-logo.jpeg" alt="Diversplas" className="w-full h-auto object-cover block" />
+              <img src="/diversplas-logo.jpeg" alt="Diversplas" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
             </div>
           </div>
           <ContactForm />
@@ -1437,6 +1439,8 @@ function Footer() {
               src="/diversplas-logo.jpeg"
               alt="DIVERSPLAS"
               className="h-14 w-auto rounded-lg"
+              loading="lazy"
+              decoding="async"
             />
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <a

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
-import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
+import logoAsset from "@/assets/diversplas-logo.webp.asset.json";
 
 export const Route = createFileRoute("/")(({
   head: () => ({
@@ -40,7 +40,7 @@ const TRUST_SLIDES = [
     headline: "+20 AÑOS",
     sub: "DE EXPERIENCIA",
     description: "Más de dos décadas avaladas por colegios y familias de Barcelona. No es experiencia — es confianza ganada.",
-    image: "/image_53d820.jpg",
+    image: "/image_53d820.webp",
     icon: "🌟",
     bg: "#35D0BA",
     blob: "#52DCC6",
@@ -50,7 +50,7 @@ const TRUST_SLIDES = [
     headline: "CONFIADOS",
     sub: "& RECOMENDADOS",
     description: "Más de 40 colegios y AMPAs nos eligen cada curso. La mejor referencia son quienes ya trabajan con nosotros.",
-    image: "/image_53e780.jpg",
+    image: "/image_53e780.webp",
     icon: "✓",
     bg: "#D8E600",
     blob: "#E8F520",
@@ -60,7 +60,7 @@ const TRUST_SLIDES = [
     headline: "RESULTADOS",
     sub: "COMPROBADOS",
     description: "Niños más activos, más seguros y con mejores habilidades sociales. Lo medimos. Lo garantizamos.",
-    image: "/image_488563.jpg",
+    image: "/image_488563.webp",
     icon: "🚀",
     bg: "#FF7B72",
     blob: "#FF9590",
@@ -70,7 +70,7 @@ const TRUST_SLIDES = [
     headline: "DISEÑO",
     sub: "PERSONALIZADO",
     description: "Cada programa es único. Lo diseñamos contigo, para tus alumnos, con tu identidad de centro.",
-    image: "/image_53ee82.png",
+    image: "/image_53ee82.webp",
     icon: "🎨",
     bg: "#FF9D42",
     blob: "#FFB468",
@@ -80,7 +80,7 @@ const TRUST_SLIDES = [
     headline: "APRENDIZAJE",
     sub: "REAL",
     description: "Proyectos reales que conectan con el mundo: idiomas, geografía, culturas. Aprenden haciendo y presentando.",
-    image: "/image_48117c.jpg",
+    image: "/image_48117c.webp",
     icon: "🌍",
     bg: "#9C7BFF",
     blob: "#B295FF",
@@ -137,7 +137,7 @@ function Nav() {
           className="flex items-center overflow-hidden rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-shadow bg-white"
           style={{ padding: "2px 8px" }}
         >
-          <img src="/diversplas-logo.jpeg" alt="DIVERSPLAS" className="h-12 w-auto block" />
+          <img src="/diversplas-logo.webp" alt="DIVERSPLAS" className="h-12 w-auto block" />
         </a>
 
         {/* Desktop links pill */}
@@ -234,7 +234,7 @@ function Hero() {
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       >
-        <img src="/sticker-trophy.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+        <img src="/sticker-trophy.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
       {/* 5. Karate — LEFT CENTER */}
@@ -243,44 +243,44 @@ function Hero() {
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
       >
-        <img src="/sticker-karate.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+        <img src="/sticker-karate.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
       {/* Floating Polaroids (outside central text wrapper for correct relative absolute positioning) */}
       {/* Foto 1 - Top Left */}
       <div style={{ '--rot': '-6deg', transform: 'rotate(var(--rot))', top: '18%', left: '80px', animation: 'float 4s ease-in-out infinite', animationDelay: '0s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53ee82.png" alt="Acción" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53ee82.webp" alt="Acción" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Foto 2 - Mid Left */}
       <div style={{ '--rot': '-3deg', transform: 'rotate(var(--rot))', top: '42%', left: '80px', animation: 'float 4.5s ease-in-out infinite', animationDelay: '1.6s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_482fc6.jpg" alt="Cara Pintada" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_482fc6.webp" alt="Cara Pintada" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Foto 3 - Bottom Left */}
       <div style={{ '--rot': '-5deg', transform: 'rotate(var(--rot))', top: '70%', left: '80px', animation: 'float 5s ease-in-out infinite', animationDelay: '3.2s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53c921.jpg" alt="Clase" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53c921.webp" alt="Clase" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Foto 4 - Top Right */}
       <div style={{ '--rot': '5deg', transform: 'rotate(var(--rot))', top: '18%', right: '80px', animation: 'float 4s ease-in-out infinite', animationDelay: '0.8s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53d820.jpg" alt="Monitores" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53d820.webp" alt="Monitores" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Foto 5 - Mid Right */}
       <div style={{ '--rot': '7deg', transform: 'rotate(var(--rot))', top: '42%', right: '80px', animation: 'float 4.5s ease-in-out infinite', animationDelay: '2.4s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53e780.jpg" alt="Zumba" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53e780.webp" alt="Zumba" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Foto 6 - Bottom Right */}
       <div style={{ '--rot': '4deg', transform: 'rotate(var(--rot))', top: '70%', right: '80px', animation: 'float 5s ease-in-out infinite', animationDelay: '1.2s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_48117c.jpg" alt="Proyectos Clase" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_48117c.webp" alt="Proyectos Clase" className="w-full h-32 object-cover border border-black/5" />
       </div>
 
       {/* Content */}
@@ -356,12 +356,12 @@ function Hero() {
         {/* Mobile Gallery (max-width: 768px) */}
         <div className="mt-12 grid grid-cols-2 gap-4 w-full max-w-md md:hidden px-2">
           {[
-            { src: "/image_53ee82.png", alt: "Acción" },
-            { src: "/image_53d820.jpg", alt: "Monitores" },
-            { src: "/image_53e780.jpg", alt: "Zumba" },
-            { src: "/image_482fc6.jpg", alt: "Cara pintada" },
-            { src: "/image_53c921.jpg", alt: "Clase" },
-            { src: "/image_48117c.jpg", alt: "Proyectos Clase" }
+            { src: "/image_53ee82.webp", alt: "Acción" },
+            { src: "/image_53d820.webp", alt: "Monitores" },
+            { src: "/image_53e780.webp", alt: "Zumba" },
+            { src: "/image_482fc6.webp", alt: "Cara pintada" },
+            { src: "/image_53c921.webp", alt: "Clase" },
+            { src: "/image_48117c.webp", alt: "Proyectos Clase" }
           ].map((img, i) => (
             <div
               key={i}
@@ -1257,21 +1257,21 @@ function CTA() {
 
       {/* Floating stickers */}
       <motion.img
-        src="/sticker-ball.png" alt=""
+        src="/sticker-ball.webp" alt=""
         className="pointer-events-none absolute bottom-10 right-10 w-20 h-20 opacity-80 drop-shadow-xl"
         style={{ mixBlendMode: "multiply" }}
         animate={{ y: [0, -14, 0], rotate: [0, 12, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
-        src="/sticker-palette.png" alt=""
+        src="/sticker-palette.webp" alt=""
         className="pointer-events-none absolute bottom-6 right-6 w-14 h-14 opacity-40 drop-shadow-xl hidden md:block"
         style={{ mixBlendMode: "multiply" }}
         animate={{ y: [0, -8, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       <motion.img
-        src="/sticker-star.png" alt=""
+        src="/sticker-star.webp" alt=""
         className="pointer-events-none absolute bottom-16 left-1/4 w-12 h-12 opacity-60 drop-shadow-xl"
         style={{ mixBlendMode: "multiply" }}
         animate={{ y: [0, -8, 0], rotate: [5, -10, 5] }}
@@ -1302,7 +1302,7 @@ function CTA() {
           {/* Left: description + mascot */}
           <div className="flex flex-col justify-between gap-12 md:min-h-[540px]">
             <p className="text-2xl text-white max-w-md leading-relaxed" style={{ fontWeight: 600 }}>
-              Descubre cómo podemos transformar las actividades de tu centro educativo. Estamos <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded">a un mensaje de distancia.</span>
+              Descubre cómo podemos transformar las actividades de tu centro educativo. Estamos <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded inline-block">a un mensaje de distancia.</span>
             </p>
             {/* Trust bullets */}
             <ul className="space-y-4 text-white/90">
@@ -1321,7 +1321,7 @@ function CTA() {
             </ul>
             {/* Mascot — estático, sin animación */}
             <div className="w-36 md:w-44 rounded-xl overflow-hidden">
-              <img src="/diversplas-logo.jpeg" alt="Diversplas" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
+              <img src="/diversplas-logo.webp" alt="Diversplas" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
             </div>
           </div>
           <ContactForm />
@@ -1436,7 +1436,7 @@ function Footer() {
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-4 flex-wrap">
             <img
-              src="/diversplas-logo.jpeg"
+              src="/diversplas-logo.webp"
               alt="DIVERSPLAS"
               className="h-14 w-auto rounded-lg"
               loading="lazy"

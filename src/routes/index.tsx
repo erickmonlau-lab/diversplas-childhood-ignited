@@ -268,90 +268,66 @@ function Hero() {
         <img src="/sticker-karate.png" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
       </motion.div>
 
-      {/* Content grid */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 w-full grid lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Text */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-left">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-8 shadow-[3px_3px_0_0_#1D2F8C] self-start"
-          >
-            <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
-            +20 años en Barcelona · Colegios · AMPAs · Centros
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="uppercase leading-[0.82] tracking-tight text-[11vw] sm:text-[10vw] md:text-[8vw] lg:text-[100px]"
-            style={condensed}
-          >
-            <span className="block">No solo</span>
-            <span className="block text-[#1D2F8C]" style={condensedItalic}>extraescolares.</span>
-            <span className="block">
-              Aquí crecen<span className="text-[#D8E600]">.</span>
-            </span>
-          </motion.h1>
-
-          {/* Sub */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-6 text-lg md:text-xl text-black/75 max-w-xl leading-relaxed"
-          >
-            <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
-            Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65 }}
-            className="mt-8 flex flex-col sm:flex-row gap-3 items-center justify-start"
-          >
-            <a
-              href="#contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto text-center"
-              style={btnStyle}
-            >
-              SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a
-              href="#activities"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto text-center"
-              style={btnStyle}
-            >
-              VER ACTIVIDADES
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Right Column: Energetic action image */}
+      {/* Content */}
+      <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto w-full flex flex-col items-center">
+        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 relative flex justify-center w-full"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-10 shadow-[3px_3px_0_0_#1D2F8C]"
         >
-          {/* Main Action Image */}
-          <div className="relative rounded-3xl border-2 border-black p-2 bg-white shadow-[8px_8px_0_0_#000] overflow-hidden max-w-[480px] w-full">
-            <img
-              src="/image_53ee82.png"
-              alt="Actividades extraescolares activas reales de Diversplas"
-              className="rounded-2xl w-full h-[320px] md:h-[400px] object-cover block"
-            />
-            {/* Action overlay sticker badge */}
-            <div className="absolute top-6 right-6 bg-black text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/20 shadow-md">
-              FOTOS REALES 📸
-            </div>
-          </div>
+          <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
+          +20 años en Barcelona · Colegios · AMPAs · Centros
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="uppercase leading-[0.82] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px]"
+          style={condensed}
+        >
+          <span className="block">No solo</span>
+          <span className="block text-[#1D2F8C]" style={condensedItalic}>extraescolares.</span>
+          <span className="block">
+            Aquí crecen<span className="text-[#D8E600]">.</span>
+          </span>
+        </motion.h1>
+
+        {/* Sub */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
+        >
+          <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
+          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+          className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center"
+        >
+          <a
+            href="#contact"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
+            style={btnStyle}
+          >
+            SOLICITAR CITA <span className="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+          <a
+            href="#activities"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
+            style={btnStyle}
+          >
+            VER ACTIVIDADES
+          </a>
         </motion.div>
       </div>
     </section>
@@ -443,42 +419,28 @@ function FeatureSection({
 
 function ActivityCardsVisual() {
   return (
-    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
+    <div className="rounded-3xl bg-[#0a0a0a] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       {/* bg glow */}
       <div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0 opacity-20"
         style={{ backgroundImage: "radial-gradient(circle at 25% 30%, #3055C7, transparent 55%), radial-gradient(circle at 75% 70%, #9C7BFF, transparent 55%)" }}
       />
-      
-      {/* Top Section */}
-      <div className="relative">
+      {/* Header */}
+      <div className="relative mb-6">
         <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Actividades disponibles</div>
-        <div className="text-white font-black text-3xl md:text-4xl mb-4" style={condensed}>+20 experiencias</div>
-        
-        {/* Tags */}
-        <div className="relative flex flex-wrap gap-2">
-          {ACTIVITIES.slice(0, 7).map((a) => (
-            <span
-              key={a.name}
-              style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-              className="rounded-full px-3 py-1 text-xs font-bold border border-black/20 whitespace-nowrap"
-            >
-              {a.icon} {a.name}
-            </span>
-          ))}
-        </div>
+        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>+20 experiencias</div>
       </div>
-
-      {/* Real Action Image inside card */}
-      <div className="relative mt-4 rounded-xl border border-white/20 overflow-hidden h-36 md:h-44 shadow-inner">
-        <img
-          src="/image_53d820.jpg"
-          alt="Monitores reales de extraescolares"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-2 right-2 bg-black/85 text-white text-[9px] font-bold tracking-widest px-2 py-0.5 rounded border border-white/10">
-          NUESTROS MONITORES 🧑‍🏫
-        </div>
+      {/* Tags */}
+      <div className="relative flex flex-wrap gap-2.5">
+        {ACTIVITIES.slice(0, 14).map((a) => (
+          <span
+            key={a.name}
+            style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
+            className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
+          >
+            {a.icon} {a.name}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -493,34 +455,21 @@ function ProgramVisual() {
     { n: "05", t: "Mejoramos",    c: "#ffffff" },
   ];
   return (
-    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
+    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
-      
-      <div className="relative">
+      <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
+      <div className="relative mb-7">
         <div className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tu programa</div>
-        <div className="text-white font-black text-2xl md:text-3xl mb-4" style={condensed}>A medida, con propósito</div>
+        <div className="text-white font-black text-3xl md:text-4xl" style={condensed}>A medida, con propósito</div>
       </div>
-
-      {/* Grid: steps left, action image right */}
-      <div className="relative grid grid-cols-12 gap-3 items-center">
-        <div className="col-span-7 space-y-2">
-          {steps.slice(0, 4).map((s) => (
-            <div key={s.n} className="flex items-center gap-2.5 bg-white/15 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
-              <span className="text-white font-bold text-xs font-mono w-5">{s.n}</span>
-              <span className="h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
-              <span className="text-white font-bold text-sm">{s.t}</span>
-            </div>
-          ))}
-        </div>
-        
-        {/* Real photo inside program */}
-        <div className="col-span-5 rounded-xl border border-black/10 overflow-hidden h-28 md:h-36 shadow-md bg-white">
-          <img
-            src="/image_53c921.jpg"
-            alt="Niños en actividades"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <div className="relative space-y-3">
+        {steps.map((s) => (
+          <div key={s.n} className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3.5 border border-white/10">
+            <span className="text-white font-bold text-sm font-mono w-6">{s.n}</span>
+            <span className="h-3 w-3 rounded-full flex-shrink-0" style={{ backgroundColor: s.c }} />
+            <span className="text-white font-bold text-lg">{s.t}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -534,36 +483,26 @@ function StatsVisual() {
     { n: "20+", label: "Actividades" },
   ];
   return (
-    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-6 md:p-8 overflow-hidden relative min-h-[380px] md:min-h-[440px] flex flex-col justify-between">
+    <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
-      
-      <div className="relative">
+      <div className="relative mb-7">
         <div className="text-black/70 text-xs font-bold uppercase tracking-widest mb-1">Nuestro impacto</div>
-        <div className="text-black font-black text-2xl md:text-3xl mb-4" style={condensed}>Resultados reales</div>
+        <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>Resultados reales</div>
       </div>
-
-      {/* Grid: stats left, action image right */}
-      <div className="relative grid grid-cols-12 gap-3 items-center">
-        <div className="col-span-7 grid grid-cols-2 gap-2">
-          {stats.slice(0, 4).map((s) => (
-            <div key={s.label} className="bg-white/40 rounded-xl p-3 text-center border border-black/10">
-              <div className="text-2xl md:text-3xl leading-none text-black font-black" style={condensed}>{s.n}</div>
-              <div className="text-[10px] font-black text-black/80 mt-1 uppercase tracking-wider">{s.label}</div>
+      <div className="relative grid grid-cols-2 gap-4">
+        {stats.map((s) => (
+          <div key={s.label} className="bg-white/30 rounded-2xl p-5 md:p-6 text-center border border-black/10">
+            <div
+              className="text-5xl md:text-6xl leading-none text-black font-black"
+              style={condensed}
+            >
+              {s.n}
             </div>
-          ))}
-        </div>
-
-        {/* Real photo inside stats */}
-        <div className="col-span-5 rounded-xl border border-black p-0.5 bg-white overflow-hidden h-28 md:h-36 shadow-md">
-          <img
-            src="/image_53e780.jpg"
-            alt="Niños bailando Zumba"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
+            <div className="text-xs font-black text-black/90 mt-2 uppercase tracking-widest">{s.label}</div>
+          </div>
+        ))}
       </div>
-
-      <p className="relative mt-2 text-black/70 text-xs font-medium">Datos reales desde 2005</p>
+      <p className="relative mt-4 text-black/70 text-xs font-medium">Datos reales desde 2005</p>
     </div>
   );
 }
@@ -636,8 +575,8 @@ function CtaMarquee() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const d1 = isMobile ? 18 : 42;
-  const d2 = isMobile ? 19 : 44;
+  const d1 = isMobile ? 10 : 42;
+  const d2 = isMobile ? 11 : 44;
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">

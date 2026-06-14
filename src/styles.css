@@ -185,7 +185,7 @@ a, button {
 /* Yellow buttons hover scaling and color brightening */
 a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover, button[type="submit"]:hover {
   transform: scale(1.05) translateY(-2px) !important;
-  background-color: #e9f710 !important;
+  background-color: #FFEA00 !important;
   color: #000000 !important;
   box-shadow: 6px 6px 0 0 #000 !important;
 }
@@ -197,4 +197,12 @@ a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
   transform: translateY(-2px);
   box-shadow: 6px 6px 0 0 #000 !important;
 }
+
+/* Mobile Marquee dynamic fast timing override */
+@media (max-width: 768px) {
+  div[class*="whitespace-nowrap"] {
+    animation-duration: 12s !important;
+  }
+}
+
 

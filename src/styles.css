@@ -176,3 +176,24 @@
     height: auto;
   }
 }
+
+/* ─── Hover Animations & States ────────────────────────── */
+a, button {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Yellow buttons hover scaling and color brightening */
+a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover {
+  transform: scale(1.05) translateY(-2px);
+  background-color: #e9f710 !important;
+  box-shadow: 6px 6px 0 0 #000 !important;
+}
+
+/* Secondary (white/transparent) buttons hover behavior */
+a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
+  background-color: #1D2F8C !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 0 #000 !important;
+}
+

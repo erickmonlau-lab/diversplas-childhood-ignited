@@ -531,7 +531,7 @@ function StatsVisual() {
     <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
-        <div className="text-black/50 text-xs font-bold uppercase tracking-widest mb-1">Nuestro impacto</div>
+        <div className="text-black/70 text-xs font-bold uppercase tracking-widest mb-1">Nuestro impacto</div>
         <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>Resultados reales</div>
       </div>
       <div className="relative grid grid-cols-2 gap-4">
@@ -543,11 +543,11 @@ function StatsVisual() {
             >
               {s.n}
             </div>
-            <div className="text-xs font-bold text-black/60 mt-2 uppercase tracking-widest">{s.label}</div>
+            <div className="text-xs font-black text-black/90 mt-2 uppercase tracking-widest">{s.label}</div>
           </div>
         ))}
       </div>
-      <p className="relative mt-4 text-black/40 text-xs font-medium">Datos reales desde 2005</p>
+      <p className="relative mt-4 text-black/70 text-xs font-medium">Datos reales desde 2005</p>
     </div>
   );
 }
@@ -582,7 +582,7 @@ function ZonesCardsVisual() {
       </div>
       <div
         className="text-xs font-bold mt-5 uppercase tracking-wider"
-        style={{ color: z.light ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.45)" }}
+        style={{ color: z.light ? "#ffffff" : "#000000" }}
       >
         Zona activa · +{z.centers} centros
       </div>
@@ -611,6 +611,17 @@ function ZonesCardsVisual() {
 function CtaMarquee() {
   const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","BÁSQUET","MULTIDEPORTE"];
   const ROW2 = ["MANUALIDADES","REFUERZO","CASALES","INGLÉS","BAILE","FÚTBOL","KARATE","ZUMBA","HIP HOP"];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const d1 = isMobile ? 18 : 42;
+  const d2 = isMobile ? 19 : 44;
 
   return (
     <section className="bg-[#0a0a0a] py-10 overflow-hidden border-y-2 border-black relative">
@@ -619,7 +630,7 @@ function CtaMarquee() {
         <motion.div
           className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 42, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: d1, repeat: Infinity, ease: "linear" }}
         >
           {[...ROW1, ...ROW1].map((t, i) => {
             const c = MARQUEE_COLORS[i % MARQUEE_COLORS.length];
@@ -647,7 +658,7 @@ function CtaMarquee() {
         <motion.div
           className="flex gap-6 whitespace-nowrap"
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 44, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: d2, repeat: Infinity, ease: "linear" }}
         >
           {[...ROW2, ...ROW2].map((t, i) => {
             const c = MARQUEE_COLORS[(i + 4) % MARQUEE_COLORS.length];
@@ -944,7 +955,7 @@ function Manifesto() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 text-black/40 text-lg md:text-xl font-medium"
+          className="mt-16 text-black/85 text-lg md:text-xl font-bold"
         >
           Y llevamos más de 20 años demostrándolo.
         </motion.p>
@@ -1016,6 +1027,31 @@ function Activities() {
 /* ─── Contact Form ──────────────────────────────────────── */
 function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      setSent(true);
+    } catch (err) {
+      console.error("Error sending to webhook", err);
+      // Fallback to showing success screen anyway so the client UX isn't broken
+      setSent(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (sent) {
     return (
@@ -1035,14 +1071,14 @@ function ContactForm() {
 
   return (
     <form
-      onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+      onSubmit={handleSubmit}
       className="rounded-3xl border-2 border-white/20 bg-white/5 backdrop-blur-xl p-6 md:p-8 space-y-5"
     >
       {[
         ["Nombre",           "text",  "nombre",  "Tu nombre"],
         ["Centro educativo", "text",  "centro",  "Nombre del colegio"],
         ["Cargo",            "text",  "cargo",   "Director, AMPA..."],
-        ["Teléfono",         "tel",   "tel",     "+34 600 000 000"],
+        ["Teléfono",         "tel",   "telefono", "El teléfono de contacto"],
         ["Email",            "email", "email",   "tu@email.com"],
       ].map(([label, type, name, placeholder]) => (
         <label key={name} className="block">
@@ -1067,10 +1103,11 @@ function ContactForm() {
       </label>
       <button
         type="submit"
-        className="mt-2 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase shadow-[4px_4px_0_0_#000] font-black"
+        disabled={loading}
+        className="mt-2 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black transition-all duration-300 hover:bg-white hover:scale-[1.05] uppercase shadow-[4px_4px_0_0_#000] font-black cursor-pointer"
         style={btnStyle}
       >
-        SOLICITAR CITA →
+        {loading ? "ENVIANDO..." : "SOLICITAR CITA →"}
       </button>
     </form>
   );
@@ -1211,8 +1248,6 @@ function FooterCard({
 }
 
 function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
   return (
     <footer>
       {/* Single unified CTA footer card — amarillo corporativo */}
@@ -1229,18 +1264,13 @@ function Footer() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:hola@diversplas.com"
-              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-colors uppercase shadow-[4px_4px_0_0_#1D2F8C]"
+              href="https://wa.me/34657117426"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-black text-white px-7 py-3.5 font-bold border-2 border-black hover:bg-[#1D2F8C] transition-all duration-300 hover:scale-[1.05] uppercase shadow-[4px_4px_0_0_#1D2F8C]"
               style={btnStyle}
             >
               ESCRÍBENOS ↗
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 font-bold border-2 border-black hover:bg-black hover:text-white transition-colors uppercase shadow-[4px_4px_0_0_#000]"
-              style={btnStyle}
-            >
-              SOLICITAR CITA ↗
             </a>
           </div>
         </FooterCard>

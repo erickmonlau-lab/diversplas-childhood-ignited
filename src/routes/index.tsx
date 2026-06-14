@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
@@ -308,8 +308,8 @@ function Hero() {
           </a>
           <a
             href="#activities"
-            className="inline-flex items-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors text-sm uppercase tracking-wide shadow-[4px_4px_0_0_#000]"
-            style={condensed}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#D8E600] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
+            style={btnStyle}
           >
             VER ACTIVIDADES
           </a>
@@ -507,7 +507,7 @@ function ZonesCardsVisual() {
       transition={{ type: "spring", stiffness: 320, damping: 22 }}
     >
       <div
-        className="uppercase leading-[0.88] text-3xl md:text-4xl"
+        className="uppercase leading-[0.88] text-3xl md:text-4xl break-words"
         style={{
           fontFamily: "'Barlow Condensed', sans-serif",
           fontWeight: 900,
@@ -705,11 +705,17 @@ function TrustSection() {
           >
             <p className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${subColor}`}>Nuestra historia</p>
             <h2
-              className={`uppercase leading-[0.85] tracking-tight text-[16vw] md:text-[10vw] lg:text-[110px] ${textColor}`}
-              style={condensedItalic}
+              className={`uppercase tracking-tight ${textColor} break-words`}
+              style={{
+                ...condensedItalic,
+                fontSize: "clamp(2rem, 8.5vw, 6.875rem)",
+                lineHeight: 0.85,
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+              }}
             >
               {slide.headline}
-              <span className="block" style={condensed}>{slide.sub}</span>
+              <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
             </h2>
             <p className={`mt-6 text-lg max-w-sm mx-auto leading-relaxed ${descColor}`}>{slide.description}</p>
             <div className="mt-6 text-5xl">{slide.icon}</div>
@@ -969,37 +975,38 @@ function ContactForm() {
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-      className="rounded-3xl border-2 border-white/30 bg-white/10 p-6 md:p-8 space-y-5"
+      className="rounded-3xl border-2 border-white/20 bg-white/5 backdrop-blur-xl p-6 md:p-8 space-y-5"
     >
       {[
-        ["Nombre",           "text",  "nombre"],
-        ["Centro educativo", "text",  "centro"],
-        ["Cargo",            "text",  "cargo"],
-        ["Teléfono",         "tel",   "tel"],
-        ["Email",            "email", "email"],
-      ].map(([label, type, name]) => (
+        ["Nombre",           "text",  "nombre",  "Tu nombre"],
+        ["Centro educativo", "text",  "centro",  "Nombre del colegio"],
+        ["Cargo",            "text",  "cargo",   "Director, AMPA..."],
+        ["Teléfono",         "tel",   "tel",     "+34 600 000 000"],
+        ["Email",            "email", "email",   "tu@email.com"],
+      ].map(([label, type, name, placeholder]) => (
         <label key={name} className="block">
-          <span className="text-sm font-bold uppercase tracking-widest text-white/80">{label}</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-white/70 mb-2 block">{label}</span>
           <input
             type={type}
             name={name}
+            placeholder={placeholder}
             required
-            className="mt-2 w-full bg-transparent border-b-2 border-white/40 focus:border-[#D8E600] outline-none py-2.5 text-xl text-white transition-colors placeholder:text-white/20"
+            className="w-full rounded-xl border-2 border-white/10 bg-black/20 px-4 py-3 text-base text-white placeholder:text-white/30 focus:border-[#D8E600] focus:bg-white/10 outline-none transition-all"
           />
         </label>
       ))}
       <label className="block">
-        <span className="text-sm font-bold uppercase tracking-widest text-white/80">Mensaje</span>
+        <span className="text-xs font-bold uppercase tracking-widest text-white/70 mb-2 block">Mensaje</span>
         <textarea
           name="mensaje"
-          rows={5}
-          style={{ minHeight: "120px" }}
-          className="mt-2 w-full bg-transparent border-b-2 border-white/40 focus:border-[#D8E600] outline-none py-2.5 text-xl text-white transition-colors resize-none"
+          rows={4}
+          placeholder="Cuéntanos qué necesitas..."
+          className="w-full rounded-xl border-2 border-white/10 bg-black/20 px-4 py-3 text-base text-white placeholder:text-white/30 focus:border-[#D8E600] focus:bg-white/10 outline-none transition-all resize-none"
         />
       </label>
       <button
         type="submit"
-        className="mt-4 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase text-xl shadow-[4px_4px_0_0_#000] font-black"
+        className="mt-2 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black hover:bg-white transition-colors uppercase shadow-[4px_4px_0_0_#000] font-black"
         style={btnStyle}
       >
         SOLICITAR CITA →
@@ -1065,29 +1072,30 @@ function CTA() {
         {/* Description + Form — separate row */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left: description + mascot */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col justify-between gap-12 md:min-h-[540px]">
             <p className="text-2xl text-white/90 max-w-md leading-relaxed font-medium">
               Descubre cómo podemos transformar las actividades de tu centro educativo.{" "}
               <span className="text-[#D8E600] font-bold">Sin compromiso.</span>
             </p>
             {/* Trust bullets */}
-            <ul className="space-y-3 text-white/75">
+            <ul className="space-y-4 text-white/75">
               {[
                 "✓  Respuesta en menos de 24h",
                 "✓  Programa a medida sin coste",
-                
               ].map((t) => (
                 <li key={t} className="text-lg font-semibold">{t}</li>
               ))}
             </ul>
-            {/* Mascot — usar fichero local para garantizar carga */}
-            <motion.img
-              src="/diversplas-logo.jpeg"
-              alt="Diversplas"
-              className="w-40 md:w-48 drop-shadow-2xl mt-4 rounded-2xl"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            />
+            {/* Mascot — overflow hidden para esquinas */}
+            <div className="w-36 md:w-44 rounded-2xl overflow-hidden shadow-[6px_6px_0_0_rgba(0,0,0,0.35)]">
+              <motion.img
+                src="/diversplas-logo.jpeg"
+                alt="Diversplas"
+                className="w-full h-full object-cover block"
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
           </div>
           <ContactForm />
         </div>

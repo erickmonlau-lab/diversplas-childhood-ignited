@@ -182,20 +182,82 @@ a, button {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Yellow buttons hover scaling and color brightening */
-a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover, button[type="submit"]:hover {
-  transform: scale(1.05) translateY(-2px) !important;
-  background-color: #FFEA00 !important;
-  color: #000000 !important;
-  box-shadow: 6px 6px 0 0 #000 !important;
+@media (hover: hover) {
+  /* Yellow buttons hover scaling and color brightening */
+  a[class*="bg-[#D8E600]"]:hover, button[class*="bg-[#D8E600]"]:hover, button[type="submit"]:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    background-color: #FFEA00 !important;
+    color: #000000 !important;
+    box-shadow: 6px 6px 0 0 #000 !important;
+  }
+
+  /* Secondary (white/transparent) buttons hover behavior */
+  a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
+    background-color: #1D2F8C !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 6px 6px 0 0 #000 !important;
+  }
+
+  /* Slider navigation arrow custom hover */
+  .slider-arrow:hover {
+    background-color: #f3f4f6 !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.4) !important;
+    box-shadow: none !important;
+    transform: translateY(-50%) scale(1.05) !important;
+  }
 }
 
-/* Secondary (white/transparent) buttons hover behavior */
-a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
-  background-color: #1D2F8C !important;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 6px 6px 0 0 #000 !important;
+/* Resets to prevent sticky states when not active or touched */
+a[class*="bg-[#D8E600]"]:not(:hover), button[class*="bg-[#D8E600]"]:not(:hover), button[type="submit"]:not(:hover) {
+  background-color: #D8E600 !important;
+  color: #000000 !important;
+  transform: none !important;
+  box-shadow: 3px 3px 0 0 #000 !important;
+}
+
+a[class*="bg-white"]:not(:hover), button[class*="bg-white"]:not(:hover) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  transform: none !important;
+  box-shadow: 2px 2px 0 0 #000 !important;
+}
+
+.slider-arrow:not(:hover) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: none !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Active transitions */
+a[class*="bg-[#D8E600]"]:active, button[class*="bg-[#D8E600]"]:active {
+  transform: scale(0.98) !important;
+}
+
+a[class*="bg-white"]:active, button[class*="bg-white"]:active {
+  transform: scale(0.98) !important;
+}
+
+.slider-arrow:active {
+  transform: translateY(-50%) scale(0.95) !important;
+}
+
+/* Focus and visited safety cleanups */
+a[class*="bg-white"]:focus, button[class*="bg-white"]:focus,
+a[class*="bg-white"]:visited, button[class*="bg-white"]:visited,
+.slider-arrow:focus, .slider-arrow:visited {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+a[class*="bg-[#D8E600]"]:focus, button[class*="bg-[#D8E600]"]:focus,
+a[class*="bg-[#D8E600]"]:visited, button[class*="bg-[#D8E600]"]:visited {
+  background-color: #D8E600 !important;
+  color: #000000 !important;
 }
 
 /* Mobile Marquee dynamic fast timing override */
@@ -206,5 +268,14 @@ a[class*="bg-white"]:hover, button[class*="bg-white"]:hover {
     animation-iteration-count: infinite !important;
   }
 }
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(var(--rot)); }
+  50%  { transform: translateY(-10px) rotate(var(--rot)); }
+  100% { transform: translateY(0px) rotate(var(--rot)); }
+}
+
+
+
 
 

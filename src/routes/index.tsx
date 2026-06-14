@@ -1041,9 +1041,9 @@ function CTA() {
       />
       <motion.img
         src="/sticker-palette.png" alt=""
-        className="pointer-events-none absolute top-12 left-10 w-16 h-16 opacity-75 drop-shadow-xl"
-        animate={{ y: [0, -10, 0], rotate: [-8, 8, -8] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="pointer-events-none absolute bottom-6 right-6 w-14 h-14 opacity-40 drop-shadow-xl hidden md:block"
+        animate={{ y: [0, -8, 0], rotate: [-5, 5, -5] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       <motion.img
         src="/sticker-star.png" alt=""
@@ -1086,14 +1086,12 @@ function CTA() {
                 <li key={t} className="text-lg font-semibold">{t}</li>
               ))}
             </ul>
-            {/* Mascot — overflow hidden para esquinas */}
+            {/* Mascot — estático, sin animación */}
             <div className="w-36 md:w-44 rounded-2xl overflow-hidden shadow-[6px_6px_0_0_rgba(0,0,0,0.35)]">
-              <motion.img
+              <img
                 src="/diversplas-logo.jpeg"
                 alt="Diversplas"
                 className="w-full h-full object-cover block"
-                animate={{ y: [0, -14, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
           </div>

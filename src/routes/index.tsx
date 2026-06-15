@@ -566,7 +566,7 @@ function StatsVisual() {
     <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
-        <div className="text-black text-sm md:text-base font-['Barlow_Condensed'] font-black uppercase tracking-[0.12em] mb-3 leading-none">Nuestro impacto</div>
+        <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-bold uppercase tracking-[0.15em] text-sm px-3 py-1 rounded-md mb-3">NUESTRO IMPACTO</span>
         <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>
           <span style={{
             backgroundColor: '#ffffff',

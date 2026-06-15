@@ -723,7 +723,6 @@ function TrustSection() {
   const textColor = slide.dark ? "text-[#1D2F8C]" : "text-white";
   const subColor  = slide.dark ? "text-[#1D2F8C]/60" : "text-white/50";
   const descColor = slide.dark ? "text-black/80" : "text-white/90";
-  const btnBorder = "border-2 border-black text-black hover:bg-black hover:text-white transition-colors duration-200 shadow-[3px_3px_0_0_#000]";
   const dotActive = slide.dark ? "bg-black" : "bg-white";
   const dotInactive= slide.dark ? "bg-black/25" : "bg-white/35";
 
@@ -788,24 +787,24 @@ function TrustSection() {
       <button
         aria-label="Anterior"
         onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full flex items-center justify-center slider-arrow"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black border-2 border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.3)] flex items-center justify-center text-white font-bold hover:bg-white hover:text-black transition-colors"
       >
-        <svg className="w-4 h-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </button>
       <button
         aria-label="Siguiente"
         onClick={() => setCurrent((c) => (c + 1) % slides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full flex items-center justify-center slider-arrow"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black border-2 border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.3)] flex items-center justify-center text-white font-bold hover:bg-white hover:text-black transition-colors"
       >
-        <svg className="w-4 h-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
 
       {/* Content */}
-      <div className="relative z-10 py-28 md:py-40 px-16 text-center">
+      <div className="relative z-10 py-28 md:py-40 px-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -813,65 +812,61 @@ function TrustSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
             transition={{ duration: 0.5 }}
-            className="max-w-2xl mx-auto"
+            className="w-full h-full flex flex-col md:flex-row items-center justify-center px-16 md:px-24 gap-16"
           >
-            <p className={`text-xs font-black uppercase tracking-[0.3em] mb-6 ${subColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 4px rgba(0,0,0,0.15)' }}>Nuestra historia</p>
-            <h2
-              className={`uppercase tracking-tight ${textColor} break-words`}
-              style={{
-                ...condensedItalic,
-                fontSize: "clamp(2.5rem, 8.5vw, 6.875rem)",
-                lineHeight: 0.85,
-                wordBreak: "break-word",
-                overflowWrap: "break-word",
-                textShadow: '0 2px 16px rgba(0,0,0,0.15)'
-              }}
-            >
-              {slide.headline === "DISEÑO" ? (
-                <>
-                  <span className="text-[#1D2F8C]">{slide.headline}</span>
-                  <span className="block text-[#1D2F8C]" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
-                </>
-              ) : (
-                <>
-                  {slide.headline}
-                  <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
-                </>
-              )}
-            </h2>
-            <p className={`mt-6 text-lg max-w-sm mx-auto leading-relaxed font-semibold ${descColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
-            {/* Polaroid image of the slide */}
-            <div className="mt-8 flex justify-center">
-              <div style={{
-                background: '#ffffff',
-                padding: '10px 10px 32px 10px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
-                borderRadius: '2px',
-                transform: 'rotate(-2deg)',
-                width: '100%',
-                maxWidth: '280px',
-                margin: '0 auto'
-              }}>
+            {/* Left column */}
+            <div className="flex flex-col justify-center gap-6 flex-1 max-w-xl">
+              <p className={`text-xs font-black uppercase tracking-[0.3em] text-left ${subColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 4px rgba(0,0,0,0.15)' }}>Nuestra historia</p>
+              <h2
+                className={`uppercase tracking-tight text-7xl md:text-8xl leading-none ${textColor} break-words text-left`}
+                style={{
+                  ...condensedItalic,
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                  textShadow: '0 2px 16px rgba(0,0,0,0.15)'
+                }}
+              >
+                {slide.headline === "DISEÑO" ? (
+                  <>
+                    <span className="text-[#1D2F8C]">{slide.headline}</span>
+                    <span className="block text-[#1D2F8C]" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
+                  </>
+                ) : (
+                  <>
+                    {slide.headline}
+                    <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
+                  </>
+                )}
+              </h2>
+              <p className={`mt-6 text-xl text-left leading-relaxed font-semibold ${descColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
+              <div className="text-5xl text-left">{slide.icon}</div>
+            </div>
+
+            {/* Right column (polaroid image) */}
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <div
+                style={{
+                  background: '#ffffff',
+                  padding: '10px 10px 32px 10px',
+                  borderRadius: '2px',
+                  rotate: '2deg',
+                }}
+                className="shadow-[6px_6px_0_0_#000]"
+              >
                 <img
                   src={slide.image}
                   alt={slide.headline}
                   loading="lazy"
                   decoding="async"
-                  style={{
-                    width: '100%',
-                    height: '180px',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
+                  className="border-4 border-white w-[340px] h-[260px] object-cover block"
                 />
               </div>
             </div>
-            <div className="mt-6 text-5xl">{slide.icon}</div>
           </motion.div>
         </AnimatePresence>
 
         {/* Dot nav — bigger dots, more contrast */}
-        <div className="flex items-center justify-center gap-3 mt-14">
+        <div className="absolute bottom-8 left-16 flex gap-2">
           {slides.map((_, i) => (
             <button
               key={i}

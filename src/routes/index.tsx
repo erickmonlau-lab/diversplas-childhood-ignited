@@ -158,7 +158,7 @@ function Nav() {
         <a
           href="#top"
           onClick={() => setOpen(false)}
-          className="flex items-center overflow-hidden rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-shadow bg-white"
+          className="flex items-center"
           style={{ padding: "2px 8px" }}
         >
           <img src="/diversplas-logo.webp" alt="DIVERSPLAS" className="h-12 w-auto block" loading="eager" width={61} height={48} />
@@ -329,7 +329,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="uppercase leading-[0.82] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px]"
+          className="uppercase leading-[1.05] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px]"
           style={condensed}
         >
           <span className="block" style={{ whiteSpace: 'nowrap' }}>No solo</span>
@@ -1386,7 +1386,7 @@ function CTA() {
           transition={{ duration: 0.8 }}
           className="mb-10"
         >
-          <div className="relative inline-block pb-4 mb-6">
+          <div className="relative inline-block pb-12 mb-6">
             <h2 className="font-black text-6xl md:text-8xl uppercase tracking-tighter text-white" style={condensedItalic}>
               <span className="mr-2 inline-block">¿</span>
               <span className="text-[#D8E600] tracking-wider" style={{ letterSpacing: '0.05em' }}>
@@ -1394,7 +1394,7 @@ function CTA() {
               </span>
               <span className="ml-2 inline-block">?</span>
             </h2>
-            <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0 mt-4"></div>
+            <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0"></div>
           </div>
         </motion.div>
 
@@ -1504,11 +1504,11 @@ function Footer() {
           bg="#D8E600"
           blob="#E8F520"
           headline={
-            <>
+            <span className="whitespace-nowrap">
               <span className="text-[#1D2F8C]" style={{ marginRight: '4px' }}>¿</span>
               <span className="tracking-wider" style={{ letterSpacing: '0.05em' }}>EMPEZAMOS</span>
               <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000' }}>?</span>
-            </>
+            </span>
           }
           dark
         >

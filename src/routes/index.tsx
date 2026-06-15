@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")(({
           "description": "Empresa de actividades extraescolares en Barcelona con más de 20 años de experiencia. Trabajamos con colegios, AFAs y centros educativos.",
           "url": "https://diversplas.es",
           "telephone": "+34657117426",
-          "email": "rakelulu@outlook.es",
+          "email": "diversplasextraescolares@gmail.com",
           "image": "https://diversplas.es/diversplas-logo.webp",
           "logo": "https://diversplas.es/logo-badge.webp",
           "address": {
@@ -1570,9 +1570,9 @@ function Footer() {
           <div className="flex items-center gap-3">
             <a
               className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors"
-              href="mailto:rakelulu@outlook.es"
+              href="mailto:diversplasextraescolares@gmail.com"
               aria-label="Correo de contacto de Diversplas"
-              title="rakelulu@outlook.es"
+              title="diversplasextraescolares@gmail.com"
             >
               <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                 <rect width="20" height="16" x="2" y="4" rx="2" />

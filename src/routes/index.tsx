@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, type ReactNode } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
 import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
 
@@ -807,6 +807,9 @@ function CtaMarquee() {
 /* ─── Trust Section (Slush-style colored slides) ────────── */
 function TrustSection() {
   const [current, setCurrent] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef);
+
   const slides = TRUST_SLIDES;
   const slide = slides[current];
   const textColor = slide.dark ? "text-[#1D2F8C]" : "text-white";
@@ -816,17 +819,21 @@ function TrustSection() {
   const dotInactive= slide.dark ? "bg-black/25" : "bg-white/35";
 
   useEffect(() => {
-    // Reset or ensure start is 0
-    setCurrent(0);
-  }, []);
+    // Reset to first slide whenever the section comes into view
+    if (isInView) {
+      setCurrent(0);
+    }
+  }, [isInView]);
 
   useEffect(() => {
+    if (!isInView) return;
     const id = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 10000);
     return () => clearInterval(id);
-  }, [current, slides.length]);
+  }, [isInView, current, slides.length]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative overflow-hidden border-b-2 border-black"
       style={{ backgroundColor: slide.bg, transition: "background-color 0.6s ease" }}
     >

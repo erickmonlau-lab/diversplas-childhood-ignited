@@ -26,7 +26,7 @@ const ACTIVITIES = [
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
   { name: "Baile",           color: "#35D0BA",                icon: "💃" },
   { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
-  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🇬🇧" },
+  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "TWEMOJI_GB" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
@@ -485,10 +485,12 @@ function ActivityCardsVisual() {
             style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
             className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
           >
-            {a.name === "Inglés" ? (
-              <span role="img" aria-label="UK flag" style={{ verticalAlign: 'middle', marginRight: '4px' }}>
-                {"\uD83C\uDDEC\uD83C\uDDE7"}
-              </span>
+            {a.icon === "TWEMOJI_GB" ? (
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                alt="🇬🇧"
+                style={{ width: '18px', height: '18px', objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}
+              />
             ) : (
               <span>{a.icon} </span>
             )}
@@ -1097,10 +1099,12 @@ function Activities() {
               </div>
 
               {/* Big icon — center */}
-              {a.name === "Inglés" ? (
-                <span role="img" aria-label="UK flag" style={{ fontSize: '64px', lineHeight: 1 }}>
-                  {"\uD83C\uDDEC\uD83C\uDDE7"}
-                </span>
+              {a.icon === "TWEMOJI_GB" ? (
+                <img
+                  src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                  alt="🇬🇧"
+                  style={{ width: '72px', height: '72px', objectFit: 'contain' }}
+                />
               ) : (
                 <span
                   className="text-5xl md:text-6xl text-center leading-none select-none"

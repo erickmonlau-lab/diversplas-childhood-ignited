@@ -484,7 +484,7 @@ function ActivityCardsVisual() {
   };
 
   return (
-    <div className="bg-white border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full relative min-h-[380px] md:min-h-[440px]">
+    <div className="bg-[#3055C7] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full relative min-h-[380px] md:min-h-[440px]">
       {/* bg glow */}
       <div
         className="absolute inset-0 opacity-20"
@@ -492,8 +492,8 @@ function ActivityCardsVisual() {
       />
       {/* Header */}
       <div className="relative mb-6">
-        <div className="text-black/50 text-xs font-bold uppercase tracking-widest mb-1">Actividades disponibles</div>
-        <div className="font-black text-5xl md:text-6xl text-[#1D2F8C] uppercase tracking-tighter mb-8">
+        <span className="font-bold text-lg uppercase text-black mb-1 block">Actividades disponibles</span>
+        <div className="font-black text-6xl text-white uppercase tracking-tighter mb-8">
           +20 experiencias
         </div>
       </div>

@@ -26,7 +26,7 @@ const ACTIVITIES = [
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
   { name: "Baile",           color: "#35D0BA",                icon: "💃" },
   { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
-  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🗣️" },
+  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🇬🇧" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
@@ -52,9 +52,9 @@ const TRUST_SLIDES = [
     description: "Colegios y AMPAs de Barcelona nos eligen curso tras curso. La mejor referencia son quienes ya confían en nosotros.",
     image: "/image_53e780.webp",
     icon: "🏆",
-    bg: "#D8E600",
-    blob: "#E8F520",
-    dark: true,
+    bg: "#1D2F8C",
+    blob: "#3055C7",
+    dark: false,
   },
   {
     headline: "RESULTADOS",
@@ -818,7 +818,7 @@ function TrustSection() {
           >
             {/* Left column */}
             <div className="flex flex-col justify-center items-center md:items-start gap-4 md:gap-6 flex-1 max-w-xl text-center md:text-left">
-              <span className={`inline-block px-3 py-1 rounded-full border-2 border-black ${slide.bg === '#D8E600' ? 'bg-white text-black' : 'bg-black text-white'} text-xs font-bold tracking-widest uppercase mb-2`} style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+              <span className="inline-block px-3 py-1 rounded-full border-2 border-black bg-white text-black text-xs font-bold tracking-widest uppercase mb-2" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
                 Nuestra historia
               </span>
               <h2

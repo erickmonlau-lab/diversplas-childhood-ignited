@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")(({
 
 const ACTIVITIES = [
   { name: "Fútbol",          color: "#FF7B72",                icon: "⚽" },
-  { name: "Básquet",         color: "#1D2F8C", light: true,  icon: "🏀" },
+  { name: "Básquet",         color: "#3055C7", light: true,  icon: "🏀" },
   { name: "Multideporte",    color: "#D8E600",                icon: "🏃" },
   { name: "Karate",          color: "#9C7BFF",                icon: "🥋" },
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
@@ -29,7 +29,7 @@ const ACTIVITIES = [
   { name: "Inglés",          color: "#3055C7", light: true,  icon: "TWEMOJI_GB" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
-  { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
+  { name: "Casales",         color: "#3055C7", light: true,  icon: "🏕️" },
   { name: "Refuerzo",        color: "#9C7BFF",                icon: "📚" },
 ];
 

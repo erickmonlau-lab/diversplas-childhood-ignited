@@ -1167,12 +1167,11 @@ function Activities() {
               </div>
 
               {/* Name at bottom */}
-              <span
-                className="font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-white text-xl leading-[0.88] pr-10"
-                style={{ WebkitTextStroke: '1.2px #0a0a0a' }}
-              >
-                {a.name}
-              </span>
+              <div className="pr-10">
+                <span className="inline-block bg-[#0a0a0a] text-white font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-sm px-2.5 py-1 rounded-md">
+                  {a.name}
+                </span>
+              </div>
 
               {/* Arrow */}
               <span className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">

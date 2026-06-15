@@ -25,11 +25,11 @@ const ACTIVITIES = [
   { name: "Karate",          color: "#9C7BFF",                icon: "🥋" },
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
   { name: "Baile",           color: "#35D0BA",                icon: "💃" },
-  { name: "Hip Hop",         color: "#1D2F8C",                icon: "🎤" },
+  { name: "Hip Hop",         color: "#F5A623",                icon: "🎤" },
   { name: "Inglés",          color: "#3055C7", light: true,  icon: "TWEMOJI_GB" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
-  { name: "Casales",         color: "#3055C7", light: true,  icon: "🏕️" },
+  { name: "Casales",         color: "#00C9A7", light: true,  icon: "🏕️" },
   { name: "Refuerzo",        color: "#9C7BFF",                icon: "📚" },
 ];
 
@@ -1115,8 +1115,8 @@ function Activities() {
 
               {/* Name at bottom */}
               <span
-                className={`uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight ${a.name === "Multideporte" || a.name === "Manualidades" ? 'text-black' : 'text-white'}`}
-                style={{ ...condensed, color: (a.name === "Multideporte" || a.name === "Manualidades") ? '#000000' : '#ffffff' }}
+                className={`uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight ${a.name === "Multideporte" || a.name === "Manualidades" || a.name === "Hip Hop" ? 'text-black' : 'text-white'}`}
+                style={{ ...condensed, color: (a.name === "Multideporte" || a.name === "Manualidades" || a.name === "Hip Hop") ? '#000000' : '#ffffff' }}
               >
                 {a.name}
               </span>

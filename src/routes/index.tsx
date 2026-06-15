@@ -463,8 +463,28 @@ function FeatureSection({
 /* ─── Visuals ───────────────────────────────────────────── */
 
 function ActivityCardsVisual() {
+  const getBrandStyles = (name: string) => {
+    switch (name) {
+      case "Fútbol":
+      case "Patinaje":
+      case "Zumba":
+      case "Hip Hop":
+        return "bg-[#FF7B72] text-black";
+      case "Básquet":
+      case "Inglés":
+      case "Casales":
+        return "bg-[#3055C7] text-white";
+      case "Multideporte":
+      case "Manualidades":
+      case "Baile":
+        return "bg-[#D8E600] text-black";
+      default:
+        return "bg-white text-black";
+    }
+  };
+
   return (
-    <div className="rounded-3xl bg-white border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]" style={{ border: '2px solid black', boxShadow: '6px 6px 0 0 #000' }}>
+    <div className="bg-white border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full relative min-h-[380px] md:min-h-[440px]">
       {/* bg glow */}
       <div
         className="absolute inset-0 opacity-20"
@@ -473,30 +493,32 @@ function ActivityCardsVisual() {
       {/* Header */}
       <div className="relative mb-6">
         <div className="text-black/50 text-xs font-bold uppercase tracking-widest mb-1">Actividades disponibles</div>
-        <div className="text-3xl md:text-4xl font-black" style={{ ...condensed, color: '#1D2F8C' }}>
+        <div className="font-black text-5xl md:text-6xl text-[#1D2F8C] uppercase tracking-tighter mb-8">
           +20 experiencias
         </div>
       </div>
       {/* Tags */}
       <div className="relative flex flex-wrap gap-2.5">
-        {ACTIVITIES.slice(0, 14).map((a) => (
-          <span
-            key={a.name}
-            style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-            className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
-          >
-            {a.icon === "TWEMOJI_GB" ? (
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
-                alt="🇬🇧"
-                style={{ width: '18px', height: '18px', objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}
-              />
-            ) : (
-              <span>{a.icon} </span>
-            )}
-            {a.name}
-          </span>
-        ))}
+        {ACTIVITIES.slice(0, 14).map((a) => {
+          const brandStyle = getBrandStyles(a.name);
+          return (
+            <span
+              key={a.name}
+              className={`inline-flex items-center gap-2 px-4 py-2 border-2 border-black rounded-full font-bold text-sm shadow-[2px_2px_0_0_#000] whitespace-nowrap ${brandStyle}`}
+            >
+              {a.icon === "TWEMOJI_GB" ? (
+                <img
+                  src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                  alt="🇬🇧"
+                  style={{ width: '18px', height: '18px', objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}
+                />
+              ) : (
+                <span>{a.icon} </span>
+              )}
+              {a.name}
+            </span>
+          );
+        })}
       </div>
     </div>
   );

@@ -666,7 +666,7 @@ function CtaMarquee() {
           fontWeight: 900,
           flexShrink: 0,
         }}
-        className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap"
+        className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap border-2 border-black shadow-[2px_2px_0_0_#000]"
       >
         {text}
       </span>

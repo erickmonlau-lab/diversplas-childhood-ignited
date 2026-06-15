@@ -602,13 +602,12 @@ function StatsVisual() {
 function ZonesCardsVisual() {
   const zones = [
     { city: "Santa Coloma", sub: "de Gramenet", color: "#3055C7" },
-    { city: "Badalona",     sub: "",             color: "#FF7B72" },
+    { city: "Badalona",     sub: "Barcelonès",   color: "#FF7B72" },
     { city: "Mollet",       sub: "del Vallès",   color: "#1D2F8C" },
-    { city: "Sant Fost",    sub: "de Campsentelles", color: "#D8E600" },
+    { city: "Sant Fost",    sub: "de Campsentelles", color: "#FF7B72" },
   ];
 
   const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => {
-    const isSantFost = z.city === "Sant Fost";
     return (
       <motion.div
         style={{
@@ -619,7 +618,7 @@ function ZonesCardsVisual() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          minHeight: '160px',
+          minHeight: '140px',
           boxShadow: '4px 4px 0 0 #000',
           ...style
         }}
@@ -627,22 +626,7 @@ function ZonesCardsVisual() {
         whileHover={{ y: -6 }}
         transition={{ type: "spring", stiffness: 320, damping: 22 }}
       >
-        <span
-          style={{
-            fontFamily: 'Barlow Condensed, sans-serif',
-            fontSize: '11px',
-            fontWeight: 700,
-            letterSpacing: '0.12em',
-            background: isSantFost ? 'rgba(0,0,0,0.15)' : 'rgba(0,0,0,0.2)',
-            color: isSantFost ? '#000' : '#fff',
-            padding: '4px 10px',
-            borderRadius: '999px',
-            display: 'inline-block',
-            width: 'fit-content'
-          }}
-        >
-          ZONA ACTIVA
-        </span>
+        <div />
 
         <div>
           <div
@@ -651,8 +635,8 @@ function ZonesCardsVisual() {
               fontSize: '30px',
               fontWeight: 900,
               lineHeight: 1,
-              color: isSantFost ? '#000' : '#fff',
-              textShadow: isSantFost ? 'none' : '2px 2px 0 #000',
+              color: '#fff',
+              textShadow: '2px 2px 0 #000',
               letterSpacing: '0.04em'
             }}
             className="uppercase break-words"
@@ -666,8 +650,8 @@ function ZonesCardsVisual() {
                 fontSize: '14px',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
-                color: isSantFost ? '#000' : '#fff',
-                textShadow: isSantFost ? 'none' : '1px 1px 0 #000',
+                color: '#fff',
+                textShadow: '1px 1px 0 #000',
                 opacity: 0.9
               }}
               className="uppercase mt-0.5"
@@ -689,13 +673,13 @@ function ZonesCardsVisual() {
       </div>
       <div className="flex md:hidden gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px", boxSizing: "border-box", scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
         {zones.map((z) => (
-          <Card key={z.city} z={z} className="flex-shrink-0 snap-start min-h-[160px]" style={{ minWidth: "220px", maxWidth: "240px" }} />
+          <Card key={z.city} z={z} className="flex-shrink-0 snap-start" style={{ minWidth: "220px", maxWidth: "240px" }} />
         ))}
       </div>
       {/* Desktop: 2×2 grid */}
       <div className="hidden md:grid grid-cols-2 gap-4">
         {zones.map((z) => (
-          <Card key={z.city} z={z} className="min-h-[190px]" />
+          <Card key={z.city} z={z} />
         ))}
       </div>
     </>

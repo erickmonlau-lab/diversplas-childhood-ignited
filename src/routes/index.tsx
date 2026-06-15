@@ -471,7 +471,8 @@ function ActivityCardsVisual() {
         <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed relative"
             style={{
               ...condensed,
-              textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 3px 0 0 #000, -3px 0 0 #000'
+              textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 3px 0 0 #000, -3px 0 0 #000',
+              letterSpacing: '0.04em'
             }}>
           +20 <span style={{
             color: '#D8E600',
@@ -479,7 +480,7 @@ function ActivityCardsVisual() {
             textShadow: '5px 5px 0 #0a0a0a',
             fontFamily: "'Barlow Condensed', sans-serif",
             fontWeight: 800,
-            letterSpacing: '-0.02em'
+            letterSpacing: '0.04em'
           }}>EXPERIENCIAS</span>
         </h2>
       </div>

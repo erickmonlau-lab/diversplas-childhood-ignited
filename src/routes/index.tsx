@@ -976,12 +976,12 @@ function PartnersSection() {
           </p>
         </div>
 
-        {/* Right — faded pill list */}
         <div
-          className="relative"
+          className="relative px-2 pr-6 max-h-[380px] md:max-h-[500px] overflow-y-auto scrollbar-thin"
           style={{
             maskImage: "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+            WebkitOverflowScrolling: 'touch'
           }}
         >
           <motion.div

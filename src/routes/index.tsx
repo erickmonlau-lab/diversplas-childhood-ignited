@@ -518,9 +518,8 @@ function ActivityCardsVisual() {
             </span>
           </div>
         ))}
-        <div className="col-span-1 md:col-span-3 flex items-center justify-center gap-2 sm:gap-3 bg-[#D8E600] border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]">
-          <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-lg sm:text-xl shrink-0">➕</span>
-          <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0 uppercase">Y más actividades</span>
+        <div className="col-span-1 md:col-span-3 flex items-center justify-center bg-[#D8E600] border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]">
+          <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0 uppercase">Y más...</span>
         </div>
       </div>
     </div>
@@ -1599,9 +1598,13 @@ function Index() {
         headlineItalic={
           <>
             ACTIVIDADES
-            <span className="block text-[#0a0a0a] text-xl md:text-2xl font-bold uppercase mt-2 md:mt-3" style={{ ...condensedItalic, fontWeight: 700, color: '#0a0a0a' }}>
-              → NOS ADAPTAMOS A{" "}
-              <span className="bg-[#D8E600] border-2 border-black px-1 inline-block" style={{ backgroundColor: '#D8E600', fontStyle: 'italic' }}>
+            <span className="block text-[#0a0a0a] text-xl md:text-2xl font-bold uppercase tracking-wider mt-2 md:mt-3" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, color: '#0a0a0a', fontStyle: 'normal', letterSpacing: '0.05em' }}>
+              <svg className="w-5 h-5 inline-block mr-2 text-black align-middle" viewBox="0 0 20 20" fill="none" style={{ verticalAlign: 'middle', marginTop: '-4px' }}>
+                <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              NOS ADAPTAMOS A{" "}
+              <span className="bg-[#D8E600] border-2 border-black px-2 py-0.5 inline-block" style={{ backgroundColor: '#D8E600', fontStyle: 'normal' }}>
                 CUALQUIER ACTIVIDAD
               </span>
             </span>

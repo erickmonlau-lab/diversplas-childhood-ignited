@@ -1327,14 +1327,12 @@ function CTA() {
           transition={{ duration: 0.8 }}
           className="mb-10"
         >
-          <h2
-            className="uppercase leading-[0.82] tracking-tight text-[16vw] md:text-[12vw] lg:text-[140px]"
-            style={condensed}
-          >
-            <span style={{ borderBottom: '8px solid #D8E600', paddingBottom: '24px', display: 'inline-block' }}>
-              ¿Hablamos<span className="text-[#D8E600]">?</span>
-            </span>
-          </h2>
+          <div className="relative inline-block pb-6">
+            <h2 className="text-white font-black text-6xl uppercase tracking-tighter BarlowCondensedItalic" style={condensedItalic}>
+              ¿<span className="text-[#D8E600]">HABLAMOS</span>?
+            </h2>
+            <div className="absolute left-0 right-0 h-1 bg-[#D8E600] bottom-0"></div>
+          </div>
         </motion.div>
 
         {/* Description + Form — separate row */}

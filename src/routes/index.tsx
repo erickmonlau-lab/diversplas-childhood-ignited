@@ -1594,10 +1594,19 @@ function Index() {
       <Nav />
       <Hero />
 
-      {/* Feature: Activities */}
       <FeatureSection
         headline="EMPIEZA AQUÍ:"
-        headlineItalic="ACTIVIDADES"
+        headlineItalic={
+          <>
+            ACTIVIDADES
+            <span className="block text-[#0a0a0a] text-xl md:text-2xl font-bold uppercase mt-2 md:mt-3" style={{ ...condensedItalic, fontWeight: 700, color: '#0a0a0a' }}>
+              → NOS ADAPTAMOS A{" "}
+              <span className="bg-[#D8E600] border-2 border-black px-1 inline-block" style={{ backgroundColor: '#D8E600', fontStyle: 'italic' }}>
+                CUALQUIER ACTIVIDAD
+              </span>
+            </span>
+          </>
+        }
         description={<span>Más de 20 experiencias diseñadas para que cada niño encuentre <span className="bg-[#D8E600] text-black font-black px-2.5 py-0.5 rounded whitespace-nowrap inline">su pasión</span>. Nos adaptamos a cualquier tipo de actividad.</span>}
         links={[{ label: "VER TODO", href: "#activities" }, { label: "PREGUNTAS", href: "#contact" }]}
         visual={<ActivityCardsVisual />}

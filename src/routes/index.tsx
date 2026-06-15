@@ -30,7 +30,10 @@ export const Route = createFileRoute("/")(({
           "areaServed": [
             "Santa Coloma de Gramenet",
             "El Fondo",
-            "Barcelona"
+            "Barcelona",
+            "Sant Fost de Campsentelles",
+            "Martorelles",
+            "Mollet del Vallès"
           ],
           "address": {
             "@type": "PostalAddress",

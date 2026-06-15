@@ -49,9 +49,9 @@ const TRUST_SLIDES = [
   {
     headline: "CONFIADOS",
     sub: "& RECOMENDADOS",
-    description: "Más de 40 colegios y AMPAs nos eligen cada curso. La mejor referencia son quienes ya trabajan con nosotros.",
+    description: "Colegios y AMPAs de Barcelona nos eligen curso tras curso. La mejor referencia son quienes ya confían en nosotros.",
     image: "/image_53e780.webp",
-    icon: "✓",
+    icon: "🏆",
     bg: "#D8E600",
     blob: "#E8F520",
     dark: true,
@@ -818,7 +818,7 @@ function TrustSection() {
           >
             {/* Left column */}
             <div className="flex flex-col justify-center items-center md:items-start gap-4 md:gap-6 flex-1 max-w-xl text-center md:text-left">
-              <span className="inline-block px-3 py-1 rounded-full border-2 border-black bg-black text-white text-xs font-bold tracking-widest uppercase mb-2" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+              <span className={`inline-block px-3 py-1 rounded-full border-2 border-black ${slide.bg === '#D8E600' ? 'bg-white text-black' : 'bg-black text-white'} text-xs font-bold tracking-widest uppercase mb-2`} style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
                 Nuestra historia
               </span>
               <h2

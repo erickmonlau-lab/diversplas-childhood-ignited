@@ -1115,8 +1115,8 @@ function Activities() {
 
               {/* Name at bottom */}
               <span
-                className="uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight"
-                style={condensed}
+                className="uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight text-white"
+                style={{ ...condensed, color: '#ffffff' }}
               >
                 {a.name}
               </span>

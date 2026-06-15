@@ -26,7 +26,7 @@ const ACTIVITIES = [
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
   { name: "Baile",           color: "#35D0BA",                icon: "💃" },
   { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
-  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "TWEMOJI_GB" },
+  { name: "Inglés",          color: "#3055C7", light: true,  icon: "TWEMOJI_GB" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
@@ -1099,20 +1099,22 @@ function Activities() {
               </div>
 
               {/* Big icon — center */}
-              {a.icon === "TWEMOJI_GB" ? (
-                <img
-                  src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
-                  alt="🇬🇧"
-                  style={{ width: '72px', height: '72px', objectFit: 'contain' }}
-                />
-              ) : (
-                <span
-                  className="text-5xl md:text-6xl text-center leading-none select-none"
-                  style={{ filter: "drop-shadow(2px 3px 0px rgba(0,0,0,0.18))" }}
-                >
-                  {a.icon}
-                </span>
-              )}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', flex: 1 }}>
+                {a.icon === "TWEMOJI_GB" ? (
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                    alt="🇬🇧"
+                    style={{ width: '72px', height: '72px', objectFit: 'contain' }}
+                  />
+                ) : (
+                  <span
+                    className="text-5xl md:text-6xl text-center leading-none select-none"
+                    style={{ filter: "drop-shadow(2px 3px 0px rgba(0,0,0,0.18))" }}
+                  >
+                    {a.icon}
+                  </span>
+                )}
+              </div>
 
               {/* Name at bottom */}
               <span

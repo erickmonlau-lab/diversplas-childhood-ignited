@@ -1083,11 +1083,8 @@ function Activities() {
             <motion.a
               key={a.name}
               href="#contact"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (i % 10) * 0.04 }}
               whileHover={{ y: -8, rotate: -1.5, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
               style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
               className="group relative aspect-square rounded-xl border-2 border-black p-4 flex flex-col justify-between overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow"
             >

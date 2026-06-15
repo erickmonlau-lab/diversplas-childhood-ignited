@@ -18,21 +18,29 @@ export const Route = createFileRoute("/")(({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Diversplas",
-          "description": "Empresa de actividades extraescolares en Barcelona con más de 20 años de experiencia. Trabajamos con colegios, AFAs y centros educativos.",
+          "name": "Diversplas Extraescolares",
+          "description": "Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona. Más de 20 años de experiencia en fútbol, karate, baile, inglés y mucho más.",
           "url": "https://diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplasextraescolares@gmail.com",
-          "image": "https://diversplas.es/diversplas-logo.webp",
-          "logo": "https://diversplas.es/logo-badge.webp",
+          "image": "https://diversplas.es/image_53e780.webp",
+          "logo": "https://diversplas.es/diversplas-logo.jpeg",
+          "priceRange": "€€",
+          "openingHours": ["Mo-Fr 16:30-20:00"],
+          "areaServed": [
+            "Santa Coloma de Gramenet",
+            "El Fondo",
+            "Barcelona"
+          ],
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Barcelona",
+            "addressLocality": "Santa Coloma de Gramenet",
             "addressRegion": "Barcelona",
             "addressCountry": "ES"
           },
-          "areaServed": { "@type": "City", "name": "Barcelona" },
-          "sameAs": [ "https://www.instagram.com/diversplas_extraescolares" ]
+          "sameAs": [
+            "https://www.instagram.com/diversplas_extraescolares"
+          ]
         })
       }
     ]

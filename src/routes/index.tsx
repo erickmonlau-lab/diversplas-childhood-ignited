@@ -26,7 +26,7 @@ const ACTIVITIES = [
   { name: "Zumba",           color: "#FF9D42",                icon: "🕺" },
   { name: "Baile",           color: "#35D0BA",                icon: "💃" },
   { name: "Hip Hop",         color: "#FF7B72",                icon: "🎤" },
-  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🇬🇧" },
+  { name: "Inglés",          color: "#1D2F8C", light: true,  icon: "🗣️" },
   { name: "Manualidades",    color: "#D8E600",                icon: "✂️" },
   { name: "Patinaje",        color: "#FF7B72",                icon: "⛸️" },
   { name: "Casales",         color: "#1D2F8C", light: true,  icon: "🏕️" },
@@ -1080,10 +1080,14 @@ function Activities() {
               transition={{ duration: 0.5, delay: (i % 10) * 0.04 }}
               whileHover={{ y: -8, rotate: -1.5, scale: 1.03 }}
               style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
-              className="group relative aspect-square rounded-2xl border-2 border-black p-4 flex flex-col justify-between overflow-hidden shadow-[6px_6px_0_0_#000] hover:shadow-[12px_12px_0_0_#000] transition-shadow"
+              className="group relative aspect-square rounded-xl border-2 border-black p-4 flex flex-col justify-between overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow"
             >
               {/* Number */}
-              <span className="text-xs font-bold opacity-50">{String(i + 1).padStart(2, "0")}</span>
+              <div className="w-full">
+                <span className="inline-block px-2 py-0.5 bg-black text-white text-xs font-bold rounded-md">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
 
               {/* Big icon — center */}
               <span
@@ -1095,21 +1099,17 @@ function Activities() {
 
               {/* Name at bottom */}
               <span
-                className={`uppercase leading-[0.88] pr-10 ${
-                  a.name.length > 10
-                    ? "text-base md:text-lg"
-                    : "text-xl md:text-2xl"
-                }`}
+                className="uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight"
                 style={condensed}
               >
                 {a.name}
               </span>
 
               {/* Arrow */}
-              <span className="absolute bottom-3 right-3">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <circle cx="11" cy="11" r="10" fill="white" stroke="black" strokeWidth="2"/>
-                  <path d="M8 11h6M12 8l3 3-3 3" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <span className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
             </motion.a>

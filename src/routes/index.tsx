@@ -175,7 +175,7 @@ function Nav() {
         <div className="flex items-center" style={{ gap: "10px" }}>
           <a
             href="#contact"
-            className="flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
+            className="flex items-center whitespace-nowrap gap-2 rounded-full border-2 border-black bg-[#D8E600] text-black font-bold hover:bg-[#c8d500] transition-colors shadow-[3px_3px_0_0_#000]"
             style={{ ...btnStyle, padding: "8px 14px", fontSize: "0.85rem" }}
             onClick={() => setOpen(false)}
           >
@@ -1504,10 +1504,10 @@ function Footer() {
           bg="#D8E600"
           blob="#E8F520"
           headline={
-            <span className="whitespace-nowrap">
-              <span className="text-[#1D2F8C]" style={{ marginRight: '4px' }}>¿</span>
+            <span className="flex items-center flex-nowrap w-full" style={{ fontSize: "clamp(2rem, 11vw, 6vw)" }}>
+              <span className="text-[#1D2F8C]" style={{ marginRight: '4px', transform: 'translateY(-5%)' }}>¿</span>
               <span className="tracking-wider" style={{ letterSpacing: '0.05em' }}>EMPEZAMOS</span>
-              <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000' }}>?</span>
+              <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000', transform: 'translateY(-5%)' }}>?</span>
             </span>
           }
           dark

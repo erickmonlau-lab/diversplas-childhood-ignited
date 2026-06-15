@@ -601,40 +601,84 @@ function StatsVisual() {
 
 function ZonesCardsVisual() {
   const zones = [
-    { city: "Santa Coloma", sub: "de Gramenet", color: "#FF7B72", light: false },
-    { city: "Badalona",     sub: "",             color: "#1D2F8C", light: true  },
-    { city: "Mollet",       sub: "del Vallès",   color: "#D8E600", light: false },
-    { city: "Sant Fost",    sub: "de Campsentelles", color: "#35D0BA", light: false },
+    { city: "Santa Coloma", sub: "de Gramenet", color: "#3055C7" },
+    { city: "Badalona",     sub: "",             color: "#FF7B72" },
+    { city: "Mollet",       sub: "del Vallès",   color: "#1D2F8C" },
+    { city: "Sant Fost",    sub: "de Campsentelles", color: "#D8E600" },
   ];
 
-  const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => (
-    <motion.div
-      style={{ backgroundColor: z.color, ...style }}
-      className={`rounded-2xl border-2 border-black p-6 flex flex-col justify-between shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default flex-shrink-0 scroll-snap-align-start ${className}`}
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 320, damping: 22 }}
-    >
-      <div
-        className="uppercase leading-[0.88] text-3xl md:text-4xl break-words"
+  const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => {
+    const isSantFost = z.city === "Sant Fost";
+    return (
+      <motion.div
         style={{
-          fontFamily: "'Barlow Condensed', sans-serif",
-          fontWeight: 900,
-          color: z.light ? "#fff" : "#000",
+          backgroundColor: z.color,
+          border: '2px solid black',
+          borderRadius: '16px',
+          padding: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          minHeight: '160px',
+          boxShadow: '4px 4px 0 0 #000',
+          ...style
         }}
+        className={`hover:shadow-[8px_8px_0_0_#000] transition-shadow duration-200 cursor-default flex-shrink-0 scroll-snap-align-start ${className}`}
+        whileHover={{ y: -6 }}
+        transition={{ type: "spring", stiffness: 320, damping: 22 }}
       >
-        {z.city}
-        {z.sub && (
-          <span className="block text-xl md:text-2xl mt-0.5">{z.sub}</span>
-        )}
-      </div>
-      <div
-        className="text-xs font-bold mt-5 uppercase tracking-wider"
-        style={{ color: z.light ? "#ffffff" : "#000000" }}
-      >
-        Zona activa
-      </div>
-    </motion.div>
-  );
+        <span
+          style={{
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            background: isSantFost ? 'rgba(0,0,0,0.15)' : 'rgba(0,0,0,0.2)',
+            color: isSantFost ? '#000' : '#fff',
+            padding: '4px 10px',
+            borderRadius: '999px',
+            display: 'inline-block',
+            width: 'fit-content'
+          }}
+        >
+          ZONA ACTIVA
+        </span>
+
+        <div>
+          <div
+            style={{
+              fontFamily: 'Barlow Condensed, sans-serif',
+              fontSize: '30px',
+              fontWeight: 900,
+              lineHeight: 1,
+              color: isSantFost ? '#000' : '#fff',
+              textShadow: isSantFost ? 'none' : '2px 2px 0 #000',
+              letterSpacing: '0.04em'
+            }}
+            className="uppercase break-words"
+          >
+            {z.city}
+          </div>
+          {z.sub && (
+            <div
+              style={{
+                fontFamily: 'Barlow Condensed, sans-serif',
+                fontSize: '14px',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                color: isSantFost ? '#000' : '#fff',
+                textShadow: isSantFost ? 'none' : '1px 1px 0 #000',
+                opacity: 0.9
+              }}
+              className="uppercase mt-0.5"
+            >
+              {z.sub}
+            </div>
+          )}
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <>

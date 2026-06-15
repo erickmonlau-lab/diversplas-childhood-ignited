@@ -1168,7 +1168,7 @@ function Activities() {
 
               {/* Name at bottom */}
               <div className="pr-10">
-                <span className="inline-block bg-[#0a0a0a] text-white font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-sm px-2.5 py-1 rounded-md">
+                <span className="inline-block bg-[#0a0a0a] text-white font-['Barlow_Condensed'] font-bold uppercase tracking-[0.1em] text-sm sm:text-base px-2.5 py-1 rounded-md">
                   {a.name}
                 </span>
               </div>

@@ -1504,7 +1504,7 @@ function Footer() {
           bg="#D8E600"
           blob="#E8F520"
           headline={
-            <span className="flex items-center flex-nowrap w-full" style={{ fontSize: "clamp(2rem, 11vw, 6vw)" }}>
+            <span className="flex items-center flex-nowrap w-full whitespace-nowrap" style={{ fontSize: "clamp(2.5rem, 12vw, 72px)" }}>
               <span className="text-[#1D2F8C]" style={{ marginRight: '4px', transform: 'translateY(-5%)' }}>¿</span>
               <span className="tracking-wider" style={{ letterSpacing: '0.05em' }}>EMPEZAMOS</span>
               <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000', transform: 'translateY(-5%)' }}>?</span>

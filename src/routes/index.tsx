@@ -566,7 +566,7 @@ function StatsVisual() {
     <div className="rounded-3xl bg-[#35D0BA] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
-        <div className="text-black text-xs font-black uppercase tracking-widest mb-1">Nuestro impacto</div>
+        <div className="text-black text-sm md:text-base font-['Barlow_Condensed'] font-black uppercase tracking-[0.12em] mb-3 leading-none">Nuestro impacto</div>
         <div className="text-black font-black text-3xl md:text-4xl" style={condensed}>
           <span style={{
             backgroundColor: '#ffffff',
@@ -615,7 +615,7 @@ function StatsVisual() {
           </motion.div>
         ))}
       </div>
-      <p className="relative mt-4 text-black/70 text-xs font-medium">Resultados avalados y datos reales desde 2005.</p>
+      <p className="relative mt-6 md:mt-8 text-black/85 text-sm font-bold">Resultados avalados y datos reales desde 2005.</p>
     </div>
   );
 }

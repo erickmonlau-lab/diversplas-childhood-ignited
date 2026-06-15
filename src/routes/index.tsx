@@ -8,9 +8,9 @@ export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
       { title: "Diversplas - Actividades extraescolares en Barcelona" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Tranquilidad y confianza a las familias. Colegios, AMPAs y centros educativos." },
+      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Tranquilidad y confianza a las familias. Colegios, A.F.As y centros educativos." },
       { property: "og:title", content: "Diversplas - Actividades extraescolares en Barcelona" },
-      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AMPAs de Barcelona." },
+      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y A.F.As de Barcelona." },
     ],
     scripts: [
       {
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")(({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Diversplas",
-          "description": "Empresa de actividades extraescolares en Barcelona con más de 20 años de experiencia. Trabajamos con colegios, AMPAs y centros educativos.",
+          "description": "Empresa de actividades extraescolares en Barcelona con más de 20 años de experiencia. Trabajamos con colegios, A.F.As y centros educativos.",
           "url": "https://diversplas.es",
           "telephone": "+34657117426",
           "email": "rakelulu@outlook.es",
@@ -73,7 +73,7 @@ const TRUST_SLIDES = [
   {
     headline: "CONFIADOS",
     sub: "& RECOMENDADOS",
-    description: "Colegios y AMPAs de Barcelona nos eligen curso tras curso. La mejor referencia son quienes ya confían en nosotros.",
+    description: "Colegios y A.F.As de Barcelona nos eligen curso tras curso. La mejor referencia son quienes ya confían en nosotros.",
     image: "/image_53e780.webp",
     icon: "🏆",
     bg: "#1D2F8C",
@@ -320,7 +320,7 @@ function Hero() {
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
           <span className="font-bold text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-            +20 años · Barcelona · AMPAs
+            +20 años · Barcelona · A.F.As
           </span>
         </motion.div>
 
@@ -347,7 +347,7 @@ function Hero() {
           className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
           <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
-          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AMPAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
+          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y A.F.As de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
         </motion.p>
 
         {/* CTAs */}
@@ -983,7 +983,7 @@ function TrustSection() {
 const PARTNER_TYPES = [
   { name: "Colegios Públicos",             color: "#FF7B72" },
   { name: "Colegios Concertados",          color: "#FF9D42" },
-  { name: "AMPAs",                         color: "#D8E600", dark: true },
+  { name: "A.F.As",                         color: "#D8E600", dark: true },
   { name: "Centros Cívicos",              color: "#35D0BA" },
   { name: "Ludotecas",                    color: "#9C7BFF" },
   { name: "Escuelas Educación Infantil",  color: "#3055C7", light: true },
@@ -1239,7 +1239,7 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
   const camposCentro = [
     ["Nombre", "text", "nombre", "Tu nombre"],
     ["Centro educativo", "text", "centro", "Nombre del colegio"],
-    ["Cargo", "text", "cargo", "Director, AMPA..."],
+    ["Cargo", "text", "cargo", "Director, A.F.A..."],
     ["Teléfono", "tel", "telefono", "657 117 426"],
     ["Email", "email", "email", "tu@email.com"],
   ];
@@ -1296,7 +1296,7 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
         <label className="block">
           <span className="text-base font-black uppercase tracking-widest text-black mb-3 block">Soy...</span>
           <div className="grid grid-cols-2 gap-3">
-            {[['centro', '🏫', 'Centro / AMPA'], ['familia', '👨👩👧', 'Una familia']].map(([val, emoji, label]) => (
+            {[['centro', '🏫', 'Centro / A.F.A'], ['familia', '👨👩👧', 'Una familia']].map(([val, emoji, label]) => (
               <button key={val} type="button"
                 onClick={() => setPerfil(val)}
                 className={`rounded-2xl border-2 border-black py-4 px-3 text-sm font-bold uppercase transition-all flex flex-col items-center gap-2 ${perfil === val ? 'bg-[#D8E600] text-black shadow-[3px_3px_0_0_#000]' : 'bg-white/20 text-white hover:bg-white/30'}`}

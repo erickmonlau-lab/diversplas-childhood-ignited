@@ -753,12 +753,9 @@ function CtaMarquee() {
           backgroundColor: c,
           flexShrink: 0,
         }}
-        className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap border-2 border-black shadow-[2px_2px_0_0_#000]"
+        className="inline-flex items-center px-10 py-5 text-xl md:text-2xl whitespace-nowrap rounded-2xl border-2 border-black shadow-[4px_4px_0_0_#000] font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-white"
       >
-        <span
-          className="font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-white"
-          style={{ WebkitTextStroke: '1.2px #0a0a0a' }}
-        >
+        <span style={{ WebkitTextStroke: '1.2px #0a0a0a' }}>
           {text}
         </span>
       </span>

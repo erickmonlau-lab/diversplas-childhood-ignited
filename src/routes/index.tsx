@@ -496,24 +496,24 @@ function ActivityCardsVisual() {
           { name: "Casales", icon: "🏠" },
           { name: "Patinaje", icon: "⛸️" },
           { name: "Hip Hop", icon: "🎧" },
-          { name: "Ingles", icon: "🇬🇧" },
+          { name: "Inglés", icon: "🇬🇧" },
         ].map((activity) => (
           <div 
             key={activity.name}
-            className="flex items-center gap-3 bg-white border-2 border-black rounded-xl px-3 py-3 shadow-[4px_4px_0_0_#000]"
+            className="flex items-center gap-2 sm:gap-3 bg-white border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]"
           >
-            <span className="flex items-center justify-center w-8 h-8 text-xl shrink-0">
-              {activity.name === "Ingles" ? (
+            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-lg sm:text-xl shrink-0">
+              {activity.name === "Inglés" ? (
                 <img
                   src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
                   alt="🇬🇧"
-                  style={{ width: '24px', height: '24px', objectFit: 'contain' }}
+                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                 />
               ) : (
                 activity.icon
               )}
             </span>
-            <span className="font-['Barlow_Condensed'] font-bold text-base sm:text-lg text-[#0a0a0a] leading-none min-w-0">
+            <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0">
               {activity.name}
             </span>
           </div>

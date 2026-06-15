@@ -85,6 +85,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Diversplas" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#1D2F8C" },
+      { property: "og:locale", content: "es_ES" },
+      { property: "og:site_name", content: "Diversplas" },
+      { property: "og:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
+      { property: "og:description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Para colegios, AMPAs y familias." },
+      { property: "og:url", content: "https://diversplas.es" },
+      { property: "og:image", content: "https://diversplas.es/image_53e780.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
+      { name: "twitter:description", content: "Más de 20 años creando experiencias extraescolares en Barcelona." },
+      { name: "twitter:image", content: "https://diversplas.es/image_53e780.webp" },
     ],
     links: [
       {
@@ -95,6 +107,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600&display=swap" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&display=swap" },
+      { rel: "canonical", href: "https://diversplas.es" },
+      { rel: "icon", type: "image/webp", href: "/logo-badge.webp" },
+      { rel: "apple-touch-icon", href: "/logo-badge.webp" },
     ],
   }),
   shellComponent: RootShell,
@@ -105,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>

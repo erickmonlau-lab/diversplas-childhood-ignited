@@ -12,6 +12,30 @@ export const Route = createFileRoute("/")(({
       { property: "og:title", content: "Diversplas - Actividades extraescolares en Barcelona" },
       { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AMPAs de Barcelona." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Diversplas",
+          "description": "Empresa de actividades extraescolares en Barcelona con más de 20 años de experiencia. Trabajamos con colegios, AMPAs y centros educativos.",
+          "url": "https://diversplas.es",
+          "telephone": "+34657117426",
+          "email": "rakelulu@outlook.es",
+          "image": "https://diversplas.es/diversplas-logo.webp",
+          "logo": "https://diversplas.es/logo-badge.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Barcelona",
+            "addressRegion": "Barcelona",
+            "addressCountry": "ES"
+          },
+          "areaServed": { "@type": "City", "name": "Barcelona" },
+          "sameAs": [ "https://www.instagram.com/diversplas_extraescolares" ]
+        })
+      }
+    ]
   }),
   component: Index,
 }) as any);
@@ -137,7 +161,7 @@ function Nav() {
           className="flex items-center overflow-hidden rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-shadow bg-white"
           style={{ padding: "2px 8px" }}
         >
-          <img src="/diversplas-logo.webp" alt="DIVERSPLAS" className="h-12 w-auto block" />
+          <img src="/diversplas-logo.webp" alt="DIVERSPLAS" className="h-12 w-auto block" loading="eager" width={61} height={48} />
         </a>
 
         {/* Desktop links pill */}
@@ -158,7 +182,7 @@ function Nav() {
             SOLICITAR CITA
           </a>
           <button
-            aria-label={open ? "Cerrar menu" : "Abrir menu"}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
             className="md:hidden flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000]"
@@ -193,9 +217,9 @@ function Nav() {
                   style={condensed}
                 >
                   <span>{label}</span>
-                  <span className="text-[#1D2F8C] inline-flex items-center">
+                  <span className="text-[#0a0a0a] inline-flex items-center">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="10" cy="10" r="9" fill="white" stroke="currentColor" strokeWidth="2"/>
                       <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </span>
@@ -234,7 +258,7 @@ function Hero() {
         animate={{ y: [0, -14, 0], rotate: [-6, 6, -6] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       >
-        <img src="/sticker-trophy.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+        <img src="/sticker-trophy.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} loading="lazy" width={96} height={96} />
       </motion.div>
 
       {/* 5. Karate — LEFT CENTER */}
@@ -243,44 +267,44 @@ function Hero() {
         animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
       >
-        <img src="/sticker-karate.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} />
+        <img src="/sticker-karate.webp" alt="" className="w-full h-full" style={{ mixBlendMode: "multiply" }} loading="lazy" width={72} height={72} />
       </motion.div>
 
       {/* Floating Polaroids (outside central text wrapper for correct relative absolute positioning) */}
       {/* Foto 1 - Top Left */}
       <div style={{ '--rot': '-6deg', transform: 'rotate(var(--rot))', top: '18%', left: '80px', animation: 'float 4s ease-in-out infinite', animationDelay: '0s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53ee82.webp" alt="Acción" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53ee82.webp" alt="Niños jugando en una actividad extraescolar de Diversplas en Barcelona" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Foto 2 - Mid Left */}
       <div style={{ '--rot': '-3deg', transform: 'rotate(var(--rot))', top: '42%', left: '80px', animation: 'float 4.5s ease-in-out infinite', animationDelay: '1.6s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_482fc6.webp" alt="Cara Pintada" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_482fc6.webp" alt="Niña con la cara pintada en un taller de Diversplas" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Foto 3 - Bottom Left */}
       <div style={{ '--rot': '-5deg', transform: 'rotate(var(--rot))', top: '70%', left: '80px', animation: 'float 5s ease-in-out infinite', animationDelay: '3.2s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53c921.webp" alt="Clase" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53c921.webp" alt="Grupo de alumnos en clase de una actividad extraescolar" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Foto 4 - Top Right */}
       <div style={{ '--rot': '5deg', transform: 'rotate(var(--rot))', top: '18%', right: '80px', animation: 'float 4s ease-in-out infinite', animationDelay: '0.8s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53d820.webp" alt="Monitores" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53d820.webp" alt="Monitores de Diversplas con un grupo de niños" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Foto 5 - Mid Right */}
       <div style={{ '--rot': '7deg', transform: 'rotate(var(--rot))', top: '42%', right: '80px', animation: 'float 4.5s ease-in-out infinite', animationDelay: '2.4s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_53e780.webp" alt="Zumba" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_53e780.webp" alt="Clase de zumba para niños de Diversplas" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Foto 6 - Bottom Right */}
       <div style={{ '--rot': '4deg', transform: 'rotate(var(--rot))', top: '70%', right: '80px', animation: 'float 5s ease-in-out infinite', animationDelay: '1.2s', position: 'absolute' } as any}
         className="w-52 p-3 pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden md:block z-10">
-        <img src="/image_48117c.webp" alt="Proyectos Clase" className="w-full h-32 object-cover border border-black/5" />
+        <img src="/image_48117c.webp" alt="Proyecto de manualidades en una actividad extraescolar" className="w-full h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       {/* Content */}
@@ -358,18 +382,18 @@ function Hero() {
         {/* Mobile Gallery (max-width: 768px) */}
         <div className="mt-12 grid grid-cols-2 gap-4 w-full max-w-md md:hidden px-2">
           {[
-            { src: "/image_53ee82.webp", alt: "Acción" },
-            { src: "/image_53d820.webp", alt: "Monitores" },
-            { src: "/image_53e780.webp", alt: "Zumba" },
-            { src: "/image_482fc6.webp", alt: "Cara pintada" },
-            { src: "/image_53c921.webp", alt: "Clase" },
-            { src: "/image_48117c.webp", alt: "Proyectos Clase" }
+            { src: "/image_53ee82.webp", alt: "Niños jugando en una actividad extraescolar de Diversplas en Barcelona" },
+            { src: "/image_53d820.webp", alt: "Monitores de Diversplas con un grupo de niños" },
+            { src: "/image_53e780.webp", alt: "Clase de zumba para niños de Diversplas" },
+            { src: "/image_482fc6.webp", alt: "Niña con la cara pintada en un taller de Diversplas" },
+            { src: "/image_53c921.webp", alt: "Grupo de alumnos en clase de una actividad extraescolar" },
+            { src: "/image_48117c.webp", alt: "Proyecto de manualidades en una actividad extraescolar" }
           ].map((img, i) => (
             <div
               key={i}
               className="bg-white p-2 pb-6 border border-black/10 shadow-[4px_4px_0_0_rgba(0,0,0,0.15)] rounded-sm"
             >
-              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading="lazy" decoding="async" />
+              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading="lazy" decoding="async" width={224} height={224} />
             </div>
           ))}
         </div>
@@ -508,6 +532,9 @@ function ActivityCardsVisual() {
                   src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
                   alt="🇬🇧"
                   className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                  loading="lazy"
+                  width={24}
+                  height={24}
                 />
               ) : (
                 activity.icon
@@ -715,7 +742,7 @@ function ZonesCardsVisual() {
 
 /* ─── CTA Marquee (Slush-style black section) ───────────── */
 function CtaMarquee() {
-  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","BÀSQUET","MULTIDEPORTE"];
+  const ROW1 = ["FÚTBOL","BAILE","INGLÉS","KARATE","HIP HOP","ZUMBA","PATINAJE","BÁSQUET","MULTIDEPORTE"];
   const ROW2 = ["MANUALIDADES","REFUERZO","CASALES","INGLÉS","BAILE","FÚTBOL","KARATE","ZUMBA","HIP HOP"];
 
   const Tag = ({ text, colorIndex }: { text: string; colorIndex: number }) => {
@@ -920,6 +947,8 @@ function TrustSection() {
                   loading="lazy"
                   decoding="async"
                   className="w-[260px] h-[200px] md:w-[340px] md:h-[260px] object-cover shadow-[6px_6px_0_0_#000] border-4 border-white block"
+                  width={340}
+                  height={260}
                 />
               </div>
             </div>
@@ -1158,6 +1187,9 @@ function Activities() {
                     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
                     alt="🇬🇧"
                     style={{ width: '72px', height: '72px', objectFit: 'contain' }}
+                    loading="lazy"
+                    width={72}
+                    height={72}
                   />
                 ) : (
                   <span
@@ -1248,7 +1280,12 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
   return (
     <div className="space-y-4">
       {/* "¿Quién eres?" más visible */}
-      <p className="text-white font-black text-xl uppercase tracking-widest mb-3">¿Quién eres?</p>
+      <p
+        className="inline-block bg-[#D8E600] text-[#0a0a0a] border-2 border-black shadow-[4px_4px_0_0_#000] rounded-full px-4 py-2 text-2xl md:text-3xl font-bold uppercase mb-4"
+        style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+      >
+        👉 ¿QUIÉN ERES?
+      </p>
 
       {/* Formulario — siempre visible */}
       <form onSubmit={handleSubmit} className="rounded-3xl border-2 border-[#D8E600] bg-white p-6 md:p-8 space-y-5 shadow-[4px_4px_0_0_#D8E600]">
@@ -1351,7 +1388,11 @@ function CTA() {
         >
           <div className="relative inline-block pb-4 mb-6">
             <h2 className="font-black text-6xl md:text-8xl uppercase tracking-tighter text-white" style={condensedItalic}>
-              ¿<span className="text-[#D8E600]">HABLAMOS</span>?
+              <span className="mr-2 inline-block">¿</span>
+              <span className="text-[#D8E600] border-2 border-black px-2 py-1 inline-block tracking-wider" style={{ letterSpacing: '0.05em' }}>
+                HABLAMOS
+              </span>
+              <span className="ml-2 inline-block">?</span>
             </h2>
             <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0"></div>
           </div>
@@ -1381,7 +1422,7 @@ function CTA() {
             </ul>
             {/* Mascot — estático, sin animación */}
             <div className="w-36 md:w-44 rounded-xl overflow-hidden">
-              <img src="/diversplas-logo.webp" alt="Diversplas" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
+              <img src="/diversplas-logo.webp" alt="Diversplas" className="w-full h-auto object-cover block" loading="lazy" decoding="async" width={176} height={138} />
             </div>
           </div>
           <ContactForm />
@@ -1403,7 +1444,7 @@ function FooterCard({
   const tc = dark ? "text-black" : "text-white";
   return (
     <div
-      className="relative rounded-3xl border-2 border-black overflow-hidden p-8 md:p-10 flex flex-col md:flex-row md:justify-between md:items-center gap-8 min-h-[300px]"
+      className="relative rounded-3xl border-2 border-white overflow-hidden p-8 md:p-10 flex flex-col md:flex-row md:justify-between md:items-center gap-8 min-h-[300px]"
       style={{ backgroundColor: bg }}
     >
       {/* Blob decoration */}
@@ -1501,6 +1542,8 @@ function Footer() {
               className="h-14 w-auto rounded-lg"
               loading="lazy"
               decoding="async"
+              width={71}
+              height={56}
             />
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <a

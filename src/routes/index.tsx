@@ -492,8 +492,8 @@ function ActivityCardsVisual() {
       />
       {/* Header */}
       <div className="relative mb-6">
-        <span className="font-bold text-lg uppercase text-black mb-1 block">Actividades disponibles</span>
-        <div className="font-black text-6xl text-white uppercase tracking-tighter mb-8">
+        <span className="font-bold text-lg uppercase text-black mb-1 block BarlowCondensedItalic" style={condensedItalic}>Actividades disponibles</span>
+        <div className="font-black text-6xl text-white uppercase tracking-tighter mb-8 BarlowCondensed" style={condensed}>
           +20 experiencias
         </div>
       </div>
@@ -515,7 +515,9 @@ function ActivityCardsVisual() {
               ) : (
                 <span>{a.icon} </span>
               )}
-              {a.name}
+              <span className="font-bold text-sm BarlowCondensed" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+                {a.name}
+              </span>
             </span>
           );
         })}

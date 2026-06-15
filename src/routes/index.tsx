@@ -950,7 +950,7 @@ function PartnersSection() {
           </h2>
           <p className="text-black/70 text-lg leading-relaxed max-w-sm">
             Trabajamos con todo tipo de centros educativos del área metropolitana de Barcelona.{" "}
-            <strong>Tu centro educativo, <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded whitespace-nowrap">a un mensaje de distancia.</span></strong>
+            <strong><span className="text-black font-black">Tu centro educativo,</span> <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded whitespace-nowrap">a un mensaje de distancia.</span></strong>
           </p>
         </div>
 

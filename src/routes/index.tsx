@@ -1394,7 +1394,7 @@ function CTA() {
               </span>
               <span className="ml-2 inline-block">?</span>
             </h2>
-            <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0"></div>
+            <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0 mt-4"></div>
           </div>
         </motion.div>
 
@@ -1506,7 +1506,7 @@ function Footer() {
           headline={
             <>
               <span className="text-[#1D2F8C]" style={{ marginRight: '4px' }}>¿</span>
-              EMPEZAMOS
+              <span className="tracking-wider" style={{ letterSpacing: '0.05em' }}>EMPEZAMOS</span>
               <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000' }}>?</span>
             </>
           }

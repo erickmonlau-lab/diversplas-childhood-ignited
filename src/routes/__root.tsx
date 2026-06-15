@@ -77,8 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Diversplas — Un mundo lleno de actividades" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares que hacen crecer a los alumnos. Barcelona y área metropolitana." },
+      { name: "description", content: "Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona. Más de 20 años de experiencia en fútbol, karate, baile, inglés y mucho más." },
       { name: "author", content: "Diversplas" },
       { property: "og:title", content: "Diversplas — Un mundo lleno de actividades" },
       { property: "og:description", content: "Experiencias extraescolares premium para colegios, AFAs y centros educativos." },

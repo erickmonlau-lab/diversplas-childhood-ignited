@@ -485,7 +485,14 @@ function ActivityCardsVisual() {
             style={{ backgroundColor: a.color, color: a.light ? "#fff" : "#000" }}
             className="rounded-full px-4 py-1.5 text-sm font-bold border border-black/20 whitespace-nowrap"
           >
-            {a.icon} {a.name}
+            {a.name === "Inglés" ? (
+              <span role="img" aria-label="UK flag" style={{ verticalAlign: 'middle', marginRight: '4px' }}>
+                {"\uD83C\uDDEC\uD83C\uDDE7"}
+              </span>
+            ) : (
+              <span>{a.icon} </span>
+            )}
+            {a.name}
           </span>
         ))}
       </div>
@@ -1090,12 +1097,18 @@ function Activities() {
               </div>
 
               {/* Big icon — center */}
-              <span
-                className="text-5xl md:text-6xl text-center leading-none select-none"
-                style={{ filter: "drop-shadow(2px 3px 0px rgba(0,0,0,0.18))" }}
-              >
-                {a.icon}
-              </span>
+              {a.name === "Inglés" ? (
+                <span role="img" aria-label="UK flag" style={{ fontSize: '64px', lineHeight: 1 }}>
+                  {"\uD83C\uDDEC\uD83C\uDDE7"}
+                </span>
+              ) : (
+                <span
+                  className="text-5xl md:text-6xl text-center leading-none select-none"
+                  style={{ filter: "drop-shadow(2px 3px 0px rgba(0,0,0,0.18))" }}
+                >
+                  {a.icon}
+                </span>
+              )}
 
               {/* Name at bottom */}
               <span

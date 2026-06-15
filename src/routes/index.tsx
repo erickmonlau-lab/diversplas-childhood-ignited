@@ -466,29 +466,31 @@ function ActivityCardsVisual() {
   return (
     <div className="bg-[#1D2F8C] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full flex-1">
       <div className="relative mb-8">
-        {/* Correcting typo and forcing font/color */}
         <span className="font-bold text-lg uppercase text-white BarlowCondensedItalic mb-1 block" style={condensedItalic}>
           ACTIVIDADES DISPONIBLES
         </span>
-        {/* Visual title with adaptation */}
-        <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed" style={condensed}>
-          +20 <span className="text-[#D8E600]">EXPERIENCIAS</span>
+        {/* Visual title with adaptation and outlined text */}
+        <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed relative"
+            style={{
+              ...condensed,
+              textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 3px 0 0 #000, -3px 0 0 #000'
+            }}>
+          +20 <span className="text-[#D8E600]" style={{ textShadow: 'none' }}>EXPERIENCIAS</span>
         </h2>
-        {/* Optional: Add a subtle graphic element like the white circles from the yellow card */}
         <div className="absolute top-0 right-0 h-24 w-24 bg-white/10 rounded-full"></div>
       </div>
 
-      {/* New grid structure with outlined badges, forced black bold text */}
+      {/* New grid structure with outlined badges, forced bold black text, adjusted typography */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {[
-          { name: "Fútbol", icon: "⚽", bgColor: "bg-[#FF7B72]" },
-          { name: "Zumba", icon: "🤸", bgColor: "bg-[#FF7B72]" },
-          { name: "Manualidades", icon: "🎨", bgColor: "bg-[#D8E600]" },
-          { name: "Básquet", icon: "🏀", bgColor: "bg-[#FF7B72]" },
-          { name: "Balle", icon: "🩰", bgColor: "bg-[#D8E600]" },
+          { name: "Fútbol", icon: "⚽", bgColor: "bg-white" },
+          { name: "Zumba", icon: "🤸", bgColor: "bg-white" },
+          { name: "Manualidades", icon: "🎨", bgColor: "bg-white" },
+          { name: "Básquet", icon: "🏀", bgColor: "bg-white" },
+          { name: "Baile", icon: "🩰", bgColor: "bg-white" },
           { name: "Casales", icon: "🏠", bgColor: "bg-white" },
-          { name: "Patina", icon: "⛸️", bgColor: "bg-[#FF7B72]" },
-          { name: "Hip Hop", icon: "🎧", bgColor: "bg-[#FF7B72]" },
+          { name: "Patinaje", icon: "⛸️", bgColor: "bg-white" },
+          { name: "Hip Hop", icon: "🎧", bgColor: "bg-white" },
           { name: "Ingles", icon: "🇬🇧", bgColor: "bg-white" },
         ].map((activity) => (
           <div 
@@ -504,8 +506,8 @@ function ActivityCardsVisual() {
             ) : (
               <span className="text-xl">{activity.icon}</span>
             )}
-            {/* Bold black text for logical identity */}
-            <span className="font-black text-black text-sm md:text-base BarlowCondensed" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+            {/* Corrected typography and spacing for badges */}
+            <span className="font-black text-black text-xs md:text-sm BarlowCondensedItalic tracking-tight leading-none pt-1" style={condensedItalic}>
               {activity.name}
             </span>
           </div>

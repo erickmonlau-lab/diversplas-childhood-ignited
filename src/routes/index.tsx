@@ -1281,7 +1281,7 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
     <div className="space-y-4">
       {/* "¿Quién eres?" más visible */}
       <p
-        className="inline-block bg-[#D8E600] text-[#0a0a0a] border-2 border-black shadow-[4px_4px_0_0_#000] rounded-full px-4 py-2 text-2xl md:text-3xl font-bold uppercase mb-4"
+        className="inline-block bg-white text-[#0a0a0a] border-2 border-black shadow-[4px_4px_0_0_#000] rounded-full px-4 py-2 text-2xl md:text-3xl font-bold uppercase mb-4"
         style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
       >
         👉 ¿QUIÉN ERES?
@@ -1389,7 +1389,7 @@ function CTA() {
           <div className="relative inline-block pb-4 mb-6">
             <h2 className="font-black text-6xl md:text-8xl uppercase tracking-tighter text-white" style={condensedItalic}>
               <span className="mr-2 inline-block">¿</span>
-              <span className="text-[#D8E600] border-2 border-black px-2 py-1 inline-block tracking-wider" style={{ letterSpacing: '0.05em' }}>
+              <span className="text-[#D8E600] tracking-wider" style={{ letterSpacing: '0.05em' }}>
                 HABLAMOS
               </span>
               <span className="ml-2 inline-block">?</span>

@@ -515,10 +515,10 @@ function ProgramVisual() {
       <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
-        <div className="text-xs font-black uppercase tracking-[0.25em] mb-1" style={{ color: "#000000" }}>Tu programa</div>
+        <span className="font-black text-lg tracking-widest text-black uppercase mb-2 block">Tu programa</span>
         <div className="text-3xl md:text-4xl font-black" style={{ ...condensed, color: '#ffffff' }}>
           A medida,{" "}
-          <span style={{ background: '#1D2F8C', color: '#ffffff', padding: '2px 10px', borderRadius: '6px', fontWeight: 900, display: 'inline' }}>con propósito</span>
+          <span className="bg-[#FF7B72] text-black border-2 border-black px-2 py-1 inline-block shadow-[2px_2px_0_0_#000] font-black rounded-md">con propósito</span>
         </div>
       </div>
       <div className="relative space-y-3">

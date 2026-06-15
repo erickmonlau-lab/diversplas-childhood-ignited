@@ -500,7 +500,7 @@ function ActivityCardsVisual() {
         ].map((activity) => (
           <div 
             key={activity.name}
-            className="flex items-center gap-3 bg-white border-2 border-black rounded-xl px-4 py-3 shadow-[4px_4px_0_0_#000]"
+            className="flex items-center gap-3 bg-white border-2 border-black rounded-xl px-3 py-3 shadow-[4px_4px_0_0_#000]"
           >
             <span className="flex items-center justify-center w-8 h-8 text-xl shrink-0">
               {activity.name === "Ingles" ? (
@@ -513,7 +513,7 @@ function ActivityCardsVisual() {
                 activity.icon
               )}
             </span>
-            <span className="font-['Barlow_Condensed'] font-bold text-lg text-[#0a0a0a] leading-none">
+            <span className="font-['Barlow_Condensed'] font-bold text-base sm:text-lg text-[#0a0a0a] leading-none min-w-0">
               {activity.name}
             </span>
           </div>

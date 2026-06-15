@@ -787,7 +787,8 @@ function TrustSection() {
       <button
         aria-label="Anterior"
         onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border-2 border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center text-black font-bold hover:bg-[#D8E600] transition-colors"
+        className="w-11 h-11 rounded-full bg-white border-2 border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center text-black font-bold hover:bg-[#D8E600] transition-colors"
+        style={{ left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'auto', cursor: 'pointer', zIndex: 50, position: 'absolute' }}
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
           <polyline points="15 18 9 12 15 6" />
@@ -796,7 +797,8 @@ function TrustSection() {
       <button
         aria-label="Siguiente"
         onClick={() => setCurrent((c) => (c + 1) % slides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border-2 border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center text-black font-bold hover:bg-[#D8E600] transition-colors"
+        className="w-11 h-11 rounded-full bg-white border-2 border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center text-black font-bold hover:bg-[#D8E600] transition-colors"
+        style={{ right: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'auto', cursor: 'pointer', zIndex: 50, position: 'absolute' }}
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
           <polyline points="9 18 15 12 9 6" />
@@ -816,9 +818,11 @@ function TrustSection() {
           >
             {/* Left column */}
             <div className="flex flex-col justify-center items-center md:items-start gap-4 md:gap-6 flex-1 max-w-xl text-center md:text-left">
-              <p className={`text-xs font-black uppercase tracking-[0.3em] text-center md:text-left text-white text-opacity-70`} style={{ textShadow: slide.dark ? 'none' : '0 1px 4px rgba(0,0,0,0.15)' }}>Nuestra historia</p>
+              <span className="inline-block px-3 py-1 rounded-full border-2 border-black bg-black text-white text-xs font-bold tracking-widest uppercase mb-2" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+                Nuestra historia
+              </span>
               <h2
-                className="uppercase tracking-tight text-3xl md:text-5xl lg:text-7xl leading-none text-white break-words text-center md:text-left"
+                className="uppercase tracking-tight text-4xl md:text-6xl lg:text-7xl leading-none text-white break-words text-center md:text-left"
                 style={{
                   ...condensedItalic,
                   wordBreak: 'break-word',
@@ -830,7 +834,7 @@ function TrustSection() {
                 {slide.headline}
                 <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
               </h2>
-              <p className="mt-6 text-xl text-center md:text-left leading-relaxed font-semibold text-white text-opacity-90" style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
+              <p className={`mt-6 text-base md:text-lg text-center md:text-left leading-relaxed font-semibold ${slide.bg === '#D8E600' ? 'text-black' : 'text-white'} text-opacity-90`} style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
               <div className="text-5xl w-full flex justify-center md:justify-start">{slide.icon}</div>
             </div>
 

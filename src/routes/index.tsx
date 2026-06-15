@@ -717,19 +717,20 @@ function CtaMarquee() {
 
   const Tag = ({ text, colorIndex }: { text: string; colorIndex: number }) => {
     const c = MARQUEE_COLORS[colorIndex % MARQUEE_COLORS.length];
-    const isLight = c === "#3055C7" || c === "#1D2F8C";
     return (
       <span
         style={{
           backgroundColor: c,
-          color: isLight ? "#fff" : "#000",
-          fontFamily: "'Barlow Condensed', sans-serif",
-          fontWeight: 900,
           flexShrink: 0,
         }}
         className="inline-flex items-center rounded-2xl border-2 border-white/10 px-10 py-5 text-xl md:text-2xl uppercase tracking-tight whitespace-nowrap border-2 border-black shadow-[2px_2px_0_0_#000]"
       >
-        {text}
+        <span
+          className="font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-white"
+          style={{ WebkitTextStroke: '1.2px #0a0a0a' }}
+        >
+          {text}
+        </span>
       </span>
     );
   };

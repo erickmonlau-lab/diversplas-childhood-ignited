@@ -1351,28 +1351,7 @@ function CTA() {
         transition={{ duration: 9, repeat: Infinity }}
       />
 
-      {/* Floating stickers */}
-      <motion.img
-        src="/sticker-ball.webp" alt=""
-        className="pointer-events-none absolute bottom-10 right-10 w-20 h-20 opacity-80 drop-shadow-xl"
-        style={{ mixBlendMode: "multiply" }}
-        animate={{ y: [0, -14, 0], rotate: [0, 12, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.img
-        src="/sticker-palette.webp" alt=""
-        className="pointer-events-none absolute bottom-6 right-6 w-14 h-14 opacity-40 drop-shadow-xl hidden md:block"
-        style={{ mixBlendMode: "multiply" }}
-        animate={{ y: [0, -8, 0], rotate: [-5, 5, -5] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      <motion.img
-        src="/sticker-star.webp" alt=""
-        className="pointer-events-none absolute bottom-16 left-1/4 w-12 h-12 opacity-60 drop-shadow-xl"
-        style={{ mixBlendMode: "multiply" }}
-        animate={{ y: [0, -8, 0], rotate: [5, -10, 5] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+
 
       <div className="relative mx-auto max-w-[1400px] px-6">
         {/* Title — full-width, no overlap */}

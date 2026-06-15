@@ -466,18 +466,22 @@ function ActivityCardsVisual() {
   return (
     <div className="bg-[#1D2F8C] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full flex-1">
       <div className="relative mb-8">
-        <span className="font-bold text-lg uppercase text-white BarlowCondensedItalic mb-1 block" style={condensedItalic}>
-          ACTIVIDADES DISPONIBLES
-        </span>
+        <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-bold uppercase tracking-[0.15em] text-sm px-3 py-1 rounded-md">ACTIVIDADES DISPONIBLES</span>
         {/* Visual title with adaptation and outlined text */}
         <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed relative"
             style={{
               ...condensed,
               textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 3px 0 0 #000, -3px 0 0 #000'
             }}>
-          +20 <span className="text-[#D8E600]" style={{ textShadow: 'none' }}>EXPERIENCIAS</span>
+          +20 <span style={{
+            color: '#D8E600',
+            WebkitTextStroke: '3px #0a0a0a',
+            textShadow: '5px 5px 0 #0a0a0a',
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 800,
+            letterSpacing: '-0.02em'
+          }}>EXPERIENCIAS</span>
         </h2>
-        <div className="absolute top-0 right-0 h-24 w-24 bg-white/10 rounded-full"></div>
       </div>
 
       {/* New grid structure with outlined badges, forced bold black text, adjusted typography */}

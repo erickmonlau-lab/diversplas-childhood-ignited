@@ -604,10 +604,11 @@ function ZonesCardsVisual() {
     { city: "Santa Coloma", sub: "de Gramenet", color: "#3055C7" },
     { city: "Badalona",     sub: "Barcelonès",   color: "#FF7B72" },
     { city: "Mollet",       sub: "del Vallès",   color: "#1D2F8C" },
-    { city: "Sant Fost",    sub: "de Campsentelles", color: "#FF7B72" },
+    { city: "Sant Fost",    sub: "de Campsentelles", color: "#D8E600" },
   ];
 
   const Card = ({ z, className = "", style = {} }: { z: typeof zones[0]; className?: string; style?: React.CSSProperties }) => {
+    const isSantFost = z.city === "Sant Fost";
     return (
       <motion.div
         style={{
@@ -618,7 +619,7 @@ function ZonesCardsVisual() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          minHeight: '140px',
+          minHeight: '160px',
           boxShadow: '4px 4px 0 0 #000',
           ...style
         }}
@@ -635,8 +636,10 @@ function ZonesCardsVisual() {
               fontSize: '30px',
               fontWeight: 900,
               lineHeight: 1,
-              color: '#fff',
-              textShadow: '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
+              color: isSantFost ? '#000' : '#fff',
+              textShadow: isSantFost
+                ? '2px 2px 0 rgba(255,255,255,0.3), -1px -1px 0 rgba(255,255,255,0.3)'
+                : '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
               letterSpacing: '0.04em'
             }}
             className="uppercase break-words"
@@ -650,8 +653,10 @@ function ZonesCardsVisual() {
                 fontSize: '14px',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
-                color: '#fff',
-                textShadow: '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
+                color: isSantFost ? '#000' : '#fff',
+                textShadow: isSantFost
+                  ? '2px 2px 0 rgba(255,255,255,0.3), -1px -1px 0 rgba(255,255,255,0.3)'
+                  : '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
                 opacity: 0.9
               }}
               className="uppercase mt-0.5"

@@ -1471,17 +1471,19 @@ function FooterCard({
           style={condensed}
         >
           {headline}
-          <span 
-            className="block w-fit" 
-            style={{ 
-              ...condensedItalic,
-              marginTop: '12px'
-            }}
-          >
-            {headlineItalic}
-          </span>
+          {headlineItalic && (
+            <span 
+              className="block w-fit" 
+              style={{ 
+                ...condensedItalic,
+                marginTop: '12px'
+              }}
+            >
+              {headlineItalic}
+            </span>
+          )}
         </h3>
-        <div className="bg-[#1D2F8C]" style={{ width: '60px', height: '6px', marginTop: '6px', marginBottom: '16px' }} />
+        <div className="bg-[#1D2F8C]" style={{ width: '60px', height: '6px', marginTop: '20px', marginBottom: '16px' }} />
         <p className="text-black font-bold text-lg md:text-xl leading-relaxed max-w-md">
           Más de 20 años a tu lado.<br/>
           <span style={{ background: '#1D2F8C', color: '#ffffff', padding: '2px 10px', borderRadius: '6px', fontWeight: 900 }}>Empieza hoy.</span>
@@ -1501,8 +1503,13 @@ function Footer() {
         <FooterCard
           bg="#D8E600"
           blob="#E8F520"
-          headline={<><span className="text-[#1D2F8C]" style={{ marginRight: '4px' }}>¿</span>HABLAMOS</>}
-          headlineItalic={<>CONTIGO<span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000' }}>?</span></>}
+          headline={
+            <>
+              <span className="text-[#1D2F8C]" style={{ marginRight: '4px' }}>¿</span>
+              EMPEZAMOS
+              <span className="text-[#1D2F8C]" style={{ marginLeft: '4px', fontWeight: 900, textShadow: '1px 1px 0 #000' }}>?</span>
+            </>
+          }
           dark
         >
           <div className="flex flex-col items-start md:items-end gap-4">

@@ -666,10 +666,14 @@ function ZonesCardsVisual() {
 
   return (
     <>
-      {/* Mobile: horizontal scroll — contained */}
-      <div className="flex md:hidden items-center gap-2 mb-3 text-black/50 text-sm font-semibold">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        Desliza para ver todas las zonas
+      {/* Mobile & Desktop scroll indicator */}
+      <div className="flex items-center gap-2 mb-3">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: '#0a0a0a' }}>
+          <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', fontWeight: 700, letterSpacing: '0.06em', color: '#0a0a0a' }}>
+          Desliza para ver todas las zonas
+        </span>
       </div>
       <div className="flex md:hidden gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none" style={{ marginLeft: "-20px", marginRight: "-20px", paddingLeft: "20px", paddingRight: "20px", boxSizing: "border-box", scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
         {zones.map((z) => (

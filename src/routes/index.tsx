@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
-import logoAsset from "@/assets/diversplas-logo.webp.asset.json";
+import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
 
 export const Route = createFileRoute("/")(({
   head: () => ({

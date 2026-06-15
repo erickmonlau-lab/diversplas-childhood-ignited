@@ -1327,11 +1327,11 @@ function CTA() {
           transition={{ duration: 0.8 }}
           className="mb-10"
         >
-          <div className="relative inline-block pb-6">
-            <h2 className="text-white font-black text-6xl uppercase tracking-tighter BarlowCondensedItalic" style={condensedItalic}>
+          <div className="relative inline-block pb-4 mb-6">
+            <h2 className="font-black text-6xl md:text-8xl uppercase tracking-tighter text-white" style={condensedItalic}>
               ¿<span className="text-[#D8E600]">HABLAMOS</span>?
             </h2>
-            <div className="absolute left-0 right-0 h-1 bg-[#D8E600] bottom-0"></div>
+            <div className="absolute left-0 right-0 h-2 bg-[#D8E600] bottom-0"></div>
           </div>
         </motion.div>
 

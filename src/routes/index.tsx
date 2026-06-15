@@ -511,11 +511,11 @@ function ProgramVisual() {
     { n: "05", t: "Mejoramos",    c: "#ffffff" },
   ];
   return (
-    <div className="rounded-3xl bg-[#9C7BFF] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
+    <div className="rounded-3xl bg-[#1D2F8C] border-2 border-black p-8 md:p-10 overflow-hidden relative min-h-[380px] md:min-h-[440px]">
       <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
-        <span className="font-black text-lg tracking-widest text-black uppercase mb-2 block">Tu programa</span>
+        <span className="font-black text-lg tracking-widest text-[#D8E600] uppercase mb-2 block">Tu programa</span>
         <div className="text-3xl md:text-4xl font-black" style={{ ...condensed, color: '#ffffff' }}>
           A medida,{" "}
           <span className="bg-[#FF7B72] text-black border-2 border-black px-2 py-1 inline-block shadow-[2px_2px_0_0_#000] font-black rounded-md">con propósito</span>

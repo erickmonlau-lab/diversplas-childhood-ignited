@@ -466,9 +466,9 @@ function ActivityCardsVisual() {
   return (
     <div className="bg-[#1D2F8C] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full flex-1">
       <div className="relative mb-8">
-        <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-bold uppercase tracking-[0.15em] text-sm px-3 py-1 rounded-md">ACTIVIDADES DISPONIBLES</span>
+        <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-sm px-3 py-1 rounded-md border-2 border-black mb-2">ACTIVIDADES DISPONIBLES</span>
         {/* Visual title with adaptation and outlined text */}
-        <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed relative"
+        <h2 className="font-black text-5xl sm:text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed break-keep relative"
             style={{
               ...condensed,
               textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 3px 0 0 #000, -3px 0 0 #000',

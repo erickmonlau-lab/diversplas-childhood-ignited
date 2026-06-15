@@ -537,7 +537,7 @@ function ProgramVisual() {
       <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-black/10 translate-y-1/3 -translate-x-1/3" />
       <div className="relative mb-7">
         <span className="font-black text-lg tracking-widest text-black uppercase mb-2 block">Tu programa</span>
-        <div className="text-3xl md:text-4xl font-black text-black" style={condensed}>
+        <div className="text-3xl md:text-4xl font-black text-black -mt-1" style={condensed}>
           A medida,{" "}
           <span className="bg-white text-black border-2 border-black px-2 py-1 inline-block shadow-[2px_2px_0_0_#000] font-black rounded-md">con propósito</span>
         </div>

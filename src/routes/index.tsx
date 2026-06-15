@@ -812,38 +812,29 @@ function TrustSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
             transition={{ duration: 0.5 }}
-            className="w-full h-full flex flex-col md:flex-row items-center justify-center px-16 md:px-24 gap-16"
+            className="w-full h-full flex flex-col md:flex-row items-center justify-center px-8 md:px-16 lg:px-24 gap-8 md:gap-16 py-12 md:py-0"
           >
             {/* Left column */}
-            <div className="flex flex-col justify-center gap-6 flex-1 max-w-xl">
-              <p className={`text-xs font-black uppercase tracking-[0.3em] text-left ${subColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 4px rgba(0,0,0,0.15)' }}>Nuestra historia</p>
+            <div className="flex flex-col justify-center items-center md:items-start gap-4 md:gap-6 flex-1 max-w-xl text-center md:text-left">
+              <p className={`text-xs font-black uppercase tracking-[0.3em] text-center md:text-left text-white text-opacity-70`} style={{ textShadow: slide.dark ? 'none' : '0 1px 4px rgba(0,0,0,0.15)' }}>Nuestra historia</p>
               <h2
-                className={`uppercase tracking-tight text-7xl md:text-8xl leading-none ${textColor} break-words text-left`}
+                className="uppercase tracking-tight text-5xl md:text-7xl lg:text-8xl leading-none text-white break-words text-center md:text-left"
                 style={{
                   ...condensedItalic,
                   wordBreak: "break-word",
                   overflowWrap: "break-word",
-                  textShadow: '0 2px 16px rgba(0,0,0,0.15)'
+                  textShadow: '3px 3px 0px rgba(0,0,0,0.3)'
                 }}
               >
-                {slide.headline === "DISEÑO" ? (
-                  <>
-                    <span className="text-[#1D2F8C]">{slide.headline}</span>
-                    <span className="block text-[#1D2F8C]" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
-                  </>
-                ) : (
-                  <>
-                    {slide.headline}
-                    <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
-                  </>
-                )}
+                {slide.headline}
+                <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
               </h2>
-              <p className={`mt-6 text-xl text-left leading-relaxed font-semibold ${descColor}`} style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
-              <div className="text-5xl text-left">{slide.icon}</div>
+              <p className="mt-6 text-xl text-center md:text-left leading-relaxed font-semibold text-white text-opacity-90" style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
+              <div className="text-5xl w-full flex justify-center md:justify-start">{slide.icon}</div>
             </div>
 
             {/* Right column (polaroid image) */}
-            <div className="flex-shrink-0 flex items-center justify-center">
+            <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
               <div
                 style={{
                   background: '#ffffff',
@@ -858,7 +849,7 @@ function TrustSection() {
                   alt={slide.headline}
                   loading="lazy"
                   decoding="async"
-                  className="border-4 border-white w-[340px] h-[260px] object-cover block"
+                  className="w-[260px] h-[200px] md:w-[340px] md:h-[260px] object-cover shadow-[6px_6px_0_0_#000] border-4 border-white block"
                 />
               </div>
             </div>
@@ -866,7 +857,7 @@ function TrustSection() {
         </AnimatePresence>
 
         {/* Dot nav — bigger dots, more contrast */}
-        <div className="absolute bottom-8 left-16 flex gap-2">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:left-16 md:translate-x-0 flex gap-2">
           {slides.map((_, i) => (
             <button
               key={i}

@@ -1166,20 +1166,18 @@ function Activities() {
                 )}
               </div>
 
-              {/* Name at bottom */}
-              <div className="pr-10">
-                <span className="inline-block bg-[#0a0a0a] text-white font-['Barlow_Condensed'] font-bold uppercase tracking-[0.1em] text-sm sm:text-base px-2.5 py-1 rounded-md">
+              {/* Name and Arrow in bottom flex container */}
+              <div className="flex items-center justify-between gap-2 w-full">
+                <span className="inline-block bg-[#0a0a0a] text-white font-['Barlow_Condensed'] font-bold uppercase tracking-[0.05em] sm:tracking-[0.1em] text-[11px] sm:text-base px-2.5 py-1 rounded-md min-w-0 whitespace-nowrap">
                   {a.name}
                 </span>
+                <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
               </div>
-
-              {/* Arrow */}
-              <span className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
             </motion.a>
           ))}
         </div>

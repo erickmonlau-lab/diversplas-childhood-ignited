@@ -518,6 +518,10 @@ function ActivityCardsVisual() {
             </span>
           </div>
         ))}
+        <div className="flex items-center gap-2 sm:gap-3 bg-[#D8E600] border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]">
+          <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-lg sm:text-xl shrink-0">·</span>
+          <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0">Y más…</span>
+        </div>
       </div>
     </div>
   );

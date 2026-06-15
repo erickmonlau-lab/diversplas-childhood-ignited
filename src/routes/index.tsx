@@ -463,64 +463,53 @@ function FeatureSection({
 /* ─── Visuals ───────────────────────────────────────────── */
 
 function ActivityCardsVisual() {
-  const getBrandStyles = (name: string) => {
-    switch (name) {
-      case "Fútbol":
-      case "Patinaje":
-      case "Zumba":
-      case "Hip Hop":
-        return "bg-[#FF7B72] text-black";
-      case "Básquet":
-      case "Inglés":
-      case "Casales":
-        return "bg-[#3055C7] text-white";
-      case "Multideporte":
-      case "Manualidades":
-      case "Baile":
-        return "bg-[#D8E600] text-black";
-      default:
-        return "bg-white text-black";
-    }
-  };
-
   return (
-    <div className="bg-[#3055C7] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full relative min-h-[380px] md:min-h-[440px]">
-      {/* bg glow */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{ backgroundImage: "radial-gradient(circle at 25% 30%, #3055C7, transparent 55%), radial-gradient(circle at 75% 70%, #9C7BFF, transparent 55%)" }}
-      />
-      {/* Header */}
-      <div className="relative mb-6">
-        <span className="font-bold text-lg uppercase text-black mb-1 block BarlowCondensedItalic" style={condensedItalic}>Actividades disponibles</span>
-        <div className="font-black text-6xl text-white uppercase tracking-tighter mb-8 BarlowCondensed" style={condensed}>
-          +20 experiencias
-        </div>
+    <div className="bg-[#1D2F8C] border-2 border-black shadow-[8px_8px_0_0_#000] rounded-2xl p-8 w-full flex-1">
+      <div className="relative mb-8">
+        {/* Correcting typo and forcing font/color */}
+        <span className="font-bold text-lg uppercase text-white BarlowCondensedItalic mb-1 block" style={condensedItalic}>
+          ACTIVIDADES DISPONIBLES
+        </span>
+        {/* Visual title with adaptation */}
+        <h2 className="font-black text-6xl md:text-8xl text-white uppercase tracking-tighter BarlowCondensed" style={condensed}>
+          +20 <span className="text-[#D8E600]">EXPERIENCIAS</span>
+        </h2>
+        {/* Optional: Add a subtle graphic element like the white circles from the yellow card */}
+        <div className="absolute top-0 right-0 h-24 w-24 bg-white/10 rounded-full"></div>
       </div>
-      {/* Tags */}
-      <div className="relative flex flex-wrap gap-2.5">
-        {ACTIVITIES.slice(0, 14).map((a) => {
-          const brandStyle = getBrandStyles(a.name);
-          return (
-            <span
-              key={a.name}
-              className={`inline-flex items-center gap-2 px-4 py-2 border-2 border-black rounded-full font-bold text-sm shadow-[2px_2px_0_0_#000] whitespace-nowrap ${brandStyle}`}
-            >
-              {a.icon === "TWEMOJI_GB" ? (
-                <img
-                  src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
-                  alt="🇬🇧"
-                  style={{ width: '18px', height: '18px', objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}
-                />
-              ) : (
-                <span>{a.icon} </span>
-              )}
-              <span className="font-bold text-sm BarlowCondensed" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-                {a.name}
-              </span>
+
+      {/* New grid structure with outlined badges, forced black bold text */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { name: "Fútbol", icon: "⚽", bgColor: "bg-[#FF7B72]" },
+          { name: "Zumba", icon: "🤸", bgColor: "bg-[#FF7B72]" },
+          { name: "Manualidades", icon: "🎨", bgColor: "bg-[#D8E600]" },
+          { name: "Básquet", icon: "🏀", bgColor: "bg-[#FF7B72]" },
+          { name: "Balle", icon: "🩰", bgColor: "bg-[#D8E600]" },
+          { name: "Casales", icon: "🏠", bgColor: "bg-white" },
+          { name: "Patina", icon: "⛸️", bgColor: "bg-[#FF7B72]" },
+          { name: "Hip Hop", icon: "🎧", bgColor: "bg-[#FF7B72]" },
+          { name: "Ingles", icon: "🇬🇧", bgColor: "bg-white" },
+        ].map((activity) => (
+          <div 
+            key={activity.name}
+            className={`flex items-center gap-2 p-3 border-2 border-black rounded-lg ${activity.bgColor} shadow-[4px_4px_0_0_#000]`}
+          >
+            {activity.name === "Ingles" ? (
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                alt="🇬🇧"
+                style={{ width: '24px', height: '24px', objectFit: 'contain' }}
+              />
+            ) : (
+              <span className="text-xl">{activity.icon}</span>
+            )}
+            {/* Bold black text for logical identity */}
+            <span className="font-black text-black text-sm md:text-base BarlowCondensed" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+              {activity.name}
             </span>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

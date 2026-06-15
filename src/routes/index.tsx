@@ -483,31 +483,32 @@ function ActivityCardsVisual() {
       {/* New grid structure with outlined badges, forced bold black text, adjusted typography */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {[
-          { name: "Fútbol", icon: "⚽", bgColor: "bg-white" },
-          { name: "Zumba", icon: "🤸", bgColor: "bg-white" },
-          { name: "Manualidades", icon: "🎨", bgColor: "bg-white" },
-          { name: "Básquet", icon: "🏀", bgColor: "bg-white" },
-          { name: "Baile", icon: "🩰", bgColor: "bg-white" },
-          { name: "Casales", icon: "🏠", bgColor: "bg-white" },
-          { name: "Patinaje", icon: "⛸️", bgColor: "bg-white" },
-          { name: "Hip Hop", icon: "🎧", bgColor: "bg-white" },
-          { name: "Ingles", icon: "🇬🇧", bgColor: "bg-white" },
+          { name: "Fútbol", icon: "⚽" },
+          { name: "Zumba", icon: "🤸" },
+          { name: "Manualidades", icon: "🎨" },
+          { name: "Básquet", icon: "🏀" },
+          { name: "Baile", icon: "🩰" },
+          { name: "Casales", icon: "🏠" },
+          { name: "Patinaje", icon: "⛸️" },
+          { name: "Hip Hop", icon: "🎧" },
+          { name: "Ingles", icon: "🇬🇧" },
         ].map((activity) => (
           <div 
             key={activity.name}
-            className={`flex items-center gap-2 p-3 border-2 border-black rounded-lg ${activity.bgColor} shadow-[4px_4px_0_0_#000]`}
+            className="flex items-center gap-3 bg-white border-2 border-black rounded-xl px-4 py-3 shadow-[4px_4px_0_0_#000]"
           >
-            {activity.name === "Ingles" ? (
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
-                alt="🇬🇧"
-                style={{ width: '24px', height: '24px', objectFit: 'contain' }}
-              />
-            ) : (
-              <span className="text-xl">{activity.icon}</span>
-            )}
-            {/* Corrected typography and spacing for badges */}
-            <span className="font-black text-black text-xs md:text-sm BarlowCondensedItalic tracking-tight leading-none pt-1" style={condensedItalic}>
+            <span className="flex items-center justify-center w-8 h-8 text-xl shrink-0">
+              {activity.name === "Ingles" ? (
+                <img
+                  src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
+                  alt="🇬🇧"
+                  style={{ width: '24px', height: '24px', objectFit: 'contain' }}
+                />
+              ) : (
+                activity.icon
+              )}
+            </span>
+            <span className="font-['Barlow_Condensed'] font-bold text-lg text-[#0a0a0a] leading-none">
               {activity.name}
             </span>
           </div>

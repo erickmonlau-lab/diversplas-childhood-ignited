@@ -1116,7 +1116,7 @@ function Activities() {
               {/* Name at bottom */}
               <span
                 className={`uppercase leading-[0.88] pr-10 text-xl font-black tracking-tight ${a.name === "Multideporte" || a.name === "Manualidades" || a.name === "Hip Hop" ? 'text-black' : 'text-white'}`}
-                style={{ ...condensed, color: (a.name === "Multideporte" || a.name === "Manualidades" || a.name === "Hip Hop") ? '#000000' : '#ffffff' }}
+                style={{ ...condensed, color: (a.name === "Multideporte" || a.name === "Manualidades" || a.name === "Hip Hop") ? '#000000' : '#ffffff', letterSpacing: '0.08em' }}
               >
                 {a.name}
               </span>

@@ -612,7 +612,7 @@ function ZonesCardsVisual() {
       <motion.div
         style={{
           backgroundColor: z.color,
-          border: '2px solid black',
+          border: '2px solid #000',
           borderRadius: '16px',
           padding: '20px',
           display: 'flex',
@@ -636,7 +636,7 @@ function ZonesCardsVisual() {
               fontWeight: 900,
               lineHeight: 1,
               color: '#fff',
-              textShadow: '2px 2px 0 #000',
+              textShadow: '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
               letterSpacing: '0.04em'
             }}
             className="uppercase break-words"
@@ -651,7 +651,7 @@ function ZonesCardsVisual() {
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 color: '#fff',
-                textShadow: '1px 1px 0 #000',
+                textShadow: '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
                 opacity: 0.9
               }}
               className="uppercase mt-0.5"
@@ -666,8 +666,8 @@ function ZonesCardsVisual() {
 
   return (
     <>
-      {/* Mobile & Desktop scroll indicator */}
-      <div className="flex items-center gap-2 mb-3">
+      {/* Mobile only scroll indicator */}
+      <div className="flex md:hidden items-center gap-2 mb-3">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: '#0a0a0a' }}>
           <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
@@ -681,7 +681,7 @@ function ZonesCardsVisual() {
         ))}
       </div>
       {/* Desktop: 2×2 grid */}
-      <div className="hidden md:grid grid-cols-2 gap-4">
+      <div className="hidden md:grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
         {zones.map((z) => (
           <Card key={z.city} z={z} />
         ))}

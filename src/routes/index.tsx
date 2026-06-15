@@ -636,9 +636,9 @@ function ZonesCardsVisual() {
               fontSize: '30px',
               fontWeight: 900,
               lineHeight: 1,
-              color: isSantFost ? '#000' : '#fff',
+              color: isSantFost ? '#000000' : '#fff',
               textShadow: isSantFost
-                ? '2px 2px 0 rgba(255,255,255,0.3), -1px -1px 0 rgba(255,255,255,0.3)'
+                ? 'none'
                 : '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
               letterSpacing: '0.04em'
             }}
@@ -653,9 +653,9 @@ function ZonesCardsVisual() {
                 fontSize: '14px',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
-                color: isSantFost ? '#000' : '#fff',
+                color: isSantFost ? '#000000' : '#fff',
                 textShadow: isSantFost
-                  ? '2px 2px 0 rgba(255,255,255,0.3), -1px -1px 0 rgba(255,255,255,0.3)'
+                  ? 'none'
                   : '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
                 opacity: 0.9
               }}

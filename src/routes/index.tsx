@@ -291,11 +291,13 @@ function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-black text-white px-5 py-2 text-sm font-bold mb-10 shadow-[3px_3px_0_0_#1D2F8C]"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] bg-[#D8E600] mb-10"
           style={{ whiteSpace: 'nowrap' }}
         >
-          <span className="h-2.5 w-2.5 rounded-full bg-[#35D0BA] animate-pulse" />
-          +20 años · Barcelona · AMPAs
+          <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
+          <span className="font-bold text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+            +20 años · Barcelona · AMPAs
+          </span>
         </motion.div>
 
         {/* Headline */}

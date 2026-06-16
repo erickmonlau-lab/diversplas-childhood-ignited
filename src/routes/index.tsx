@@ -453,12 +453,12 @@ function FeatureSection({
       <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg overflow-wrap-anywhere ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{description}</p>
       {extra && <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{extra}</p>}
       {links && (
-        <div className="flex flex-wrap gap-4 mt-10">
+        <ul className="flex flex-wrap gap-4 mt-10 p-0 m-0 list-none">
           {links.map((l, i) => (
-            <React.Fragment key={i}>
+            <li key={i}>
               <a
                 href={l.href}
-                className={`rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
+                className={`inline-block rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
                   i === 0
                     ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
                     : "bg-transparent text-black hover:bg-black hover:text-white"
@@ -467,10 +467,9 @@ function FeatureSection({
               >
                 {l.label}
               </a>
-              <span className="sr-only">. </span>
-            </React.Fragment>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </motion.div>
   );

@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")(({
           "url": "https://diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplasextraescolares@gmail.com",
-          "image": "https://diversplas.es/image_53e780.webp",
+          "image": "https://diversplas.es/og-image.jpg?v=1",
           "logo": "https://diversplas.es/diversplas-logo.jpeg",
           "priceRange": "€€",
           "openingHours": ["Mo-Fr 16:30-20:00"],

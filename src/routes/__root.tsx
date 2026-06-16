@@ -91,11 +91,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
       { property: "og:description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Para colegios, AFAs y familias." },
       { property: "og:url", content: "https://diversplas.es" },
-      { property: "og:image", content: "https://diversplas.es/image_53e780.webp" },
+      { property: "og:image", content: "https://diversplas.es/og-image.jpg?v=1" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
       { name: "twitter:description", content: "Más de 20 años creando experiencias extraescolares en Barcelona." },
-      { name: "twitter:image", content: "https://diversplas.es/image_53e780.webp" },
+      { name: "twitter:image", content: "https://diversplas.es/og-image.jpg?v=1" },
     ],
     links: [
       {

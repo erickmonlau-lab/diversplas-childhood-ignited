@@ -75,6 +75,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
+      { title: "Diversplas - Actividades extraescolares en Barcelona" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "description", content: "Diversplas es una entidad independiente con más de 20 años de experiencia. Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona." },

@@ -18,7 +18,10 @@ export const Route = createFileRoute("/")(({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Diversplas Extraescolares",
+          "name": "Diversplas",
+          "legalName": "Diversplas",
+          "alternateName": ["Diversplas Extraescolares", "Divers Plas"],
+          "disambiguatingDescription": "Diversplas es una empresa independiente con sede en Santa Coloma de Gramenet. No estamos vinculados a Diver's Esplai ni a otras entidades. Llevamos más de 20 años ofreciendo actividades extraescolares propias.",
           "description": "Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona. Más de 20 años de experiencia en fútbol, karate, baile, inglés y mucho más.",
           "url": "https://diversplas.es",
           "telephone": "+34657117426",

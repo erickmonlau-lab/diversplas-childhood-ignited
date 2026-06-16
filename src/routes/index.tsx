@@ -174,9 +174,8 @@ function Nav() {
           href="#top"
           onClick={() => setOpen(false)}
           className="flex items-center"
-          style={{ padding: "2px 8px" }}
         >
-          <img src="/diversplas-logo.webp" alt="DIVERSPLAS" className="h-12 w-auto block" loading="eager" width={61} height={48} />
+          <img src="/diversplas-logo-graffiti.png" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" width={87} height={64} />
         </a>
 
         {/* Desktop links pill */}
@@ -456,18 +455,20 @@ function FeatureSection({
       {links && (
         <div className="flex flex-wrap gap-4 mt-10">
           {links.map((l, i) => (
-            <a
-              key={i}
-              href={l.href}
-              className={`rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
-                i === 0
-                  ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
-                  : "bg-transparent text-black hover:bg-black hover:text-white"
-              }`}
-              style={btnStyle}
-            >
-              {l.label}
-            </a>
+            <React.Fragment key={i}>
+              <a
+                href={l.href}
+                className={`rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
+                  i === 0
+                    ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
+                    : "bg-transparent text-black hover:bg-black hover:text-white"
+                }`}
+                style={btnStyle}
+              >
+                {l.label}
+              </a>
+              <span className="sr-only">. </span>
+            </React.Fragment>
           ))}
         </div>
       )}
@@ -1540,7 +1541,7 @@ function Footer() {
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-4 flex-wrap">
             <img
-              src="/diversplas-logo.webp"
+              src="/diversplas-logo-graffiti.png"
               alt="DIVERSPLAS"
               className="h-14 w-auto rounded-lg"
               loading="lazy"

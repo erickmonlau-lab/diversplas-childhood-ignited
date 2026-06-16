@@ -45,7 +45,8 @@ export const Route = createFileRoute("/")(({
             "addressCountry": "ES"
           },
           "sameAs": [
-            "https://www.instagram.com/diversplas_extraescolares"
+            "https://www.instagram.com/diversplas_extraescolares",
+            "https://www.google.com/maps?cid=AQUI_TU_CID_DE_GOOGLE_BUSINESS"
           ]
         })
       }

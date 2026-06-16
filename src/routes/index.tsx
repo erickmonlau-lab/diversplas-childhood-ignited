@@ -764,11 +764,9 @@ function CtaMarquee() {
           backgroundColor: c,
           flexShrink: 0,
         }}
-        className="inline-flex items-center px-10 py-5 text-xl md:text-2xl whitespace-nowrap rounded-2xl border-2 border-black shadow-[4px_4px_0_0_#000] font-['Barlow_Condensed'] font-bold uppercase tracking-wide text-white"
+        className="inline-flex items-center px-6 py-2 md:px-10 md:py-3 text-[48px] md:text-[80px] lg:text-[110px] leading-none whitespace-nowrap rounded-2xl border-2 border-black shadow-[4px_4px_0_0_#000] font-['Barlow_Condensed'] font-black italic uppercase tracking-normal text-black"
       >
-        <span style={{ WebkitTextStroke: '1.2px #0a0a0a' }}>
-          {text}
-        </span>
+        {text}
       </span>
     );
   };
@@ -786,16 +784,16 @@ function CtaMarquee() {
         }
         .marquee-left {
           display: flex;
-          gap: 24px;
+          gap: 16px;
           width: max-content;
-          animation: marquee-left 18s linear infinite;
+          animation: marquee-left 40s linear infinite;
           will-change: transform;
         }
         .marquee-right {
           display: flex;
-          gap: 24px;
+          gap: 16px;
           width: max-content;
-          animation: marquee-right 20s linear infinite;
+          animation: marquee-right 45s linear infinite;
           will-change: transform;
         }
       `}</style>

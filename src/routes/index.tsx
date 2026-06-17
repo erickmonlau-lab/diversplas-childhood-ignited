@@ -551,7 +551,7 @@ function ActivityCardsVisual() {
       </div>
 
       {/* New grid structure with outlined badges, forced bold black text, adjusted typography */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[
           { name: "Fútbol", desc: "Mejora la potencia muscular, capacidad cardiovascular y el trabajo en equipo.", icon: "⚽" },
           { name: "Multideporte", desc: "Movimientos corporales mediante juegos individuales y colectivos. Trabaja coordinación, equilibrio y orientación espacial.", icon: "🏀" },

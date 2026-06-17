@@ -2,22 +2,16 @@ import { motion } from 'framer-motion';
 
 const REVIEWS = [
   {
-    name: "Marta G.",
-    text: "Llevamos años confiando en Diversplas para las extraescolares de nuestros hijos y la experiencia no podría ser mejor. Los monitores son unos profesionales.",
-    stars: 5,
-    date: "Hace 1 mes"
+    name: "Raquel Rodríguez martínez",
+    text: "Confianza absoluta en Diversplas. El trato con los niños es excepcional y muy cercano, se nota la gran experiencia que tienen."
   },
   {
-    name: "Carlos R.",
-    text: "El casal de verano ha sido un éxito total. Mi hija ha vuelto cada día encantada. Muy recomendables, trato cercano y mucha seguridad.",
-    stars: 5,
-    date: "Hace 3 meses"
+    name: "Antonia Santos Cano",
+    text: "Hola Diversplas sois geniales la coordinadora se desvive por los niños los monitores súper atentos."
   },
   {
-    name: "Laura V.",
-    text: "La mejor decisión para las tardes de los peques. Se nota que llevan muchos años en esto, la organización y la comunicación con las familias es de 10.",
-    stars: 5,
-    date: "Hace 4 meses"
+    name: "Maria Edivia Salguero Diaz",
+    text: "Me encanta, por su valor como persona y profesional ❤️"
   }
 ];
 
@@ -42,21 +36,11 @@ export function ReviewsSection() {
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
           <div className="max-w-2xl">
             <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-[#1D2F8C]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              Lo que dicen <span className="text-[#D8E600]" style={{ textShadow: '2px 2px 0 #1D2F8C' }}>las familias</span>
+              Lo que dicen <span className="text-[#D8E600] inline-block ml-1 sm:ml-2" style={{ textShadow: '2px 2px 0 #1D2F8C' }}>las familias</span>
             </h2>
             <p className="mt-4 text-black/70 text-xl font-medium">
               Nuestra mejor garantía son los niños que repiten año tras año.
             </p>
-          </div>
-          
-          <div className="flex flex-col items-start md:items-end gap-2">
-            <div className="flex items-center gap-3">
-              <span className="text-4xl font-black">5.0</span>
-              <div className="flex flex-col">
-                <StarRating />
-                <span className="text-sm font-bold text-black/60 uppercase tracking-widest mt-1">16 reseñas reales</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -76,9 +60,11 @@ export function ReviewsSection() {
                   "{review.text}"
                 </p>
               </div>
-              <div className="mt-8 flex items-center justify-between border-t-2 border-black/10 pt-4">
-                <span className="font-bold text-black">{review.name}</span>
-                <span className="text-sm text-black/50 font-semibold">{review.date}</span>
+              <div className="mt-8 flex items-center gap-3 border-t-2 border-black/10 pt-4">
+                <div className="w-10 h-10 rounded-full bg-[#1D2F8C] flex items-center justify-center text-white font-bold text-lg border border-black/10 shrink-0">
+                  {review.name.charAt(0)}
+                </div>
+                <span className="font-bold text-black leading-tight">{review.name}</span>
               </div>
             </motion.div>
           ))}

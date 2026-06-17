@@ -562,11 +562,14 @@ function ActivityCardsVisual() {
           { name: "Inglés", desc: "P3 a P5: introducción con canciones. 1º a 6º: refuerzo y comunicación oral.", icon: "🇬🇧" },
           { name: "Dibujo", desc: "Experimentación y creatividad a través de las artes plásticas.", icon: "✏️" },
           { name: "Refuerzo escolar", desc: "Para alumnos de 1º a 6º que necesiten ayuda con los deberes y técnicas de estudio.", icon: "📚" },
-        ].map((activity) => (
-          <div 
-            key={activity.name}
-            className="flex items-start gap-3 bg-white border-2 border-black rounded-xl px-4 py-4 shadow-[4px_4px_0_0_#000]"
-          >
+          { name: "¡Y mucho más!", desc: "Más de 20 disciplinas disponibles. Nos adaptamos a las necesidades y espacios de tu centro.", icon: "✨", isHighlight: true },
+          ].map((activity: any) => (
+            <div 
+              key={activity.name}
+              className={`flex items-start gap-3 border-2 border-black rounded-xl px-4 py-4 shadow-[4px_4px_0_0_#000] ${
+                activity.isHighlight ? 'bg-[#D8E600]' : 'bg-white'
+              }`}
+            >
             <span className="flex items-center justify-center w-8 h-8 text-2xl shrink-0 mt-0.5">
               {activity.name === "Inglés" ? (
                 <img

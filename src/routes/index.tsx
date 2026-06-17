@@ -3,12 +3,13 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
 import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
+import { FAQSection } from '../components/FAQSection';
 
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
       { title: "Diversplas - Actividades extraescolares en Barcelona" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Tranquilidad y confianza a las familias. Colegios, AFAs y centros educativos." },
+      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. No realizamos gestión de comedores. Tranquilidad y confianza a las familias. Colegios, AFAs y centros educativos." },
       { property: "og:title", content: "Diversplas - Actividades extraescolares en Barcelona" },
       { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AFAs de Barcelona." },
     ],
@@ -21,38 +22,61 @@ export const Route = createFileRoute("/")(({
           "name": "Diversplas",
           "legalName": "Diversplas",
           "alternateName": ["Diversplas Extraescolares", "Divers Plas"],
-          "disambiguatingDescription": "Diversplas es una empresa independiente con sede en Santa Coloma de Gramenet. No estamos vinculados a Diver's Esplai ni a otras entidades. Llevamos más de 20 años ofreciendo actividades extraescolares propias.",
-          "description": "Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona. Más de 20 años de experiencia en fútbol, karate, baile, inglés y mucho más.",
-          "url": "https://diversplas.es",
+          "disambiguatingDescription": "Diversplas (diversplas.es) es una empresa completamente independiente y sin relación alguna con Diversesplai (diversesplai.cat), Diver's Associació d'Esplai ni ninguna entidad similar. Son empresas distintas con distinto CIF, distinta web y distinto correo electrónico.",
+          "description": "Especialistas en actividades extraescolares y casales vacacionales en Barcelona, Santa Coloma de Gramenet y alrededores. Más de 20 años de experiencia.",
+          "url": "https://www.diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplasextraescolares@gmail.com",
-          "image": "https://diversplas.es/og-diversplas-v3.jpg",
-          "logo": "https://diversplas.es/diversplas-logo.jpeg",
-          "priceRange": "€€",
-          "openingHours": ["Mo-Fr 16:30-20:00"],
-          "areaServed": [
-            "Santa Coloma de Gramenet",
-            "El Fondo",
-            "Barcelona",
-            "Sant Fost de Campsentelles",
-            "Martorelles",
-            "Mollet del Vallès"
-          ],
+          "image": "https://www.diversplas.es/og-diversplas-v3.jpg",
+          "logo": "https://www.diversplas.es/diversplas-logo.jpeg",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Santa Coloma de Gramenet",
             "addressRegion": "Barcelona",
             "addressCountry": "ES"
           },
+          "areaServed": [
+            "Santa Coloma de Gramenet",
+            "Barcelona",
+            "Sant Fost de Campsentelles",
+            "Martorelles",
+            "Badalona",
+            "Mollet del Vallès",
+            "Fondo",
+            "Singuerlín"
+          ],
           "sameAs": [
+            "https://www.diversplas.es",
             "https://www.instagram.com/diversplas_extraescolares",
             "https://www.google.com/maps?cid=17471814521949579952"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "10"
+          }
+        })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Desde qué edad pueden apuntarse los niños?", "acceptedAnswer": { "@type": "Answer", "text": "A partir de 3-4 años según la actividad y el colegio." } },
+            { "@type": "Question", "name": "¿Cómo me inscribo?", "acceptedAnswer": { "@type": "Answer", "text": "A través del AFA del colegio donde se imparte la actividad." } },
+            { "@type": "Question", "name": "¿Con quién trabajáis?", "acceptedAnswer": { "@type": "Answer", "text": "Con AFAs, ludotecas, centros cívicos y casales de Barcelona y alrededores." } },
+            { "@type": "Question", "name": "¿Qué actividades extraescolares ofrecéis?", "acceptedAnswer": { "@type": "Answer", "text": "Fútbol, Multideporte, Karate, Hip Hop, Zumba, Manualidades, Inglés, Dibujo y Refuerzo escolar (deberes)." } },
+            { "@type": "Question", "name": "¿En qué zonas operáis?", "acceptedAnswer": { "@type": "Answer", "text": "Santa Coloma de Gramenet, el Fondo, Badalona, Mollet del Vallès, Sant Fost de Campsentelles, Martorelles y Barcelona." } },
+            { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "El precio varía según la actividad y el colegio. Consulta directamente con el AFA de tu colegio." } },
+            { "@type": "Question", "name": "¿En qué horario son las actividades?", "acceptedAnswer": { "@type": "Answer", "text": "De lunes a viernes a partir de las 16:30, al finalizar el horario escolar." } },
+            { "@type": "Question", "name": "¿Hacéis gestión de mediodía o comedores escolares?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fútbol, multideporte, karate, hip hop, zumba, manualidades, inglés, dibujo y refuerzo escolar) y en la organización de casales en periodos vacacionales. No realizamos gestión de mediodía ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas." } }
           ]
         })
       }
     ]
   }),
-  component: Index,
+  component: LandingPage,
 }) as any);
 
 /* ─── Data ─────────────────────────────────────────────── */
@@ -175,7 +199,7 @@ function Nav() {
           onClick={() => setOpen(false)}
           className="flex items-center"
         >
-          <img src="/diversplas-logo-graffiti.png" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" width={87} height={64} />
+          <img src="/diversplas-logo-graffiti.webp" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" width={87} height={64} />
         </a>
 
         {/* Desktop links pill */}
@@ -251,7 +275,7 @@ function Nav() {
 }
 
 /* ─── Hero ──────────────────────────────────────────────── */
-function Hero() {
+export function Hero({ city = "Barcelona y área metropolitana", cityShort = "Barcelona" }: { city?: string; cityShort?: string }) {
   return (
     <section id="top" className="relative w-full min-h-screen bg-white flex flex-col justify-center pt-28 pb-20" style={{ position: 'relative', width: '100%', overflow: 'visible', paddingTop: '80px', paddingBottom: '60px' }}>
       {/* Dot grid */}
@@ -334,7 +358,7 @@ function Hero() {
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
           <span className="font-bold text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-            +20 años · Barcelona · AFAs
+            +20 años · {cityShort} · AFAs
           </span>
         </motion.div>
 
@@ -361,7 +385,7 @@ function Hero() {
           className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed"
         >
           <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
-          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AFAs de Barcelona, ofreciendo total tranquilidad y confianza a las familias.
+          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AFAs de {city}, ofreciendo total tranquilidad y confianza a las familias.
         </motion.p>
 
         {/* CTAs */}
@@ -450,8 +474,8 @@ function FeatureSection({
           <span className="block text-[#1D2F8C]" style={condensedItalic}>{headlineItalic}</span>
         )}
       </h2>
-      <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg overflow-wrap-anywhere ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{description}</p>
-      {extra && <p className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{extra}</p>}
+      <div className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg overflow-wrap-anywhere ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{description}</div>
+      {extra && <div className={`text-base sm:text-xl md:text-2xl leading-relaxed w-full md:max-w-lg mt-4 ${dark ? "text-white/90" : "text-black/75"}`} style={{ overflowWrap: "break-word" }}>{extra}</div>}
       {links && (
         <ul className="flex flex-wrap gap-4 mt-10 p-0 m-0 list-none">
           {links.map((l, i) => (
@@ -525,28 +549,28 @@ function ActivityCardsVisual() {
       </div>
 
       {/* New grid structure with outlined badges, forced bold black text, adjusted typography */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
-          { name: "Fútbol", icon: "⚽" },
-          { name: "Zumba", icon: "🤸" },
-          { name: "Manualidades", icon: "🎨" },
-          { name: "Básquet", icon: "🏀" },
-          { name: "Baile", icon: "🩰" },
-          { name: "Casales", icon: "🏠" },
-          { name: "Patinaje", icon: "⛸️" },
-          { name: "Hip Hop", icon: "🎧" },
-          { name: "Inglés", icon: "🇬🇧" },
+          { name: "Fútbol", desc: "Mejora la potencia muscular, capacidad cardiovascular y el trabajo en equipo.", icon: "⚽" },
+          { name: "Multideporte", desc: "Movimientos corporales mediante juegos individuales y colectivos. Trabaja coordinación, equilibrio y orientación espacial.", icon: "🏀" },
+          { name: "Karate", desc: "Descubrir y disfrutar del arte marcial. Mejora habilidades psicomotrices, flexibilidad, coordinación y rapidez.", icon: "🥋" },
+          { name: "Hip Hop", desc: "Clase de ritmos urbanos con técnicas de Hip Hop y Comercial.", icon: "🧢" },
+          { name: "Zumba", desc: "Zumba Kids con rutinas pensadas para niños y niñas. Coreografías y juegos.", icon: "💃" },
+          { name: "Manualidades", desc: "Creatividad con materiales nuevos y reciclados. Elementos estéticos y funcionales.", icon: "🎨" },
+          { name: "Inglés", desc: "P3 a P5: introducción con canciones. 1º a 6º: refuerzo y comunicación oral.", icon: "🇬🇧" },
+          { name: "Dibujo", desc: "Experimentación y creatividad a través de las artes plásticas.", icon: "✏️" },
+          { name: "Refuerzo escolar", desc: "Para alumnos de 1º a 6º que necesiten ayuda con los deberes y técnicas de estudio.", icon: "📚" },
         ].map((activity) => (
           <div 
             key={activity.name}
-            className="flex items-center gap-2 sm:gap-3 bg-white border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]"
+            className="flex items-start gap-3 bg-white border-2 border-black rounded-xl px-4 py-4 shadow-[4px_4px_0_0_#000]"
           >
-            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-lg sm:text-xl shrink-0">
+            <span className="flex items-center justify-center w-8 h-8 text-2xl shrink-0 mt-0.5">
               {activity.name === "Inglés" ? (
                 <img
                   src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f1ec-1f1e7.png"
                   alt="🇬🇧"
-                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                  className="w-6 h-6 object-contain"
                   loading="lazy"
                   width={24}
                   height={24}
@@ -555,14 +579,16 @@ function ActivityCardsVisual() {
                 activity.icon
               )}
             </span>
-            <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0">
-              {activity.name}
-            </span>
+            <div className="flex flex-col">
+              <span className="font-black text-base uppercase tracking-wide leading-tight">
+                {activity.name}
+              </span>
+              <span className="text-sm font-medium mt-1.5 text-black/80 leading-snug">
+                {activity.desc}
+              </span>
+            </div>
           </div>
         ))}
-        <div className="col-span-1 md:col-span-3 flex items-center justify-center bg-[#D8E600] border-2 border-black rounded-xl px-3 sm:px-4 py-3 shadow-[4px_4px_0_0_#000]">
-          <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-lg text-[#0a0a0a] leading-none min-w-0 uppercase">Y más...</span>
-        </div>
       </div>
     </div>
   );
@@ -1328,13 +1354,13 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
               <label key={name} className="block">
                 <span className="text-xs font-bold uppercase tracking-widest text-black font-black mb-2 block">{label}</span>
                 <input type={type} name={name} placeholder={placeholder} required
-                  className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/30 focus:border-[#1D2F8C] outline-none transition-all" />
+                  className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/60 focus:border-[#1D2F8C] outline-none transition-all" />
               </label>
             ))}
             <label className="block">
               <span className="text-xs font-bold uppercase tracking-widest text-black font-black mb-2 block">Mensaje</span>
               <textarea name="mensaje" rows={3} placeholder={perfil === 'centro' ? 'Cuéntanos qué necesita tu centro...' : 'Cuéntanos en qué actividad está interesado/a...'}
-                className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/30 focus:border-[#1D2F8C] outline-none transition-all resize-none" />
+                className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/60 focus:border-[#1D2F8C] outline-none transition-all resize-none" />
             </label>
             <button type="submit" disabled={loading}
               className="mt-2 w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black transition-all hover:bg-[#c8d500] hover:scale-[1.05] uppercase shadow-[4px_4px_0_0_#000] font-black cursor-pointer"
@@ -1540,7 +1566,7 @@ function Footer() {
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-4 flex-wrap">
             <img
-              src="/diversplas-logo-graffiti.png"
+              src="/diversplas-logo-graffiti.webp"
               alt="DIVERSPLAS"
               className="h-14 w-auto rounded-lg"
               loading="lazy"
@@ -1549,6 +1575,13 @@ function Footer() {
               height={56}
             />
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <a
+                href="https://www.diversplas.es"
+                className="text-[11px] font-black text-black uppercase tracking-wider border-b-2 border-[#1D2F8C] hover:text-[#D8E600] hover:border-[#D8E600] transition-colors leading-none pb-0.5 inline-block"
+                aria-label="Sitio web de Diversplas"
+              >
+                www.diversplas.es
+              </a>
               <a
                 href="https://www.instagram.com/diversplas_extraescolares"
                 target="_blank"
@@ -1632,12 +1665,22 @@ function Footer() {
   );
 }
 
-/* ─── Root ──────────────────────────────────────────────── */
-function Index() {
+/* ─ Root ─ */
+export interface LandingPageProps {
+  city?: string;
+  cityShort?: string;
+  locationContext?: string;
+}
+
+export function LandingPage({ 
+  city = "Barcelona y área metropolitana", 
+  cityShort = "Barcelona",
+  locationContext = "Barcelona y su área metropolitana"
+}: LandingPageProps = {}) {
   return (
     <div className="bg-white text-black font-sans antialiased selection:bg-[#D8E600] selection:text-black">
       <Nav />
-      <Hero />
+      <Hero city={city} cityShort={cityShort} />
 
       <FeatureSection
         headline="EMPIEZA AQUÍ:"
@@ -1685,13 +1728,15 @@ function Index() {
       {/* Feature: Zones (flipped) */}
       <FeatureSection
         id="zones"
-        headline="OPERAMOS EN"
-        headlineItalic={<span className="bg-[#3055C7] text-white px-3 py-0.5 rounded inline-block">BARCELONA</span>}
-        description="Santa Coloma de Gramenet, Badalona, Mollet del Vallès y Sant Fost de Campsentelles."
+        headline="CERCA DE TI:"
+        headlineItalic={<span className="bg-[#3055C7] text-white px-3 py-0.5 rounded inline-block">{cityShort.toUpperCase()}</span>}
+        description={`${locationContext}. Actividades extraescolares cerca de ti.`}
         extra={<span>Siempre <span className="bg-[#D8E600] text-black font-black px-1.5 py-0.5 rounded">cerca de tu centro</span> educativo.</span>}
         visual={<ZonesCardsVisual />}
         flip
       />
+      
+      <FAQSection />
 
       <CtaMarquee />
       <TrustSection />

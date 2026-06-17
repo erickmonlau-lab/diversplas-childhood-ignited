@@ -1684,6 +1684,9 @@ export function LandingPage({
       <Nav />
       <Hero city={city} cityShort={cityShort} />
 
+      <TrustSection />
+      <PartnersSection />
+
       <FeatureSection
         headline="EMPIEZA AQUÍ:"
         headlineItalic={
@@ -1705,6 +1708,9 @@ export function LandingPage({
         links={[{ label: "VER TODO", href: "#activities" }, { label: "PREGUNTAS", href: "#contact" }]}
         visual={<ActivityCardsVisual />}
       />
+
+      <CtaMarquee />
+      <Activities />
 
       {/* Feature: Program (flipped) */}
       <FeatureSection
@@ -1738,11 +1744,7 @@ export function LandingPage({
         flip
       />
       
-      <CtaMarquee />
-      <TrustSection />
-      <PartnersSection />
       <Manifesto />
-      <Activities />
       <ReviewsSection />
       <FAQSection />
       <CTA />

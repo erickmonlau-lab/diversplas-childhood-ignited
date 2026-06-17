@@ -431,7 +431,7 @@ export function Hero({ city = "Barcelona y área metropolitana", cityShort = "Ba
               key={i}
               className="bg-white p-2 pb-6 border border-black/10 shadow-[4px_4px_0_0_rgba(0,0,0,0.15)] rounded-sm"
             >
-              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading="lazy" decoding="async" width={224} height={224} />
+              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading={i < 2 ? "eager" : "lazy"} fetchPriority={i < 2 ? "high" : "auto"} decoding="async" width={224} height={224} />
             </div>
           ))}
         </div>

@@ -35,10 +35,6 @@ export const FAQS = [
     question: "¿Hacéis gestión de mediodía o comedores escolares?",
     answer: "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fútbol, multideporte, karate, hip hop, zumba, manualidades, inglés, dibujo y refuerzo escolar) y en la organización de casales en periodos vacacionales. No realizamos gestión de mediodía ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas."
   },
-  {
-    question: "¿Diversplas tiene alguna relación con Diver's Associació d'Esplai o Diver Planet?",
-    answer: "No. Diversplas (diversplas.es) es una empresa completamente independiente y sin ninguna vinculación con Diver's Associació d'Esplai (diversesplai.cat), Diver Planet, ni ninguna otra entidad de nombre similar. Somos entidades distintas, con diferente titularidad, gestión y contacto."
-  }
 ];
 
 export function FAQSection() {

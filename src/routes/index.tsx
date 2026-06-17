@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, type ReactNode } from "react";
 import mascotAsset from "@/assets/diversplas-mascot.png.asset.json";
 import logoAsset from "@/assets/diversplas-logo.jpeg.asset.json";
 import { FAQSection } from '../components/FAQSection';
+import { ReviewsSection } from '../components/ReviewsSection';
 
 export const Route = createFileRoute("/")(({
   head: () => ({
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/")(({
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
-            "reviewCount": "10"
+            "reviewCount": "16"
           }
         })
       },
@@ -580,11 +581,11 @@ function ActivityCardsVisual() {
                 activity.icon
               )}
             </span>
-            <div className="flex flex-col">
-              <span className="font-black text-base uppercase tracking-wide leading-tight">
+            <div className="flex flex-col min-w-0">
+              <span className="font-black text-[15px] md:text-base uppercase tracking-wide leading-tight break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {activity.name}
               </span>
-              <span className="text-sm font-medium mt-1.5 text-black/80 leading-snug">
+              <span className="text-[13px] md:text-sm font-medium mt-1 text-black/80 leading-snug break-words">
                 {activity.desc}
               </span>
             </div>
@@ -1737,13 +1738,13 @@ export function LandingPage({
         flip
       />
       
-      <FAQSection />
-
       <CtaMarquee />
       <TrustSection />
       <PartnersSection />
       <Manifesto />
       <Activities />
+      <ReviewsSection />
+      <FAQSection />
       <CTA />
       <Footer />
     </div>

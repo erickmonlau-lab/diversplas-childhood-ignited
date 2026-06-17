@@ -35,7 +35,7 @@ export function ReviewsSection() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
           <div className="max-w-2xl">
-            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-wide text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Lo que dicen <span className="text-[#D8E600] inline-block ml-1 sm:ml-2" style={{ textShadow: '2px 2px 0 #0a0a0a' }}>las familias</span>
             </h2>
             <p className="mt-4 text-white/80 text-xl font-medium">
@@ -52,19 +52,19 @@ export function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="bg-[#1D2F8C] border-2 border-black p-8 sm:p-10 rounded-2xl shadow-[6px_6px_0_0_#000] hover:translate-y-[-4px] hover:shadow-[8px_8px_0_0_#000] transition-all flex flex-col justify-between"
+              className="bg-white border-2 border-black p-8 sm:p-10 rounded-2xl shadow-[6px_6px_0_0_#000] hover:translate-y-[-4px] hover:shadow-[8px_8px_0_0_#000] transition-all flex flex-col justify-between"
             >
               <div>
                 <StarRating />
-                <p className="mt-6 text-lg font-medium text-white leading-[1.8] italic">
+                <p className="mt-6 text-lg font-medium text-black/80 leading-[1.8]">
                   "{review.text}"
                 </p>
               </div>
-              <div className="mt-8 flex items-center gap-3 border-t-2 border-white/10 pt-5">
-                <div className="w-10 h-10 rounded-full bg-[#D8E600] flex items-center justify-center text-black font-black text-lg border-2 border-black shrink-0">
+              <div className="mt-8 flex items-center gap-3 border-t-2 border-black/10 pt-5">
+                <div className="w-10 h-10 rounded-full bg-[#1D2F8C] flex items-center justify-center text-white font-bold text-lg border border-black/10 shrink-0">
                   {review.name.charAt(0)}
                 </div>
-                <span className="font-bold text-white leading-tight">{review.name}</span>
+                <span className="font-bold text-black leading-tight">{review.name}</span>
               </div>
             </motion.div>
           ))}

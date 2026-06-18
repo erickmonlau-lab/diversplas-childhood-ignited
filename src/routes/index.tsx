@@ -10,9 +10,9 @@ export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
       { title: "Diversplas - Actividades extraescolares en Barcelona" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. No realizamos gestión de comedores. Tranquilidad y confianza a las familias. Colegios, AFAs y centros educativos." },
-      { property: "og:title", content: "Diversplas - Actividades extraescolares en Barcelona" },
-      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AFAs de Barcelona." },
+      { name: "description", content: "Más de 20 años creando experiencias extraescolares premium. Cobertura en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost. Especialistas para colegios y AFAs." },
+      { property: "og:title", content: "Diversplas - Extraescolares en Barcelona, Santa Coloma, Badalona y Vallès" },
+      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AFAs en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost." },
     ],
     scripts: [
       {
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")(({
           "legalName": "Diversplas",
           "alternateName": ["Diversplas Extraescolares", "Divers Plas"],
           "disambiguatingDescription": "Diversplas (diversplas.es) es una empresa completamente independiente y sin relación alguna con Diversesplai (diversesplai.cat), Diver's Associació d'Esplai ni ninguna entidad similar. Son empresas distintas con distinto CIF, distinta web y distinto correo electrónico.",
-          "description": "Especialistas en actividades extraescolares y casales vacacionales en Barcelona, Santa Coloma de Gramenet y alrededores. Más de 20 años de experiencia.",
+          "description": "Especialistas en actividades extraescolares y casales vacacionales. Más de 20 años de experiencia.",
           "url": "https://www.diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplasextraescolares@gmail.com",
@@ -37,14 +37,13 @@ export const Route = createFileRoute("/")(({
             "addressCountry": "ES"
           },
           "areaServed": [
-            "Santa Coloma de Gramenet",
-            "Barcelona",
-            "Sant Fost de Campsentelles",
-            "Martorelles",
-            "Badalona",
-            "Mollet del Vallès",
-            "Fondo",
-            "Singuerlín"
+            { "@type": "City", "name": "Barcelona" },
+            { "@type": "City", "name": "Santa Coloma de Gramenet" },
+            { "@type": "City", "name": "Badalona" },
+            { "@type": "City", "name": "Mollet del Vallès" },
+            { "@type": "City", "name": "Martorelles" },
+            { "@type": "City", "name": "Sant Fost de Campsentelles" },
+            { "@type": "Neighborhood", "name": "El Fondo, Santa Coloma de Gramenet" }
           ],
           "sameAs": [
             "https://www.diversplas.es",

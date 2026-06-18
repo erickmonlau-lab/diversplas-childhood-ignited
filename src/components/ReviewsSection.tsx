@@ -2,16 +2,16 @@ import { motion } from 'framer-motion';
 
 const REVIEWS = [
   {
-    name: "sheila Baudet",
-    text: "Empresa familiar y cercana! He tenido reunión con la directora para contratar uno servios y la verdad que he quedado encantada. Sin duda volveré a contactar."
+    name: "Sheila Baudet",
+    text: "¡Empresa familiar y cercana! He tenido una reunión con la directora para contratar unos servicios y la verdad es que he quedado encantada. Sin duda volveré a contactar."
   },
   {
     name: "Antonia Santos Cano",
-    text: "Hola Diversplas sois geniales la coordinadora se desvive por los niños los monitores súper atentos."
+    text: "¡Hola Diversplas, sois geniales! La coordinadora se desvive por los niños y los monitores son súper atentos."
   },
   {
-    name: "Maria Edivia Salguero Diaz",
-    text: "Me encanta, por su valor como persona y profesional ❤️"
+    name: "María Edivia Salguero Díaz",
+    text: "Me encanta, por su valor como persona y profesional. ❤️"
   }
 ];
 

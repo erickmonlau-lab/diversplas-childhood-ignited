@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 const REVIEWS = [
   {
-    name: "Heidy Torre Moronta",
-    text: "Buena organización y ayuda a los niños recomendados Rakel la mejor"
+    name: "sheila Baudet",
+    text: "Empresa familiar y cercana! He tenido reunión con la directora para contratar uno servios y la verdad que he quedado encantada. Sin duda volveré a contactar."
   },
   {
     name: "Antonia Santos Cano",

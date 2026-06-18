@@ -11,7 +11,8 @@ const REVIEWS = [
   },
   {
     name: "María Edivia Salguero Díaz",
-    text: "Me encanta, por su valor como persona y profesional. ❤️"
+    text: "Me encanta, por su valor como persona y profesional. ❤️",
+    image: "/maria-avatar.png" // The user will upload this image
   }
 ];
 
@@ -61,8 +62,12 @@ export function ReviewsSection() {
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-3 border-t-2 border-black/10 pt-5">
-                <div className="w-10 h-10 rounded-full bg-[#1D2F8C] flex items-center justify-center text-white font-bold text-lg border border-black/10 shrink-0">
-                  {review.name.charAt(0)}
+                <div className="w-10 h-10 rounded-full bg-[#1D2F8C] flex items-center justify-center text-white font-bold text-lg border border-black/10 shrink-0 overflow-hidden">
+                  {review.image ? (
+                    <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                  ) : (
+                    review.name.charAt(0)
+                  )}
                 </div>
                 <span className="font-bold text-black leading-tight">{review.name}</span>
               </div>

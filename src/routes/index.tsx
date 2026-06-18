@@ -9,9 +9,9 @@ import { ReviewsSection } from '../components/ReviewsSection';
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "Diversplas - Actividades extraescolares en Barcelona" },
+      { title: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
       { name: "description", content: "Más de 20 años creando experiencias extraescolares premium. Cobertura en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost. Especialistas para colegios y AFAs." },
-      { property: "og:title", content: "Diversplas - Extraescolares en Barcelona, Santa Coloma, Badalona y Vallès" },
+      { property: "og:title", content: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
       { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AFAs en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost." },
     ],
     scripts: [

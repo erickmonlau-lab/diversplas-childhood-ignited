@@ -11,8 +11,7 @@ const REVIEWS = [
   },
   {
     name: "María Edivia Salguero Díaz",
-    text: "Me encanta, por su valor como persona y profesional. ❤️",
-    image: "/maria-avatar.png" // The user will upload this image
+    text: "Me encanta, por su valor como persona y profesional. ❤️"
   }
 ];
 

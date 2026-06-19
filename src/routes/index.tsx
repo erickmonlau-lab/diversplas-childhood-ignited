@@ -5,9 +5,9 @@ export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
       { title: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares premium. Cobertura en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost. Especialistas para colegios y AFAs." },
+      { name: "description", content: "MÃ¡s de 20 aÃ±os creando experiencias extraescolares premium. Cobertura en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost. Especialistas para colegios y AFAs." },
       { property: "og:title", content: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
-      { property: "og:description", content: "Más de 20 años de actividades extraescolares premium para colegios y AFAs en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost." },
+      { property: "og:description", content: "MÃ¡s de 20 aÃ±os de actividades extraescolares premium para colegios y AFAs en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost." },
     ],
     scripts: [
       {
@@ -18,8 +18,8 @@ export const Route = createFileRoute("/")(({
           "name": "Diversplas",
           "legalName": "Diversplas",
           "alternateName": ["Diversplas Extraescolares", "Divers Plas"],
-          "disambiguatingDescription": "Diversplas (diversplas.es) es una empresa completamente independiente y sin relación alguna con Diversesplai (diversesplai.cat), Diver's Associació d'Esplai ni ninguna entidad similar. Son empresas distintas con distinto CIF, distinta web y distinto correo electrónico.",
-          "description": "Especialistas en actividades extraescolares y casales vacacionales. Más de 20 años de experiencia.",
+          "disambiguatingDescription": "Diversplas (diversplas.es) es una empresa completamente independiente y sin relaciÃ³n alguna con Diversesplai (diversesplai.cat), Diver's AssociaciÃ³ d'Esplai ni ninguna entidad similar. Son empresas distintas con distinto CIF, distinta web y distinto correo electrÃ³nico.",
+          "description": "Especialistas en actividades extraescolares y casales vacacionales. MÃ¡s de 20 aÃ±os de experiencia.",
           "url": "https://www.diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplasextraescolares@gmail.com",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")(({
             { "@type": "City", "name": "Barcelona" },
             { "@type": "City", "name": "Santa Coloma de Gramenet" },
             { "@type": "City", "name": "Badalona" },
-            { "@type": "City", "name": "Mollet del Vallès" },
+            { "@type": "City", "name": "Mollet del VallÃ¨s" },
             { "@type": "City", "name": "Martorelles" },
             { "@type": "City", "name": "Sant Fost de Campsentelles" },
             { "@type": "Neighborhood", "name": "El Fondo, Santa Coloma de Gramenet" }
@@ -58,15 +58,15 @@ export const Route = createFileRoute("/")(({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Desde qué edad pueden apuntarse los niños?", "acceptedAnswer": { "@type": "Answer", "text": "A partir de 3-4 años según la actividad y el colegio." } },
-            { "@type": "Question", "name": "¿Cómo me inscribo?", "acceptedAnswer": { "@type": "Answer", "text": "A través del AFA del colegio donde se imparte la actividad." } },
-            { "@type": "Question", "name": "¿Con quién trabajáis?", "acceptedAnswer": { "@type": "Answer", "text": "Con AFAs, ludotecas, centros cívicos y casales de Barcelona y alrededores." } },
-            { "@type": "Question", "name": "¿Qué actividades extraescolares ofrecéis?", "acceptedAnswer": { "@type": "Answer", "text": "Fútbol, Multideporte, Karate, Hip Hop, Zumba, Manualidades, Inglés, Dibujo y Refuerzo escolar (deberes)." } },
-            { "@type": "Question", "name": "¿En qué zonas operáis?", "acceptedAnswer": { "@type": "Answer", "text": "Santa Coloma de Gramenet, el Fondo, Badalona, Mollet del Vallès, Sant Fost de Campsentelles, Martorelles y Barcelona." } },
-            { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "El precio varía según la actividad y el colegio. Consulta directamente con el AFA de tu colegio." } },
-            { "@type": "Question", "name": "¿En qué horario son las actividades?", "acceptedAnswer": { "@type": "Answer", "text": "De lunes a viernes a partir de las 16:30, al finalizar el horario escolar." } },
-            { "@type": "Question", "name": "¿Hacéis gestión de mediodía o comedores escolares?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fútbol, multideporte, karate, hip hop, zumba, manualidades, inglés, dibujo y refuerzo escolar) y en la organización de casales en periodos vacacionales. No realizamos gestión de mediodía ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas." } },
-            { "@type": "Question", "name": "¿Diversplas tiene alguna relación con Diver's Associació d'Esplai o Diver Planet?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas (diversplas.es) es una empresa completamente independiente y sin ninguna vinculación con Diver's Associació d'Esplai (diversesplai.cat), Diver Planet, ni ninguna otra entidad de nombre similar. Somos entidades distintas, con diferente titularidad, gestión y contacto." } }
+            { "@type": "Question", "name": "Â¿Desde quÃ© edad pueden apuntarse los niÃ±os?", "acceptedAnswer": { "@type": "Answer", "text": "A partir de 3-4 aÃ±os segÃºn la actividad y el colegio." } },
+            { "@type": "Question", "name": "Â¿CÃ³mo me inscribo?", "acceptedAnswer": { "@type": "Answer", "text": "A travÃ©s del AFA del colegio donde se imparte la actividad." } },
+            { "@type": "Question", "name": "Â¿Con quiÃ©n trabajÃ¡is?", "acceptedAnswer": { "@type": "Answer", "text": "Con AFAs, ludotecas, centros cÃ­vicos y casales de Barcelona y alrededores." } },
+            { "@type": "Question", "name": "Â¿QuÃ© actividades extraescolares ofrecÃ©is?", "acceptedAnswer": { "@type": "Answer", "text": "FÃºtbol, Multideporte, Karate, Hip Hop, Zumba, Manualidades, InglÃ©s, Dibujo y Refuerzo escolar (deberes)." } },
+            { "@type": "Question", "name": "Â¿En quÃ© zonas operÃ¡is?", "acceptedAnswer": { "@type": "Answer", "text": "Santa Coloma de Gramenet, el Fondo, Badalona, Mollet del VallÃ¨s, Sant Fost de Campsentelles, Martorelles y Barcelona." } },
+            { "@type": "Question", "name": "Â¿CuÃ¡nto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "El precio varÃ­a segÃºn la actividad y el colegio. Consulta directamente con el AFA de tu colegio." } },
+            { "@type": "Question", "name": "Â¿En quÃ© horario son las actividades?", "acceptedAnswer": { "@type": "Answer", "text": "De lunes a viernes a partir de las 16:30, al finalizar el horario escolar." } },
+            { "@type": "Question", "name": "Â¿HacÃ©is gestiÃ³n de mediodÃ­a o comedores escolares?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fÃºtbol, multideporte, karate, hip hop, zumba, manualidades, inglÃ©s, dibujo y refuerzo escolar) y en la organizaciÃ³n de casales en periodos vacacionales. No realizamos gestiÃ³n de mediodÃ­a ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas." } },
+            { "@type": "Question", "name": "Â¿Diversplas tiene alguna relaciÃ³n con Diver's AssociaciÃ³ d'Esplai o Diver Planet?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas (diversplas.es) es una empresa completamente independiente y sin ninguna vinculaciÃ³n con Diver's AssociaciÃ³ d'Esplai (diversesplai.cat), Diver Planet, ni ninguna otra entidad de nombre similar. Somos entidades distintas, con diferente titularidad, gestiÃ³n y contacto." } }
           ]
         })
       }

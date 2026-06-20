@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://diversplas.es/sitemap.xml
+Sitemap: https://www.diversplas.es/sitemap.xml

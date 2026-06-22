@@ -326,7 +326,7 @@ export function Hero({ city = "Barcelona y área metropolitana", cityShort = "Ba
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto"
             style={btnStyle}
           >
-            SOLICITAR CITA {cityShort !== "Barcelona" && `EN ${cityShort.toUpperCase()}`}{" "}
+            SOLICITAR CITA EN {cityShort.toUpperCase()}{" "}
             <span className="transition-transform group-hover:translate-x-1 inline-flex items-center">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="9" fill="white" stroke="currentColor" strokeWidth="2"/>

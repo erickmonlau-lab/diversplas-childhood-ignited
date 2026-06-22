@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.diversplas.es"
+        }
+      ],
+      "destination": "https://diversplas.es/$1",
+      "permanent": true
+    }
+  ]
+}

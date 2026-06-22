@@ -1519,11 +1519,11 @@ function Footer() {
               />
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <a
-                  href="https://www.diversplas.es"
+                  href="https://diversplas.es"
                   className="text-[11px] font-black text-black uppercase tracking-wider border-b-2 border-[#1D2F8C] hover:text-[#D8E600] hover:border-[#D8E600] transition-colors leading-none pb-0.5 inline-block"
                   aria-label="Sitio web de Diversplas"
                 >
-                  www.diversplas.es
+                  diversplas.es
                 </a>
                 <a
                   href="https://www.instagram.com/diversplas_extraescolares"

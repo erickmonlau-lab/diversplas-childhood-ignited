@@ -13,6 +13,7 @@ import { Route as SantaColomaRouteImport } from './routes/santa-coloma'
 import { Route as SantFostRouteImport } from './routes/sant-fost'
 import { Route as MolletRouteImport } from './routes/mollet'
 import { Route as MartorellesRouteImport } from './routes/martorelles'
+import { Route as FondoRouteImport } from './routes/fondo'
 import { Route as BarcelonaRouteImport } from './routes/barcelona'
 import { Route as BadalonaRouteImport } from './routes/badalona'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const MartorellesRoute = MartorellesRouteImport.update({
   path: '/martorelles',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FondoRoute = FondoRouteImport.update({
+  id: '/fondo',
+  path: '/fondo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BarcelonaRoute = BarcelonaRouteImport.update({
   id: '/barcelona',
   path: '/barcelona',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/badalona': typeof BadalonaRoute
   '/barcelona': typeof BarcelonaRoute
+  '/fondo': typeof FondoRoute
   '/martorelles': typeof MartorellesRoute
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/badalona': typeof BadalonaRoute
   '/barcelona': typeof BarcelonaRoute
+  '/fondo': typeof FondoRoute
   '/martorelles': typeof MartorellesRoute
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/badalona': typeof BadalonaRoute
   '/barcelona': typeof BarcelonaRoute
+  '/fondo': typeof FondoRoute
   '/martorelles': typeof MartorellesRoute
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/badalona'
     | '/barcelona'
+    | '/fondo'
     | '/martorelles'
     | '/mollet'
     | '/sant-fost'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/badalona'
     | '/barcelona'
+    | '/fondo'
     | '/martorelles'
     | '/mollet'
     | '/sant-fost'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/badalona'
     | '/barcelona'
+    | '/fondo'
     | '/martorelles'
     | '/mollet'
     | '/sant-fost'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BadalonaRoute: typeof BadalonaRoute
   BarcelonaRoute: typeof BarcelonaRoute
+  FondoRoute: typeof FondoRoute
   MartorellesRoute: typeof MartorellesRoute
   MolletRoute: typeof MolletRoute
   SantFostRoute: typeof SantFostRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MartorellesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fondo': {
+      id: '/fondo'
+      path: '/fondo'
+      fullPath: '/fondo'
+      preLoaderRoute: typeof FondoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/barcelona': {
       id: '/barcelona'
       path: '/barcelona'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BadalonaRoute: BadalonaRoute,
   BarcelonaRoute: BarcelonaRoute,
+  FondoRoute: FondoRoute,
   MartorellesRoute: MartorellesRoute,
   MolletRoute: MolletRoute,
   SantFostRoute: SantFostRoute,

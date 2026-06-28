@@ -56,6 +56,38 @@ export const Route = createFileRoute("/")(({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "Diversplas Actividades Extraescolares",
+          "url": "https://diversplas.es/",
+          "telephone": "+34657117426",
+          "email": "diversplasextraescolares@gmail.com",
+          "description": "Empresa especializada en actividades extraescolares para colegios, AFAs y centros cívicos en Barcelona y área metropolitana. Fútbol, karate, hip hop, inglés, zumba, manualidades, dibujo y refuerzo escolar.",
+          "foundingDate": "2005",
+          "areaServed": [
+            "Barcelona", "Santa Coloma de Gramenet", "Badalona",
+            "Mollet del Vallès", "Martorelles", "Sant Fost de Campsentelles"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Actividades Extraescolares",
+            "itemListElement": [
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Fútbol extraescolar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Karate para niños"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Hip Hop infantil"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Zumba Kids"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Inglés extraescolar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Multideporte"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Manualidades"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Refuerzo escolar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Casales vacacionales"}}
+            ]
+          }
+        })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "¿Desde qué edad pueden apuntarse los niños?", "acceptedAnswer": { "@type": "Answer", "text": "A partir de 3-4 años según la actividad y el colegio." } },

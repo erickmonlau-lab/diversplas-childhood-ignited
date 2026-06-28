@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 export const FAQS = [
@@ -54,37 +53,23 @@ export function FAQSection() {
             return (
               <div 
                 key={index} 
-                className={`border-2 border-black rounded-xl overflow-hidden bg-white transition-shadow ${isOpen ? 'shadow-[6px_6px_0_0_#000]' : 'shadow-[3px_3px_0_0_#000] hover:shadow-[4px_4px_0_0_#000]'}`}
+                className={`border-2 border-black rounded-xl overflow-hidden transition-all ${isOpen ? 'bg-[#D8E600] shadow-[6px_6px_0_0_#000]' : 'bg-white shadow-[3px_3px_0_0_#000] hover:shadow-[4px_4px_0_0_#000]'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
                 >
-                  <span className="font-bold text-lg md:text-xl">{faq.question}</span>
-                  <div className={`shrink-0 ml-4 p-1 rounded-full border-2 border-black transition-colors ${isOpen ? 'bg-[#D8E600]' : 'bg-[#f0f0f0]'}`}>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronDown size={20} strokeWidth={3} />
-                    </motion.div>
+                  <span className="font-bold text-lg md:text-xl text-black">{faq.question}</span>
+                  <div className={`shrink-0 ml-4 p-1 rounded-full border-2 border-black transition-transform duration-300 bg-white ${isOpen ? 'rotate-180' : ''}`}>
+                    <ChevronDown size={20} strokeWidth={3} className="text-black" />
                   </div>
                 </button>
                 
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="p-5 md:p-6 pt-0 text-black/75 font-medium md:text-lg border-t-2 border-black/5">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
+                  <div className={`p-5 md:p-6 pt-0 font-medium md:text-lg border-t-2 ${isOpen ? 'border-black/10 text-black/85' : 'border-transparent text-transparent'}`}>
+                    {faq.answer}
+                  </div>
+                </div>
               </div>
             );
           })}
@@ -93,3 +78,4 @@ export function FAQSection() {
     </section>
   );
 }
+

@@ -10,6 +10,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import "../styles/fonts.css";
+import "../styles/animations.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -78,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Diversplas - Actividades extraescolares en Barcelona" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "keywords", content: "actividades extraescolares barcelona, extraescolares santa coloma gramenet, extraescolares badalona, actividades niños barcelona, futbol extraescolar barcelona, karate niños barcelona, hip hop niños extraescolar, casales verano barcelona, AFA actividades colegios barcelona" },
       { name: "description", content: "Diversplas es una entidad independiente con más de 20 años de experiencia. Actividades extraescolares en Santa Coloma de Gramenet, el Fondo y Barcelona." },
       { name: "author", content: "Diversplas" },
       { property: "og:title", content: "Diversplas — Un mundo lleno de actividades" },
@@ -91,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Diversplas" },
       { property: "og:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
       { property: "og:description", content: "Más de 20 años creando experiencias extraescolares en Barcelona. Para colegios, AFAs y familias." },
-      { property: "og:url", content: "https://diversplas.es" },
+      { property: "og:url", content: "https://diversplas.es/" },
       { property: "og:image", content: "https://diversplas.es/og-diversplas-v3.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Diversplas — Actividades extraescolares en Barcelona" },
@@ -103,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "canonical", href: "https://diversplas.es" },
+      { rel: "canonical", href: "https://diversplas.es/" },
       { rel: "icon", type: "image/png", sizes: "48x48", href: "https://diversplas.es/favicon-48.png" },
       { rel: "icon", type: "image/png", sizes: "192x192", href: "https://diversplas.es/favicon-192.png" },
       { rel: "apple-touch-icon", href: "https://diversplas.es/apple-touch-icon.png" },
@@ -120,19 +123,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
-        <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600&display=swap" />
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&display=swap" />
-        <link rel="stylesheet" media="print" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600&display=swap" />
-        <link rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&display=swap" />
-        <script dangerouslySetInnerHTML={{ __html: `document.querySelectorAll('link[media="print"]').forEach(function(l) { l.media = 'all'; });` }} />
-        <noscript>
-          <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600&display=swap" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&display=swap" />
-        </noscript>
+        {/* Preload hero images */}
+        <link rel="preload" as="image" href="/image_53ee82.webp" fetchPriority="high"/>
+        <link rel="preload" as="image" href="/image_53d820.webp" fetchPriority="high"/>
+        {/* Preload critical local fonts */}
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900-italic.woff2" crossOrigin="anonymous" />
       </head>
       <body>
         {children}

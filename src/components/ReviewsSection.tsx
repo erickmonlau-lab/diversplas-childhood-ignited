@@ -1,17 +1,21 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from '../hooks/useInView';
 
 const REVIEWS = [
   {
     name: "Sheila Baudet",
-    text: "¡Empresa familiar y cercana! He tenido una reunión con la directora para contratar unos servicios y la verdad es que he quedado encantada. Sin duda volveré a contactar."
+    text: "¡Empresa familiar y cercana! He tenido una reunión con la directora para contratar unos servicios y la verdad es que he quedado encantada. Sin duda volveré a contactar.",
+    image: undefined
   },
   {
     name: "Antonia Santos Cano",
-    text: "¡Hola Diversplas, sois geniales! La coordinadora se desvive por los niños y los monitores son súper atentos."
+    text: "¡Hola Diversplas, sois geniales! La coordinadora se desvive por los niños y los monitores son súper atentos.",
+    image: undefined
   },
   {
     name: "María Edivia Salguero Díaz",
-    text: "Me encanta, por su valor como persona y profesional. ❤️"
+    text: "Me encanta, por su valor como persona y profesional. ❤️",
+    image: undefined
   }
 ];
 
@@ -28,13 +32,16 @@ function StarRating() {
 }
 
 export function ReviewsSection() {
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref);
+
   return (
-    <section className="py-20 bg-[#1D2F8C] border-b-2 border-black overflow-hidden relative">
+    <section ref={ref} className="py-20 bg-[#1D2F8C] border-b-2 border-black overflow-hidden relative">
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
       
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
-          <div className="max-w-2xl">
+          <div className={`max-w-2xl ${inView ? 'animate-fade-in' : 'opacity-0'}`}>
             <h2 className="text-5xl md:text-6xl font-black uppercase tracking-wide text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Lo que dicen <span className="text-[#D8E600] inline-block ml-1 sm:ml-2" style={{ textShadow: '2px 2px 0 #0a0a0a' }}>las familias</span>
             </h2>
@@ -46,13 +53,10 @@ export function ReviewsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {REVIEWS.map((review, i) => (
-            <motion.div 
+            <div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="bg-white border-2 border-black p-8 sm:p-10 rounded-2xl shadow-[6px_6px_0_0_#000] hover:translate-y-[-4px] hover:shadow-[8px_8px_0_0_#000] transition-all flex flex-col justify-between"
+              className={`bg-white border-2 border-black p-8 sm:p-10 rounded-2xl shadow-[6px_6px_0_0_#000] hover:translate-y-[-4px] hover:shadow-[8px_8px_0_0_#000] transition-all flex flex-col justify-between ${inView ? 'animate-fade-in' : 'opacity-0'}`}
+              style={{ animationDelay: `${i * 150}ms` }}
             >
               <div>
                 <StarRating />
@@ -70,11 +74,11 @@ export function ReviewsSection() {
                 </div>
                 <span className="font-bold text-black leading-tight">{review.name}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className={`mt-12 flex justify-center ${inView ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '500ms' }}>
           <a
             href="https://www.google.com/maps?cid=17471814521949579952"
             target="_blank"
@@ -91,3 +95,4 @@ export function ReviewsSection() {
     </section>
   );
 }
+

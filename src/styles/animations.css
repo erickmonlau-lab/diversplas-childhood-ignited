@@ -1,0 +1,67 @@
+/* Custom animations for Diversplas */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50%      { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+@keyframes ticker-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: ticker-left 20s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ticker-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.ticker-track-reverse {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: ticker-right 22s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .ticker-track-reverse {
+    animation: none;
+  }
+}
+
+.activity-card {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.activity-card:hover {
+  transform: rotate(-1.5deg) scale(1.03);
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease, padding 300ms ease;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  padding-bottom: 1rem;
+}

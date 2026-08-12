@@ -1,21 +1,18 @@
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { condensed, btnStyle } from "../lib/styles";
 import HeroSection from "./sections/HeroSection";
 import FloatingWidgets from "./ui/FloatingWidgets";
 
-// Lazy loaded sections
-const CarouselSection = lazy(() => import("./sections/CarouselSection"));
-const CentrosSection = lazy(() => import("./sections/CentrosSection"));
-const ActividadesSection = lazy(() => import("./sections/ActividadesSection"));
-const TickerSection = lazy(() => import("./sections/TickerSection"));
-const ProgramaSection = lazy(() => import("./sections/ProgramaSection"));
-const ZonasSection = lazy(() => import("./sections/ZonasSection"));
-const ManifiestoSection = lazy(() => import("./sections/ManifiestoSection"));
-const ContactoSection = lazy(() => import("./sections/ContactoSection"));
-const FAQSection = lazy(() => import("./FAQSection").then(module => ({ default: module.FAQSection })));
-const ReviewsSection = lazy(() => import("./ReviewsSection").then(module => ({ default: module.ReviewsSection })));
-
-const SectionFallback = () => <div style={{ minHeight: '300px' }} aria-hidden="true" />;
+import CarouselSection from "./sections/CarouselSection";
+import CentrosSection from "./sections/CentrosSection";
+import ActividadesSection from "./sections/ActividadesSection";
+import TickerSection from "./sections/TickerSection";
+import ProgramaSection from "./sections/ProgramaSection";
+import ZonasSection from "./sections/ZonasSection";
+import ManifiestoSection from "./sections/ManifiestoSection";
+import ContactoSection from "./sections/ContactoSection";
+import { FAQSection } from "./FAQSection";
+import { ReviewsSection } from "./ReviewsSection";
 
 function Nav() {
   const [open, setOpen] = useState(false);
@@ -212,45 +209,16 @@ export function LandingPage({ city, cityShort, locationContext }: LandingPagePro
       <main className="flex flex-col bg-white">
         <HeroSection city={city} cityShort={cityShort} />
         
-        <Suspense fallback={<SectionFallback />}>
-          <TickerSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionFallback />}>
-          <ActividadesSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionFallback />}>
-          <ProgramaSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <CentrosSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <CarouselSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionFallback />}>
-          <ZonasSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <ManifiestoSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <ReviewsSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <FAQSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionFallback />}>
-          <ContactoSection />
-        </Suspense>
+        <TickerSection />
+        <ActividadesSection />
+        <ProgramaSection />
+        <CentrosSection />
+        <CarouselSection />
+        <ZonasSection />
+        <ManifiestoSection />
+        <ReviewsSection />
+        <FAQSection />
+        <ContactoSection />
       </main>
       <Footer />
       <FloatingWidgets />

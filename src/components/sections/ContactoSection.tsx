@@ -35,13 +35,22 @@ function ContactForm({ tipo: initialTipo }: { tipo?: 'centro' | 'familia' } = {}
     setLoading(true);
     const formData = new FormData(e.currentTarget);
     const selectedTipo = formData.get("tipo") as string || perfil;
-    const data = { ...Object.fromEntries(formData.entries()), tipo: selectedTipo };
+    const data = {
+      ...Object.fromEntries(formData.entries()),
+      tipo: selectedTipo,
+      email_destino: 'diversplascontacto@gmail.com',
+      destinatario: 'diversplascontacto@gmail.com',
+      origen: typeof window !== 'undefined' ? window.location.href : 'https://diversplas.es'
+    };
     try {
-      await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
+      const response = await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      if (!response.ok) {
+        throw new Error("Error al procesar el formulario");
+      }
       setSent(true);
     } catch {
       setSent(true);

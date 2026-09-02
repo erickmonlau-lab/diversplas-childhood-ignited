@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")(({
           "description": "Especialistas en actividades extraescolares y casales vacacionales. Más de 20 años de experiencia.",
           "url": "https://www.diversplas.es",
           "telephone": "+34657117426",
-          "email": "diversplasextraescolares@gmail.com",
+          "email": "diversplascontacto@gmail.com",
           "image": "https://www.diversplas.es/og-diversplas-v3.jpg",
           "logo": "https://www.diversplas.es/diversplas-logo.jpeg",
           "address": {
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/")(({
           "name": "Diversplas Actividades Extraescolares",
           "url": "https://diversplas.es/",
           "telephone": "+34657117426",
-          "email": "diversplasextraescolares@gmail.com",
+          "email": "diversplascontacto@gmail.com",
           "description": "Empresa especializada en actividades extraescolares para colegios, AFAs y centros cívicos en Barcelona y área metropolitana. Fútbol, karate, hip hop, inglés, zumba, manualidades, dibujo y refuerzo escolar.",
           "foundingDate": "2005",
           "areaServed": [

@@ -179,7 +179,7 @@ export function Footer() {
             </div>
             
             <div className="flex items-center gap-2">
-              <a className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="mailto:diversplasextraescolares@gmail.com" aria-label="Enviar email a Diversplas" title="diversplasextraescolares@gmail.com">
+              <a className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="mailto:diversplascontacto@gmail.com" aria-label="Enviar email a Diversplas" title="diversplascontacto@gmail.com">
                 <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
               </a>
               <a className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="tel:+34657117426" aria-label="Llamar a Diversplas" title="+34 657 117 426">

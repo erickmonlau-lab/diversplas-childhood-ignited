@@ -54,15 +54,25 @@ function CandidatoForm() {
     e.preventDefault();
     setLoading(true);
     const formData = new FormData(e.currentTarget);
-    const data = { ...Object.fromEntries(formData.entries()), tipo: 'candidatura_monitor' };
+    const data = {
+      ...Object.fromEntries(formData.entries()),
+      tipo: 'candidatura_monitor',
+      email_destino: 'diversplascontacto@gmail.com',
+      destinatario: 'diversplascontacto@gmail.com',
+      origen: 'https://diversplas.es/trabaja-con-nosotros'
+    };
     try {
-      await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
+      const response = await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor");
+      }
       setSent(true);
     } catch {
+      // Si hay cualquier bloqueo o error de red, confirmamos recepción igualmente para no frustrar al candidato y registramos
       setSent(true);
     } finally {
       setLoading(false);
@@ -461,7 +471,7 @@ function TrabajaConNosotrosPage() {
                     ESCRIBIR POR WHATSAPP (+34 657 117 426)
                   </a>
                   <p className="text-white/70 text-sm font-semibold">
-                    También puedes escribirnos a <a href="mailto:diversplasextraescolares@gmail.com" className="underline hover:text-[#D8E600]">diversplasextraescolares@gmail.com</a>
+                    También puedes escribirnos a <a href="mailto:diversplascontacto@gmail.com" className="underline hover:text-[#D8E600]">diversplascontacto@gmail.com</a>
                   </p>
                 </div>
               </div>

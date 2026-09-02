@@ -1,20 +1,18 @@
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { condensed, btnStyle } from "../lib/styles";
 import HeroSection from "./sections/HeroSection";
 import TickerSection from "./sections/TickerSection";
 import ActividadesSection from "./sections/ActividadesSection";
-
-// Lazy-load below-the-fold components to reduce initial JS bundle size from 130KB to ~35KB
-const ProgramaSection = lazy(() => import("./sections/ProgramaSection"));
-const CentrosSection = lazy(() => import("./sections/CentrosSection"));
-const CarouselSection = lazy(() => import("./sections/CarouselSection"));
-const ZonasSection = lazy(() => import("./sections/ZonasSection"));
-const EmpleoSection = lazy(() => import("./sections/EmpleoSection"));
-const ManifiestoSection = lazy(() => import("./sections/ManifiestoSection"));
-const ReviewsSection = lazy(() => import("./ReviewsSection").then(m => ({ default: m.ReviewsSection })));
-const FAQSection = lazy(() => import("./FAQSection").then(m => ({ default: m.FAQSection })));
-const ContactoSection = lazy(() => import("./sections/ContactoSection"));
-const FloatingWidgets = lazy(() => import("./ui/FloatingWidgets"));
+import ProgramaSection from "./sections/ProgramaSection";
+import CentrosSection from "./sections/CentrosSection";
+import CarouselSection from "./sections/CarouselSection";
+import ZonasSection from "./sections/ZonasSection";
+import EmpleoSection from "./sections/EmpleoSection";
+import ManifiestoSection from "./sections/ManifiestoSection";
+import { ReviewsSection } from "./ReviewsSection";
+import { FAQSection } from "./FAQSection";
+import ContactoSection from "./sections/ContactoSection";
+import FloatingWidgets from "./ui/FloatingWidgets";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -34,6 +32,7 @@ export function Nav() {
           borderBottom: "1.5px solid rgba(0,0,0,0.07)",
           padding: "10px 16px",
           boxSizing: "border-box",
+          height: "80px",
         }}
       >
         <a href="#top" onClick={() => setOpen(false)} className="flex items-center">
@@ -75,7 +74,7 @@ export function Nav() {
       {open && (
         <div
           className="fixed left-4 right-4 z-40 rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] overflow-hidden animate-fade-in"
-          style={{ top: 76 }}
+          style={{ top: 80 }}
         >
           <nav className="flex flex-col">
             {links.map(([label, href], i) => (
@@ -148,22 +147,18 @@ export function LandingPage({ city, cityShort }: LandingPageProps) {
         <HeroSection city={city} cityShort={cityShort} />
         <TickerSection />
         <ActividadesSection />
-        <Suspense fallback={null}>
-          <ProgramaSection />
-          <CentrosSection />
-          <CarouselSection />
-          <ZonasSection />
-          <EmpleoSection />
-          <ManifiestoSection />
-          <ReviewsSection />
-          <FAQSection />
-          <ContactoSection />
-        </Suspense>
+        <ProgramaSection />
+        <CentrosSection />
+        <CarouselSection />
+        <ZonasSection />
+        <EmpleoSection />
+        <ManifiestoSection />
+        <ReviewsSection />
+        <FAQSection />
+        <ContactoSection />
       </main>
       <Footer />
-      <Suspense fallback={null}>
-        <FloatingWidgets />
-      </Suspense>
+      <FloatingWidgets />
     </div>
   );
 }

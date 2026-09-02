@@ -9,17 +9,17 @@ export const Route = createFileRoute('/trabaja-con-nosotros')({
   component: TrabajaConNosotrosPage,
   head: () => ({
     meta: [
-      { title: "Buscamos Monitor de Patinaje y Zumba en Santa Coloma de Gramenet | Diversplas" },
-      { name: "description", content: "Oferta de empleo para monitores/as de patinaje y zumba/danza en Santa Coloma de Gramenet para actividades extraescolares. ¡Únete al equipo de Diversplas!" },
+      { title: "Ofertas de Empleo en Diversplas: Monitores de Extraescolares en Santa Coloma de Gramenet" },
+      { name: "description", content: "Diversplas busca Monitores/as de Patinaje y Zumba/Danza para actividades extraescolares en colegios de Santa Coloma de Gramenet (Barcelona). ¡Envía tu candidatura!" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Buscamos Monitor de Patinaje y Zumba en Santa Coloma de Gramenet | Diversplas" },
-      { property: "og:description", content: "Oferta de empleo para monitores/as de patinaje y zumba/danza en Santa Coloma de Gramenet para actividades extraescolares. ¡Únete al equipo de Diversplas!" },
+      { property: "og:title", content: "Ofertas de Empleo en Diversplas: Monitores de Extraescolares en Santa Coloma de Gramenet" },
+      { property: "og:description", content: "Diversplas Extraescolares abre proceso de selección para Monitores/as de Patinaje y Zumba/Danza en colegios de Santa Coloma de Gramenet." },
       { property: "og:url", content: "https://diversplas.es/trabaja-con-nosotros" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://diversplas.es/og-diversplas-v3.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Buscamos Monitor de Patinaje y Zumba en Santa Coloma de Gramenet | Diversplas" },
-      { name: "twitter:description", content: "Oferta de empleo para monitores/as de patinaje y zumba/danza en Santa Coloma de Gramenet para actividades extraescolares." }
+      { name: "twitter:title", content: "Ofertas de Empleo en Diversplas: Monitores en Santa Coloma de Gramenet" },
+      { name: "twitter:description", content: "Buscamos Monitores/as de Patinaje y Zumba/Danza para colegios de Santa Coloma de Gramenet." }
     ],
     links: [
       { rel: "canonical", href: "https://diversplas.es/trabaja-con-nosotros" }
@@ -29,20 +29,20 @@ export const Route = createFileRoute('/trabaja-con-nosotros')({
 
 const FAQ_MONITORES = [
   {
-    question: "¿Qué perfil o experiencia se necesita?",
-    answer: "Buscamos personas dinámicas, responsables y con entusiasmo por la enseñanza infantil. Se valora experiencia previa impartiendo la disciplina (patinaje o zumba/danza) y/o titulación de monitor/a de ocio y tiempo libre."
+    question: "¿Qué perfil o experiencia se necesita para trabajar en Diversplas?",
+    answer: "Buscamos personas dinámicas, responsables y con entusiasmo por la enseñanza infantil. Valoramos positivamente la experiencia previa impartiendo la disciplina específica (patinaje, zumba o danza) y contar con la titulación oficial de monitor/a de ocio y tiempo libre."
   },
   {
-    question: "¿Cuál es el horario habitual de las clases?",
-    answer: "Las actividades extraescolares se imparten de lunes a viernes en horario de tardes, habitualmente en franjas entre las 16:30 y las 18:00 h, según el colegio asignado en Santa Coloma de Gramenet."
+    question: "¿Cuál es el horario habitual de las clases extraescolares?",
+    answer: "El horario de trabajo se concentra en la franja de tardes, de lunes a viernes, habitualmente a partir de las 16:30 h, coincidiendo con la finalización del horario lectivo de los colegios."
   },
   {
-    question: "¿Es compatible con estudios u otros trabajos?",
-    answer: "¡Totalmente! Al ser jornadas de 1 a 2 horas por tarde en días determinados, es ideal para estudiantes universitarios, técnicos deportivos o monitores que buscan compaginar con otras ocupaciones."
+    question: "¿Es un trabajo compatible con estudios u otras actividades?",
+    answer: "Sí, al tratarse de jornadas parciales en horario de tarde, es un puesto ideal para compaginar con estudios universitarios, formación profesional u otros trabajos en horario de mañana."
   },
   {
-    question: "¿Cómo es el proceso de selección?",
-    answer: "Una vez nos escribas por WhatsApp o envíes el formulario, nuestro equipo de coordinación revisará tu disponibilidad y experiencia y te contactará para una breve entrevista telefónica o presencial."
+    question: "¿Cómo es el proceso de selección de Diversplas?",
+    answer: "El proceso es ágil y directo. Consiste en una primera toma de contacto vía WhatsApp o formulario, seguida de una breve entrevista (telefónica o presencial) para evaluar la disponibilidad, experiencia y encaje con los valores de la empresa."
   }
 ];
 
@@ -101,7 +101,7 @@ function CandidatoForm() {
         Envía tus datos
       </h3>
       <p className="text-sm font-semibold text-black/70">
-        Si prefieres que te llamemos nosotros, déjanos tu información:
+        Si prefieres que nos pongamos en contacto contigo, completa la siguiente información:
       </p>
 
       <label className="block">
@@ -211,24 +211,24 @@ function TrabajaConNosotrosPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] bg-[#D8E600] mb-8">
               <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
               <span className="font-bold text-xs sm:text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-                OFERTA DE EMPLEO · SANTA COLOMA DE GRAMENET
+                OFERTAS DE EMPLEO EN DIVERSPLAS · SANTA COLOMA DE GRAMENET
               </span>
             </div>
 
             {/* Main Title */}
             <h1
-              className="uppercase leading-[0.95] text-[11vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[74px] text-black max-w-5xl"
+              className="uppercase leading-[0.95] text-[11vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[72px] text-black max-w-5xl"
               style={{ ...condensed, letterSpacing: '0.02em' }}
             >
-              Buscamos monitores/as en{" "}
+              Ofertas de Empleo en Diversplas:{" "}
               <span className="text-[#1D2F8C]" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
-                Santa Coloma de Gramenet<span className="text-[#D8E600]">.</span>
+                Monitores de Extraescolares en Santa Coloma de Gramenet<span className="text-[#D8E600]">.</span>
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-3xl mx-auto leading-relaxed font-medium">
-              Seleccionamos <strong className="text-black font-black bg-[#D8E600] px-2 py-0.5 rounded">Monitor/a de Patinaje</strong> y <strong className="text-black font-black bg-[#35D0BA] px-2 py-0.5 rounded">Monitor/a de Zumba / Danza</strong> para impartir actividades extraescolares en colegios y centros de Santa Coloma durante el curso escolar.
+              <strong>Diversplas Extraescolares</strong>, empresa con más de 20 años de experiencia en el sector educativo, abre su proceso de selección para el curso escolar. Buscamos incorporar <strong className="text-black font-black bg-[#D8E600] px-2 py-0.5 rounded">Monitores/as de Patinaje</strong> y <strong className="text-black font-black bg-[#35D0BA] px-2 py-0.5 rounded">Monitores/as de Zumba y Danza</strong> para impartir actividades en colegios y centros educativos de Santa Coloma de Gramenet (Barcelona).
             </p>
 
             {/* Action Buttons */}
@@ -241,7 +241,7 @@ function TrabajaConNosotrosPage() {
                 VER VACANTES DISPONIBLES ↓
               </a>
               <a
-                href="https://wa.me/34657117426?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20las%20vacantes%20de%20monitor%2Fa%20en%20Santa%20Coloma"
+                href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20en%20Santa%20Coloma"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#3055C7] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]"
@@ -267,7 +267,7 @@ function TrabajaConNosotrosPage() {
                 Vacantes <span className="text-[#1D2F8C]">Destacadas</span>
               </h2>
               <p className="mt-3 text-lg md:text-xl text-black/70 max-w-2xl mx-auto font-medium">
-                Puestos para incorporación al equipo de actividades extraescolares en Santa Coloma de Gramenet.
+                Puestos disponibles para incorporación inmediata al equipo de actividades extraescolares infantiles y de primaria en Santa Coloma de Gramenet.
               </p>
             </div>
 
@@ -288,7 +288,7 @@ function TrabajaConNosotrosPage() {
                     Monitor/a de Patinaje
                   </h3>
                   <p className="text-black/80 font-medium text-base md:text-lg mb-6 leading-relaxed">
-                    Impartición de clases de patinaje sobre ruedas para alumnos de infantil y primaria, trabajando equilibrio, psicomotricidad, técnica básica y juegos en grupo.
+                    Impartición de clases de patinaje sobre ruedas para alumnos de educación infantil y primaria. El objetivo de la actividad es trabajar el equilibrio, la psicomotricidad, la técnica básica y fomentar el juego en grupo.
                   </p>
 
                   <div className="space-y-3 bg-[#f5f5f5] p-5 rounded-2xl border-2 border-black/10 mb-6">
@@ -296,7 +296,7 @@ function TrabajaConNosotrosPage() {
                       <span className="text-xl">📍</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Zona:</strong>
-                        <span className="font-bold text-black text-base">Santa Coloma de Gramenet (Colegios locales)</span>
+                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -315,7 +315,7 @@ function TrabajaConNosotrosPage() {
                     <ul className="space-y-2 text-black/85 font-medium text-sm md:text-base">
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                        Experiencia previa en patinaje y/o dinamización de grupos infantiles.
+                        Experiencia previa comprobable en patinaje y/o dinamización de grupos infantiles.
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
@@ -323,7 +323,7 @@ function TrabajaConNosotrosPage() {
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                        Responsabilidad, dinamismo, paciencia y buen trato con alumnos y familias.
+                        Responsabilidad, dinamismo, paciencia y excelentes habilidades comunicativas con alumnos y familias.
                       </li>
                     </ul>
                   </div>
@@ -359,7 +359,7 @@ function TrabajaConNosotrosPage() {
                     Monitor/a de Zumba / Danza
                   </h3>
                   <p className="text-black/80 font-medium text-base md:text-lg mb-6 leading-relaxed">
-                    Dinamización de clases de Zumba Kids, baile moderno y expresión corporal para grupos infantiles, enseñando coreografías adaptadas y juegos rítmicos.
+                    Dinamización de clases de Zumba Kids, baile moderno y expresión corporal para grupos infantiles. El monitor/a se encargará de enseñar coreografías adaptadas y coordinar juegos rítmicos.
                   </p>
 
                   <div className="space-y-3 bg-[#f5f5f5] p-5 rounded-2xl border-2 border-black/10 mb-6">
@@ -367,7 +367,7 @@ function TrabajaConNosotrosPage() {
                       <span className="text-xl">📍</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Zona:</strong>
-                        <span className="font-bold text-black text-base">Santa Coloma de Gramenet (Colegios locales)</span>
+                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -386,7 +386,7 @@ function TrabajaConNosotrosPage() {
                     <ul className="space-y-2 text-black/85 font-medium text-sm md:text-base">
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                        Experiencia o formación en zumba, danza, baile moderno o ritmos infantiles.
+                        Experiencia o formación específica en zumba, danza, baile moderno o ritmos infantiles.
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
@@ -394,7 +394,7 @@ function TrabajaConNosotrosPage() {
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-[#D8E600] border border-black text-black font-black text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                        Energía, empatía, ganas de motivar y dinamizar grupos escolares.
+                        Energía, empatía y gran capacidad para motivar y dinamizar grupos escolares.
                       </li>
                     </ul>
                   </div>
@@ -422,10 +422,10 @@ function TrabajaConNosotrosPage() {
           <div className="max-w-[1300px] mx-auto px-6">
             <div className="text-center mb-16">
               <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-bold uppercase tracking-[0.15em] text-sm px-4 py-1 rounded-md mb-3 border-2 border-black shadow-[2px_2px_0_0_#000]">
-                VENTAJAS DE TRABAJAR CON NOSOTROS
+                VENTAJAS DE TRABAJAR CON DIVERSPLAS
               </span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase text-black" style={condensed}>
-                ¿Por qué unirte a <span className="text-[#1D2F8C]">Diversplas</span>?
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase text-black" style={{ ...condensed, letterSpacing: '0.03em' }}>
+                ¿Por qué unirte a <span className="text-[#1D2F8C]">nuestro equipo educativo</span>?
               </h2>
             </div>
 
@@ -436,7 +436,7 @@ function TrabajaConNosotrosPage() {
                   Más de 20 años de experiencia
                 </h3>
                 <p className="text-black/75 font-medium leading-relaxed">
-                  Somos una entidad independiente consolidada con amplia presencia y reconocimiento en colegios y AFAs de Santa Coloma y Barcelona.
+                  Somos una entidad independiente consolidada, con amplia presencia y reconocimiento en colegios y AFAs (Asociaciones de Familias de Alumnos) de Santa Coloma de Gramenet y la provincia de Barcelona.
                 </p>
               </div>
 
@@ -446,7 +446,7 @@ function TrabajaConNosotrosPage() {
                   Material y soporte completo
                 </h3>
                 <p className="text-black/75 font-medium leading-relaxed">
-                  Te proporcionamos el material didáctico necesario, asesoramiento pedagógico y apoyo continuo de nuestro equipo de coordinación.
+                  Proporcionamos todo el material didáctico necesario, asesoramiento pedagógico y apoyo continuo por parte de nuestro equipo de coordinación.
                 </p>
               </div>
 
@@ -456,7 +456,7 @@ function TrabajaConNosotrosPage() {
                   Trato cercano y continuidad
                 </h3>
                 <p className="text-black/75 font-medium leading-relaxed">
-                  Equipo familiar, comunicación directa y posibilidad de continuidad en campus y casales durante periodos festivos y verano.
+                  Formarás parte de un equipo familiar con comunicación directa. Ofrecemos posibilidad de continuidad laboral en campus, casales de verano y periodos festivos.
                 </p>
               </div>
             </div>
@@ -475,7 +475,7 @@ function TrabajaConNosotrosPage() {
                   ¿Quieres unirte <span className="text-[#D8E600]">al equipo</span>?
                 </h2>
                 <p className="text-xl text-white/90 font-medium leading-relaxed mb-8">
-                  La forma más rápida de inscribirte es enviarnos un mensaje por WhatsApp con tu disponibilidad y experiencia. ¡Te responderemos enseguida!
+                  La forma más rápida de presentar tu candidatura es enviarnos un mensaje por WhatsApp indicando tu disponibilidad y experiencia. ¡Te responderemos a la mayor brevedad!
                 </p>
 
                 <div className="space-y-4">
@@ -492,7 +492,7 @@ function TrabajaConNosotrosPage() {
                     ESCRIBIR POR WHATSAPP (+34 657 117 426)
                   </a>
                   <p className="text-white/70 text-sm font-semibold">
-                    También puedes escribirnos a <a href="mailto:diversplascontacto@gmail.com" className="underline hover:text-[#D8E600]">diversplascontacto@gmail.com</a>
+                    También puedes enviar tu currículum por correo electrónico a: <a href="mailto:diversplascontacto@gmail.com" className="underline hover:text-[#D8E600]">diversplascontacto@gmail.com</a>
                   </p>
                 </div>
               </div>

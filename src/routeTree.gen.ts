@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrabajaConNosotrosRouteImport } from './routes/trabaja-con-nosotros'
 import { Route as SantaColomaRouteImport } from './routes/santa-coloma'
 import { Route as SantFostRouteImport } from './routes/sant-fost'
 import { Route as MolletRouteImport } from './routes/mollet'
@@ -18,6 +19,11 @@ import { Route as BarcelonaRouteImport } from './routes/barcelona'
 import { Route as BadalonaRouteImport } from './routes/badalona'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TrabajaConNosotrosRoute = TrabajaConNosotrosRouteImport.update({
+  id: '/trabaja-con-nosotros',
+  path: '/trabaja-con-nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SantaColomaRoute = SantaColomaRouteImport.update({
   id: '/santa-coloma',
   path: '/santa-coloma',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
   '/santa-coloma': typeof SantaColomaRoute
+  '/trabaja-con-nosotros': typeof TrabajaConNosotrosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
   '/santa-coloma': typeof SantaColomaRoute
+  '/trabaja-con-nosotros': typeof TrabajaConNosotrosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/mollet': typeof MolletRoute
   '/sant-fost': typeof SantFostRoute
   '/santa-coloma': typeof SantaColomaRoute
+  '/trabaja-con-nosotros': typeof TrabajaConNosotrosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/mollet'
     | '/sant-fost'
     | '/santa-coloma'
+    | '/trabaja-con-nosotros'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/mollet'
     | '/sant-fost'
     | '/santa-coloma'
+    | '/trabaja-con-nosotros'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/mollet'
     | '/sant-fost'
     | '/santa-coloma'
+    | '/trabaja-con-nosotros'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,10 +144,18 @@ export interface RootRouteChildren {
   MolletRoute: typeof MolletRoute
   SantFostRoute: typeof SantFostRoute
   SantaColomaRoute: typeof SantaColomaRoute
+  TrabajaConNosotrosRoute: typeof TrabajaConNosotrosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/trabaja-con-nosotros': {
+      id: '/trabaja-con-nosotros'
+      path: '/trabaja-con-nosotros'
+      fullPath: '/trabaja-con-nosotros'
+      preLoaderRoute: typeof TrabajaConNosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/santa-coloma': {
       id: '/santa-coloma'
       path: '/santa-coloma'
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   MolletRoute: MolletRoute,
   SantFostRoute: SantFostRoute,
   SantaColomaRoute: SantaColomaRoute,
+  TrabajaConNosotrosRoute: TrabajaConNosotrosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

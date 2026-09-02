@@ -14,7 +14,7 @@ import ContactoSection from "./sections/ContactoSection";
 import { FAQSection } from "./FAQSection";
 import { ReviewsSection } from "./ReviewsSection";
 
-function Nav() {
+export function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     ["Actividades", "#activities"],
@@ -128,7 +128,7 @@ function FooterCard({ bg, blob, headline, headlineItalic, dark = false, children
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer>
       <div className="bg-white border-b-2 border-black px-4 md:px-6 py-6">
@@ -174,6 +174,7 @@ function Footer() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <a href="https://diversplas.es" className="text-[11px] font-black text-black uppercase tracking-wider border-b-2 border-[#1D2F8C] hover:text-[#D8E600] hover:border-[#D8E600] transition-colors leading-none pb-0.5 inline-block" aria-label="Sitio web de Diversplas">diversplas.es</a>
                 <a href="https://www.instagram.com/diversplas_extraescolares" target="_blank" rel="noopener noreferrer" className="text-[11px] font-black text-black uppercase tracking-wider border-b-2 border-[#D8E600] hover:text-[#1D2F8C] hover:border-[#1D2F8C] transition-colors leading-none pb-0.5 inline-block" aria-label="Ir al Instagram de Diversplas">@diversplas_extraescolares</a>
+                <a href="/trabaja-con-nosotros" className="text-[11px] font-black text-black uppercase tracking-wider border-b-2 border-[#1D2F8C] hover:text-[#D8E600] hover:border-[#D8E600] transition-colors leading-none pb-0.5 inline-block" aria-label="Trabaja con nosotros">Trabaja con nosotros</a>
               </div>
             </div>
             

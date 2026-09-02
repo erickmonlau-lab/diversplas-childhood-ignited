@@ -36,18 +36,26 @@ export const FAQS = [
   },
 ];
 
-export function FAQSection() {
+export function FAQSection({
+  items = FAQS,
+  title = "Preguntas",
+  titleHighlight = "Frecuentes"
+}: {
+  items?: { question: string; answer: string }[];
+  title?: string;
+  titleHighlight?: string;
+} = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="faq" className="w-full bg-[#f8f8f8] py-20 border-b-2 border-black">
       <div className="mx-auto max-w-4xl px-5 sm:px-6">
         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12 text-center" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-          Preguntas <span className="text-[#3055C7]">Frecuentes</span>
+          {title} <span className="text-[#3055C7]">{titleHighlight}</span>
         </h2>
         
         <div className="flex flex-col gap-4">
-          {FAQS.map((faq, index) => {
+          {items.map((faq, index) => {
             const isOpen = openIndex === index;
             
             return (

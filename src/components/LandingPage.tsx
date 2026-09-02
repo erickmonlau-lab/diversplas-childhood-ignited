@@ -52,7 +52,7 @@ export function Nav() {
             href="https://wa.me/34657117426"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center whitespace-nowrap gap-2 rounded-full border-2 border-black bg-[#25D366] text-white font-black hover:bg-[#20bd5a] transition-all shadow-[3px_3px_0_0_#000] hover:scale-[1.02]"
+            className="flex items-center whitespace-nowrap gap-2 rounded-full border-2 border-black bg-[#25D366] text-black font-black hover:bg-[#20bd5a] transition-all shadow-[3px_3px_0_0_#000] hover:scale-[1.02]"
             style={{ ...btnStyle, padding: "8px 16px", fontSize: "0.85rem" }}
             onClick={() => setOpen(false)}
           >

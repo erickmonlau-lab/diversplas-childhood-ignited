@@ -133,20 +133,21 @@ export default function TrustSection() {
             <span className="inline-block px-3 py-1 rounded-full border-2 border-black bg-white text-black text-xs font-bold tracking-widest uppercase mb-2" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
               Nuestra historia
             </span>
+            {/* Slide title with WCAG contrast */}
             <h2
-              className="uppercase tracking-tight text-4xl md:text-6xl lg:text-7xl leading-none text-white break-words text-center md:text-left"
+              className={`uppercase tracking-tight text-4xl md:text-6xl lg:text-7xl leading-none ${slide.bg === '#1D2F8C' ? 'text-white' : 'text-black'} break-words text-center md:text-left`}
               style={{
                 ...condensedItalic,
                 wordBreak: 'break-word',
                 overflowWrap: 'break-word',
-                WebkitTextStroke: '2px black',
-                textShadow: '3px 3px 0px #000'
+                WebkitTextStroke: slide.bg === '#1D2F8C' ? '2px black' : 'none',
+                textShadow: slide.bg === '#1D2F8C' ? '3px 3px 0px #000' : 'none'
               }}
             >
               {slide.headline}
               <span className="block" style={{ ...condensed, wordBreak: "break-word" }}>{slide.sub}</span>
             </h2>
-            <p className={`mt-6 text-base md:text-lg text-center md:text-left leading-relaxed font-semibold ${slide.bg === '#D8E600' ? 'text-black' : 'text-white'} text-opacity-90`} style={{ textShadow: slide.dark ? 'none' : '0 1px 8px rgba(0,0,0,0.2)' }}>{slide.description}</p>
+            <p className={`mt-6 text-base md:text-lg text-center md:text-left leading-relaxed font-bold ${slide.bg === '#1D2F8C' ? 'text-white' : 'text-black'}`}>{slide.description}</p>
             <div className="text-5xl w-full flex justify-center md:justify-start">{slide.icon}</div>
           </div>
 

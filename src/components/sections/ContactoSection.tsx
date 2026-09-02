@@ -135,7 +135,7 @@ export default function ContactSection() {
                 href="https://wa.me/34657117426?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20actividades%20de%20Diversplas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-white px-8 py-4 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide"
+                className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-black px-8 py-4 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide"
                 style={btnStyle}
               >
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">

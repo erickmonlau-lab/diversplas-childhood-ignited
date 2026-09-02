@@ -334,7 +334,7 @@ function TrabajaConNosotrosPage() {
                 href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20en%20Santa%20Coloma"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#20bd5a] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-black px-8 py-4 font-black border-2 border-black hover:bg-[#20bd5a] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]"
                 style={btnStyle}
               >
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -423,7 +423,7 @@ function TrabajaConNosotrosPage() {
                   href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20de%20Patinaje%20en%20Santa%20Coloma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-white py-4 px-6 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-center"
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-black py-4 px-6 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-center"
                   style={btnStyle}
                 >
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -494,7 +494,7 @@ function TrabajaConNosotrosPage() {
                   href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20de%20Zumba%20%2F%20Danza%20en%20Santa%20Coloma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-white py-4 px-6 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-center"
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-black py-4 px-6 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-center"
                   style={btnStyle}
                 >
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -583,7 +583,7 @@ function TrabajaConNosotrosPage() {
                     href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20en%20Santa%20Coloma"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-white px-8 py-4 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide"
+                    className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-black px-8 py-4 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide"
                     style={btnStyle}
                   >
                     <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">

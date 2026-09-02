@@ -10,8 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import "../styles/fonts.css";
-import "../styles/animations.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -123,11 +121,8 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
-        {/* Preload critical local fonts */}
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-700.woff2" crossOrigin="anonymous" />
+        {/* Preload critical local font for fastest FCP */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
-        {/* Preload hero image */}
-        <link rel="preload" as="image" href="/diversplas-logo-graffiti.webp" fetchPriority="high" />
       </head>
       <body>
         {children}

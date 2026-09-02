@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import appCssRaw from "../styles.css?inline";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -100,10 +101,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://diversplas.es/og-diversplas-v3.jpg" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
       { rel: "canonical", href: "https://diversplas.es/" },
       { rel: "icon", type: "image/png", sizes: "48x48", href: "https://diversplas.es/favicon-48.png" },
       { rel: "icon", type: "image/png", sizes: "192x192", href: "https://diversplas.es/favicon-192.png" },
@@ -120,14 +117,10 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
       <head>
-        {/* Critical Inline CSS for instant 0ms FCP */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `html,body{margin:0;padding:0;background:#ffffff;color:#0a0a0a;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}header{position:fixed;top:0;left:0;right:0;z-index:50}h1{font-family:'Barlow Condensed',system-ui,sans-serif}`,
-          }}
-        />
+        {/* Inlined CSS: Eliminates render-blocking stylesheets for instant FCP */}
+        <style dangerouslySetInnerHTML={{ __html: appCssRaw }} />
         <HeadContent />
-        {/* Preload critical local font */}
+        {/* Preload critical headline font */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
       </head>
       <body>

@@ -58,28 +58,28 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
       <div className="relative z-10 text-center px-5 md:px-[220px] max-w-[1040px] mx-auto w-full flex flex-col items-center" style={{ maxWidth: '1040px', margin: '0 auto' }}>
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] bg-[#D8E600] mb-10 animate-[fade-in_0.5s_ease-out_forwards]" style={{ whiteSpace: 'nowrap' }}>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] bg-[#D8E600] mb-8" style={{ whiteSpace: 'nowrap' }}>
           <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
           <span className="font-bold text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
             +20 años · {cityShort} · AFAs
           </span>
         </div>
 
-        {/* Headline (Único <h1>) */}
-        <h1 className="uppercase leading-[1.05] text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[80px] animate-[fade-in_0.8s_ease-out_forwards] opacity-0 text-black max-w-4xl mx-auto" style={{ ...condensed, letterSpacing: '0.02em', animationDelay: '100ms' }}>
+        {/* Headline (Único <h1>) - Renderizado inmediato */}
+        <h1 className="uppercase leading-[1.05] text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[80px] text-black max-w-4xl mx-auto" style={{ ...condensed, letterSpacing: '0.02em' }}>
           Actividades Extraescolares de Calidad en{" "}
           <span className="text-[#1D2F8C]" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
             {cityShort === "Barcelona" ? "Santa Coloma de Gramenet" : cityShort}<span className="text-[#D8E600]">.</span>
           </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed font-medium animate-[fade-in_0.7s_ease-out_forwards] opacity-0" style={{ animationDelay: '450ms' }}>
+        {/* Subtitle - Renderizado inmediato */}
+        <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed font-medium">
           Más de 20 años de experiencia dinamizando colegios, gestionando AFAs y organizando casales infantiles. Profesionales apasionados por la educación y el deporte.
         </p>
 
-        {/* CTAs */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center animate-[fade-in_0.7s_ease-out_forwards] opacity-0" style={{ animationDelay: '650ms' }}>
+        {/* CTAs - Renderizado inmediato */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a href="#contacto" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-8 py-4 font-black border-2 border-black hover:bg-[#c8d500] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]" style={btnStyle}>
             SOLICITAR INFORMACIÓN{" "}
             <span className="transition-transform group-hover:translate-x-1 inline-flex items-center">
@@ -105,7 +105,7 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
             { src: "/image_48117c.webp", alt: "Proyecto de manualidades en una actividad extraescolar" }
           ].map((img, i) => (
             <div key={i} className="bg-white p-2 pb-6 border border-black/10 shadow-[4px_4px_0_0_rgba(0,0,0,0.15)] rounded-sm">
-              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading={i < 2 ? "eager" : "lazy"} fetchPriority={i < 2 ? "high" : "auto"} decoding="async" width={224} height={224} />
+              <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover border border-black/5" loading="lazy" fetchPriority="low" decoding="async" width={224} height={224} />
             </div>
           ))}
         </div>

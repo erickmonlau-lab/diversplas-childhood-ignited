@@ -65,25 +65,23 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
           </span>
         </div>
 
-        {/* Headline */}
-        <h1 className="uppercase leading-[1.05] tracking-tight text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[125px] animate-[fade-in_0.8s_ease-out_forwards] opacity-0" style={{ ...condensed, animationDelay: '100ms' }}>
-          <span className="block" style={{ whiteSpace: 'nowrap' }}>No solo</span>
-          <span className="block text-[#1D2F8C]" style={{ ...condensedItalic, whiteSpace: 'nowrap' }}>extraescolares.</span>
-          <span className="block" style={{ whiteSpace: 'nowrap' }}>
-            Aquí crecen<span className="text-[#D8E600]">.</span>
+        {/* Headline (Único <h1>) */}
+        <h1 className="uppercase leading-[1.05] text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[80px] animate-[fade-in_0.8s_ease-out_forwards] opacity-0 text-black max-w-4xl mx-auto" style={{ ...condensed, letterSpacing: '0.02em', animationDelay: '100ms' }}>
+          Actividades Extraescolares de Calidad en{" "}
+          <span className="text-[#1D2F8C]" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
+            {cityShort === "Barcelona" ? "Santa Coloma de Gramenet" : cityShort}<span className="text-[#D8E600]">.</span>
           </span>
         </h1>
 
-        {/* Sub */}
-        <p className="mt-8 text-base md:text-lg text-black/70 max-w-xl mx-auto leading-relaxed animate-[fade-in_0.7s_ease-out_forwards] opacity-0" style={{ animationDelay: '450ms' }}>
-          <span className="bg-[#D8E600] text-black font-black px-2 py-0.5 rounded mr-1">Mucho más que rellenar las tardes.</span>
-          Un espacio para jugar, aprender y crecer. Llevamos más de 20 años diseñando actividades para colegios y AFAs de {city}, ofreciendo total tranquilidad y confianza a las familias.
+        {/* Subtitle */}
+        <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed font-medium animate-[fade-in_0.7s_ease-out_forwards] opacity-0" style={{ animationDelay: '450ms' }}>
+          Más de 20 años de experiencia dinamizando colegios, gestionando AFAs y organizando casales infantiles. Profesionales apasionados por la educación y el deporte.
         </p>
 
         {/* CTAs */}
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center animate-[fade-in_0.7s_ease-out_forwards] opacity-0" style={{ animationDelay: '650ms' }}>
-          <a href="#contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-7 py-3.5 font-bold border-2 border-black hover:bg-[#c8d500] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto" style={btnStyle}>
-            SOLICITAR CITA EN {cityShort.toUpperCase()}{" "}
+          <a href="#contacto" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-8 py-4 font-black border-2 border-black hover:bg-[#c8d500] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]" style={btnStyle}>
+            SOLICITAR INFORMACIÓN{" "}
             <span className="transition-transform group-hover:translate-x-1 inline-flex items-center">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="9" fill="white" stroke="currentColor" strokeWidth="2"/>
@@ -91,8 +89,8 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
               </svg>
             </span>
           </a>
-          <a href="#activities" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-7 py-3.5 font-bold border-2 border-black hover:bg-[#3055C7] transition-colors uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto" style={btnStyle}>
-            VER ACTIVIDADES
+          <a href="https://wa.me/34657117426" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#3055C7] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]" style={btnStyle}>
+            CONTACTAR POR WHATSAPP
           </a>
         </div>
 

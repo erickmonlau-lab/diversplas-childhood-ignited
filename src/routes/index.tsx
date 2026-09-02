@@ -101,6 +101,36 @@ export const Route = createFileRoute("/")(({
             { "@type": "Question", "name": "¿Diversplas tiene alguna relación con Diver's Associació d'Esplai o Diver Planet?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas (diversplas.es) es una empresa completamente independiente y sin ninguna vinculación con Diver's Associació d'Esplai (diversesplai.cat), Diver Planet, ni ninguna otra entidad de nombre similar. Somos entidades distintas, con diferente titularidad, gestión y contacto." } }
           ]
         })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          "title": "Monitor/a de Patinaje (Extraescolares)",
+          "description": "Impartición de clases de patinaje sobre ruedas para alumnos de educación infantil y primaria en colegios de Santa Coloma de Gramenet. Horario de tardes a partir de las 16:30 h de lunes a viernes.",
+          "identifier": { "@type": "PropertyValue", "name": "Diversplas", "value": "PATINAJE-SCG-2026" },
+          "datePosted": "2026-09-02",
+          "validThrough": "2026-12-31",
+          "employmentType": "PART_TIME",
+          "hiringOrganization": { "@type": "Organization", "name": "Diversplas Extraescolares", "sameAs": "https://diversplas.es" },
+          "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Santa Coloma de Gramenet", "addressRegion": "Barcelona", "addressCountry": "ES" } }
+        })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          "title": "Monitor/a de Zumba / Danza (Extraescolares)",
+          "description": "Dinamización de clases de Zumba Kids, baile moderno y expresión corporal para grupos infantiles en colegios de Santa Coloma de Gramenet. Horario de tardes a partir de las 16:30 h de lunes a viernes.",
+          "identifier": { "@type": "PropertyValue", "name": "Diversplas", "value": "ZUMBA-SCG-2026" },
+          "datePosted": "2026-09-02",
+          "validThrough": "2026-12-31",
+          "employmentType": "PART_TIME",
+          "hiringOrganization": { "@type": "Organization", "name": "Diversplas Extraescolares", "sameAs": "https://diversplas.es" },
+          "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Santa Coloma de Gramenet", "addressRegion": "Barcelona", "addressCountry": "ES" } }
+        })
       }
     ]
   }),

@@ -120,8 +120,14 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
       <head>
+        {/* Critical Inline CSS for instant 0ms FCP */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `html,body{margin:0;padding:0;background:#ffffff;color:#0a0a0a;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}header{position:fixed;top:0;left:0;right:0;z-index:50}h1{font-family:'Barlow Condensed',system-ui,sans-serif}`,
+          }}
+        />
         <HeadContent />
-        {/* Preload critical local font for fastest FCP */}
+        {/* Preload critical local font */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
       </head>
       <body>

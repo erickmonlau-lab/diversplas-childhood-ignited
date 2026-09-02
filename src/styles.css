@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-display: "Clash Display", "Inter", sans-serif;
-  --font-condensed: "Barlow Condensed", "Clash Display", sans-serif;
-  --font-sans: "General Sans", "Inter", sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --color-ink: #0a0a0a;
   --color-paper: #ffffff;
   --color-brand: #1d2f8c;

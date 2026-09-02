@@ -123,12 +123,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
-        {/* Preload hero images */}
-        <link rel="preload" as="image" href="/image_53ee82.webp" fetchPriority="high"/>
-        <link rel="preload" as="image" href="/image_53d820.webp" fetchPriority="high"/>
         {/* Preload critical local fonts */}
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-700.woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900-italic.woff2" crossOrigin="anonymous" />
+        {/* Preload hero image */}
+        <link rel="preload" as="image" href="/diversplas-logo-graffiti.webp" fetchPriority="high" />
       </head>
       <body>
         {children}

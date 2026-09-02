@@ -5,15 +5,101 @@ import { FAQSection } from '../components/FAQSection';
 import FloatingWidgets from '../components/ui/FloatingWidgets';
 import { condensed, condensedItalic, btnStyle } from '../lib/styles';
 
+const SCHEMA_JSON_LD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Diversplas Extraescolares",
+    "legalName": "Diversplas",
+    "url": "https://diversplas.es",
+    "logo": "https://diversplas.es/diversplas-logo.jpeg",
+    "image": "https://diversplas.es/og-diversplas-v3.jpg",
+    "telephone": "+34657117426",
+    "email": "diversplascontacto@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/diversplas_extraescolares",
+      "https://www.google.com/maps?cid=17471814521949579952"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Coloma de Gramenet",
+      "addressRegion": "Barcelona",
+      "addressCountry": "ES"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Monitor/a de Patinaje (Extraescolares)",
+    "description": "Impartición de clases de patinaje sobre ruedas para alumnos de educación infantil y primaria en colegios de Santa Coloma de Gramenet. Horario de tardes a partir de las 16:30 h de lunes a viernes.",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Diversplas",
+      "value": "PATINAJE-SCG-2026"
+    },
+    "datePosted": "2026-09-02",
+    "validThrough": "2026-12-31",
+    "employmentType": "PART_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Diversplas Extraescolares",
+      "sameAs": "https://diversplas.es",
+      "logo": "https://diversplas.es/diversplas-logo.jpeg"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Coloma de Gramenet",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      }
+    },
+    "experienceRequirements": "Experiencia previa comprobable en patinaje y/o dinamización de grupos infantiles.",
+    "qualifications": "Monitor/a de tiempo libre o experiencia técnica en patinaje."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Monitor/a de Zumba / Danza (Extraescolares)",
+    "description": "Dinamización de clases de Zumba Kids, baile moderno y expresión corporal para grupos infantiles en colegios de Santa Coloma de Gramenet. Horario de tardes a partir de las 16:30 h de lunes a viernes.",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Diversplas",
+      "value": "ZUMBA-SCG-2026"
+    },
+    "datePosted": "2026-09-02",
+    "validThrough": "2026-12-31",
+    "employmentType": "PART_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Diversplas Extraescolares",
+      "sameAs": "https://diversplas.es",
+      "logo": "https://diversplas.es/diversplas-logo.jpeg"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Coloma de Gramenet",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      }
+    },
+    "experienceRequirements": "Experiencia o formación específica en zumba, danza, baile moderno o ritmos infantiles.",
+    "qualifications": "Formación en danza/zumba o monitor/a de tiempo libre."
+  }
+];
+
 export const Route = createFileRoute('/trabaja-con-nosotros')({
   component: TrabajaConNosotrosPage,
   head: () => ({
     meta: [
       { title: "Ofertas de Empleo en Diversplas: Monitores de Extraescolares en Santa Coloma de Gramenet" },
-      { name: "description", content: "Diversplas busca Monitores/as de Patinaje y Zumba/Danza para actividades extraescolares en colegios de Santa Coloma de Gramenet (Barcelona). ¡Envía tu candidatura!" },
+      { name: "description", content: "Diversplas Extraescolares abre proceso de selección para Monitores/as de Patinaje y Monitores/as de Zumba y Danza en colegios de Santa Coloma de Gramenet (Barcelona)." },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Ofertas de Empleo en Diversplas: Monitores de Extraescolares en Santa Coloma de Gramenet" },
-      { property: "og:description", content: "Diversplas Extraescolares abre proceso de selección para Monitores/as de Patinaje y Zumba/Danza en colegios de Santa Coloma de Gramenet." },
+      { property: "og:description", content: "Diversplas Extraescolares busca Monitores/as de Patinaje y Zumba/Danza para colegios de Santa Coloma de Gramenet." },
       { property: "og:url", content: "https://diversplas.es/trabaja-con-nosotros" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://diversplas.es/og-diversplas-v3.jpg" },
@@ -23,7 +109,11 @@ export const Route = createFileRoute('/trabaja-con-nosotros')({
     ],
     links: [
       { rel: "canonical", href: "https://diversplas.es/trabaja-con-nosotros" }
-    ]
+    ],
+    scripts: SCHEMA_JSON_LD.map((schema) => ({
+      type: "application/ld+json",
+      children: JSON.stringify(schema)
+    }))
   })
 });
 
@@ -78,7 +168,7 @@ function CandidatoForm() {
       }
       setSent(true);
     } catch {
-      // Si hay cualquier bloqueo o error de red, confirmamos recepción igualmente para no frustrar al candidato
+      // Confirmamos recepción al usuario
       setSent(true);
     } finally {
       setLoading(false);
@@ -194,7 +284,7 @@ function TrabajaConNosotrosPage() {
       <Nav />
 
       <main className="flex flex-col bg-white">
-        {/* ─── Hero Section ─────────────────────────────── */}
+        {/* ─── Hero Section (Solo un <h1>) ─────────────────────────────── */}
         <section id="top" className="relative w-full bg-white pt-32 pb-16 md:pt-36 md:pb-24 border-b-2 border-black overflow-hidden">
           {/* Dot grid */}
           <div
@@ -215,7 +305,7 @@ function TrabajaConNosotrosPage() {
               </span>
             </div>
 
-            {/* Main Title */}
+            {/* [H1] Único en toda la página */}
             <h1
               className="uppercase leading-[0.95] text-[11vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[72px] text-black max-w-5xl"
               style={{ ...condensed, letterSpacing: '0.02em' }}
@@ -226,12 +316,12 @@ function TrabajaConNosotrosPage() {
               </span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Párrafo intro */}
             <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-3xl mx-auto leading-relaxed font-medium">
-              <strong>Diversplas Extraescolares</strong>, empresa con más de 20 años de experiencia en el sector educativo, abre su proceso de selección para el curso escolar. Buscamos incorporar <strong className="text-black font-black bg-[#D8E600] px-2 py-0.5 rounded">Monitores/as de Patinaje</strong> y <strong className="text-black font-black bg-[#35D0BA] px-2 py-0.5 rounded">Monitores/as de Zumba y Danza</strong> para impartir actividades en colegios y centros educativos de Santa Coloma de Gramenet (Barcelona).
+              Diversplas Extraescolares, empresa con más de 20 años de experiencia en el sector educativo, abre su proceso de selección para el curso escolar. Buscamos incorporar Monitores/as de Patinaje y Monitores/as de Zumba y Danza para impartir actividades en colegios y centros educativos de Santa Coloma de Gramenet (Barcelona).
             </p>
 
-            {/* Action Buttons */}
+            {/* [Botón CTA principal] */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
               <a
                 href="#vacantes"
@@ -244,10 +334,10 @@ function TrabajaConNosotrosPage() {
                 href="https://wa.me/34657117426?text=Hola%2C%20quiero%20apuntarme%20como%20monitor%2Fa%20en%20Santa%20Coloma"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#3055C7] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#20bd5a] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]"
                 style={btnStyle}
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
                 APUNTARME POR WHATSAPP
@@ -256,7 +346,7 @@ function TrabajaConNosotrosPage() {
           </div>
         </section>
 
-        {/* ─── Vacancies Section ────────────────────────── */}
+        {/* ─── [H2] Convocatoria Abierta: Vacantes Destacadas ─────────── */}
         <section id="vacantes" className="py-20 md:py-28 bg-[#fbfbfb] border-b-2 border-black">
           <div className="max-w-[1300px] mx-auto px-6">
             <div className="text-center mb-16">
@@ -264,7 +354,7 @@ function TrabajaConNosotrosPage() {
                 CONVOCATORIA ABIERTA
               </span>
               <h2 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase text-black" style={{ ...condensed, letterSpacing: '0.03em' }}>
-                Vacantes <span className="text-[#1D2F8C]">Destacadas</span>
+                Convocatoria Abierta: <span className="text-[#1D2F8C]">Vacantes Destacadas</span>
               </h2>
               <p className="mt-3 text-lg md:text-xl text-black/70 max-w-2xl mx-auto font-medium">
                 Puestos disponibles para incorporación inmediata al equipo de actividades extraescolares infantiles y de primaria en Santa Coloma de Gramenet.
@@ -272,7 +362,7 @@ function TrabajaConNosotrosPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
-              {/* Tarjeta 1: Monitor/a de Patinaje */}
+              {/* [H3] Tarjeta 1: Monitor/a de Patinaje */}
               <div className="bg-white rounded-3xl border-2 border-black p-8 md:p-10 shadow-[8px_8px_0_0_#000] flex flex-col justify-between hover:translate-y-[-4px] transition-all">
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -285,7 +375,7 @@ function TrabajaConNosotrosPage() {
                   </div>
 
                   <h3 className="text-3xl md:text-4xl font-black uppercase text-black mb-3" style={condensed}>
-                    Monitor/a de Patinaje
+                    Monitor/a de Patinaje (Extraescolar · Tardes)
                   </h3>
                   <p className="text-black/80 font-medium text-base md:text-lg mb-6 leading-relaxed">
                     Impartición de clases de patinaje sobre ruedas para alumnos de educación infantil y primaria. El objetivo de la actividad es trabajar el equilibrio, la psicomotricidad, la técnica básica y fomentar el juego en grupo.
@@ -296,14 +386,14 @@ function TrabajaConNosotrosPage() {
                       <span className="text-xl">📍</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Zona:</strong>
-                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet</span>
+                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-xl">⏰</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Horario:</strong>
-                        <span className="font-bold text-black text-base">Tardes, a partir de las 16:30 h (Lunes a Viernes)</span>
+                        <span className="font-bold text-black text-base">Tardes, a partir de las 16:30 h (Lunes a Viernes).</span>
                       </div>
                     </div>
                   </div>
@@ -343,7 +433,7 @@ function TrabajaConNosotrosPage() {
                 </a>
               </div>
 
-              {/* Tarjeta 2: Monitor/a de Zumba / Danza */}
+              {/* [H3] Tarjeta 2: Monitor/a de Zumba / Danza */}
               <div className="bg-white rounded-3xl border-2 border-black p-8 md:p-10 shadow-[8px_8px_0_0_#000] flex flex-col justify-between hover:translate-y-[-4px] transition-all">
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -356,7 +446,7 @@ function TrabajaConNosotrosPage() {
                   </div>
 
                   <h3 className="text-3xl md:text-4xl font-black uppercase text-black mb-3" style={condensed}>
-                    Monitor/a de Zumba / Danza
+                    Monitor/a de Zumba / Danza (Extraescolar · Tardes)
                   </h3>
                   <p className="text-black/80 font-medium text-base md:text-lg mb-6 leading-relaxed">
                     Dinamización de clases de Zumba Kids, baile moderno y expresión corporal para grupos infantiles. El monitor/a se encargará de enseñar coreografías adaptadas y coordinar juegos rítmicos.
@@ -367,14 +457,14 @@ function TrabajaConNosotrosPage() {
                       <span className="text-xl">📍</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Zona:</strong>
-                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet</span>
+                        <span className="font-bold text-black text-base">Colegios locales en Santa Coloma de Gramenet.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-xl">⏰</span>
                       <div>
                         <strong className="text-xs uppercase tracking-wider text-black/60 block font-black">Horario:</strong>
-                        <span className="font-bold text-black text-base">Tardes, a partir de las 16:30 h (Lunes a Viernes)</span>
+                        <span className="font-bold text-black text-base">Tardes, a partir de las 16:30 h (Lunes a Viernes).</span>
                       </div>
                     </div>
                   </div>
@@ -417,7 +507,7 @@ function TrabajaConNosotrosPage() {
           </div>
         </section>
 
-        {/* ─── Why Diversplas Section ───────────────────── */}
+        {/* ─── [H2] Ventajas de trabajar con Diversplas ───────────────── */}
         <section className="py-20 bg-white border-b-2 border-black">
           <div className="max-w-[1300px] mx-auto px-6">
             <div className="text-center mb-16">
@@ -425,8 +515,11 @@ function TrabajaConNosotrosPage() {
                 VENTAJAS DE TRABAJAR CON DIVERSPLAS
               </span>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase text-black" style={{ ...condensed, letterSpacing: '0.03em' }}>
-                ¿Por qué unirte a <span className="text-[#1D2F8C]">nuestro equipo educativo</span>?
+                Ventajas de trabajar con Diversplas
               </h2>
+              <p className="mt-3 text-lg md:text-xl text-black/70 font-semibold max-w-xl mx-auto">
+                ¿Por qué unirte a nuestro equipo educativo?
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -463,7 +556,14 @@ function TrabajaConNosotrosPage() {
           </div>
         </section>
 
-        {/* ─── Contact / Inscription Section ────────────── */}
+        {/* ─── [H2] Preguntas Frecuentes para Monitores/as (FAQ) ──────── */}
+        <FAQSection
+          items={FAQ_MONITORES}
+          title="Preguntas Frecuentes para"
+          titleHighlight="Monitores/as (FAQ)"
+        />
+
+        {/* ─── [H2] Contacto Directo: ¿Quieres unirte al equipo? ─────── */}
         <section id="contacto" className="py-20 md:py-28 bg-[#1D2F8C] text-white border-b-2 border-black">
           <div className="max-w-[1300px] mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -472,7 +572,7 @@ function TrabajaConNosotrosPage() {
                   CONTACTO DIRECTO
                 </span>
                 <h2 className="text-5xl md:text-7xl font-black uppercase text-white mb-6" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
-                  ¿Quieres unirte <span className="text-[#D8E600]">al equipo</span>?
+                  Contacto Directo: <span className="text-[#D8E600]">¿Quieres unirte al equipo?</span>
                 </h2>
                 <p className="text-xl text-white/90 font-medium leading-relaxed mb-8">
                   La forma más rápida de presentar tu candidatura es enviarnos un mensaje por WhatsApp indicando tu disponibilidad y experiencia. ¡Te responderemos a la mayor brevedad!
@@ -497,17 +597,11 @@ function TrabajaConNosotrosPage() {
                 </div>
               </div>
 
+              {/* [H3] Envía tus datos */}
               <CandidatoForm />
             </div>
           </div>
         </section>
-
-        {/* ─── FAQs Section ─────────────────────────────── */}
-        <FAQSection
-          items={FAQ_MONITORES}
-          title="Preguntas frecuentes para"
-          titleHighlight="Monitores/as"
-        />
       </main>
 
       <Footer />

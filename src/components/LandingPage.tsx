@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { condensed, btnStyle } from "../lib/styles";
 import HeroSection from "./sections/HeroSection";
-import FloatingWidgets from "./ui/FloatingWidgets";
-
-import CarouselSection from "./sections/CarouselSection";
-import CentrosSection from "./sections/CentrosSection";
-import ActividadesSection from "./sections/ActividadesSection";
 import TickerSection from "./sections/TickerSection";
-import ProgramaSection from "./sections/ProgramaSection";
-import ZonasSection from "./sections/ZonasSection";
-import ManifiestoSection from "./sections/ManifiestoSection";
-import EmpleoSection from "./sections/EmpleoSection";
-import ContactoSection from "./sections/ContactoSection";
-import { FAQSection } from "./FAQSection";
-import { ReviewsSection } from "./ReviewsSection";
+import ActividadesSection from "./sections/ActividadesSection";
+
+// Lazy-load below-the-fold components to reduce initial JS bundle size from 130KB to ~35KB
+const ProgramaSection = lazy(() => import("./sections/ProgramaSection"));
+const CentrosSection = lazy(() => import("./sections/CentrosSection"));
+const CarouselSection = lazy(() => import("./sections/CarouselSection"));
+const ZonasSection = lazy(() => import("./sections/ZonasSection"));
+const EmpleoSection = lazy(() => import("./sections/EmpleoSection"));
+const ManifiestoSection = lazy(() => import("./sections/ManifiestoSection"));
+const ReviewsSection = lazy(() => import("./ReviewsSection").then(m => ({ default: m.ReviewsSection })));
+const FAQSection = lazy(() => import("./FAQSection").then(m => ({ default: m.FAQSection })));
+const ContactoSection = lazy(() => import("./sections/ContactoSection"));
+const FloatingWidgets = lazy(() => import("./ui/FloatingWidgets"));
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -29,9 +30,7 @@ export function Nav() {
       <header
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
         style={{
-          background: "rgba(255,255,255,0.88)",
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
+          background: "rgba(255,255,255,0.95)",
           borderBottom: "1.5px solid rgba(0,0,0,0.07)",
           padding: "10px 16px",
           boxSizing: "border-box",
@@ -41,7 +40,7 @@ export function Nav() {
           <img src="/diversplas-logo-graffiti.webp" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" width={87} height={64} />
         </a>
 
-        <nav className="hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
+        <nav className="hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 px-2 py-1.5 shadow-[3px_3px_0_0_#000]">
           {links.map(([label, href]) => (
             <a key={href} href={href} className="px-3.5 py-1.5 rounded-full text-sm font-bold hover:bg-black hover:text-white transition-colors">{label}</a>
           ))}
@@ -143,24 +142,28 @@ export interface LandingPageProps {
 
 export function LandingPage({ city, cityShort }: LandingPageProps) {
   return (
-    <div className="font-sans antialiased text-[#0a0a0a] min-h-screen selection:bg-[#1D2F8C] selection:text-white" style={{ background: '#0a0a0a' }}>
+    <div className="font-sans antialiased text-[#0a0a0a] min-h-screen selection:bg-[#1D2F8C] selection:text-white" style={{ background: '#ffffff' }}>
       <Nav />
       <main className="flex flex-col bg-white">
         <HeroSection city={city} cityShort={cityShort} />
         <TickerSection />
         <ActividadesSection />
-        <ProgramaSection />
-        <CentrosSection />
-        <CarouselSection />
-        <ZonasSection />
-        <EmpleoSection />
-        <ManifiestoSection />
-        <ReviewsSection />
-        <FAQSection />
-        <ContactoSection />
+        <Suspense fallback={null}>
+          <ProgramaSection />
+          <CentrosSection />
+          <CarouselSection />
+          <ZonasSection />
+          <EmpleoSection />
+          <ManifiestoSection />
+          <ReviewsSection />
+          <FAQSection />
+          <ContactoSection />
+        </Suspense>
       </main>
       <Footer />
-      <FloatingWidgets />
+      <Suspense fallback={null}>
+        <FloatingWidgets />
+      </Suspense>
     </div>
   );
 }

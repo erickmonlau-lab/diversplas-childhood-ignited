@@ -6,13 +6,16 @@ export default function TickerSection() {
 
   const Tag = ({ text, colorIndex }: { text: string; colorIndex: number }) => {
     const c = MARQUEE_COLORS[colorIndex % MARQUEE_COLORS.length];
+    const isDark = c === "#1D2F8C" || c === "#3055C7";
+    const textColor = isDark ? "text-white" : "text-black";
+
     return (
       <span
         style={{
           backgroundColor: c,
           flexShrink: 0,
         }}
-        className="inline-flex items-center px-6 py-2 md:px-10 md:py-3 text-[48px] md:text-[80px] lg:text-[110px] leading-none whitespace-nowrap rounded-2xl border-2 border-black shadow-[4px_4px_0_0_#000] font-['Barlow_Condensed'] font-black italic uppercase tracking-normal text-black"
+        className={`inline-flex items-center px-6 py-2 md:px-10 md:py-3 text-[48px] md:text-[80px] lg:text-[110px] leading-none whitespace-nowrap rounded-2xl border-2 border-black shadow-[4px_4px_0_0_#000] font-['Barlow_Condensed'] font-black italic uppercase tracking-normal ${textColor}`}
       >
         {text}
       </span>

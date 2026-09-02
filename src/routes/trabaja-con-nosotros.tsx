@@ -49,17 +49,23 @@ const FAQ_MONITORES = [
 function CandidatoForm() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [vacanteSeleccionada, setVacanteSeleccionada] = useState("Monitor/a de Patinaje");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     const formData = new FormData(e.currentTarget);
+    const vacante = formData.get("vacante") as string;
+    const otraVacante = formData.get("otra_vacante") as string;
+    const vacanteFinal = vacante === "Otra disciplina" && otraVacante?.trim() ? `Otra disciplina: ${otraVacante.trim()}` : vacante;
+
     const data = {
       ...Object.fromEntries(formData.entries()),
+      vacante: vacanteFinal,
       tipo: 'candidatura_monitor',
       email_destino: 'diversplascontacto@gmail.com',
       destinatario: 'diversplascontacto@gmail.com',
-      origen: 'https://diversplas.es/trabaja-con-nosotros'
+      origen: typeof window !== 'undefined' ? window.location.href : 'https://diversplas.es/trabaja-con-nosotros'
     };
     try {
       const response = await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
@@ -72,7 +78,7 @@ function CandidatoForm() {
       }
       setSent(true);
     } catch {
-      // Si hay cualquier bloqueo o error de red, confirmamos recepción igualmente para no frustrar al candidato y registramos
+      // Si hay cualquier bloqueo o error de red, confirmamos recepción igualmente para no frustrar al candidato
       setSent(true);
     } finally {
       setLoading(false);
@@ -136,14 +142,29 @@ function CandidatoForm() {
         <select
           name="vacante"
           required
+          value={vacanteSeleccionada}
+          onChange={(e) => setVacanteSeleccionada(e.target.value)}
           className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black focus:border-[#1D2F8C] outline-none transition-all"
         >
           <option value="Monitor/a de Patinaje">Monitor/a de Patinaje (Santa Coloma)</option>
           <option value="Monitor/a de Zumba / Danza">Monitor/a de Zumba / Danza (Santa Coloma)</option>
           <option value="Ambas disciplinas">Ambas disciplinas</option>
-          <option value="Otra disciplina">Otra disciplina</option>
+          <option value="Otra disciplina">Otra disciplina (especificar cuál)</option>
         </select>
       </label>
+
+      {vacanteSeleccionada === "Otra disciplina" && (
+        <label className="block animate-fade-in">
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">¿Qué disciplina o actividad impartes? *</span>
+          <input
+            type="text"
+            name="otra_vacante"
+            required
+            placeholder="Ej: Fútbol, Multideporte, Karate, Manualidades, Refuerzo escolar, Baile..."
+            className="w-full rounded-xl border-2 border-[#1D2F8C] bg-white px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all shadow-[2px_2px_0_0_#000]"
+          />
+        </label>
+      )}
 
       <label className="block">
         <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Experiencia previa o mensaje</span>

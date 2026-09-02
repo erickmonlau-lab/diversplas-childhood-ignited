@@ -15,6 +15,12 @@ export default defineConfig({
   vite: {
     build: {
       chunkSizeWarningLimit: 1500,
+      minify: "esbuild",
+      cssMinify: true,
+    },
+    esbuild: {
+      legalComments: "none",
+      drop: ["debugger"],
     },
   },
 } as any);

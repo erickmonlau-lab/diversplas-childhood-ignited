@@ -217,11 +217,11 @@ function TrabajaConNosotrosPage() {
 
             {/* Main Title */}
             <h1
-              className="uppercase leading-[0.95] tracking-tight text-[11vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[76px] text-black max-w-5xl"
-              style={condensed}
+              className="uppercase leading-[0.95] text-[11vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[74px] text-black max-w-5xl"
+              style={{ ...condensed, letterSpacing: '0.02em' }}
             >
               Buscamos monitores/as en{" "}
-              <span className="text-[#1D2F8C]" style={condensedItalic}>
+              <span className="text-[#1D2F8C]" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
                 Santa Coloma de Gramenet<span className="text-[#D8E600]">.</span>
               </span>
             </h1>
@@ -263,7 +263,7 @@ function TrabajaConNosotrosPage() {
               <span className="inline-block bg-[#D8E600] text-[#0a0a0a] font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-sm px-4 py-1.5 rounded-md border-2 border-black mb-3 shadow-[2px_2px_0_0_#000]">
                 CONVOCATORIA ABIERTA
               </span>
-              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-black" style={condensed}>
+              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase text-black" style={{ ...condensed, letterSpacing: '0.03em' }}>
                 Vacantes <span className="text-[#1D2F8C]">Destacadas</span>
               </h2>
               <p className="mt-3 text-lg md:text-xl text-black/70 max-w-2xl mx-auto font-medium">
@@ -471,7 +471,7 @@ function TrabajaConNosotrosPage() {
                 <span className="inline-block bg-[#D8E600] text-black font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-xs md:text-sm px-3.5 py-1 rounded-md mb-4 border-2 border-black">
                   CONTACTO DIRECTO
                 </span>
-                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mb-6" style={condensedItalic}>
+                <h2 className="text-5xl md:text-7xl font-black uppercase text-white mb-6" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
                   ¿Quieres unirte <span className="text-[#D8E600]">al equipo</span>?
                 </h2>
                 <p className="text-xl text-white/90 font-medium leading-relaxed mb-8">

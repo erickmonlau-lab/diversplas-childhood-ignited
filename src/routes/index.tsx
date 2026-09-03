@@ -64,8 +64,12 @@ export const Route = createFileRoute("/")(({
           "description": "Empresa especializada en actividades extraescolares para colegios, AFAs y centros cívicos en Barcelona y área metropolitana. Fútbol, karate, hip hop, inglés, zumba, manualidades, dibujo y refuerzo escolar.",
           "foundingDate": "2005",
           "areaServed": [
-            "Barcelona", "Santa Coloma de Gramenet", "Badalona",
-            "Mollet del Vallès", "Martorelles", "Sant Fost de Campsentelles"
+            { "@type": "AdministrativeArea", "name": "Santa Coloma de Gramenet", "sameAs": "https://www.wikidata.org/wiki/Q15474" },
+            { "@type": "AdministrativeArea", "name": "Barcelona", "sameAs": "https://www.wikidata.org/wiki/Q1492" },
+            { "@type": "AdministrativeArea", "name": "Badalona", "sameAs": "https://www.wikidata.org/wiki/Q15470" },
+            { "@type": "AdministrativeArea", "name": "Mollet del Vallès", "sameAs": "https://www.wikidata.org/wiki/Q15494" },
+            { "@type": "AdministrativeArea", "name": "Sant Fost de Campsentelles", "sameAs": "https://www.wikidata.org/wiki/Q15454" },
+            { "@type": "AdministrativeArea", "name": "Martorelles", "sameAs": "https://www.wikidata.org/wiki/Q15442" }
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",

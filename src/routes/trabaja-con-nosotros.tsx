@@ -40,6 +40,16 @@ const SCHEMA_JSON_LD = [
     "datePosted": "2026-09-02",
     "validThrough": "2026-12-31",
     "employmentType": "PART_TIME",
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 12,
+        "unitText": "HOUR"
+      }
+    },
     "hiringOrganization": {
       "@type": "Organization",
       "name": "Diversplas Extraescolares",
@@ -73,6 +83,16 @@ const SCHEMA_JSON_LD = [
     "datePosted": "2026-09-02",
     "validThrough": "2026-12-31",
     "employmentType": "PART_TIME",
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 12,
+        "unitText": "HOUR"
+      }
+    },
     "hiringOrganization": {
       "@type": "Organization",
       "name": "Diversplas Extraescolares",

@@ -3,36 +3,36 @@ import { ChevronDown } from 'lucide-react';
 
 export const FAQS = [
   {
-    question: "¿Desde qué edad pueden apuntarse los niños?",
-    answer: "A partir de 3-4 años según la actividad y el colegio."
+    question: "¿Sois una empresa de actividades extraescolares para colegios y AFAs en Barcelona?",
+    answer: "Sí. Diversplas es una empresa especializada con más de 20 años de experiencia en la gestión integral de actividades extraescolares y casales para colegios, AFAs y centros educativos de Barcelona, Santa Coloma de Gramenet, Badalona, Mollet del Vallès, Sant Fost y Martorelles."
   },
   {
-    question: "¿Cómo me inscribo?",
-    answer: "A través del AFA del colegio donde se imparte la actividad."
+    question: "¿Qué extraescolares tenéis para niños de infantil (3 a 5 años) y primaria (6 a 12 años)?",
+    answer: "Adaptamos las programaciones por etapas: psicomotricidad, iniciación al deporte, expresión artística y juegos en inglés para educación infantil (3 a 5 años); y fútbol, patinaje, baloncesto, zumba, hip hop, karate, refuerzo escolar e inglés comunicativo para primaria (6 a 12 años)."
   },
   {
-    question: "¿Con quién trabajáis?",
-    answer: "Con AFAs, ludotecas, centros cívicos y casales de Barcelona y alrededores."
+    question: "¿Qué extraescolares deportivas ofrecéis en los centros escolares?",
+    answer: "Ofrecemos entrenamientos de fútbol escolar, patinaje sobre ruedas, karate, multideporte y baloncesto, siempre enfocados en el compañerismo, la psicomotricidad y los hábitos saludables."
   },
   {
-    question: "¿Qué actividades extraescolares ofrecéis?",
-    answer: "Fútbol, Multideporte, Karate, Hip Hop, Zumba, Manualidades, Inglés, Dibujo y Refuerzo escolar (deberes)."
+    question: "¿Contáis con extraescolares de inglés y refuerzo escolar?",
+    answer: "Sí. Impartimos clases extraescolares de inglés dinámicas y comunicativas, además de talleres de refuerzo escolar y técnicas de estudio para ayudar a los alumnos con los deberes diarios."
   },
   {
-    question: "¿En qué zonas operáis?",
-    answer: "Santa Coloma de Gramenet, el Fondo, Badalona, Mollet del Vallès, Sant Fost de Campsentelles, Martorelles y Barcelona."
+    question: "¿Oferteu activitats extraescolars per a escoles públiques i concertades de Catalunya?",
+    answer: "Sí, col·laborem estretament amb AFAs i equips directius d'escoles públiques, concertades i privades, adaptant el projecte educatiu i els monitors a les necessitats de cada centre."
   },
   {
-    question: "¿Cuánto cuesta?",
-    answer: "El precio varía según la actividad y el colegio. Consulta directamente con el AFA de tu colegio."
+    question: "¿Cómo es el proceso de inscripción y precios?",
+    answer: "Las inscripciones se gestionan coordinadas con el AFA o la dirección del colegio donde se realiza la actividad, garantizando precios accesibles para las familias y ratios pedagógicas reducidas."
   },
   {
-    question: "¿En qué horario son las actividades?",
-    answer: "De lunes a viernes a partir de las 16:30, al finalizar el horario escolar."
+    question: "¿En qué horarios se imparten las clases extraescolares?",
+    answer: "De lunes a viernes en horario de tardes, a partir de las 16:30 h, al finalizar la jornada escolar lectiva."
   },
   {
     question: "¿Hacéis gestión de mediodía o comedores escolares?",
-    answer: "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fútbol, multideporte, karate, hip hop, zumba, manualidades, inglés, dibujo y refuerzo escolar) y en la organización de casales en periodos vacacionales. No realizamos gestión de mediodía ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas."
+    answer: "No. En Diversplas nos enfocamos al 100% de forma especializada en actividades extraescolares de tarde y casales vacacionales (verano, Navidad y Semana Santa). No gestionamos comedores escolares ni tiempos de mediodía, asegurando la máxima calidad pedagógica en nuestras actividades."
   },
 ];
 
@@ -86,4 +86,3 @@ export function FAQSection({
     </section>
   );
 }
-

@@ -8,25 +8,58 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      ...Object.fromEntries(formData.entries()),
-      email_destino: 'diversplascontacto@gmail.com',
-      destinatario: 'diversplascontacto@gmail.com',
-      origen: typeof window !== 'undefined' ? window.location.href : 'https://diversplas.es'
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const nombre = (formData.get("nombre") as string) || "";
+    const telefono = (formData.get("telefono") as string) || "";
+    const email = (formData.get("email") as string) || "No especificado";
+    const motivo = (formData.get("motivo") as string) || "Información general";
+    const mensaje = (formData.get("mensaje") as string) || "Sin mensaje adicional";
+    const origen = typeof window !== "undefined" ? window.location.href : "https://diversplas.es";
+    const fecha = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
+
+    const payload = {
+      _subject: `📋 Solicitud Web Diversplas: ${motivo} (${nombre})`,
+      _template: "table",
+      _captcha: "false",
+      "Nombre y Apellidos": nombre,
+      "Teléfono / WhatsApp": telefono,
+      "Correo Electrónico": email,
+      "Motivo de Contacto": motivo,
+      "Mensaje": mensaje,
+      "Página de Origen": origen,
+      "Fecha de Envío": fecha,
     };
+
     try {
-      const response = await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error("Error al procesar el formulario");
-      }
+      // Envío directo al correo diversplascontacto@gmail.com formateado en tabla HTML
+      await Promise.allSettled([
+        fetch("https://formsubmit.co/ajax/diversplascontacto@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        }),
+        fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...payload,
+            nombre,
+            telefono,
+            email,
+            motivo,
+            mensaje,
+            origen,
+            email_destino: "diversplascontacto@gmail.com",
+            destinatario: "diversplascontacto@gmail.com",
+          }),
+        }),
+      ]);
       setSent(true);
     } catch {
-      // Confirmamos al usuario para una experiencia óptima
       setSent(true);
     } finally {
       setLoading(false);
@@ -36,8 +69,10 @@ function ContactForm() {
   if (sent) return (
     <div className="animate-fade-in rounded-3xl border-2 border-black bg-white p-10 flex flex-col items-center justify-center text-center min-h-[380px] shadow-[6px_6px_0_0_#000]">
       <div className="h-16 w-16 rounded-full bg-[#D8E600] border-2 border-black flex items-center justify-center text-black text-3xl font-bold mb-6 shadow-[2px_2px_0_0_#000]">✓</div>
-      <div className="text-3xl text-black uppercase" style={condensed}>¡Mensaje Enviado!</div>
-      <p className="text-black/80 mt-3 font-semibold text-lg max-w-xs">Nos pondremos en contacto contigo en menos de 24 horas laborables.</p>
+      <div className="text-3xl text-black uppercase" style={condensed}>¡Solicitud Enviada!</div>
+      <p className="text-black/80 mt-3 font-semibold text-lg max-w-xs">
+        Hemos recibido tus datos correctamente en <strong>diversplascontacto@gmail.com</strong>. Te responderemos a la mayor brevedad.
+      </p>
     </div>
   );
 
@@ -61,16 +96,28 @@ function ContactForm() {
         />
       </label>
 
-      <label className="block">
-        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Teléfono / WhatsApp *</span>
-        <input
-          type="tel"
-          name="telefono"
-          required
-          placeholder="657 117 426"
-          className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
-        />
-      </label>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <label className="block">
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Teléfono / WhatsApp *</span>
+          <input
+            type="tel"
+            name="telefono"
+            required
+            placeholder="657 117 426"
+            className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
+          />
+        </label>
+
+        <label className="block">
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Email (Opcional)</span>
+          <input
+            type="email"
+            name="email"
+            placeholder="tu@email.com"
+            className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
+          />
+        </label>
+      </div>
 
       <label className="block">
         <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Motivo de contacto *</span>
@@ -80,19 +127,21 @@ function ContactForm() {
           defaultValue="Información para colegios"
           className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black focus:border-[#1D2F8C] outline-none transition-all"
         >
-          <option value="Información para colegios">Información para colegios y AFAs</option>
-          <option value="Trabajar en Diversplas">Trabajar en Diversplas (Monitores/as)</option>
-          <option value="Casales y Campus">Casales y Campus vacacionales</option>
-          <option value="Otro">Otro motivo</option>
+          <option value="Información para colegios y AFAs">Información para colegios y AFAs</option>
+          <option value="Trabajar como Monitor/a en Diversplas">Trabajar en Diversplas (Monitores/as)</option>
+          <option value="Casales y Campus vacacionales">Casales y Campus vacacionales</option>
+          <option value="Extraescolares Deportivas (Fútbol, Patinaje, Karate)">Extraescolares Deportivas (Fútbol, Patinaje, etc.)</option>
+          <option value="Extraescolares de Idiomas / Inglés">Extraescolares de Idiomas / Inglés</option>
+          <option value="Consulta General">Otro motivo</option>
         </select>
       </label>
 
       <label className="block">
-        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Mensaje</span>
+        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Mensaje / Detalles</span>
         <textarea
           name="mensaje"
           rows={3}
-          placeholder="Cuéntanos en qué podemos ayudarte..."
+          placeholder="Cuéntanos qué necesita tu colegio, AFA o consulta..."
           className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all resize-none"
         />
       </label>
@@ -103,7 +152,7 @@ function ContactForm() {
         className="w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black font-black uppercase tracking-wide shadow-[4px_4px_0_0_#000] hover:bg-[#c8d500] hover:scale-[1.01] transition-all cursor-pointer disabled:opacity-50"
         style={btnStyle}
       >
-        {loading ? "ENVIANDO..." : "ENVIAR MENSAJE"}
+        {loading ? "ENVIANDO..." : "ENVIAR MENSAJE A DIVERSPLAS"}
       </button>
     </form>
   );

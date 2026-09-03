@@ -114,7 +114,17 @@ export const Route = createFileRoute("/")(({
           "validThrough": "2026-12-31",
           "employmentType": "PART_TIME",
           "hiringOrganization": { "@type": "Organization", "name": "Diversplas Extraescolares", "sameAs": "https://diversplas.es" },
-          "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Santa Coloma de Gramenet", "addressRegion": "Barcelona", "addressCountry": "ES" } }
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Diversos centros educativos y colegios",
+              "addressLocality": "Santa Coloma de Gramenet",
+              "postalCode": "08921",
+              "addressRegion": "Barcelona",
+              "addressCountry": "ES"
+            }
+          }
         })
       },
       {
@@ -129,7 +139,17 @@ export const Route = createFileRoute("/")(({
           "validThrough": "2026-12-31",
           "employmentType": "PART_TIME",
           "hiringOrganization": { "@type": "Organization", "name": "Diversplas Extraescolares", "sameAs": "https://diversplas.es" },
-          "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Santa Coloma de Gramenet", "addressRegion": "Barcelona", "addressCountry": "ES" } }
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Diversos centros educativos y colegios",
+              "addressLocality": "Santa Coloma de Gramenet",
+              "postalCode": "08921",
+              "addressRegion": "Barcelona",
+              "addressCountry": "ES"
+            }
+          }
         })
       }
     ]

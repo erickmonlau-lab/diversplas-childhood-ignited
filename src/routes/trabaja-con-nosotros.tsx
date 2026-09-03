@@ -50,7 +50,9 @@ const SCHEMA_JSON_LD = [
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Diversos centros educativos y colegios",
         "addressLocality": "Santa Coloma de Gramenet",
+        "postalCode": "08921",
         "addressRegion": "Barcelona",
         "addressCountry": "ES"
       }
@@ -81,7 +83,9 @@ const SCHEMA_JSON_LD = [
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Diversos centros educativos y colegios",
         "addressLocality": "Santa Coloma de Gramenet",
+        "postalCode": "08921",
         "addressRegion": "Barcelona",
         "addressCountry": "ES"
       }

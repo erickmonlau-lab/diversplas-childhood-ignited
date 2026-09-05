@@ -36,7 +36,7 @@ export function Nav() {
         }}
       >
         <a href="#top" onClick={() => setOpen(false)} className="flex items-center">
-          <img src="/diversplas-logo-graffiti.webp" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" width={87} height={64} />
+          <img src="/diversplas-logo-graffiti.webp" alt="DIVERSPLAS" className="h-14 md:h-16 w-auto block" loading="eager" fetchPriority="high" decoding="async" width={87} height={64} />
         </a>
 
         <nav className="hidden md:flex items-center gap-0.5 rounded-full border-2 border-black bg-white/95 px-2 py-1.5 shadow-[3px_3px_0_0_#000]">

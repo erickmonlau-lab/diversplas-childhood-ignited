@@ -94,15 +94,62 @@ export const Route = createFileRoute("/")(({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Desde qué edad pueden apuntarse los niños?", "acceptedAnswer": { "@type": "Answer", "text": "A partir de 3-4 años según la actividad y el colegio." } },
-            { "@type": "Question", "name": "¿Cómo me inscribo?", "acceptedAnswer": { "@type": "Answer", "text": "A través del AFA del colegio donde se imparte la actividad." } },
-            { "@type": "Question", "name": "¿Con quién trabajáis?", "acceptedAnswer": { "@type": "Answer", "text": "Con AFAs, ludotecas, centros cívicos y casales de Barcelona y alrededores." } },
-            { "@type": "Question", "name": "¿Qué actividades extraescolares ofrecéis?", "acceptedAnswer": { "@type": "Answer", "text": "Fútbol, Multideporte, Karate, Hip Hop, Zumba, Manualidades, Inglés, Dibujo y Refuerzo escolar (deberes)." } },
-            { "@type": "Question", "name": "¿En qué zonas operáis?", "acceptedAnswer": { "@type": "Answer", "text": "Santa Coloma de Gramenet, el Fondo, Badalona, Mollet del Vallès, Sant Fost de Campsentelles, Martorelles y Barcelona." } },
-            { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "El precio varía según la actividad y el colegio. Consulta directamente con el AFA de tu colegio." } },
-            { "@type": "Question", "name": "¿En qué horario son las actividades?", "acceptedAnswer": { "@type": "Answer", "text": "De lunes a viernes a partir de las 16:30, al finalizar el horario escolar." } },
-            { "@type": "Question", "name": "¿Hacéis gestión de mediodía o comedores escolares?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas se especializa de forma exclusiva en actividades extraescolares (fútbol, multideporte, karate, hip hop, zumba, manualidades, inglés, dibujo y refuerzo escolar) y en la organización de casales en periodos vacacionales. No realizamos gestión de mediodía ni de comedores escolares. Somos una entidad independiente y no estamos vinculados a otras asociaciones o empresas." } },
-            { "@type": "Question", "name": "¿Diversplas tiene alguna relación con Diver's Associació d'Esplai o Diver Planet?", "acceptedAnswer": { "@type": "Answer", "text": "No. Diversplas (diversplas.es) es una empresa completamente independiente y sin ninguna vinculación con Diver's Associació d'Esplai (diversesplai.cat), Diver Planet, ni ninguna otra entidad de nombre similar. Somos entidades distintas, con diferente titularidad, gestión y contacto." } }
+            {
+              "@type": "Question",
+              "name": "¿Sois una empresa de actividades extraescolares para colegios y AFAs en Barcelona?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Diversplas es una empresa especializada con más de 20 años de experiencia en la gestión integral de actividades extraescolares y casales para colegios, AFAs y centros educativos de Barcelona, Santa Coloma de Gramenet, Badalona, Mollet del Vallès, Sant Fost y Martorelles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué extraescolares tenéis para niños de infantil (3 a 5 años) y primaria (6 a 12 años)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Adaptamos las programaciones por etapas: psicomotricidad, iniciación al deporte, expresión artística y juegos en inglés para educación infantil (3 a 5 años); y fútbol, patinaje, baloncesto, zumba, hip hop, karate, refuerzo escolar e inglés comunicativo para primaria (6 a 12 años)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué extraescolares deportivas ofrecéis en los centros escolares?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ofrecemos entrenamientos de fútbol escolar, patinaje sobre ruedas, karate, multideporte y baloncesto, siempre enfocados en el compañerismo, la psicomotricidad y los hábitos saludables."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Contáis con extraescolares de inglés y refuerzo escolar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Impartimos clases extraescolares de inglés dinámicas y comunicativas, además de talleres de refuerzo escolar y técnicas de estudio para ayudar a los alumnos con los deberes diarios."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Oferteu activitats extraescolars per a escoles públiques i concertades de Catalunya?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, col·laborem estretament amb AFAs i equips directius d'escoles públiques, concertades i privades, adaptant el projecte educatiu i els monitors a les necessitats de cada centre."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿En qué horarios se imparten las clases extraescolares?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "De lunes a viernes en horario de tardes, a partir de las 16:30 h, al finalizar la jornada escolar lectiva."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hacéis gestión de mediodía o comedores escolares?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. En Diversplas nos enfocamos al 100% de forma especializada en actividades extraescolares de tarde y casales vacacionales (verano, Navidad y Semana Santa). No gestionamos comedores escolares ni tiempos de mediodía."
+              }
+            }
           ]
         })
       },

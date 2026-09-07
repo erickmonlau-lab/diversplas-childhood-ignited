@@ -369,15 +369,15 @@ export function Footer() {
                     }
                     25% {
                       opacity: 0.95;
-                      transform: scale(0.9) translate(14px, -12px);
+                      transform: scale(0.85) translate(8px, 4px);
                     }
                     70% {
                       opacity: 0.6;
-                      transform: scale(1.4) translate(26px, -24px);
+                      transform: scale(1.3) translate(18px, 8px);
                     }
                     100% {
                       opacity: 0;
-                      transform: scale(1.8) translate(36px, -34px);
+                      transform: scale(1.7) translate(28px, 12px);
                     }
                   }
                   .mascot-sway-anim {
@@ -386,12 +386,12 @@ export function Footer() {
                   }
                   .footer-sneak-mist {
                     animation: footerCanSpray 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
-                    transform-origin: 22px 64px;
+                    transform-origin: 0px 0px;
                   }
                 `}</style>
 
                 {/* Personaje asomando encima de la píldora con z-index alto sobre cualquier sección */}
-                <div className="absolute -top-36 sm:-top-44 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
+                <div className="absolute -top-32 sm:-top-40 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
                   {/* Bocadillo de diálogo B2B con margen generoso arriba */}
                   <div className="absolute -top-10 sm:-top-12 bg-white text-black font-black text-xs sm:text-sm px-4 py-2 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
                     ¿Hablamos para vuestro colegio o AFA? 🏫✨
@@ -410,38 +410,39 @@ export function Footer() {
                       height={215}
                     />
 
-                    {/* Fuga de spray naciendo EXACTAMENTE en la boquilla del bote (83.5% horizontal, 50.8% vertical) */}
+                    {/* Fuga de spray naciendo EXACTAMENTE en la boquilla del bote (87.1% horizontal, 52.7% vertical) */}
                     <div 
                       className="absolute pointer-events-none z-40"
-                      style={{ left: '83.5%', top: '50.8%' }}
+                      style={{ left: '87.1%', top: '52.7%' }}
                     >
                       <svg
-                        viewBox="-10 -50 90 90"
-                        className="w-24 h-24 -translate-y-1/2 pointer-events-none overflow-visible"
+                        viewBox="0 -30 80 60"
+                        className="w-20 h-20 pointer-events-none overflow-visible"
+                        style={{ transform: 'translate(0px, -50%)' }}
                       >
                         <defs>
-                          <radialGradient id="ftSprayGrad3" cx="30%" cy="50%" r="50%">
+                          <radialGradient id="ftSprayGrad4" cx="15%" cy="50%" r="60%">
                             <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
-                            <stop offset="45%" stopColor="#35D0BA" stopOpacity="0.8" />
-                            <stop offset="85%" stopColor="#1D2F8C" stopOpacity="0.45" />
+                            <stop offset="40%" stopColor="#35D0BA" stopOpacity="0.85" />
+                            <stop offset="80%" stopColor="#1D2F8C" stopOpacity="0.5" />
                             <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
                           </radialGradient>
                         </defs>
                         <g className="footer-sneak-mist">
-                          {/* Chorro concentrado en la boquilla (0,0) abriéndose en abanico hacia la derecha */}
+                          {/* Cono de niebla saliendo en horizontal/leve descenso según la inclinación del bote */}
                           <path
-                            d="M 0 0 L 35 -18 Q 45 -5 42 12 Q 25 8 0 0 Z"
-                            fill="url(#ftSprayGrad3)"
+                            d="M 0 0 L 28 -10 Q 38 0 35 12 L 0 0 Z"
+                            fill="url(#ftSprayGrad4)"
                             opacity="0.85"
                           />
-                          <circle cx="16" cy="-4" r="8" fill="url(#ftSprayGrad3)" />
-                          <circle cx="34" cy="-10" r="13" fill="url(#ftSprayGrad3)" />
-                          <circle cx="48" cy="-18" r="16" fill="url(#ftSprayGrad3)" />
+                          <circle cx="12" cy="0" r="7" fill="url(#ftSprayGrad4)" />
+                          <circle cx="25" cy="2" r="11" fill="url(#ftSprayGrad4)" />
+                          <circle cx="38" cy="4" r="14" fill="url(#ftSprayGrad4)" />
                           {/* Gotas y chispas de pintura nítidas */}
-                          <circle cx="38" cy="-22" r="3" fill="#D8E600" stroke="#000" strokeWidth="0.75" />
-                          <circle cx="52" cy="-6" r="2.5" fill="#35D0BA" stroke="#000" strokeWidth="0.75" />
-                          <circle cx="45" cy="8" r="2" fill="#FFEA00" />
-                          <circle cx="62" cy="-14" r="3.2" fill="#1D2F8C" stroke="#fff" strokeWidth="0.5" />
+                          <circle cx="28" cy="-8" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="40" cy="1" r="3" fill="#35D0BA" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="33" cy="12" r="2" fill="#FFEA00" />
+                          <circle cx="50" cy="5" r="2.8" fill="#1D2F8C" stroke="#fff" strokeWidth="0.5" />
                         </g>
                       </svg>
                     </div>

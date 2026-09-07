@@ -88,7 +88,7 @@ export default function ZonasSection() {
   return (
     <FeatureSection
       id="zones"
-      headline="Operativa actual en"
+      headline="Operativa en"
       headlineItalic="Santa Coloma y El Fondo."
       description="Nuestra base operativa e implantación principal se centra en Santa Coloma de Gramenet y el barrio del Fondo, con capacidad de expansión inmediata para nuevos colegios de Badalona, Barcelona, Mollet, Sant Fost y Martorelles."
       links={[{ label: "SOLICITAR PROYECTO EDUCATIVO", href: "#contacto" }]}

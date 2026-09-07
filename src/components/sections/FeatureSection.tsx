@@ -28,8 +28,8 @@ export default function FeatureSection({
       className={`flex flex-col justify-center py-8 md:py-0 min-w-0 w-full order-1 ${flip ? "md:order-2" : "md:order-1"} ${inView ? "animate-fade-in" : "opacity-0"}`}
     >
       <h2
-        className={`uppercase leading-[0.88] tracking-tight text-[12vw] md:text-[7vw] lg:text-[88px] mb-8 ${dark ? "text-white" : "text-black"}`}
-        style={condensed}
+        className={`uppercase leading-[0.95] tracking-tight text-[11vw] sm:text-[8vw] md:text-[6vw] lg:text-[76px] mb-8 ${dark ? "text-white" : "text-black"}`}
+        style={{ ...condensed, textWrap: "balance" as any }}
       >
         {headline}
         {headlineItalic && (

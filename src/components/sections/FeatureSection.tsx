@@ -41,13 +41,13 @@ export default function FeatureSection({
       {links && (
         <ul className="flex flex-wrap gap-4 mt-10 p-0 m-0 list-none">
           {links.map((l, i) => (
-            <li key={i}>
+            <li key={i} className="w-full sm:w-auto">
               <a
                 href={l.href}
-                className={`inline-block rounded-full px-8 py-3.5 font-bold border-2 border-black uppercase transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] ${
+                className={`inline-flex items-center justify-center rounded-full px-8 py-4 font-extrabold border-2 border-black uppercase transition-all shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] hover:scale-[1.02] text-center w-full sm:w-auto ${
                   i === 0
                     ? "bg-[#D8E600] text-black hover:bg-[#c8d500]"
-                    : "bg-transparent text-black hover:bg-black hover:text-white"
+                    : "bg-white text-black hover:bg-[#1D2F8C] hover:text-white"
                 }`}
                 style={btnStyle}
               >

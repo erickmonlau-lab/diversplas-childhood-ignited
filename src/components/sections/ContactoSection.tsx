@@ -180,7 +180,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black font-black uppercase tracking-wide shadow-[4px_4px_0_0_#000] hover:bg-[#c8d500] hover:scale-[1.01] transition-all cursor-pointer disabled:opacity-50 text-base"
+        className="w-full rounded-full bg-[#D8E600] text-black py-4.5 sm:py-5 border-2 border-black font-extrabold uppercase tracking-normal shadow-[4px_4px_0_0_#000] hover:bg-[#c8d500] hover:scale-[1.01] transition-all cursor-pointer disabled:opacity-50 text-base sm:text-lg text-center"
         style={btnStyle}
       >
         {loading ? "ENVIANDO SOLICITUD..." : "SOLICITAR PROPUESTA PARA EL COLEGIO"}
@@ -195,7 +195,7 @@ export default function ContactSection() {
       <div className="max-w-[1300px] mx-auto px-6 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           <div className="lg:col-span-5">
-            <span className="inline-block bg-[#D8E600] text-black font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-xs md:text-sm px-3.5 py-1 rounded-md mb-4 border-2 border-black shadow-[2px_2px_0_0_#000]">
+            <span className="inline-block bg-[#D8E600] text-black font-extrabold uppercase tracking-wide text-xs md:text-sm px-4 py-1.5 rounded-full mb-4 border-2 border-black shadow-[2px_2px_0_0_#000]">
               CONTRATACIÓN PARA COLEGIOS Y AFAS
             </span>
             {/* [H2] Contacta con Coordinación */}

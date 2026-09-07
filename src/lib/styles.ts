@@ -12,8 +12,9 @@ export const condensedItalic: React.CSSProperties = {
 };
 
 export const btnStyle: React.CSSProperties = {
-  fontFamily: "'Barlow Condensed', sans-serif",
-  fontWeight: 900,
-  letterSpacing: "0.06em",
-  fontSize: "1.05rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontWeight: 800,
+  letterSpacing: "0.02em",
+  fontSize: "1rem",
 };
+

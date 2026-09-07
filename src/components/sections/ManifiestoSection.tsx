@@ -10,8 +10,8 @@ export default function ManifiestoSection() {
   return (
     <section id="manifesto" ref={ref} className="bg-white pt-14 pb-24 md:pt-16 md:pb-40 border-b-2 border-black">
       <div className="mx-auto max-w-[1400px] px-6">
-        <div className="mb-12 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs font-bold tracking-widest">
-          MANIFIESTO
+        <div className="mb-12 inline-flex items-center gap-2 rounded-full border-2 border-black bg-[#D8E600] px-4 py-1.5 text-xs sm:text-sm font-extrabold uppercase shadow-[2px_2px_0_0_#000]">
+          MANIFIESTO EDUCATIVO
         </div>
         <div className="space-y-10 md:space-y-14">
           {MANIFESTO_PAIRS.map((p, i) => (

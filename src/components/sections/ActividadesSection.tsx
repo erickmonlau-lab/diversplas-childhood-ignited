@@ -6,7 +6,7 @@ export default function Activities() {
     <section id="servicios" className="bg-white py-20 md:py-28 border-b-2 border-black">
       <div className="mx-auto max-w-[1400px] px-6">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-block bg-[#D8E600] text-black font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-xs md:text-sm px-3.5 py-1 rounded-md mb-3 border-2 border-black shadow-[2px_2px_0_0_#000]">
+          <span className="inline-block bg-[#D8E600] text-black font-extrabold uppercase tracking-wide text-xs md:text-sm px-4 py-1.5 rounded-full mb-4 border-2 border-black shadow-[2px_2px_0_0_#000]">
             PROYECTOS Y LÍNEAS EDUCATIVAS PARA COLEGIOS Y AFAS
           </span>
           {/* [H2] Servicios Educativos y Deportivos para Colegios */}

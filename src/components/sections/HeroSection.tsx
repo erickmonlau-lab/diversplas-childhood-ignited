@@ -58,9 +58,9 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
       <div className="relative z-10 text-center px-4 sm:px-6 min-[1200px]:px-8 max-w-4xl mx-auto w-full flex flex-col items-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black shadow-[2px_2px_0_0_#000] bg-[#D8E600] mb-8" style={{ whiteSpace: 'nowrap' }}>
-          <span className="w-2.5 h-2.5 rounded-full bg-[#1D2F8C] flex-shrink-0" />
-          <span className="font-bold text-sm tracking-wide text-black uppercase" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border-2 border-black shadow-[3px_3px_0_0_#000] bg-[#D8E600] mb-8" style={{ whiteSpace: 'nowrap' }}>
+          <span className="w-3 h-3 rounded-full bg-[#1D2F8C] flex-shrink-0 animate-pulse" />
+          <span className="font-extrabold text-sm sm:text-base tracking-normal text-black uppercase" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
             Servicio Exclusivo para Colegios y AFAs · +20 Años
           </span>
         </div>
@@ -79,17 +79,17 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
         </p>
 
         {/* CTAs - B2B Directo */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <a href="#contacto" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#D8E600] text-black px-8 py-4 font-black border-2 border-black hover:bg-[#c8d500] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]" style={btnStyle}>
-            SOLICITAR PROPUESTA PARA TU CENTRO{" "}
-            <span className="transition-transform group-hover:translate-x-1 inline-flex items-center">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl">
+          <a href="#contacto" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#D8E600] text-black px-8 py-4 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#c8d500] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-sm sm:text-base text-center" style={btnStyle}>
+            SOLICITAR PROPUESTA PARA TU CENTRO
+            <span className="transition-transform group-hover:translate-x-1 inline-flex items-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="9" fill="white" stroke="currentColor" strokeWidth="2"/>
                 <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
           </a>
-          <a href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-8 py-4 font-black border-2 border-black hover:bg-[#3055C7] transition-all uppercase tracking-wide shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02]" style={btnStyle}>
+          <a href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-8 py-4 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-sm sm:text-base text-center" style={btnStyle}>
             CONTACTAR COORDINACIÓN
           </a>
         </div>

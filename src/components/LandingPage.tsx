@@ -347,23 +347,58 @@ export function Footer() {
               </a>
 
               {/* Contenedor relativo para la píldora legal con el muñeco sentado / asomando encima */}
-              <div className="relative pt-12">
-                {/* Personaje asomando encima de la píldora, con animación */}
-                <div className="absolute -top-12 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-20 flex flex-col items-center">
-                  {/* Bocadillo de diálogo */}
-                  <div className="absolute -top-8 bg-white text-black font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[2px_2px_0_0_#000] whitespace-nowrap opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all pointer-events-none">
-                    ¿Yo? ¡Si soy un santo! 😇🎨
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border-r-2 border-b-2 border-black rotate-45" />
+              <div className="relative pt-20">
+                {/* Estilo local para animación del spray fugándose detrás del muñeco */}
+                <style>{`
+                  @keyframes footerSneakSpray {
+                    0% { opacity: 0; transform: scale(0.3) translate(0, 0); }
+                    35% { opacity: 0.9; transform: scale(1) translate(10px, -8px); }
+                    70% { opacity: 0.5; transform: scale(1.3) translate(18px, -15px); }
+                    100% { opacity: 0; transform: scale(1.6) translate(25px, -20px); }
+                  }
+                  .footer-sneak-mist {
+                    animation: footerSneakSpray 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+                    transform-origin: 10px 40px;
+                  }
+                `}</style>
+
+                {/* Personaje asomando bien arriba sobre la píldora */}
+                <div className="absolute -top-20 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-20 flex flex-col items-center">
+                  {/* Bocadillo de diálogo B2B bien separado arriba sin pisar la gorra */}
+                  <div className="absolute -top-12 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-30">
+                    ¿Hablamos para vuestro colegio o AFA? 🏫✨
+                    {/* Pico apuntando hacia la gorra */}
+                    <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
                   </div>
 
-                  {/* Imagen animada con balanceo suave y respiración */}
+                  {/* Fuga de spray animada saliendo del bote detrás de su espalda */}
+                  <svg
+                    viewBox="0 0 80 80"
+                    className="absolute top-10 right-0 w-16 h-16 pointer-events-none z-10 overflow-visible"
+                  >
+                    <defs>
+                      <radialGradient id="ftSprayGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
+                        <stop offset="50%" stopColor="#35D0BA" stopOpacity="0.7" />
+                        <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <g className="footer-sneak-mist">
+                      <circle cx="35" cy="45" r="10" fill="url(#ftSprayGrad)" />
+                      <circle cx="44" cy="38" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.5" />
+                      <circle cx="40" cy="32" r="2" fill="#35D0BA" />
+                      <circle cx="50" cy="46" r="2" fill="#FFEA00" />
+                    </g>
+                  </svg>
+
+                  {/* Imagen del muñeco con tamaño adecuado y animación de flotación suave */}
                   <img
                     src="/mascot-hiding.webp"
-                    alt="Mascota Diversplas Ojo Pícaro"
-                    className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)] animate-[float_3.5s_ease-in-out_infinite] hover:scale-110 transition-transform duration-300"
+                    alt="Mascota Diversplas para Colegios y AFAs"
+                    className="h-24 sm:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] animate-[float_4s_ease-in-out_infinite] hover:scale-110 transition-transform duration-300 relative z-20"
                     loading="lazy"
-                    width={88}
-                    height={116}
+                    width={105}
+                    height={140}
                   />
                 </div>
 

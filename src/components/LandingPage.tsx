@@ -225,10 +225,10 @@ export function Footer() {
       </div>
 
       {/* Footer Principal: Estructura en Columnas Limpias y Marca */}
-      <div className="bg-white pt-14 pb-8 px-6 relative z-30 overflow-visible border-t border-black/5">
+      <div className="bg-white pt-14 pb-12 px-6 relative z-30 overflow-visible border-t border-black/10">
         <div className="mx-auto max-w-[1400px]">
           {/* Fila superior: Columnas de información y navegación */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-black/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16">
             {/* Columna 1: Logo + Descripción de la empresa (5 cols) */}
             <div className="lg:col-span-5 flex flex-col items-start space-y-4">
               <a href="#top" className="inline-block group transition-transform hover:scale-105 duration-200">
@@ -242,91 +242,115 @@ export function Footer() {
                   height={80}
                 />
               </a>
-              <p className="text-sm font-semibold text-black/70 max-w-md leading-relaxed">
-                Especialistas en actividades extraescolares, casales deportivos y gestión de ocio educativo para colegios y AFAs. Más de 20 años transformando los patios en espacios de aprendizaje y diversión.
+              <p className="text-sm font-semibold text-black/80 max-w-md leading-relaxed">
+                Especialistas en actividades extraescolares, casales deportivos y gestión integral de ocio educativo para colegios y AFAs. Más de 20 años transformando los patios en espacios activos y seguros.
               </p>
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href="https://www.instagram.com/diversplas_extraescolares"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-black/80 hover:text-[#1D2F8C] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-white hover:bg-[#1D2F8C] hover:text-white px-3 py-1.5 rounded-xl border-2 border-black shadow-[2px_2px_0_0_#000] transition-all hover:scale-105"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                   @diversplas_extraescolares
                 </a>
-                <span className="text-black/20">·</span>
                 <a
                   href="/trabaja-con-nosotros"
-                  className="text-xs font-bold text-black/60 hover:text-black transition-colors underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-gray-100 hover:bg-black hover:text-white px-3 py-1.5 rounded-xl border-2 border-black shadow-[2px_2px_0_0_#000] transition-all hover:scale-105"
                 >
-                  Trabaja con nosotros
+                  💼 Trabaja con nosotros
                 </a>
               </div>
             </div>
 
             {/* Columna 2: Navegación Rápida (3 cols) */}
-            <div className="lg:col-span-3 flex flex-col space-y-3">
-              <span className="text-xs font-black uppercase tracking-wider text-black">
+            <div className="lg:col-span-3 flex flex-col space-y-4">
+              <span className="inline-block bg-[#1D2F8C] text-white text-[11px] font-black uppercase px-3 py-1 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] tracking-wider w-fit">
                 Navegación
               </span>
-              <ul className="space-y-2 text-sm font-bold text-black/80">
+              <ul className="space-y-2.5 text-sm font-bold text-black/90">
                 <li>
-                  <a href="#servicios" className="hover:text-[#1D2F8C] transition-colors">Actividades Extraescolares</a>
+                  <a href="#servicios" className="hover:text-[#1D2F8C] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#1D2F8C]">▸</span> Actividades Extraescolares
+                  </a>
                 </li>
                 <li>
-                  <a href="#process" className="hover:text-[#1D2F8C] transition-colors">Cómo Funciona</a>
+                  <a href="#process" className="hover:text-[#1D2F8C] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#1D2F8C]">▸</span> Cómo Funciona
+                  </a>
                 </li>
                 <li>
-                  <a href="#zones" className="hover:text-[#1D2F8C] transition-colors">Zonas de Servicio</a>
+                  <a href="#zones" className="hover:text-[#1D2F8C] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#1D2F8C]">▸</span> Zonas de Servicio
+                  </a>
                 </li>
                 <li>
-                  <a href="#faq" className="hover:text-[#1D2F8C] transition-colors">Preguntas Frecuentes</a>
+                  <a href="#faq" className="hover:text-[#1D2F8C] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#1D2F8C]">▸</span> Preguntas Frecuentes
+                  </a>
                 </li>
                 <li>
-                  <a href="#contacto" className="hover:text-[#1D2F8C] transition-colors">Contacto para Colegios</a>
+                  <a href="#contacto" className="hover:text-[#1D2F8C] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#1D2F8C]">▸</span> Contacto para Centros
+                  </a>
                 </li>
               </ul>
             </div>
 
             {/* Columna 3: Zonas Escolares / Localidades (4 cols) */}
-            <div className="lg:col-span-4 flex flex-col space-y-3">
+            <div className="lg:col-span-4 flex flex-col space-y-4">
               <div className="flex items-center gap-2">
-                <span className="bg-[#1D2F8C] text-white text-[10px] font-black uppercase px-2 py-0.5 rounded border border-black tracking-wider">
+                <span className="bg-[#D8E600] text-black text-[11px] font-black uppercase px-3 py-1 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] tracking-wider">
                   Zonas Escolares
                 </span>
-                <span className="text-xs text-black/60 font-semibold">
-                  Presencia en Cataluña
+                <span className="text-xs text-black/70 font-bold">
+                  Cataluña
                 </span>
               </div>
-              <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs font-bold text-black/80">
-                <a href="/santa-coloma" className="hover:text-[#1D2F8C] underline decoration-2 decoration-[#D8E600] transition-colors">
-                  Santa Coloma de Gramenet (Sede)
+              <div className="flex flex-wrap gap-2 text-xs font-bold text-black">
+                <a
+                  href="/santa-coloma"
+                  className="inline-flex items-center gap-1 bg-[#D8E600]/30 hover:bg-[#D8E600] text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
+                  🏫 Santa Coloma (Sede)
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/fondo" className="hover:text-[#1D2F8C] underline decoration-2 decoration-[#D8E600] transition-colors">
-                  El Fondo
+                <a
+                  href="/fondo"
+                  className="inline-flex items-center gap-1 bg-[#35D0BA]/30 hover:bg-[#35D0BA] text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
+                  📍 El Fondo
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/badalona" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+                <a
+                  href="/badalona"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-[#1D2F8C] hover:text-white text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
                   Badalona
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/barcelona" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+                <a
+                  href="/barcelona"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-[#1D2F8C] hover:text-white text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
                   Barcelona
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/mollet" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+                <a
+                  href="/mollet"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-[#1D2F8C] hover:text-white text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
                   Mollet del Vallès
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/sant-fost" className="hover:text-[#1D2F8C] hover:underline transition-colors">
-                  Sant Fost de Campsentelles
+                <a
+                  href="/sant-fost"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-[#1D2F8C] hover:text-white text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
+                  Sant Fost
                 </a>
-                <span className="text-black/30">•</span>
-                <a href="/martorelles" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+                <a
+                  href="/martorelles"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-[#1D2F8C] hover:text-white text-black px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_0_#000] transition-all"
+                >
                   Martorelles
                 </a>
               </div>
@@ -334,12 +358,12 @@ export function Footer() {
           </div>
 
           {/* Fila inferior: Redes sociales y el personaje con la píldora de copyright */}
-          <div className="pt-10 flex flex-wrap justify-between items-center gap-6 overflow-visible">
+          <div className="border-t-2 border-black pt-8 flex flex-col sm:flex-row justify-between items-center gap-8 overflow-visible">
             {/* Canales de Contacto Directo */}
             <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-black/60 hidden sm:inline mr-1">Canales directos:</span>
+              <span className="text-xs font-black uppercase text-black/70 mr-1 tracking-wider">Contacto rápido:</span>
               <a
-                className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000]"
+                className="rounded-full border-2 border-black h-10 w-10 inline-flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] hover:scale-105"
                 href="mailto:diversplascontacto@gmail.com"
                 aria-label="Enviar email a Diversplas"
                 title="diversplascontacto@gmail.com"
@@ -350,7 +374,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000]"
+                className="rounded-full border-2 border-black h-10 w-10 inline-flex items-center justify-center bg-[#D8E600] text-black hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] hover:scale-105"
                 href="tel:+34657117426"
                 aria-label="Llamar a Diversplas"
                 title="+34 657 117 426"
@@ -360,7 +384,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000]"
+                className="rounded-full border-2 border-black h-10 w-10 inline-flex items-center justify-center bg-[#25D366] text-black hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] hover:scale-105"
                 href="https://wa.me/34657117426"
                 target="_blank"
                 rel="noopener noreferrer"

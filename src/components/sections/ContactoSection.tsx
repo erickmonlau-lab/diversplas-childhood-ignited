@@ -10,23 +10,25 @@ function ContactForm() {
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const nombre = (formData.get("nombre") as string) || "";
+    const centro = (formData.get("centro") as string) || "";
+    const responsable = (formData.get("responsable") as string) || "";
     const telefono = (formData.get("telefono") as string) || "";
     const email = (formData.get("email") as string) || "No especificado";
-    const motivo = (formData.get("motivo") as string) || "Información general";
+    const motivo = (formData.get("motivo") as string) || "Propuesta de Extraescolares";
     const mensaje = (formData.get("mensaje") as string) || "Sin mensaje adicional";
     const origen = typeof window !== "undefined" ? window.location.href : "https://diversplas.es";
     const fecha = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
 
     const payload = {
-      _subject: `📋 Solicitud Web Diversplas: ${motivo} (${nombre})`,
+      _subject: `🏫 Solicitud de Centro/AFA: ${centro} - ${motivo} (${responsable})`,
       _template: "table",
       _captcha: "false",
-      "Nombre y Apellidos": nombre,
-      "Teléfono / WhatsApp": telefono,
+      "Centro Educativo / AFA": centro,
+      "Persona de Contacto / Cargo": responsable,
+      "Teléfono / WhatsApp de Contacto": telefono,
       "Correo Electrónico": email,
-      "Motivo de Contacto": motivo,
-      "Mensaje": mensaje,
+      "Tipo de Servicio Solicitado": motivo,
+      "Detalles / Necesidades del Centro": mensaje,
       "Página de Origen": origen,
       "Fecha de Envío": fecha,
     };
@@ -47,7 +49,8 @@ function ContactForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...payload,
-            nombre,
+            centro,
+            nombre: responsable,
             telefono,
             email,
             motivo,
@@ -69,9 +72,9 @@ function ContactForm() {
   if (sent) return (
     <div className="animate-fade-in rounded-3xl border-2 border-black bg-white p-10 flex flex-col items-center justify-center text-center min-h-[380px] shadow-[6px_6px_0_0_#000]">
       <div className="h-16 w-16 rounded-full bg-[#D8E600] border-2 border-black flex items-center justify-center text-black text-3xl font-bold mb-6 shadow-[2px_2px_0_0_#000]">✓</div>
-      <div className="text-3xl text-black uppercase" style={condensed}>¡Solicitud Enviada!</div>
+      <div className="text-3xl text-black uppercase" style={condensed}>¡Solicitud Recibida!</div>
       <p className="text-black/80 mt-3 font-semibold text-lg max-w-xs">
-        Hemos recibido tus datos correctamente en <strong>diversplascontacto@gmail.com</strong>. Te responderemos a la mayor brevedad.
+        Hemos recibido los datos de vuestro centro escolar en <strong>diversplascontacto@gmail.com</strong>. Nuestro equipo de coordinación contactará con vosotros a la mayor brevedad.
       </p>
     </div>
   );
@@ -79,24 +82,35 @@ function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="rounded-3xl border-2 border-black bg-white p-6 md:p-8 space-y-4 shadow-[6px_6px_0_0_#000]">
       <h3 className="text-2xl md:text-3xl font-black uppercase text-black" style={condensed}>
-        Envíanos un mensaje
+        Solicitar Propuesta para tu Colegio
       </h3>
       <p className="text-sm font-semibold text-black/70">
-        Completa el formulario y te responderemos a la mayor brevedad:
+        Formulario exclusivo para Equipos Directivos, AFAs / AMPAs y Centros Educativos:
       </p>
 
       <label className="block">
-        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Nombre y Apellidos *</span>
+        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Nombre del Colegio / AFA / Entidad *</span>
         <input
           type="text"
-          name="nombre"
+          name="centro"
           required
-          placeholder="Tu nombre completo"
+          placeholder="Ej: Escola Joan Maragall / AFA"
           className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
         />
       </label>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <label className="block">
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Persona de Contacto y Cargo *</span>
+          <input
+            type="text"
+            name="responsable"
+            required
+            placeholder="Ej: Laura (Presidenta AFA / Directora)"
+            className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
+          />
+        </label>
+
         <label className="block">
           <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Teléfono / WhatsApp *</span>
           <input
@@ -107,41 +121,42 @@ function ContactForm() {
             className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
           />
         </label>
+      </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <label className="block">
-          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Email (Opcional)</span>
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Email del Centro / AFA</span>
           <input
             type="email"
             name="email"
-            placeholder="tu@email.com"
+            placeholder="afa@colegio.cat"
             className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all"
           />
+        </label>
+
+        <label className="block">
+          <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Servicio Requerido *</span>
+          <select
+            name="motivo"
+            required
+            defaultValue="Gestión de Actividades Extraescolares"
+            className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black focus:border-[#1D2F8C] outline-none transition-all"
+          >
+            <option value="Gestión de Actividades Extraescolares">Gestión de Actividades Extraescolares</option>
+            <option value="Organización de Casales Escolares (Verano / Navidad)">Organización de Casales Escolares</option>
+            <option value="Monitores Titulados de Sustitución o Refuerzo">Monitores Titulados de Sustitución</option>
+            <option value="Trabajar como Monitor/a en Diversplas">Candidatura Monitor/a</option>
+            <option value="Reunión Informativa / Presentación">Reunión con Coordinación</option>
+          </select>
         </label>
       </div>
 
       <label className="block">
-        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Motivo de contacto *</span>
-        <select
-          name="motivo"
-          required
-          defaultValue="Información para colegios"
-          className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black focus:border-[#1D2F8C] outline-none transition-all"
-        >
-          <option value="Información para colegios y AFAs">Información para colegios y AFAs</option>
-          <option value="Trabajar como Monitor/a en Diversplas">Trabajar en Diversplas (Monitores/as)</option>
-          <option value="Casales y Campus vacacionales">Casales y Campus vacacionales</option>
-          <option value="Extraescolares Deportivas (Fútbol, Patinaje, Karate)">Extraescolares Deportivas (Fútbol, Patinaje, etc.)</option>
-          <option value="Extraescolares de Idiomas / Inglés">Extraescolares de Idiomas / Inglés</option>
-          <option value="Consulta General">Otro motivo</option>
-        </select>
-      </label>
-
-      <label className="block">
-        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Mensaje / Detalles</span>
+        <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Detalles o Actividades de Interés</span>
         <textarea
           name="mensaje"
           rows={3}
-          placeholder="Cuéntanos qué necesita tu colegio, AFA o consulta..."
+          placeholder="Ej: Nos interesa fútbol, patinaje e inglés de 16:30 a 18:00 para unos 60 alumnos..."
           className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-base text-black placeholder:text-black/50 focus:border-[#1D2F8C] outline-none transition-all resize-none"
         />
       </label>
@@ -152,7 +167,7 @@ function ContactForm() {
         className="w-full rounded-full bg-[#D8E600] text-black py-4 border-2 border-black font-black uppercase tracking-wide shadow-[4px_4px_0_0_#000] hover:bg-[#c8d500] hover:scale-[1.01] transition-all cursor-pointer disabled:opacity-50"
         style={btnStyle}
       >
-        {loading ? "ENVIANDO..." : "ENVIAR MENSAJE A DIVERSPLAS"}
+        {loading ? "ENVIANDO SOLICITUD..." : "SOLICITAR PROPUESTA PARA EL COLEGIO"}
       </button>
     </form>
   );
@@ -165,23 +180,23 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-block bg-[#D8E600] text-black font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-xs md:text-sm px-3.5 py-1 rounded-md mb-4 border-2 border-black">
-              ATENCIÓN DIRECTA
+              CONTRATACIÓN PARA COLEGIOS Y AFAS
             </span>
-            {/* [H2] Contacta con Nosotros */}
+            {/* [H2] Contacta con Coordinación */}
             <h2 className="text-5xl md:text-7xl font-black uppercase text-white mb-6" style={{ ...condensedItalic, letterSpacing: '0.02em' }}>
-              Contacta <span className="text-[#D8E600]">con Nosotros</span>
+              Atención a <span className="text-[#D8E600]">Centros Escolares</span>
             </h2>
             <p className="text-xl text-white/90 font-medium leading-relaxed mb-8">
-              Escríbenos por WhatsApp al <strong>+34 657 117 426</strong> o envíanos un correo a{" "}
+              Atención directa para equipos directivos y juntas de AFA. Escríbenos por WhatsApp al <strong>+34 657 117 426</strong> o envíanos un correo a{" "}
               <a href="mailto:diversplascontacto@gmail.com" className="underline hover:text-[#D8E600] transition-colors">
                 diversplascontacto@gmail.com
               </a>
-              . Estamos a tu disposición para asesorar a tu centro escolar o resolver cualquier consulta.
+              . Te prepararemos una propuesta pedagógica y económica adaptada a las necesidades de vuestro colegio.
             </p>
 
             <div className="space-y-4">
               <a
-                href="https://wa.me/34657117426?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20actividades%20de%20Diversplas"
+                href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-black px-8 py-4 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide"
@@ -190,10 +205,10 @@ export default function ContactSection() {
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                ESCRIBIR POR WHATSAPP (+34 657 117 426)
+                WHATSAPP DE COORDINACIÓN (+34 657 117 426)
               </a>
               <p className="text-white/70 text-sm font-semibold">
-                Respuesta rápida en horario escolar y de coordinación.
+                Atención preferente para colegios de Santa Coloma de Gramenet y área de expansión.
               </p>
             </div>
           </div>

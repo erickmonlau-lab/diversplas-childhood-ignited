@@ -3,36 +3,32 @@ import { ChevronDown } from 'lucide-react';
 
 export const FAQS = [
   {
-    question: "¿Sois una empresa de actividades extraescolares para colegios y AFAs en Barcelona?",
-    answer: "Sí. Diversplas es una empresa especializada con más de 20 años de experiencia en la gestión integral de actividades extraescolares y casales para colegios, AFAs y centros educativos de Barcelona, Santa Coloma de Gramenet, Badalona, Mollet del Vallès, Sant Fost y Martorelles."
+    question: "¿Qué responsabilidades y trámites asume Diversplas en nuestro colegio?",
+    answer: "Asumimos la gestión integral y llave en mano: selección, contratación y nóminas de monitores titulados, cobertura con póliza de Responsabilidad Civil patronal y de actividades, material técnico homologado, programación pedagógica adaptada al centro y resolución ágil de cualquier incidencia."
   },
   {
-    question: "¿Qué extraescolares tenéis para niños de infantil (3 a 5 años) y primaria (6 a 12 años)?",
-    answer: "Adaptamos las programaciones por etapas: psicomotricidad, iniciación al deporte, expresión artística y juegos en inglés para educación infantil (3 a 5 años); y fútbol, patinaje, baloncesto, zumba, hip hop, karate, refuerzo escolar e inglés comunicativo para primaria (6 a 12 años)."
+    question: "¿En qué zonas operáis actualmente?",
+    answer: "Nuestra sede principal y núcleo operativo se encuentra en Santa Coloma de Gramenet y el barrio del Fondo. Además, contamos con capacidad de desplazamiento e implantación de proyectos en colegios de Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles."
   },
   {
-    question: "¿Qué extraescolares deportivas ofrecéis en los centros escolares?",
-    answer: "Ofrecemos entrenamientos de fútbol escolar, patinaje sobre ruedas, karate, multideporte y baloncesto, siempre enfocados en el compañerismo, la psicomotricidad y los hábitos saludables."
+    question: "¿Los monitores cuentan con la titulación y certificados legales requeridos?",
+    answer: "Sí, el 100% de nuestro equipo de monitores y coordinadores dispone de la titulación oficial exigida por la normativa catalana (Monitor/a de Lleure, técnicos deportivos o grados en educación) y el Certificado Negativo del Registro Central de Delincuentes Sexuales debidamente actualizado."
   },
   {
-    question: "¿Contáis con extraescolares de inglés y refuerzo escolar?",
-    answer: "Sí. Impartimos clases extraescolares de inglés dinámicas y comunicativas, además de talleres de refuerzo escolar y técnicas de estudio para ayudar a los alumnos con los deberes diarios."
+    question: "¿Podemos personalizar las actividades y adaptarlas al Ideario de nuestro centro?",
+    answer: "Por supuesto. No imponemos programas cerrados; nos reunimos previamente con la dirección del centro escolar y la junta del AFA para alinear los horarios, valores, metodologías y oferta de actividades con el Proyecto Educativo de Centro (PEC)."
   },
   {
-    question: "¿Oferteu activitats extraescolars per a escoles públiques i concertades de Catalunya?",
-    answer: "Sí, col·laborem estretament amb AFAs i equips directius d'escoles públiques, concertades i privades, adaptant el projecte educatiu i els monitors a les necessitats de cada centre."
+    question: "¿Organizáis casales en las instalaciones del colegio durante los periodos de vacaciones?",
+    answer: "Sí. Diseñamos y ejecutamos casales escolares y campus vacacionales de Verano, Navidad y Semana Santa dentro de vuestro propio recinto educativo, facilitando la conciliación laboral y familiar del centro con proyectos lúdico-educativos temáticos."
   },
   {
-    question: "¿Cómo es el proceso de inscripción y precios?",
-    answer: "Las inscripciones se gestionan coordinadas con el AFA o la dirección del colegio donde se realiza la actividad, garantizando precios accesibles para las familias y ratios pedagógicas reducidas."
-  },
-  {
-    question: "¿En qué horarios se imparten las clases extraescolares?",
-    answer: "De lunes a viernes en horario de tardes, a partir de las 16:30 h, al finalizar la jornada escolar lectiva."
+    question: "¿Cómo se coordina el día a día entre el colegio y Diversplas?",
+    answer: "Cada centro cuenta con un/a Coordinador/a pedagógico de enlace asignado. Es la persona responsable del seguimiento diario de las asistencias, la comunicación fluida con la dirección y la atención preferente a través de canal directo y WhatsApp."
   },
   {
     question: "¿Hacéis gestión de mediodía o comedores escolares?",
-    answer: "No. En Diversplas nos enfocamos al 100% de forma especializada en actividades extraescolares de tarde y casales vacacionales (verano, Navidad y Semana Santa). No gestionamos comedores escolares ni tiempos de mediodía, asegurando la máxima calidad pedagógica en nuestras actividades."
+    answer: "No. En Diversplas nos enfocamos de forma 100% especializada en actividades extraescolares de tarde y casales vacacionales. No gestionamos comedores escolares ni tiempos de mediodía, lo que nos permite volcar toda nuestra energía y excelencia pedagógica en las tardes."
   },
 ];
 

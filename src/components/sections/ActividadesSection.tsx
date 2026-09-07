@@ -7,17 +7,17 @@ export default function Activities() {
       <div className="mx-auto max-w-[1400px] px-6">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <span className="inline-block bg-[#D8E600] text-black font-['Barlow_Condensed'] font-black uppercase tracking-[0.15em] text-xs md:text-sm px-3.5 py-1 rounded-md mb-3 border-2 border-black shadow-[2px_2px_0_0_#000]">
-            EMPRESA DE ACTIVIDADES EXTRAESCOLARES
+            PROYECTOS Y LÍNEAS EDUCATIVAS PARA COLEGIOS Y AFAS
           </span>
           {/* [H2] Servicios Educativos y Deportivos para Colegios */}
           <h2
             className="uppercase leading-none text-5xl sm:text-6xl md:text-7xl font-black text-black"
             style={{ ...condensed, letterSpacing: '0.02em' }}
           >
-            Servicios Educativos y <span style={condensedItalic} className="text-[#1D2F8C]">Deportivos<span className="text-[#D8E600]">.</span></span>
+            Catálogo Extraescolar para <span style={condensedItalic} className="text-[#1D2F8C]">Centros Escolares<span className="text-[#D8E600]">.</span></span>
           </h2>
           <p className="mt-4 text-black/70 text-lg md:text-xl leading-relaxed font-medium">
-            Programas extraescolares y casales a medida para colegios, AFAs y centros educativos en Barcelona y área metropolitana.
+            Programación integral llave en mano para colegios y AFAs: monitores cualificados, ratios pedagógicas y material homologado en Santa Coloma de Gramenet y alrededores.
           </p>
         </div>
 
@@ -28,10 +28,10 @@ export default function Activities() {
               ⚽
             </div>
             <h3 className="text-2xl md:text-3xl font-black uppercase text-black mb-3" style={condensed}>
-              Extraescolares Deportivas y Fútbol
+              Línea Deportiva y Psicomotricidad
             </h3>
             <p className="text-black/80 font-medium leading-relaxed">
-              Fútbol escolar, patinaje sobre ruedas, karate, baloncesto y multideporte. Entrenamientos adaptados para niños de infantil (3 a 5 años) y primaria (6 a 12 años) que fomentan hábitos saludables y compañerismo.
+              Fútbol escolar, patinaje sobre ruedas, karate, baloncesto y multideporte. Entrenamientos adaptados tanto para educación infantil (3 a 5 años) como primaria (6 a 12 años), potenciando el compañerismo y los hábitos saludables en vuestras pistas.
             </p>
           </div>
 
@@ -40,10 +40,10 @@ export default function Activities() {
               🇬🇧
             </div>
             <h3 className="text-2xl md:text-3xl font-black uppercase text-black mb-3" style={condensed}>
-              Inglés y Expresión Artística
+              Línea Lingüística y Artística
             </h3>
             <p className="text-black/80 font-medium leading-relaxed">
-              Clases extraescolares de inglés comunicativo, Zumba Kids, baile moderno, hip hop, manualidades y dibujo creativo. Espacios estimulantes que potencian la fluidez lingüística y la creatividad.
+              Talleres dinámicos de inglés comunicativo, Zumba Kids, danza moderna, hip hop y artes plásticas/manualidades. Actividades participativas que desarrollan la creatividad y el talento dentro del centro educativo.
             </p>
           </div>
 
@@ -52,10 +52,10 @@ export default function Activities() {
               🏕️
             </div>
             <h3 className="text-2xl md:text-3xl font-black uppercase text-black mb-3" style={condensed}>
-              Casales, Refuerzo y Colegios
+              Casales Escolares y Refuerzo
             </h3>
             <p className="text-black/80 font-medium leading-relaxed">
-              Gestión integral de casales de verano, Navidad y Semana Santa, junto a talleres de refuerzo escolar y apoyo con los deberes para colegios y AFAs de Cataluña.
+              Organización de casales vacacionales de Verano, Navidad y Semana Santa en vuestras propias instalaciones, además de aulas de estudio asistido y refuerzo escolar para apoyar a las familias del colegio.
             </p>
           </div>
         </div>

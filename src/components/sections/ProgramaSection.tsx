@@ -31,10 +31,10 @@ export default function ProgramaSection() {
   return (
     <FeatureSection
       id="process"
-      headline="Tu AFA, sin estrés."
-      description="Sabemos lo que cuesta organizar las extraescolares. Nosotros nos encargamos de todo: inscripciones, cobros, seguros y coordinación con el centro."
-      extra="Solo tenéis que elegir qué queréis ofrecer."
-      links={[{ label: "SOLICITAR CITA", href: "#contact" }]}
+      headline="Tu Colegio y tu AFA, sin preocupaciones."
+      description="Sabemos lo que cuesta coordinar las tardes escolares. En Diversplas asumimos la gestión total: contratación de monitores cualificados, seguros de RC, material deportivo, control pedagógico y atención a incidencias."
+      extra="Vuestro centro solo decide qué actividades ofrecer; nosotros nos encargamos de que todo funcione con excelencia."
+      links={[{ label: "SOLICITAR REUNIÓN", href: "#contacto" }]}
       visual={<ProgramVisual />}
       flip
     />

@@ -18,8 +18,8 @@ export const MARQUEE_COLORS = ["#FF7B72", "#3055C7", "#FF9D42", "#35D0BA", "#9C7
 export const TRUST_SLIDES = [
   {
     headline: "+20 AÑOS",
-    sub: "DE EXPERIENCIA",
-    description: "Más de dos décadas avaladas por colegios y familias de Barcelona. No es experiencia — es confianza ganada.",
+    sub: "CON CENTROS EDUCATIVOS",
+    description: "Más de dos décadas gestionando proyectos extraescolares y casales en colegios. Cero complicaciones para la dirección y la junta del AFA.",
     image: "/image_53d820.webp",
     icon: "🌟",
     bg: "#35D0BA",
@@ -27,9 +27,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "CONFIADOS",
-    sub: "& RECOMENDADOS",
-    description: "Colegios y AFAs de Barcelona nos eligen curso tras curso. La mejor referencia son quienes ya confían en nosotros.",
+    headline: "GESTIÓN INTEGRAL",
+    sub: "LLAVE EN MANO",
+    description: "Nos encargamos de todo: selección y contratación de monitores titulados, seguros de RC, cobros, material deportivo y atención continua.",
     image: "/image_53e780.webp",
     icon: "🏆",
     bg: "#1D2F8C",
@@ -37,9 +37,9 @@ export const TRUST_SLIDES = [
     dark: false,
   },
   {
-    headline: "RESULTADOS",
-    sub: "COMPROBADOS",
-    description: "Niños más activos, más seguros y con mejores habilidades sociales. Lo medimos. Lo garantizamos.",
+    headline: "COORDINACIÓN",
+    sub: "DIRECTA Y CERCANA",
+    description: "El centro y el AFA cuentan con un coordinador de enlace asignado para resolver cualquier necesidad operativa al instante.",
     image: "/image_488563.webp",
     icon: "🚀",
     bg: "#FF7B72",
@@ -47,9 +47,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "DISEÑO",
-    sub: "PERSONALIZADO",
-    description: "Cada programa es único. Lo diseñamos contigo, para tus alumnos, con tu identidad de centro.",
+    headline: "ADAPTADO AL PEC",
+    sub: "DEL COLEGIO",
+    description: "Alineamos cada actividad con el Ideario y Proyecto Educativo del Centro escolar, fomentando valores, deporte y creatividad.",
     image: "/image_53ee82.webp",
     icon: "🎨",
     bg: "#FF9D42",
@@ -57,9 +57,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "APRENDIZAJE",
-    sub: "REAL",
-    description: "Proyectos reales que conectan con el mundo: idiomas, geografía, culturas. Aprenden haciendo y presentando.",
+    headline: "MONITORES",
+    sub: "CUALIFICADOS",
+    description: "Personal titulado, con vocación pedagógica y certificación negativa de delitos de naturaleza sexual en regla y contrastada.",
     image: "/image_48117c.webp",
     icon: "🌍",
     bg: "#9C7BFF",
@@ -71,34 +71,36 @@ export const TRUST_SLIDES = [
 export const PARTNER_TYPES = [
   { name: "Colegios Públicos",             color: "#FF7B72" },
   { name: "Colegios Concertados",          color: "#FF9D42" },
-  { name: "AFAs",                         color: "#D8E600", dark: true },
-  { name: "Centros Cívicos",              color: "#35D0BA" },
-  { name: "Ludotecas",                    color: "#9C7BFF" },
-  { name: "Escuelas Educación Infantil",  color: "#3055C7", light: true },
-  { name: "Campus de Verano",             color: "#FF7B72" },
-  { name: "Centros de Educación Especial",color: "#35D0BA" },
+  { name: "AFAs / AMPAs",                  color: "#D8E600", dark: true },
+  { name: "Equipos Directivos de Centro",  color: "#35D0BA" },
+  { name: "Escuelas de Educación Infantil",color: "#3055C7", light: true },
+  { name: "Escuelas de Primaria",          color: "#9C7BFF" },
+  { name: "Casales y Campus Escolares",    color: "#FF7B72" },
+  { name: "Institutos y Centros Cívicos",  color: "#35D0BA" },
 ];
 
 export const PROGRAM_STEPS = [
-  { n: "01", t: "Escuchamos",   c: "#FF7B72" },
-  { n: "02", t: "Diseñamos",    c: "#FF9D42" },
-  { n: "03", t: "Coordinamos",  c: "#D8E600" },
-  { n: "04", t: "Acompañamos",  c: "#35D0BA" },
-  { n: "05", t: "Mejoramos",    c: "#ffffff" },
+  { n: "01", t: "Estudio del Centro",   c: "#FF7B72" },
+  { n: "02", t: "Propuesta a Medida",   c: "#FF9D42" },
+  { n: "03", t: "Monitores y Seguros",  c: "#D8E600" },
+  { n: "04", t: "Gestión y Cobros",     c: "#35D0BA" },
+  { n: "05", t: "Supervisión Continua", c: "#ffffff" },
 ];
 
 export const STATS = [
-  { n: "+20", label: "Años" },
-  { n: "✓", label: "Garantía" },
-  { n: "BCN", label: "Presente" },
-  { n: "100%", label: "Compromiso" },
+  { n: "+20", label: "Años de Experiencia" },
+  { n: "100%", label: "Gestión Integral" },
+  { n: "08921", label: "Santa Coloma / Fondo" },
+  { n: "Top", label: "Calidad Pedagógica" },
 ];
 
 export const ZONES = [
-  { city: "Santa Coloma", sub: "de Gramenet", color: "bg-[#3055C7]" },
-  { city: "Badalona",     sub: "Barcelonès",   color: "bg-[#FF7B72]" },
-  { city: "Mollet",       sub: "del Vallès",   color: "bg-fuchsia-400" },
-  { city: "Sant Fost",    sub: "de Campsentelles", color: "bg-emerald-400" },
+  { city: "Santa Coloma", sub: "de Gramenet · Sede Principal", color: "bg-[#3055C7]" },
+  { city: "El Fondo",     sub: "Santa Coloma · Operativa Activa", color: "bg-[#D8E600] text-black" },
+  { city: "Badalona",     sub: "Área de Expansión", color: "bg-[#FF7B72]" },
+  { city: "Barcelona",    sub: "Área de Expansión", color: "bg-[#35D0BA]" },
+  { city: "Mollet",       sub: "del Vallès · Expansión", color: "bg-fuchsia-400" },
+  { city: "Sant Fost / Martorelles", sub: "Área de Expansión", color: "bg-[#9C7BFF]" },
 ];
 
 export const MANIFESTO_PAIRS = [

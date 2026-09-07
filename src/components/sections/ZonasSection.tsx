@@ -88,10 +88,10 @@ export default function ZonasSection() {
   return (
     <FeatureSection
       id="zones"
-      headline="Cerca de"
-      headlineItalic="vosotros."
-      description="Operamos en Barcelona y toda el área metropolitana, adaptándonos a las realidades y necesidades de cada municipio."
-      links={[{ label: "VER TODAS LAS ZONAS", href: "#zones" }]}
+      headline="Operativa actual en"
+      headlineItalic="Santa Coloma y El Fondo."
+      description="Nuestra base operativa e implantación principal se centra en Santa Coloma de Gramenet y el barrio del Fondo, con capacidad de expansión inmediata para nuevos colegios de Badalona, Barcelona, Mollet, Sant Fost y Martorelles."
+      links={[{ label: "SOLICITAR PROYECTO EDUCATIVO", href: "#contacto" }]}
       visual={<ZonesCardsVisual />}
       dark
     />

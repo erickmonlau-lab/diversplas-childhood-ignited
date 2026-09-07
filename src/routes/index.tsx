@@ -4,10 +4,10 @@ import { LandingPage } from "../components/LandingPage";
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
-      { name: "description", content: "Más de 20 años creando experiencias extraescolares. Cobertura en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost. Especialistas para colegios y AFAs." },
-      { property: "og:title", content: "Diversplas - Extraescolares en Barcelona, Santa Coloma y Badalona" },
-      { property: "og:description", content: "Más de 20 años de actividades extraescolares para colegios y AFAs en Barcelona, Santa Coloma, Badalona, Mollet, Martorelles y Sant Fost." },
+      { title: "Diversplas — Gestión de Extraescolares y Casales para Colegios y AFAs" },
+      { name: "description", content: "Empresa de gestión integral de actividades extraescolares y casales para colegios y AFAs en Santa Coloma de Gramenet y El Fondo. Monitores titulados, seguros y coordinación." },
+      { property: "og:title", content: "Diversplas — Gestión de Extraescolares y Casales para Colegios y AFAs" },
+      { property: "og:description", content: "Soluciones integrales de extraescolares y casales para centros educativos y AFAs en Santa Coloma de Gramenet y El Fondo con más de 20 años de experiencia." },
     ],
     scripts: [
       {
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")(({
           "legalName": "Diversplas",
           "alternateName": ["Diversplas Extraescolares", "Divers Plas"],
           "disambiguatingDescription": "Diversplas (diversplas.es) es una empresa completamente independiente y sin relación alguna con Diversesplai (diversesplai.cat), Diver's Associació d'Esplai ni ninguna entidad similar. Son empresas distintas con distinto CIF, distinta web y distinto correo electrónico.",
-          "description": "Especialistas en actividades extraescolares y casales vacacionales. Más de 20 años de experiencia.",
+          "description": "Empresa especializada en la gestión integral de actividades extraescolares y casales vacacionales para colegios, AFAs y centros escolares. Más de 20 años de experiencia.",
           "url": "https://www.diversplas.es",
           "telephone": "+34657117426",
           "email": "diversplascontacto@gmail.com",
@@ -27,18 +27,20 @@ export const Route = createFileRoute("/")(({
           "logo": "https://www.diversplas.es/diversplas-logo.jpeg",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Diversos centros educativos y colegios",
+            "postalCode": "08921",
             "addressLocality": "Santa Coloma de Gramenet",
             "addressRegion": "Barcelona",
             "addressCountry": "ES"
           },
           "areaServed": [
-            { "@type": "City", "name": "Barcelona" },
             { "@type": "City", "name": "Santa Coloma de Gramenet" },
+            { "@type": "Neighborhood", "name": "El Fondo, Santa Coloma de Gramenet" },
             { "@type": "City", "name": "Badalona" },
+            { "@type": "City", "name": "Barcelona" },
             { "@type": "City", "name": "Mollet del Vallès" },
             { "@type": "City", "name": "Martorelles" },
-            { "@type": "City", "name": "Sant Fost de Campsentelles" },
-            { "@type": "Neighborhood", "name": "El Fondo, Santa Coloma de Gramenet" }
+            { "@type": "City", "name": "Sant Fost de Campsentelles" }
           ],
           "sameAs": [
             "https://www.diversplas.es",
@@ -61,29 +63,31 @@ export const Route = createFileRoute("/")(({
           "url": "https://diversplas.es/",
           "telephone": "+34657117426",
           "email": "diversplascontacto@gmail.com",
-          "description": "Empresa especializada en actividades extraescolares para colegios, AFAs y centros cívicos en Barcelona y área metropolitana. Fútbol, karate, hip hop, inglés, zumba, manualidades, dibujo y refuerzo escolar.",
+          "description": "Proveedor integral de programas extraescolares y casales escolares para colegios públicos, concertados y AFAs. Especialistas en Santa Coloma de Gramenet y El Fondo con área de expansión.",
           "foundingDate": "2005",
           "areaServed": [
             { "@type": "AdministrativeArea", "name": "Santa Coloma de Gramenet", "sameAs": "https://www.wikidata.org/wiki/Q15474" },
-            { "@type": "AdministrativeArea", "name": "Barcelona", "sameAs": "https://www.wikidata.org/wiki/Q1492" },
+            { "@type": "Neighborhood", "name": "El Fondo, Santa Coloma de Gramenet", "sameAs": "https://www.wikidata.org/wiki/Q15474" },
             { "@type": "AdministrativeArea", "name": "Badalona", "sameAs": "https://www.wikidata.org/wiki/Q15470" },
+            { "@type": "AdministrativeArea", "name": "Barcelona", "sameAs": "https://www.wikidata.org/wiki/Q1492" },
             { "@type": "AdministrativeArea", "name": "Mollet del Vallès", "sameAs": "https://www.wikidata.org/wiki/Q15494" },
             { "@type": "AdministrativeArea", "name": "Sant Fost de Campsentelles", "sameAs": "https://www.wikidata.org/wiki/Q15454" },
             { "@type": "AdministrativeArea", "name": "Martorelles", "sameAs": "https://www.wikidata.org/wiki/Q15442" }
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Actividades Extraescolares",
+            "name": "Catálogo de Extraescolares y Casales para Colegios",
             "itemListElement": [
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Fútbol extraescolar"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Karate para niños"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Hip Hop infantil"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Zumba Kids"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Inglés extraescolar"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Multideporte"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Manualidades"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Refuerzo escolar"}},
-              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Casales vacacionales"}}
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Gestión de Fútbol extraescolar en colegios"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Patinaje sobre ruedas escolar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Karate y artes marciales para centros educativos"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Hip Hop y Danza infantil en colegios"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Zumba Kids escolar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Inglés extraescolar comunicativo"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Multideporte y Psicomotricidad"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Talleres de Manualidades y Expresión Artística"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Refuerzo escolar y técnicas de estudio"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Casales escolares vacacionales (Verano, Navidad, Semana Santa)"}}
             ]
           }
         })
@@ -96,50 +100,42 @@ export const Route = createFileRoute("/")(({
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "¿Sois una empresa de actividades extraescolares para colegios y AFAs en Barcelona?",
+              "name": "¿Qué responsabilidades y trámites asume Diversplas en nuestro colegio?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí. Diversplas es una empresa especializada con más de 20 años de experiencia en la gestión integral de actividades extraescolares y casales para colegios, AFAs y centros educativos de Barcelona, Santa Coloma de Gramenet, Badalona, Mollet del Vallès, Sant Fost y Martorelles."
+                "text": "Asumimos la gestión integral y llave en mano: selección, contratación y nóminas de monitores titulados, cobertura con póliza de Responsabilidad Civil patronal y de actividades, material técnico homologado, programación pedagógica adaptada al centro y resolución ágil de cualquier incidencia."
               }
             },
             {
               "@type": "Question",
-              "name": "¿Qué extraescolares tenéis para niños de infantil (3 a 5 años) y primaria (6 a 12 años)?",
+              "name": "¿En qué zonas operáis actualmente?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Adaptamos las programaciones por etapas: psicomotricidad, iniciación al deporte, expresión artística y juegos en inglés para educación infantil (3 a 5 años); y fútbol, patinaje, baloncesto, zumba, hip hop, karate, refuerzo escolar e inglés comunicativo para primaria (6 a 12 años)."
+                "text": "Nuestra sede principal y núcleo operativo se encuentra en Santa Coloma de Gramenet y el barrio del Fondo. Además, contamos con capacidad de desplazamiento e implantación de proyectos en colegios de Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles."
               }
             },
             {
               "@type": "Question",
-              "name": "¿Qué extraescolares deportivas ofrecéis en los centros escolares?",
+              "name": "¿Los monitores cuentan con la titulación y certificados legales requeridos?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ofrecemos entrenamientos de fútbol escolar, patinaje sobre ruedas, karate, multideporte y baloncesto, siempre enfocados en el compañerismo, la psicomotricidad y los hábitos saludables."
+                "text": "Sí, el 100% de nuestro equipo de monitores y coordinadores dispone de la titulación oficial exigida por la normativa catalana (Monitor/a de Lleure, técnicos deportivos o grados en educación) y el Certificado Negativo del Registro Central de Delincuentes Sexuales debidamente actualizado."
               }
             },
             {
               "@type": "Question",
-              "name": "¿Contáis con extraescolares de inglés y refuerzo escolar?",
+              "name": "¿Podemos personalizar las actividades y adaptarlas al Ideario de nuestro centro?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí. Impartimos clases extraescolares de inglés dinámicas y comunicativas, además de talleres de refuerzo escolar y técnicas de estudio para ayudar a los alumnos con los deberes diarios."
+                "text": "Por supuesto. No imponemos programas cerrados; nos reunimos previamente con la dirección del centro escolar y la junta del AFA para alinear los horarios, valores, metodologías y oferta de actividades con el Proyecto Educativo de Centro (PEC)."
               }
             },
             {
               "@type": "Question",
-              "name": "¿Oferteu activitats extraescolars per a escoles públiques i concertades de Catalunya?",
+              "name": "¿Organizáis casales en las instalaciones del colegio durante los periodos de vacaciones?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí, col·laborem estretament amb AFAs i equips directius d'escoles públiques, concertades i privades, adaptant el projecte educatiu i els monitors a les necessitats de cada centre."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿En qué horarios se imparten las clases extraescolares?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "De lunes a viernes en horario de tardes, a partir de las 16:30 h, al finalizar la jornada escolar lectiva."
+                "text": "Sí. Diseñamos y ejecutamos casales escolares y campus vacacionales de Verano, Navidad y Semana Santa dentro de vuestro propio recinto educativo, facilitando la conciliación laboral y familiar del centro con proyectos lúdico-educativos temáticos."
               }
             },
             {
@@ -147,7 +143,7 @@ export const Route = createFileRoute("/")(({
               "name": "¿Hacéis gestión de mediodía o comedores escolares?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. En Diversplas nos enfocamos al 100% de forma especializada en actividades extraescolares de tarde y casales vacacionales (verano, Navidad y Semana Santa). No gestionamos comedores escolares ni tiempos de mediodía."
+                "text": "No. En Diversplas nos enfocamos de forma 100% especializada en actividades extraescolares de tarde y casales vacacionales. No gestionamos comedores escolares ni tiempos de mediodía, lo que nos permite volcar toda nuestra energía y excelencia pedagógica en las tardes."
               }
             }
           ]

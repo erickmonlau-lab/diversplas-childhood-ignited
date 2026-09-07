@@ -111,7 +111,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm font-semibold">
           <p className="text-black/80 text-center md:text-left">
-            <strong>Zonas de Servicio:</strong> Barcelona, Badalona, Santa Coloma de Gramenet, Mollet del Vallès, Sant Fost de Campsentelles, Martorelles
+            <strong>Sede y Operativa Principal:</strong> Santa Coloma de Gramenet y El Fondo · <strong>Área de Expansión para Centros:</strong> Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles
           </p>
           
           <div className="flex items-center gap-4">

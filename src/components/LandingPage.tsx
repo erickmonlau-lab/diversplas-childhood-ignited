@@ -189,8 +189,8 @@ export function Footer() {
             dark
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
-              {/* Personaje animado en SVG nativo de Diversplas */}
-              <div className="w-56 sm:w-64 h-56 flex-shrink-0 flex items-center justify-center overflow-visible">
+              {/* Personaje animado de Diversplas */}
+              <div className="w-full sm:w-[360px] h-[270px] flex-shrink-0 flex items-center justify-center overflow-visible">
                 <MascotFooter />
               </div>
 

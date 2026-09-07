@@ -104,29 +104,234 @@ export function Nav() {
   );
 }
 
+function FooterCard({
+  bg, blob, headline, headlineItalic, dark = false, children,
+}: {
+  bg: string; blob: string; headline: React.ReactNode; headlineItalic?: React.ReactNode;
+  dark?: boolean; children: React.ReactNode;
+}) {
+  const tc = dark ? "text-black" : "text-white";
+  return (
+    <div
+      className="relative rounded-3xl border-2 border-black overflow-hidden p-8 md:p-12 flex flex-col md:flex-row md:justify-between md:items-center gap-8 min-h-[300px] shadow-[6px_6px_0_0_#000]"
+      style={{ backgroundColor: bg }}
+    >
+      {/* Blob decoration */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute"
+          style={{
+            width: "110%", height: "55%", top: "20%", left: "-5%",
+            backgroundColor: blob,
+            borderRadius: "50% 60% 40% 70% / 60% 30% 70% 40%",
+            transform: "rotate(-10deg)",
+            opacity: 0.4,
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{ width: "25%", height: "40%", top: "-8%", right: "8%", backgroundColor: blob, opacity: 0.3 }}
+        />
+      </div>
+      {/* Left Column (Title + Description) */}
+      <div className="relative z-10 flex flex-col gap-4 max-w-xl">
+        <h3
+          className={`uppercase leading-[0.88] tracking-tight text-[12vw] md:text-[6vw] lg:text-[68px] ${tc}`}
+          style={condensed}
+        >
+          {headline}
+          {headlineItalic && (
+            <span 
+              className="block w-fit text-[#1D2F8C]" 
+              style={{ 
+                ...condensedItalic,
+                marginTop: '8px'
+              }}
+            >
+              {headlineItalic}
+            </span>
+          )}
+        </h3>
+        <div className="bg-[#1D2F8C] w-16 h-1.5 mt-2 mb-1" />
+        <p className="text-black font-bold text-lg md:text-xl leading-relaxed max-w-md">
+          Más de 20 años dinamizando actividades en colegios.<br/>
+          <span style={{ background: '#1D2F8C', color: '#ffffff', padding: '3px 12px', borderRadius: '8px', fontWeight: 900, display: 'inline-block', marginTop: '6px' }}>
+            Lleva Diversplas a tu centro.
+          </span>
+        </p>
+      </div>
+      {/* Right Column (WhatsApp button + Call) */}
+      <div className={`relative z-10 w-full md:w-auto ${tc}`}>{children}</div>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="w-full bg-[#f4f4f4] py-10 border-t-2 border-black text-black">
-      <div className="mx-auto max-w-[1300px] px-6 sm:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="max-w-2xl text-center md:text-left space-y-1">
-            <p className="text-xs md:text-sm font-bold text-black leading-relaxed">
-              <span className="bg-[#D8E600] text-black px-2 py-0.5 rounded border border-black font-black uppercase text-[11px] tracking-wider mr-2 inline-block">Sede Principal</span>
-              Santa Coloma de Gramenet y El Fondo
-            </p>
-            <p className="text-xs md:text-sm font-medium text-black/70 leading-relaxed">
-              <strong>Áreas de Expansión para Colegios:</strong> Badalona, Barcelona, Mollet del Vallès, Sant Fost de Campsentelles y Martorelles.
-            </p>
+    <footer className="w-full bg-white border-t-2 border-black text-black">
+      {/* CTA Footer Card — Amarillo corporativo */}
+      <div className="bg-white border-b-2 border-black px-4 sm:px-6 md:px-8 py-10 md:py-14">
+        <div className="mx-auto max-w-[1400px]">
+          <FooterCard
+            bg="#D8E600"
+            blob="#E8F520"
+            headline={
+              <span className="flex items-center flex-nowrap w-full whitespace-nowrap" style={{ fontSize: "clamp(2.2rem, 8vw, 68px)" }}>
+                <span className="text-[#1D2F8C] mr-1">¿</span>
+                <span>EMPEZAMOS</span>
+                <span className="text-[#1D2F8C] ml-1">?</span>
+              </span>
+            }
+            dark
+          >
+            <div className="flex flex-col items-stretch sm:items-end gap-3.5 w-full">
+              <a
+                href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-white text-black px-8 py-4 font-extrabold border-2 border-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-[1.02] uppercase shadow-[4px_4px_0_0_#000] group w-full text-center"
+                style={btnStyle}
+              >
+                <svg className="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                ESCRÍBENOS POR WHATSAPP
+              </a>
+              <a
+                href="tel:+34657117426"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#1D2F8C] text-white px-8 py-4 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all shadow-[4px_4px_0_0_#000] uppercase w-full text-center"
+                style={btnStyle}
+              >
+                <svg className="w-4 h-4 fill-none stroke-current stroke-2 flex-shrink-0" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +34 657 117 426
+              </a>
+            </div>
+          </FooterCard>
+        </div>
+      </div>
+
+      {/* SEO GEO Links & Navegación Local para Colegios */}
+      <div className="bg-[#f9f9f9] py-8 px-6 border-b border-black/10">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <span className="bg-[#1D2F8C] text-white text-[11px] font-black uppercase px-2.5 py-1 rounded border border-black tracking-wider">
+              Zonas de Operativa y Expansión:
+            </span>
+            <span className="text-xs text-black/60 font-medium">
+              Servicio de extraescolares y casales para colegios y AFAs en:
+            </span>
           </div>
-          
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-bold text-black whitespace-nowrap">
-            <a
-              href="/trabaja-con-nosotros"
-              className="text-black/60 hover:text-black font-semibold underline text-xs transition-colors"
-            >
-              Trabaja con Nosotros
+
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-bold text-black">
+            <a href="/santa-coloma" className="hover:text-[#1D2F8C] underline decoration-2 decoration-[#D8E600] transition-colors">
+              Santa Coloma de Gramenet (Sede)
             </a>
-            <div className="flex items-center gap-3 bg-white border-2 border-black px-4 py-2 rounded-full shadow-[2px_2px_0_0_#000]">
+            <span className="text-black/30">•</span>
+            <a href="/fondo" className="hover:text-[#1D2F8C] underline decoration-2 decoration-[#D8E600] transition-colors">
+              El Fondo
+            </a>
+            <span className="text-black/30">•</span>
+            <a href="/badalona" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+              Badalona
+            </a>
+            <span className="text-black/30">•</span>
+            <a href="/barcelona" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+              Barcelona
+            </a>
+            <span className="text-black/30">•</span>
+            <a href="/mollet" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+              Mollet del Vallès
+            </a>
+            <span className="text-black/30">•</span>
+            <a href="/sant-fost" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+              Sant Fost de Campsentelles
+            </a>
+            <span className="text-black/30">•</span>
+            <a href="/martorelles" className="hover:text-[#1D2F8C] hover:underline transition-colors">
+              Martorelles
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Legal, Social & Credits */}
+      <div className="bg-white py-6 px-6">
+        <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-6">
+          <div className="flex items-center gap-4 flex-wrap">
+            <a href="#top" className="flex items-center">
+              <img
+                src="/diversplas-logo-graffiti.webp"
+                alt="DIVERSPLAS"
+                className="h-12 w-auto"
+                loading="lazy"
+                decoding="async"
+                width={71}
+                height={56}
+              />
+            </a>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <a
+                href="https://diversplas.es"
+                className="text-xs font-black text-black uppercase tracking-wider hover:text-[#1D2F8C] transition-colors"
+              >
+                diversplas.es
+              </a>
+              <span className="text-black/20">|</span>
+              <a
+                href="https://www.instagram.com/diversplas_extraescolares"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-black text-black uppercase tracking-wider hover:text-[#1D2F8C] transition-colors"
+              >
+                @diversplas_extraescolares
+              </a>
+              <span className="text-black/20">|</span>
+              <a
+                href="/trabaja-con-nosotros"
+                className="text-xs font-semibold text-black/60 hover:text-black underline transition-colors"
+              >
+                Trabaja con Nosotros
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a
+              className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+              href="mailto:diversplascontacto@gmail.com"
+              aria-label="Enviar email a Diversplas"
+              title="diversplascontacto@gmail.com"
+            >
+              <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </a>
+            <a
+              className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+              href="tel:+34657117426"
+              aria-label="Llamar a Diversplas"
+              title="+34 657 117 426"
+            >
+              <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </a>
+            <a
+              className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+              href="https://wa.me/34657117426"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp de Diversplas"
+              title="WhatsApp"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <div className="flex items-center gap-2 bg-white border-2 border-black px-3.5 py-1.5 rounded-full shadow-[2px_2px_0_0_#000] text-xs font-bold whitespace-nowrap ml-2">
               <span>© 2026 Diversplas</span>
               <span className="text-black/30">·</span>
               <span>

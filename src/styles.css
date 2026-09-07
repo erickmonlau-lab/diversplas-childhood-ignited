@@ -226,7 +226,7 @@ a[class*="bg-white"]:not(:hover), button[class*="bg-white"]:not(:hover) {
 }
 
 /* ─── Ultra-Fast Initial Paint (Skip off-screen DOM during frame 1) ─── */
-#servicios, #centros, #zonas, #empleo, #manifiesto, #reviews, #faq, #contacto, footer {
+#servicios, #centros, #zonas, #manifiesto, #reviews, #faq, #contacto, footer {
   content-visibility: auto;
   contain-intrinsic-size: 1px 700px;
 }

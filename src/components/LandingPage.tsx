@@ -19,7 +19,6 @@ export function Nav() {
   const links = [
     ["Inicio", "#top"],
     ["Servicios", "#servicios"],
-    ["Trabaja con Nosotros", "#empleo"],
     ["Contacto", "#contacto"],
   ] as const;
 
@@ -120,20 +119,28 @@ export function Footer() {
             </p>
           </div>
           
-          <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-black whitespace-nowrap bg-white border-2 border-black px-4 py-2 rounded-full shadow-[2px_2px_0_0_#000]">
-            <span>© 2026 Diversplas</span>
-            <span className="text-black/30">·</span>
-            <span>
-              Desarrollado por{" "}
-              <a
-                href="https://kovia.es"
-                target="_blank"
-                rel="noopener"
-                className="font-black text-black underline hover:text-[#1D2F8C]"
-              >
-                Kovia
-              </a>
-            </span>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-bold text-black whitespace-nowrap">
+            <a
+              href="/trabaja-con-nosotros"
+              className="text-black/60 hover:text-black font-semibold underline text-xs transition-colors"
+            >
+              Trabaja con Nosotros
+            </a>
+            <div className="flex items-center gap-3 bg-white border-2 border-black px-4 py-2 rounded-full shadow-[2px_2px_0_0_#000]">
+              <span>© 2026 Diversplas</span>
+              <span className="text-black/30">·</span>
+              <span>
+                Desarrollado por{" "}
+                <a
+                  href="https://kovia.es"
+                  target="_blank"
+                  rel="noopener"
+                  className="font-black text-black underline hover:text-[#1D2F8C]"
+                >
+                  Kovia
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -159,7 +166,6 @@ export function LandingPage({ city, cityShort }: LandingPageProps) {
         <CentrosSection />
         <CarouselSection />
         <ZonasSection />
-        <EmpleoSection />
         <ManifiestoSection />
         <ReviewsSection />
         <FAQSection />

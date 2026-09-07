@@ -391,9 +391,9 @@ export function Footer() {
                 `}</style>
 
                 {/* Personaje asomando encima de la píldora con z-index alto sobre cualquier sección */}
-                <div className="absolute -top-32 sm:-top-40 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
+                <div className="absolute -top-24 sm:-top-28 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
                   {/* Bocadillo de diálogo B2B con margen generoso arriba */}
-                  <div className="absolute -top-10 sm:-top-12 bg-white text-black font-black text-xs sm:text-sm px-4 py-2 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
+                  <div className="absolute -top-12 sm:-top-14 bg-white text-black font-black text-xs sm:text-sm px-4 py-2 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
                     ¿Hablamos para vuestro colegio o AFA? 🏫✨
                     {/* Pico apuntando hacia la gorra */}
                     <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
@@ -410,14 +410,14 @@ export function Footer() {
                       height={215}
                     />
 
-                    {/* Fuga de spray naciendo EXACTAMENTE en la boquilla del bote (87.1% horizontal, 52.7% vertical) */}
+                    {/* Fuga de spray naciendo EXACTAMENTE en la boquilla del bote (86.5% horizontal, 53.5% vertical) */}
                     <div 
                       className="absolute pointer-events-none z-40"
-                      style={{ left: '87.1%', top: '52.7%' }}
+                      style={{ left: '86.5%', top: '53.5%' }}
                     >
                       <svg
-                        viewBox="0 -30 80 60"
-                        className="w-20 h-20 pointer-events-none overflow-visible"
+                        viewBox="0 -25 90 50"
+                        className="w-24 h-24 pointer-events-none overflow-visible"
                         style={{ transform: 'translate(0px, -50%)' }}
                       >
                         <defs>
@@ -429,20 +429,20 @@ export function Footer() {
                           </radialGradient>
                         </defs>
                         <g className="footer-sneak-mist">
-                          {/* Cono de niebla saliendo en horizontal/leve descenso según la inclinación del bote */}
-                          <path
-                            d="M 0 0 L 28 -10 Q 38 0 35 12 L 0 0 Z"
+                          {/* Chorro cónico saliendo justo de la boquilla (0,0) */}
+                          <polygon
+                            points="0,0 32,-14 36,12"
                             fill="url(#ftSprayGrad4)"
-                            opacity="0.85"
+                            opacity="0.9"
                           />
-                          <circle cx="12" cy="0" r="7" fill="url(#ftSprayGrad4)" />
-                          <circle cx="25" cy="2" r="11" fill="url(#ftSprayGrad4)" />
-                          <circle cx="38" cy="4" r="14" fill="url(#ftSprayGrad4)" />
+                          <circle cx="16" cy="-2" r="8" fill="url(#ftSprayGrad4)" />
+                          <circle cx="32" cy="0" r="12" fill="url(#ftSprayGrad4)" />
+                          <circle cx="48" cy="2" r="15" fill="url(#ftSprayGrad4)" />
                           {/* Gotas y chispas de pintura nítidas */}
-                          <circle cx="28" cy="-8" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.75" />
-                          <circle cx="40" cy="1" r="3" fill="#35D0BA" stroke="#000" strokeWidth="0.75" />
-                          <circle cx="33" cy="12" r="2" fill="#FFEA00" />
-                          <circle cx="50" cy="5" r="2.8" fill="#1D2F8C" stroke="#fff" strokeWidth="0.5" />
+                          <circle cx="28" cy="-10" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="44" cy="-2" r="3" fill="#35D0BA" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="36" cy="10" r="2" fill="#FFEA00" />
+                          <circle cx="56" cy="4" r="3" fill="#1D2F8C" stroke="#fff" strokeWidth="0.5" />
                         </g>
                       </svg>
                     </div>

@@ -2,7 +2,7 @@ import { condensed, condensedItalic, btnStyle } from "../../lib/styles";
 
 export default function Hero({ city = "Barcelona y área metropolitana", cityShort = "Barcelona" }: { city?: string; cityShort?: string }) {
   return (
-    <section id="top" className="relative w-full min-h-screen bg-white flex flex-col justify-center pt-28 pb-20" style={{ position: 'relative', width: '100%', overflow: 'visible', paddingTop: '80px', paddingBottom: '60px' }}>
+    <section id="top" className="relative w-full min-h-screen bg-white flex flex-col justify-center pt-24 pb-16 overflow-visible">
       {/* Dot grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -25,32 +25,32 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
 
       {/* Floating Polaroids (Visible on screens wide enough >= 1200px so they never overlap text) */}
       <div style={{ '--rot': '-6deg', transform: 'rotate(var(--rot))', top: '18%', left: 'max(20px, calc(50% - 680px))', animation: 'float 4s ease-in-out infinite', animationDelay: '0s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_53ee82.webp" alt="Niños jugando en una actividad extraescolar de Diversplas en Barcelona" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="eager" fetchPriority="high" width={208} height={128} />
       </div>
 
       <div style={{ '--rot': '-3deg', transform: 'rotate(var(--rot))', top: '42%', left: 'max(20px, calc(50% - 680px))', animation: 'float 4.5s ease-in-out infinite', animationDelay: '1.6s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_482fc6.webp" alt="Niña con la cara pintada en un taller de Diversplas" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       <div style={{ '--rot': '-5deg', transform: 'rotate(var(--rot))', top: '70%', left: 'max(20px, calc(50% - 680px))', animation: 'float 5s ease-in-out infinite', animationDelay: '3.2s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_53c921.webp" alt="Grupo de alumnos en clase de una actividad extraescolar" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       <div style={{ '--rot': '5deg', transform: 'rotate(var(--rot))', top: '18%', right: 'max(20px, calc(50% - 680px))', animation: 'float 4s ease-in-out infinite', animationDelay: '0.8s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_53d820.webp" alt="Monitores de Diversplas con un grupo de niños" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="eager" fetchPriority="high" width={208} height={128} />
       </div>
 
       <div style={{ '--rot': '7deg', transform: 'rotate(var(--rot))', top: '42%', right: 'max(20px, calc(50% - 680px))', animation: 'float 4.5s ease-in-out infinite', animationDelay: '2.4s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_53e780.webp" alt="Clase de zumba para niños de Diversplas" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 
       <div style={{ '--rot': '4deg', transform: 'rotate(var(--rot))', top: '70%', right: 'max(20px, calc(50% - 680px))', animation: 'float 5s ease-in-out infinite', animationDelay: '1.2s', position: 'absolute', willChange: 'transform' } as any}
-        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10">
+        className="w-44 xl:w-52 p-2.5 xl:p-3 pb-6 xl:pb-8 bg-white border border-black/10 shadow-[6px_6px_0_0_rgba(0,0,0,0.15)] rounded-sm pointer-events-none hidden min-[1200px]:block z-10 h-[170px] xl:h-[190px]">
         <img src="/image_48117c.webp" alt="Proyecto de manualidades en una actividad extraescolar" className="w-full h-28 xl:h-32 object-cover border border-black/5" loading="lazy" width={208} height={128} />
       </div>
 

@@ -109,7 +109,7 @@ export function MascotFooter() {
 
         {/* ─── CHIP B2B SUPERIOR IZQUIERDA: +20 AÑOS ─── */}
         <div className="absolute top-1 -left-2 z-20 anim-tag-2 pointer-events-none">
-          <span className="inline-flex items-center gap-1 bg-[#FF6B6B] text-white font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
+          <span className="inline-flex items-center gap-1 bg-[#FF6B6B] text-black font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
             ★ +20 AÑOS
           </span>
         </div>

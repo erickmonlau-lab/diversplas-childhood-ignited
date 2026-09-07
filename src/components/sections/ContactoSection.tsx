@@ -95,10 +95,11 @@ function ContactForm() {
 
       <div className="space-y-4">
         <div>
-          <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+          <label htmlFor="contacto-centro" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
             Nombre del Colegio / AFA / Centro Escolar *
           </label>
           <input
+            id="contacto-centro"
             type="text"
             name="centro"
             required
@@ -109,10 +110,11 @@ function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+            <label htmlFor="contacto-responsable" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
               Persona de Contacto y Cargo *
             </label>
             <input
+              id="contacto-responsable"
               type="text"
               name="responsable"
               required
@@ -122,10 +124,11 @@ function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+            <label htmlFor="contacto-telefono" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
               Teléfono o WhatsApp de Contacto *
             </label>
             <input
+              id="contacto-telefono"
               type="tel"
               name="telefono"
               required
@@ -137,10 +140,11 @@ function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+            <label htmlFor="contacto-email" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
               Email del Colegio o AFA
             </label>
             <input
+              id="contacto-email"
               type="email"
               name="email"
               placeholder="afa@colegio.cat"
@@ -149,11 +153,13 @@ function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+            <label htmlFor="contacto-motivo" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
               ¿Qué servicio queréis contratar? *
             </label>
             <select
+              id="contacto-motivo"
               name="motivo"
+              aria-label="Servicio que queréis contratar"
               required
               defaultValue="Contratar Gestión Integral de Extraescolares"
               className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-sm md:text-base text-black focus:border-[#1D2F8C] focus:bg-white outline-none transition-all cursor-pointer truncate font-medium"
@@ -167,10 +173,11 @@ function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
+          <label htmlFor="contacto-mensaje" className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
             ¿Qué actividades os interesan o qué necesita vuestro centro?
           </label>
           <textarea
+            id="contacto-mensaje"
             name="mensaje"
             rows={3}
             placeholder="Ej: Necesitamos fútbol, patinaje e inglés los martes y jueves para unos 50 alumnos..."

@@ -251,10 +251,12 @@ function CandidatoForm() {
         </label>
       </div>
 
-      <label className="block">
+      <label htmlFor="candidato-vacante" className="block">
         <span className="text-xs font-black uppercase tracking-widest text-black mb-1.5 block">Vacante a la que optas *</span>
         <select
+          id="candidato-vacante"
           name="vacante"
+          aria-label="Vacante a la que optas"
           required
           value={vacanteSeleccionada}
           onChange={(e) => setVacanteSeleccionada(e.target.value)}

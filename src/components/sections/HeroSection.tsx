@@ -73,9 +73,9 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
           </span>
         </h1>
 
-        {/* Subtitle - 100% B2B Enfocado a Directivas y AFAs */}
+        {/* Subtitle - 100% B2B Enfocado a Directivas y AFAs con vocación de expansión */}
         <p className="mt-6 text-lg sm:text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed font-medium">
-          Liberamos al equipo directivo y a la junta del AFA de toda la gestión: selección y contratación de monitores titulados, seguros de RC, cobros y supervisión continua en <strong>Santa Coloma de Gramenet y El Fondo</strong>.
+          Liberamos al equipo directivo y a la junta del AFA de toda la gestión: selección y contratación de monitores titulados, seguros de RC, cobros y supervisión continua. <strong>Con sede en Santa Coloma y El Fondo, y proyectos abiertos para colegios de toda el área metropolitana de Barcelona</strong>.
         </p>
 
         {/* CTAs - B2B Directo */}

@@ -156,8 +156,8 @@ function FooterCard({
           )}
         </h3>
         <div className="bg-[#1D2F8C] w-16 h-1.5 mt-2 mb-1" />
-        <p className="text-black font-bold text-lg md:text-xl leading-relaxed max-w-md">
-          Más de 20 años dinamizando actividades en colegios.<br/>
+        <p className="text-black font-bold text-lg md:text-xl leading-relaxed max-w-lg" style={{ textWrap: "balance" as any }}>
+          Más de 20 años dinamizando actividades escolares.<br className="hidden sm:inline" />{" "}
           <span style={{ background: '#1D2F8C', color: '#ffffff', padding: '3px 12px', borderRadius: '8px', fontWeight: 900, display: 'inline-block', marginTop: '6px' }}>
             Lleva Diversplas a tu centro.
           </span>

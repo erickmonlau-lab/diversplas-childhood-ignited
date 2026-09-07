@@ -5,33 +5,52 @@ export function MascotFooter() {
     <div className="relative w-full h-full min-h-[250px] max-w-[340px] select-none flex items-center justify-center p-2">
       {/* ─── ANIMACIONES CSS NATIVAS (60 FPS) ─── */}
       <style>{`
-        /* Movimiento de respiración / balanceo leve sin desconectar de la sombra */
+        /* Movimiento de respiración / balanceo dinámico */
         @keyframes mascotBreathing {
           0%, 100% {
-            transform: translateY(0px) scale(1);
+            transform: translateY(0px) rotate(0deg);
           }
           50% {
-            transform: translateY(-4px) scale(1.01);
+            transform: translateY(-5px) rotate(1.5deg);
           }
         }
 
-        /* Pulsación rítmica del spray saliendo del pico del bote */
-        @keyframes sprayMistBurst {
+        /* Mano saludando de verdad */
+        @keyframes handWave {
+          0%, 100% {
+            transform: rotate(0deg);
+          }
+          20% {
+            transform: rotate(12deg);
+          }
+          40% {
+            transform: rotate(-8deg);
+          }
+          60% {
+            transform: rotate(10deg);
+          }
+          80% {
+            transform: rotate(-4deg);
+          }
+        }
+
+        /* Pulsación del spray en la mano izquierda del bote */
+        @keyframes sprayMistLeft {
           0% {
             opacity: 0;
             transform: scale(0.3) translate(0, 0);
           }
           30% {
             opacity: 0.9;
-            transform: scale(1) translate(12px, -14px);
+            transform: scale(1) translate(-12px, -14px);
           }
           70% {
             opacity: 0.6;
-            transform: scale(1.4) translate(22px, -26px);
+            transform: scale(1.4) translate(-22px, -26px);
           }
           100% {
             opacity: 0;
-            transform: scale(1.8) translate(30px, -36px);
+            transform: scale(1.8) translate(-30px, -36px);
           }
         }
 
@@ -57,13 +76,13 @@ export function MascotFooter() {
         }
 
         .spray-mist-particle-1 {
-          transform-origin: 20px 80px;
-          animation: sprayMistBurst 2.2s ease-out infinite;
+          transform-origin: 30px 40px;
+          animation: sprayMistLeft 2.2s ease-out infinite;
         }
 
         .spray-mist-particle-2 {
-          transform-origin: 22px 78px;
-          animation: sprayMistBurst 2.2s ease-out infinite 0.7s;
+          transform-origin: 28px 38px;
+          animation: sprayMistLeft 2.2s ease-out infinite 0.7s;
         }
 
         .anim-tag-1 {
@@ -80,45 +99,45 @@ export function MascotFooter() {
       `}</style>
 
       {/* Contenedor relativo principal con suficiente aire para que nada se solape */}
-      <div className="relative w-[300px] h-[240px] flex items-end justify-center">
+      <div className="relative w-[310px] h-[250px] flex items-end justify-center">
 
-        {/* ─── BOCADILLO DE DIÁLOGO "¡Hola Colegios! 👋" (Arriba centrado/izquierda, sin tapar gorra) ─── */}
-        <div className="absolute top-0 left-0 z-20 anim-tag-1 pointer-events-none">
-          <div className="relative bg-white text-black font-black text-xs px-3 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap">
+        {/* ─── BOCADILLO DE DIÁLOGO "¡Hola Colegios! 👋" (Arriba a la derecha hacia la mano que saluda) ─── */}
+        <div className="absolute -top-3 right-0 z-20 anim-tag-1 pointer-events-none">
+          <div className="relative bg-white text-black font-black text-xs px-3.5 py-1.5 rounded-2xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap">
             ¡Hola Colegios! 👋
-            {/* Pico del bocadillo saliendo desde abajo hacia la cabeza */}
-            <div className="absolute -bottom-1.5 left-8 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
+            {/* Pico del bocadillo saliendo hacia la mano saludando */}
+            <div className="absolute -bottom-1.5 left-6 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
           </div>
         </div>
 
-        {/* ─── CHIP B2B SUPERIOR DERECHA: +20 AÑOS (Despejado por encima del bote) ─── */}
-        <div className="absolute top-2 -right-1 z-20 anim-tag-2 pointer-events-none">
-          <span className="inline-flex items-center gap-1 bg-[#FF6B6B] text-white font-black text-[11px] px-2.5 py-1 rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
+        {/* ─── CHIP B2B SUPERIOR IZQUIERDA: +20 AÑOS ─── */}
+        <div className="absolute top-2 -left-2 z-20 anim-tag-2 pointer-events-none">
+          <span className="inline-flex items-center gap-1 bg-[#FF6B6B] text-white font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
             ★ +20 AÑOS
           </span>
         </div>
 
-        {/* ─── CHIP B2B IZQUIERDA: COLEGIOS (Alineado fuera del cuerpo) ─── */}
-        <div className="absolute top-[48%] -left-3 -translate-y-1/2 z-20 anim-tag-3 pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 bg-[#1D2F8C] text-white font-black text-[11px] px-2.5 py-1 rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
+        {/* ─── CHIP B2B INFERIOR IZQUIERDA: COLEGIOS ─── */}
+        <div className="absolute bottom-6 -left-3 z-20 anim-tag-3 pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 bg-[#1D2F8C] text-white font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
             🏫 COLEGIOS
           </span>
         </div>
 
-        {/* ─── CHIP B2B INFERIOR DERECHA: CASALES (A un lado de las zapatillas) ─── */}
-        <div className="absolute bottom-4 -right-4 z-20 anim-tag-1 pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 bg-[#35D0BA] text-black font-black text-[11px] px-2.5 py-1 rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
+        {/* ─── CHIP B2B INFERIOR DERECHA: CASALES ─── */}
+        <div className="absolute bottom-4 -right-3 z-20 anim-tag-1 pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 bg-[#35D0BA] text-black font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] uppercase tracking-wide whitespace-nowrap">
             ⚽ CASALES
           </span>
         </div>
 
-        {/* ─── EFECTOS DE PARTÍCULAS DE SPRAY DIRECTAMENTE EN LA BOQUILLA ─── */}
+        {/* ─── EFECTOS DE PARTÍCULAS DE SPRAY EN LA MANO DEL BOTE (IZQUIERDA) ─── */}
         <svg
           viewBox="0 0 100 100"
-          className="absolute top-[52px] right-[40px] w-20 h-20 pointer-events-none z-20 overflow-visible"
+          className="absolute top-[80px] left-[15px] w-20 h-20 pointer-events-none z-20 overflow-visible"
         >
           <defs>
-            <radialGradient id="sprayMistGrad2" cx="50%" cy="50%" r="50%">
+            <radialGradient id="sprayMistGradLeft" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
               <stop offset="50%" stopColor="#35D0BA" stopOpacity="0.5" />
               <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
@@ -127,35 +146,35 @@ export function MascotFooter() {
 
           {/* Ráfaga 1 saliendo de la boquilla */}
           <g className="spray-mist-particle-1">
-            <circle cx="28" cy="65" r="10" fill="url(#sprayMistGrad2)" />
-            <circle cx="36" cy="58" r="2.5" fill="#D8E600" />
-            <circle cx="30" cy="52" r="1.8" fill="#FFEA00" />
-            <circle cx="42" cy="68" r="2" fill="#35D0BA" />
+            <circle cx="45" cy="55" r="9" fill="url(#sprayMistGradLeft)" />
+            <circle cx="38" cy="48" r="2.5" fill="#D8E600" />
+            <circle cx="44" cy="42" r="1.8" fill="#FFEA00" />
+            <circle cx="32" cy="56" r="2" fill="#35D0BA" />
           </g>
 
           {/* Ráfaga 2 */}
           <g className="spray-mist-particle-2">
-            <circle cx="34" cy="56" r="14" fill="url(#sprayMistGrad2)" />
-            <circle cx="46" cy="46" r="3" fill="#D8E600" />
-            <circle cx="38" cy="38" r="2" fill="#1D2F8C" />
-            <circle cx="50" cy="54" r="2.5" fill="#35D0BA" />
+            <circle cx="40" cy="48" r="13" fill="url(#sprayMistGradLeft)" />
+            <circle cx="28" cy="38" r="3" fill="#D8E600" />
+            <circle cx="36" cy="30" r="2" fill="#1D2F8C" />
+            <circle cx="24" cy="46" r="2.5" fill="#35D0BA" />
           </g>
         </svg>
 
-        {/* ─── EL MUÑECO OFICIAL DIVERSPLAS EN ALTA RESOLUCIÓN Y BIEN ASENTADO ─── */}
+        {/* ─── EL MUÑECO DIVERSPLAS EN POSE DE SALUDO Y BOTE ─── */}
         <div className="mascot-character-float relative z-10 flex flex-col items-center justify-end">
           <img
-            src="/mascot-boy.webp"
-            alt="Mascota Diversplas Oficial"
+            src="/mascot-waving.webp"
+            alt="Mascota Diversplas Saludando"
             width={170}
             height={220}
-            className="w-36 sm:w-[155px] h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] filter contrast-[1.05]"
+            className="w-40 sm:w-[170px] h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] filter contrast-[1.03]"
             loading="lazy"
             decoding="async"
           />
         </div>
 
-        {/* Sombra de suelo neo-brutalista sólida y pegada a las suelas */}
+        {/* Sombra de suelo neo-brutalista bien afianzada */}
         <div className="absolute -bottom-1 w-36 h-3 bg-black/40 rounded-full blur-[1.5px] -z-0" />
       </div>
     </div>

@@ -39,6 +39,18 @@ export const Route = createFileRoute('/martorelles')({
             "@type": "AggregateRating",
             "ratingValue": "5.0",
             "reviewCount": "19"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Actividades Extraescolares y Casales Martorelles",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Fútbol extraescolar escolar" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Patinaje sobre ruedas" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Zumba Kids y Danza moderna" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Inglés comunicativo para niños" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Refuerzo escolar y técnicas de estudio" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Casales de verano y Navidad" } }
+            ]
           }
         })
       },

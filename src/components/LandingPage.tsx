@@ -391,48 +391,60 @@ export function Footer() {
                 `}</style>
 
                 {/* Personaje asomando encima de la píldora con z-index alto sobre cualquier sección */}
-                <div className="absolute -top-24 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
+                <div className="absolute -top-36 sm:-top-44 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
                   {/* Bocadillo de diálogo B2B con margen generoso arriba */}
-                  <div className="absolute -top-12 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
+                  <div className="absolute -top-10 sm:-top-12 bg-white text-black font-black text-xs sm:text-sm px-4 py-2 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
                     ¿Hablamos para vuestro colegio o AFA? 🏫✨
                     {/* Pico apuntando hacia la gorra */}
                     <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
                   </div>
 
-                  {/* Fuga de spray animada saliendo exactamente de la boquilla del bote (a la derecha de la cadera) */}
-                  <svg
-                    viewBox="0 0 100 100"
-                    className="absolute top-[38px] right-[-14px] w-20 h-20 pointer-events-none z-20 overflow-visible"
-                  >
-                    <defs>
-                      <radialGradient id="ftSprayGrad2" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
-                        <stop offset="50%" stopColor="#35D0BA" stopOpacity="0.75" />
-                        <stop offset="85%" stopColor="#1D2F8C" stopOpacity="0.4" />
-                        <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
-                      </radialGradient>
-                    </defs>
-                    <g className="footer-sneak-mist">
-                      {/* Nube principal que sale de la boquilla hacia arriba/afuera */}
-                      <circle cx="28" cy="58" r="9" fill="url(#ftSprayGrad2)" />
-                      <circle cx="38" cy="48" r="13" fill="url(#ftSprayGrad2)" />
-                      {/* Gotas y chispas de pintura nítidas */}
-                      <circle cx="48" cy="40" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.5" />
-                      <circle cx="42" cy="32" r="2" fill="#35D0BA" stroke="#000" strokeWidth="0.5" />
-                      <circle cx="54" cy="46" r="2.2" fill="#FFEA00" />
-                    </g>
-                  </svg>
-
-                  {/* Muñeco con balanceo de lado a lado (sin flotar arriba/abajo) apoyado sobre la píldora */}
-                  <div className="mascot-sway-anim">
+                  {/* Contenedor del muñeco + spray juntos para que se muevan y escalen en perfecta sincronía */}
+                  <div className="mascot-sway-anim relative">
                     <img
                       src="/mascot-hiding.webp"
                       alt="Mascota Diversplas para Colegios y AFAs"
-                      className="h-24 sm:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform duration-300 relative z-30"
+                      className="h-36 sm:h-44 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform duration-300 relative z-30 block"
                       loading="lazy"
-                      width={105}
-                      height={140}
+                      width={160}
+                      height={215}
                     />
+
+                    {/* Fuga de spray naciendo EXACTAMENTE en la boquilla del bote (83.5% horizontal, 50.8% vertical) */}
+                    <div 
+                      className="absolute pointer-events-none z-40"
+                      style={{ left: '83.5%', top: '50.8%' }}
+                    >
+                      <svg
+                        viewBox="-10 -50 90 90"
+                        className="w-24 h-24 -translate-y-1/2 pointer-events-none overflow-visible"
+                      >
+                        <defs>
+                          <radialGradient id="ftSprayGrad3" cx="30%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
+                            <stop offset="45%" stopColor="#35D0BA" stopOpacity="0.8" />
+                            <stop offset="85%" stopColor="#1D2F8C" stopOpacity="0.45" />
+                            <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
+                          </radialGradient>
+                        </defs>
+                        <g className="footer-sneak-mist">
+                          {/* Chorro concentrado en la boquilla (0,0) abriéndose en abanico hacia la derecha */}
+                          <path
+                            d="M 0 0 L 35 -18 Q 45 -5 42 12 Q 25 8 0 0 Z"
+                            fill="url(#ftSprayGrad3)"
+                            opacity="0.85"
+                          />
+                          <circle cx="16" cy="-4" r="8" fill="url(#ftSprayGrad3)" />
+                          <circle cx="34" cy="-10" r="13" fill="url(#ftSprayGrad3)" />
+                          <circle cx="48" cy="-18" r="16" fill="url(#ftSprayGrad3)" />
+                          {/* Gotas y chispas de pintura nítidas */}
+                          <circle cx="38" cy="-22" r="3" fill="#D8E600" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="52" cy="-6" r="2.5" fill="#35D0BA" stroke="#000" strokeWidth="0.75" />
+                          <circle cx="45" cy="8" r="2" fill="#FFEA00" />
+                          <circle cx="62" cy="-14" r="3.2" fill="#1D2F8C" stroke="#fff" strokeWidth="0.5" />
+                        </g>
+                      </svg>
+                    </div>
                   </div>
                 </div>
 

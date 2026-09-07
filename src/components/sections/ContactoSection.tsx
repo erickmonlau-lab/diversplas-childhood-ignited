@@ -81,19 +81,22 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-3xl border-2 border-black bg-white p-6 sm:p-8 md:p-10 space-y-5 shadow-[8px_8px_0_0_#000] w-full">
-      <div>
-        <h3 className="text-2xl sm:text-3xl font-black uppercase text-black tracking-wide" style={condensed}>
-          Solicitar Propuesta para tu Colegio
+      <div className="border-b-2 border-black/10 pb-4">
+        <div className="inline-block bg-[#1D2F8C] text-white text-[11px] font-black uppercase px-2.5 py-1 rounded border border-black tracking-wider mb-2">
+          CONTRATACIÓN DIRECTA
+        </div>
+        <h3 className="text-2xl sm:text-3xl font-black uppercase text-black tracking-wide leading-none" style={condensed}>
+          Contratar Diversplas para tu Centro
         </h3>
-        <p className="text-sm font-medium text-black/60 mt-1">
-          Formulario para Equipos Directivos, AFAs / AMPAs y Centros Educativos
+        <p className="text-xs sm:text-sm font-semibold text-black/70 mt-2">
+          Pide presupuesto sin compromiso para tu <strong>Colegio, AFA / AMPA o Centro Educativo</strong>.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
           <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
-            Nombre del Colegio / AFA / Entidad *
+            Nombre del Colegio / AFA / Centro Escolar *
           </label>
           <input
             type="text"
@@ -113,14 +116,14 @@ function ContactForm() {
               type="text"
               name="responsable"
               required
-              placeholder="Ej: Laura (Presidenta AFA)"
+              placeholder="Ej: Laura (Presidenta AFA / Dirección)"
               className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-sm md:text-base text-black placeholder:text-black/40 focus:border-[#1D2F8C] focus:bg-white outline-none transition-all"
             />
           </div>
 
           <div>
             <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
-              Teléfono / WhatsApp *
+              Teléfono o WhatsApp de Contacto *
             </label>
             <input
               type="tel"
@@ -135,7 +138,7 @@ function ContactForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
-              Email del Centro / AFA
+              Email del Colegio o AFA
             </label>
             <input
               type="email"
@@ -147,31 +150,30 @@ function ContactForm() {
 
           <div>
             <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
-              Servicio Requerido *
+              ¿Qué servicio queréis contratar? *
             </label>
             <select
               name="motivo"
               required
-              defaultValue="Gestión de Actividades Extraescolares"
-              className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-sm md:text-base text-black focus:border-[#1D2F8C] focus:bg-white outline-none transition-all cursor-pointer truncate"
+              defaultValue="Contratar Gestión Integral de Extraescolares"
+              className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-sm md:text-base text-black focus:border-[#1D2F8C] focus:bg-white outline-none transition-all cursor-pointer truncate font-medium"
             >
-              <option value="Gestión de Actividades Extraescolares">Gestión de Actividades Extraescolares</option>
-              <option value="Organización de Casales Escolares (Verano / Navidad)">Organización de Casales Escolares</option>
-              <option value="Monitores para Actividades de Centro">Monitores para Actividades</option>
-              <option value="Trabajar como Monitor/a en Diversplas">Candidatura Monitor/a</option>
-              <option value="Reunión Informativa / Presentación">Reunión con Coordinación</option>
+              <option value="Contratar Gestión Integral de Extraescolares">Contratar Extraescolares para el Colegio</option>
+              <option value="Contratar Organización de Casales Escolares">Contratar Casales (Verano / Navidad)</option>
+              <option value="Contratar Monitores para Actividades">Contratar Monitores / Dinamizadores</option>
+              <option value="Solicitar Reunión Presencial / Propuesta">Solicitar Reunión con Coordinación</option>
             </select>
           </div>
         </div>
 
         <div>
           <label className="block text-xs font-black uppercase tracking-wider text-black mb-1.5">
-            Detalles o Actividades de Interés
+            ¿Qué actividades os interesan o qué necesita vuestro centro?
           </label>
           <textarea
             name="mensaje"
             rows={3}
-            placeholder="Ej: Nos interesa fútbol, patinaje e inglés para unos 60 alumnos..."
+            placeholder="Ej: Necesitamos fútbol, patinaje e inglés los martes y jueves para unos 50 alumnos..."
             className="w-full rounded-xl border-2 border-black/20 bg-gray-50 px-4 py-3 text-sm md:text-base text-black placeholder:text-black/40 focus:border-[#1D2F8C] focus:bg-white outline-none transition-all resize-none"
           />
         </div>
@@ -183,7 +185,7 @@ function ContactForm() {
         className="w-full rounded-full bg-[#D8E600] text-black py-4.5 sm:py-5 border-2 border-black font-extrabold uppercase tracking-normal shadow-[4px_4px_0_0_#000] hover:bg-[#c8d500] hover:scale-[1.01] transition-all cursor-pointer disabled:opacity-50 text-base sm:text-lg text-center"
         style={btnStyle}
       >
-        {loading ? "ENVIANDO SOLICITUD..." : "SOLICITAR PROPUESTA PARA EL COLEGIO"}
+        {loading ? "ENVIANDO SOLICITUD..." : "SOLICITAR PRESUPUESTO / REUNIÓN"}
       </button>
     </form>
   );

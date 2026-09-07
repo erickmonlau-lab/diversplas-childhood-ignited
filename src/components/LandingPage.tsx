@@ -107,21 +107,29 @@ export function Nav() {
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#f8f8f8] py-8 border-t-2 border-black text-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm font-semibold">
-          <p className="text-black/80 text-center md:text-left">
-            <strong>Sede y Operativa Principal:</strong> Santa Coloma de Gramenet y El Fondo · <strong>Área de Expansión para Centros:</strong> Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles
-          </p>
+    <footer className="w-full bg-[#f4f4f4] py-10 border-t-2 border-black text-black">
+      <div className="mx-auto max-w-[1300px] px-6 sm:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-2xl text-center md:text-left space-y-1">
+            <p className="text-xs md:text-sm font-bold text-black leading-relaxed">
+              <span className="bg-[#D8E600] text-black px-2 py-0.5 rounded border border-black font-black uppercase text-[11px] tracking-wider mr-2 inline-block">Sede Principal</span>
+              Santa Coloma de Gramenet y El Fondo
+            </p>
+            <p className="text-xs md:text-sm font-medium text-black/70 leading-relaxed">
+              <strong>Áreas de Expansión para Colegios:</strong> Badalona, Barcelona, Mollet del Vallès, Sant Fost de Campsentelles y Martorelles.
+            </p>
+          </div>
           
-          <div className="flex items-center gap-4">
-            <span className="text-xs text-black font-black whitespace-nowrap">
-              © 2026 Diversplas · Desarrollado por{" "}
+          <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-black whitespace-nowrap bg-white border-2 border-black px-4 py-2 rounded-full shadow-[2px_2px_0_0_#000]">
+            <span>© 2026 Diversplas</span>
+            <span className="text-black/30">·</span>
+            <span>
+              Desarrollado por{" "}
               <a
                 href="https://kovia.es"
                 target="_blank"
                 rel="noopener"
-                className="text-black font-black no-underline"
+                className="font-black text-black underline hover:text-[#1D2F8C]"
               >
                 Kovia
               </a>

@@ -144,7 +144,7 @@ function ContactForm() {
           >
             <option value="Gestión de Actividades Extraescolares">Gestión de Actividades Extraescolares</option>
             <option value="Organización de Casales Escolares (Verano / Navidad)">Organización de Casales Escolares</option>
-            <option value="Monitores Titulados de Sustitución o Refuerzo">Monitores Titulados de Sustitución</option>
+            <option value="Monitores para Actividades de Centro">Monitores para Actividades</option>
             <option value="Trabajar como Monitor/a en Diversplas">Candidatura Monitor/a</option>
             <option value="Reunión Informativa / Presentación">Reunión con Coordinación</option>
           </select>

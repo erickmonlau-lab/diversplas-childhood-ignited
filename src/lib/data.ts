@@ -19,7 +19,7 @@ export const TRUST_SLIDES = [
   {
     headline: "+20 AÑOS",
     sub: "CON CENTROS EDUCATIVOS",
-    description: "Más de dos décadas gestionando proyectos extraescolares y casales en colegios. Cero complicaciones para la dirección y la junta del AFA.",
+    description: "Más de dos décadas realizando actividades extraescolares y casales en colegios. Confianza, cercanía y experiencia demostrada.",
     image: "/image_53d820.webp",
     icon: "🌟",
     bg: "#35D0BA",
@@ -27,9 +27,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "GESTIÓN INTEGRAL",
-    sub: "LLAVE EN MANO",
-    description: "Nos encargamos de todo: selección y contratación de monitores titulados, seguros de RC, cobros, material deportivo y atención continua.",
+    headline: "GESTIÓN DE ACTIVIDADES",
+    sub: "ADAPTADA AL COLEGIO",
+    description: "Nos encargamos de impartir las clases, el material deportivo y lúdico, y la coordinación directa de cada tarde escolar.",
     image: "/image_53e780.webp",
     icon: "🏆",
     bg: "#1D2F8C",
@@ -39,7 +39,7 @@ export const TRUST_SLIDES = [
   {
     headline: "COORDINACIÓN",
     sub: "DIRECTA Y CERCANA",
-    description: "El centro y el AFA cuentan con un coordinador de enlace asignado para resolver cualquier necesidad operativa al instante.",
+    description: "Comunicación fluida y constante con el centro y el AFA para que las actividades funcionen de manera óptima día a día.",
     image: "/image_488563.webp",
     icon: "🚀",
     bg: "#FF7B72",
@@ -47,9 +47,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "ADAPTADO AL PEC",
-    sub: "DEL COLEGIO",
-    description: "Alineamos cada actividad con el Ideario y Proyecto Educativo del Centro escolar, fomentando valores, deporte y creatividad.",
+    headline: "ADAPTADO AL CENTRO",
+    sub: "Y A SUS ALUMNOS",
+    description: "Alineamos cada actividad con las necesidades del colegio, fomentando el deporte, el trabajo en equipo y la diversión.",
     image: "/image_53ee82.webp",
     icon: "🎨",
     bg: "#FF9D42",
@@ -57,9 +57,9 @@ export const TRUST_SLIDES = [
     dark: true,
   },
   {
-    headline: "MONITORES",
-    sub: "CUALIFICADOS",
-    description: "Personal titulado, con vocación pedagógica y certificación negativa de delitos de naturaleza sexual en regla y contrastada.",
+    headline: "EQUIPO",
+    sub: "CON EXPERIENCIA",
+    description: "Monitores y monitoras con experiencia en el trato infantil, dinamización de grupos y pasión por la enseñanza.",
     image: "/image_48117c.webp",
     icon: "🌍",
     bg: "#9C7BFF",
@@ -72,19 +72,19 @@ export const PARTNER_TYPES = [
   { name: "Colegios Públicos",             color: "#FF7B72" },
   { name: "Colegios Concertados",          color: "#FF9D42" },
   { name: "AFAs / AMPAs",                  color: "#D8E600", dark: true },
-  { name: "Equipos Directivos de Centro",  color: "#35D0BA" },
+  { name: "Centros Escolares",             color: "#35D0BA" },
   { name: "Escuelas de Educación Infantil",color: "#3055C7", light: true },
   { name: "Escuelas de Primaria",          color: "#9C7BFF" },
-  { name: "Casales y Campus Escolares",    color: "#FF7B72" },
-  { name: "Institutos y Centros Cívicos",  color: "#35D0BA" },
+  { name: "Casales Escolares",             color: "#FF7B72" },
+  { name: "Centros Cívicos",               color: "#35D0BA" },
 ];
 
 export const PROGRAM_STEPS = [
   { n: "01", t: "Estudio del Centro",   c: "#FF7B72" },
-  { n: "02", t: "Propuesta a Medida",   c: "#FF9D42" },
-  { n: "03", t: "Monitores y Seguros",  c: "#D8E600" },
-  { n: "04", t: "Gestión y Cobros",     c: "#35D0BA" },
-  { n: "05", t: "Supervisión Continua", c: "#ffffff" },
+  { n: "02", t: "Propuesta de Actividades", c: "#FF9D42" },
+  { n: "03", t: "Material y Monitores", c: "#D8E600" },
+  { n: "04", t: "Puesta en Marcha",     c: "#35D0BA" },
+  { n: "05", t: "Seguimiento Continuo", c: "#ffffff" },
 ];
 
 export const STATS = [

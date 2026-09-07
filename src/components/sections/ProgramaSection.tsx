@@ -31,9 +31,9 @@ export default function ProgramaSection() {
   return (
     <FeatureSection
       id="process"
-      headline="Tu Colegio y tu AFA, sin preocupaciones."
-      description="Sabemos lo que cuesta coordinar las tardes escolares. En Diversplas asumimos la gestión total: contratación de monitores cualificados, seguros de RC, material deportivo, control pedagógico y atención a incidencias."
-      extra="Vuestro centro solo decide qué actividades ofrecer; nosotros nos encargamos de que todo funcione con excelencia."
+      headline="Tu Colegio y tu AFA, con las mejores actividades."
+      description="Llevamos más de 20 años dinamizando las tardes escolares. En Diversplas nos encargamos de impartir las clases, aportar el material deportivo y lúdico, y asegurar que los alumnos disfruten y aprendan en cada sesión."
+      extra="Vuestro centro solo decide qué actividades ofrecer; nosotros nos encargamos de que todo funcione con cercanía y dedicación."
       links={[{ label: "SOLICITAR REUNIÓN", href: "#contacto" }]}
       visual={<ProgramVisual />}
       flip

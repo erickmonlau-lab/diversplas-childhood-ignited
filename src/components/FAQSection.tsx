@@ -3,32 +3,32 @@ import { ChevronDown } from 'lucide-react';
 
 export const FAQS = [
   {
-    question: "¿Qué responsabilidades y trámites asume Diversplas en nuestro colegio?",
-    answer: "Asumimos la gestión integral y llave en mano: selección, contratación y nóminas de monitores titulados, cobertura con póliza de Responsabilidad Civil patronal y de actividades, material técnico homologado, programación pedagógica adaptada al centro y resolución ágil de cualquier incidencia."
+    question: "¿Qué servicios ofrece Diversplas para nuestro colegio o AFA?",
+    answer: "Ofrecemos la impartición y dinamización de actividades extraescolares deportivas, artísticas y de refuerzo, además de casales en periodos vacacionales. Aportamos el material necesario, la programación de las clases y la coordinación directa con el centro."
   },
   {
     question: "¿En qué zonas operáis actualmente?",
-    answer: "Nuestra sede principal y núcleo operativo se encuentra en Santa Coloma de Gramenet y el barrio del Fondo. Además, contamos con capacidad de desplazamiento e implantación de proyectos en colegios de Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles."
+    answer: "Nuestra sede y operativa principal se encuentra en Santa Coloma de Gramenet y el barrio del Fondo. Además, tenemos disponibilidad para poner en marcha actividades en colegios de Badalona, Barcelona, Mollet del Vallès, Sant Fost y Martorelles."
   },
   {
-    question: "¿Los monitores cuentan con la titulación y certificados legales requeridos?",
-    answer: "Sí, el 100% de nuestro equipo de monitores y coordinadores dispone de la titulación oficial exigida por la normativa catalana (Monitor/a de Lleure, técnicos deportivos o grados en educación) y el Certificado Negativo del Registro Central de Delincuentes Sexuales debidamente actualizado."
+    question: "¿Cómo son los monitores y monitoras de Diversplas?",
+    answer: "Contamos con un equipo experimentado y cercano, con vocación por el trato infantil, la educación en valores y la animación deportiva y artística."
   },
   {
-    question: "¿Podemos personalizar las actividades y adaptarlas al Ideario de nuestro centro?",
-    answer: "Por supuesto. No imponemos programas cerrados; nos reunimos previamente con la dirección del centro escolar y la junta del AFA para alinear los horarios, valores, metodologías y oferta de actividades con el Proyecto Educativo de Centro (PEC)."
+    question: "¿Podemos personalizar las actividades para nuestro centro?",
+    answer: "Por supuesto. Nos adaptamos a los horarios, espacios disponibles y preferencias del colegio y de las familias, seleccionando juntos las actividades más demandadas."
   },
   {
-    question: "¿Organizáis casales en las instalaciones del colegio durante los periodos de vacaciones?",
-    answer: "Sí. Diseñamos y ejecutamos casales escolares y campus vacacionales de Verano, Navidad y Semana Santa dentro de vuestro propio recinto educativo, facilitando la conciliación laboral y familiar del centro con proyectos lúdico-educativos temáticos."
+    question: "¿Organizáis casales en las instalaciones del colegio?",
+    answer: "Sí. Realizamos casales y actividades en periodos vacacionales (Verano, Navidad y Semana Santa) dentro del propio centro escolar para que los alumnos disfruten en un entorno familiar."
   },
   {
-    question: "¿Cómo se coordina el día a día entre el colegio y Diversplas?",
-    answer: "Cada centro cuenta con un/a Coordinador/a pedagógico de enlace asignado. Es la persona responsable del seguimiento diario de las asistencias, la comunicación fluida con la dirección y la atención preferente a través de canal directo y WhatsApp."
+    question: "¿Cómo contactamos con la coordinación de Diversplas?",
+    answer: "Estamos disponibles a través de WhatsApp en el +34 657 117 426 y por correo electrónico en diversplascontacto@gmail.com para resolver cualquier duda o acordar una reunión informativa."
   },
   {
     question: "¿Hacéis gestión de mediodía o comedores escolares?",
-    answer: "No. En Diversplas nos enfocamos de forma 100% especializada en actividades extraescolares de tarde y casales vacacionales. No gestionamos comedores escolares ni tiempos de mediodía, lo que nos permite volcar toda nuestra energía y excelencia pedagógica en las tardes."
+    answer: "No. En Diversplas nos enfocamos de forma 100% especializada en actividades extraescolares de tarde y casales vacacionales. No gestionamos comedores escolares ni tiempos de mediodía."
   },
 ];
 

@@ -225,7 +225,7 @@ export function Footer() {
       </div>
 
       {/* SEO GEO Links & Navegación Local para Colegios */}
-      <div className="bg-[#f9f9f9] py-8 px-6 border-b border-black/10">
+      <div className="bg-[#f9f9f9] py-8 px-6">
         <div className="mx-auto max-w-[1400px]">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="bg-[#1D2F8C] text-white text-[11px] font-black uppercase px-2.5 py-1 rounded border border-black tracking-wider">
@@ -269,8 +269,8 @@ export function Footer() {
       </div>
 
       {/* Bottom Legal, Social & Credits */}
-      <div className="bg-white py-6 px-6">
-        <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-6">
+      <div className="bg-white py-6 px-6 relative z-30 overflow-visible">
+        <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-6 overflow-visible">
           <div className="flex items-center gap-4 flex-wrap">
             <a href="#top" className="flex items-center">
               <img
@@ -310,7 +310,7 @@ export function Footer() {
           </div>
 
           {/* Zona Derecha: Redes y Créditos */}
-          <div className="flex items-center gap-5 flex-wrap">
+          <div className="flex items-center gap-5 flex-wrap overflow-visible">
             <div className="flex items-center gap-3">
               <a
                 className="rounded-full border-2 border-black h-9 w-9 inline-flex items-center justify-center hover:bg-black hover:text-white transition-colors"
@@ -347,14 +347,29 @@ export function Footer() {
               </a>
 
               {/* Contenedor relativo para la píldora legal con el muñeco sentado / asomando encima */}
-              <div className="relative pt-20">
-                {/* Estilo local para animación del spray fugándose detrás del muñeco */}
+              <div className="relative pt-24 overflow-visible">
+                {/* Animación: sin flotar arriba/abajo, balanceo sutil de lado a lado como incómodo 'haciéndose el inocente' */}
                 <style>{`
+                  @keyframes mascotSwayInnocent {
+                    0%, 100% {
+                      transform: rotate(0deg);
+                    }
+                    25% {
+                      transform: rotate(-3deg);
+                    }
+                    75% {
+                      transform: rotate(3deg);
+                    }
+                  }
                   @keyframes footerSneakSpray {
                     0% { opacity: 0; transform: scale(0.3) translate(0, 0); }
                     35% { opacity: 0.9; transform: scale(1) translate(10px, -8px); }
                     70% { opacity: 0.5; transform: scale(1.3) translate(18px, -15px); }
                     100% { opacity: 0; transform: scale(1.6) translate(25px, -20px); }
+                  }
+                  .mascot-sway-anim {
+                    animation: mascotSwayInnocent 4.8s ease-in-out infinite;
+                    transform-origin: bottom center;
                   }
                   .footer-sneak-mist {
                     animation: footerSneakSpray 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
@@ -362,10 +377,10 @@ export function Footer() {
                   }
                 `}</style>
 
-                {/* Personaje asomando bien arriba sobre la píldora */}
-                <div className="absolute -top-20 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-20 flex flex-col items-center">
-                  {/* Bocadillo de diálogo B2B bien separado arriba sin pisar la gorra */}
-                  <div className="absolute -top-12 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-30">
+                {/* Personaje asomando encima de la píldora con z-index alto sobre cualquier sección */}
+                <div className="absolute -top-24 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
+                  {/* Bocadillo de diálogo B2B bien arriba sin pisar la gorra */}
+                  <div className="absolute -top-14 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
                     ¿Hablamos para vuestro colegio o AFA? 🏫✨
                     {/* Pico apuntando hacia la gorra */}
                     <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
@@ -374,7 +389,7 @@ export function Footer() {
                   {/* Fuga de spray animada saliendo del bote detrás de su espalda */}
                   <svg
                     viewBox="0 0 80 80"
-                    className="absolute top-10 right-0 w-16 h-16 pointer-events-none z-10 overflow-visible"
+                    className="absolute top-10 right-0 w-16 h-16 pointer-events-none z-20 overflow-visible"
                   >
                     <defs>
                       <radialGradient id="ftSprayGrad" cx="50%" cy="50%" r="50%">
@@ -391,19 +406,21 @@ export function Footer() {
                     </g>
                   </svg>
 
-                  {/* Imagen del muñeco con tamaño adecuado y animación de flotación suave */}
-                  <img
-                    src="/mascot-hiding.webp"
-                    alt="Mascota Diversplas para Colegios y AFAs"
-                    className="h-24 sm:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] animate-[float_4s_ease-in-out_infinite] hover:scale-110 transition-transform duration-300 relative z-20"
-                    loading="lazy"
-                    width={105}
-                    height={140}
-                  />
+                  {/* Muñeco con balanceo de lado a lado (sin flotar arriba/abajo) apoyado sobre la píldora */}
+                  <div className="mascot-sway-anim">
+                    <img
+                      src="/mascot-hiding.webp"
+                      alt="Mascota Diversplas para Colegios y AFAs"
+                      className="h-24 sm:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform duration-300 relative z-30"
+                      loading="lazy"
+                      width={105}
+                      height={140}
+                    />
+                  </div>
                 </div>
 
                 {/* Píldora de créditos */}
-                <div className="relative z-10 flex items-center gap-2 bg-white border-2 border-black px-4 py-2 rounded-full shadow-[3px_3px_0_0_#000] text-xs font-bold whitespace-nowrap">
+                <div className="relative z-20 flex items-center gap-2 bg-white border-2 border-black px-4 py-2 rounded-full shadow-[3px_3px_0_0_#000] text-xs font-bold whitespace-nowrap">
                   <span>© 2026 Diversplas</span>
                   <span className="text-black/30">·</span>
                   <span>

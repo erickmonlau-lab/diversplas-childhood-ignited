@@ -235,19 +235,23 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Muñeco Mascota y badge de zona compactado */}
-            <div className="flex items-center gap-5 pt-2">
+            {/* Muñeco Mascota y tarjeta solida neo-brutalista */}
+            <div className="flex items-center gap-4 pt-1">
               <img
                 src="/mascot-boy.webp"
                 alt="Mascota Diversplas"
-                className="w-28 sm:w-36 h-auto drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] animate-[float_4s_ease-in-out_infinite] flex-shrink-0"
-                width={144}
-                height={210}
+                className="w-24 sm:w-32 h-auto drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)] animate-[float_4s_ease-in-out_infinite] flex-shrink-0"
+                width={128}
+                height={190}
                 loading="lazy"
               />
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-xs text-white/90 leading-relaxed font-medium shadow-[2px_2px_0_0_rgba(0,0,0,0.2)]">
-                <span className="font-extrabold text-[#D8E600] uppercase block text-[11px] mb-0.5">Sede & Cobertura</span>
-                Santa Coloma de Gramenet, El Fondo y expansión metropolitana.
+              <div className="bg-white text-black border-2 border-black rounded-2xl p-3.5 shadow-[4px_4px_0_0_#000]">
+                <div className="inline-block bg-[#D8E600] text-black font-black uppercase text-[11px] px-2 py-0.5 rounded border border-black mb-1.5">
+                  SEDE & ZONAS
+                </div>
+                <div className="text-xs font-bold text-black leading-snug">
+                  Santa Coloma, El Fondo, Badalona, Barcelona y alrededores.
+                </div>
               </div>
             </div>
           </div>

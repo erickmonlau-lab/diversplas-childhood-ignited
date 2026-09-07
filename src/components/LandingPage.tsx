@@ -271,7 +271,24 @@ export function Footer() {
       {/* Bottom Legal, Social & Credits */}
       <div className="bg-white py-6 px-6">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-6">
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-5 flex-wrap">
+            {/* Mascota escondiendo el spray asomando con picardía */}
+            <div className="relative group cursor-pointer flex items-center">
+              <img
+                src="/mascot-hiding.webp"
+                alt="Mascota Diversplas"
+                className="h-16 w-auto object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.25)] hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                width={70}
+                height={92}
+              />
+              {/* Bocadillo emergente interactivo */}
+              <div className="absolute -top-9 left-2 bg-white text-black font-black text-[11px] px-2.5 py-1 rounded-xl border-2 border-black shadow-[2px_2px_0_0_#000] whitespace-nowrap opacity-90 group-hover:opacity-100 transition-opacity pointer-events-none">
+                ¿Yo? ¡Si soy un santo! 😇🎨
+                <div className="absolute -bottom-1 left-4 w-2 h-2 bg-white border-r-2 border-b-2 border-black rotate-45" />
+              </div>
+            </div>
+
             <a href="#top" className="flex items-center">
               <img
                 src="/diversplas-logo-graffiti.webp"

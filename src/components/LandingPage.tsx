@@ -18,7 +18,10 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     ["Inicio", "#top"],
-    ["Servicios", "#servicios"],
+    ["Actividades", "#servicios"],
+    ["Proceso", "#process"],
+    ["Zonas", "#zones"],
+    ["Preguntas", "#faq"],
     ["Contacto", "#contacto"],
   ] as const;
 

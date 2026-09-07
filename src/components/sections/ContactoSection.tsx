@@ -210,12 +210,12 @@ export default function ContactSection() {
               . Te prepararemos una propuesta adaptada a las necesidades de vuestro colegio.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               <a
                 href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-black px-7 py-3.5 font-black border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-sm md:text-base"
+                className="inline-flex items-center gap-3 rounded-full bg-[#25D366] text-black px-7 py-3.5 font-extrabold border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[#20bd5a] hover:scale-[1.02] transition-all uppercase tracking-wide text-sm md:text-base"
                 style={btnStyle}
               >
                 <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
@@ -223,7 +223,30 @@ export default function ContactSection() {
                 </svg>
                 <span>WHATSAPP DE COORDINACIÓN (+34 657 117 426)</span>
               </a>
-              <p className="text-white/70 text-sm font-semibold">
+
+              {/* Logo Badge Card */}
+              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,0.2)] max-w-sm">
+                <div className="w-16 h-16 rounded-xl bg-white p-1.5 flex-shrink-0 border border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center">
+                  <img
+                    src="/diversplas-logo.webp"
+                    alt="Diversplas Extraescolares"
+                    className="w-full h-auto object-contain"
+                    width={56}
+                    height={56}
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div className="font-extrabold text-white text-base leading-snug uppercase tracking-wide" style={{ fontFamily: "system-ui, sans-serif" }}>
+                    DIVERSPLAS
+                  </div>
+                  <div className="text-white/80 text-xs font-semibold mt-0.5">
+                    +20 años al servicio de colegios y AFAs.
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-white/70 text-xs sm:text-sm font-semibold">
                 Atención preferente para colegios de Santa Coloma de Gramenet y área de expansión.
               </p>
             </div>

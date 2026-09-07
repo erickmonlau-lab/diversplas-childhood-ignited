@@ -42,11 +42,11 @@ function ZonesCardsVisual() {
               style={{
                 fontFamily: 'Barlow Condensed, sans-serif',
                 fontSize: '14px',
-                fontWeight: 700,
+                fontWeight: 900,
                 letterSpacing: '0.08em',
                 color: '#fff',
                 textShadow: '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
-                opacity: 0.9
+                opacity: 0.95
               }}
               className="uppercase mt-0.5"
             >
@@ -65,7 +65,7 @@ function ZonesCardsVisual() {
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: '#0a0a0a' }}>
           <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', fontWeight: 700, letterSpacing: '0.06em', color: '#0a0a0a' }}>
+        <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', fontWeight: 900, letterSpacing: '0.06em', color: '#0a0a0a' }}>
           Desliza para ver todas las zonas
         </span>
       </div>

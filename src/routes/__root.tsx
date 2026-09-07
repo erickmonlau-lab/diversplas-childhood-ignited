@@ -120,8 +120,9 @@ function RootShell({ children }: { children: ReactNode }) {
         {/* Inlined CSS: Eliminates render-blocking stylesheets for instant FCP */}
         <style dangerouslySetInnerHTML={{ __html: appCssRaw }} />
         <HeadContent />
-        {/* Preload critical headline font */}
+        {/* Preload critical headline fonts used in the Hero H1 to eliminate FOYT and layout shifts */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900.woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-900-italic.woff2" crossOrigin="anonymous" />
       </head>
       <body>
         {children}

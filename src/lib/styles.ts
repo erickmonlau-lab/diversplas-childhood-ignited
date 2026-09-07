@@ -1,12 +1,12 @@
 import React from 'react';
 
 export const condensed: React.CSSProperties = {
-  fontFamily: "'Barlow Condensed', sans-serif",
+  fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Impact', sans-serif",
   fontWeight: 900,
 };
 
 export const condensedItalic: React.CSSProperties = {
-  fontFamily: "'Barlow Condensed', sans-serif",
+  fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Impact', sans-serif",
   fontWeight: 900,
   fontStyle: "italic",
 };

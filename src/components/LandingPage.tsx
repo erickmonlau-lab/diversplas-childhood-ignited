@@ -225,7 +225,7 @@ export function Footer() {
       </div>
 
       {/* SEO GEO Links & Navegación Local para Colegios */}
-      <div className="bg-[#f9f9f9] py-8 px-6">
+      <div className="bg-white py-8 px-6">
         <div className="mx-auto max-w-[1400px]">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="bg-[#1D2F8C] text-white text-[11px] font-black uppercase px-2.5 py-1 rounded border border-black tracking-wider">
@@ -269,7 +269,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Legal, Social & Credits */}
-      <div className="bg-white py-6 px-6 relative z-30 overflow-visible">
+      <div className="bg-white pt-16 pb-8 px-6 relative z-30 overflow-visible">
         <div className="mx-auto max-w-[1400px] flex flex-wrap justify-between items-center gap-6 overflow-visible">
           <div className="flex items-center gap-4 flex-wrap">
             <a href="#top" className="flex items-center">
@@ -361,48 +361,65 @@ export function Footer() {
                       transform: rotate(3deg);
                     }
                   }
-                  @keyframes footerSneakSpray {
-                    0% { opacity: 0; transform: scale(0.3) translate(0, 0); }
-                    35% { opacity: 0.9; transform: scale(1) translate(10px, -8px); }
-                    70% { opacity: 0.5; transform: scale(1.3) translate(18px, -15px); }
-                    100% { opacity: 0; transform: scale(1.6) translate(25px, -20px); }
+                  /* Chorro y nube de pintura saliendo directamente del pico blanco del bote a la derecha */
+                  @keyframes footerCanSpray {
+                    0% {
+                      opacity: 0;
+                      transform: scale(0.2) translate(0, 0);
+                    }
+                    25% {
+                      opacity: 0.95;
+                      transform: scale(0.9) translate(14px, -12px);
+                    }
+                    70% {
+                      opacity: 0.6;
+                      transform: scale(1.4) translate(26px, -24px);
+                    }
+                    100% {
+                      opacity: 0;
+                      transform: scale(1.8) translate(36px, -34px);
+                    }
                   }
                   .mascot-sway-anim {
                     animation: mascotSwayInnocent 4.8s ease-in-out infinite;
                     transform-origin: bottom center;
                   }
                   .footer-sneak-mist {
-                    animation: footerSneakSpray 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
-                    transform-origin: 10px 40px;
+                    animation: footerCanSpray 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+                    transform-origin: 22px 64px;
                   }
                 `}</style>
 
                 {/* Personaje asomando encima de la píldora con z-index alto sobre cualquier sección */}
                 <div className="absolute -top-24 left-1/2 -translate-x-1/2 group pointer-events-auto cursor-pointer z-30 flex flex-col items-center">
-                  {/* Bocadillo de diálogo B2B bien arriba sin pisar la gorra */}
-                  <div className="absolute -top-14 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
+                  {/* Bocadillo de diálogo B2B con margen generoso arriba */}
+                  <div className="absolute -top-12 bg-white text-black font-black text-[11px] sm:text-xs px-3.5 py-1.5 rounded-xl border-2 border-black shadow-[3px_3px_0_0_#000] whitespace-nowrap opacity-100 group-hover:scale-105 transition-all pointer-events-none z-40">
                     ¿Hablamos para vuestro colegio o AFA? 🏫✨
                     {/* Pico apuntando hacia la gorra */}
                     <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-r-2 border-b-2 border-black rotate-45" />
                   </div>
 
-                  {/* Fuga de spray animada saliendo del bote detrás de su espalda */}
+                  {/* Fuga de spray animada saliendo exactamente de la boquilla del bote (a la derecha de la cadera) */}
                   <svg
-                    viewBox="0 0 80 80"
-                    className="absolute top-10 right-0 w-16 h-16 pointer-events-none z-20 overflow-visible"
+                    viewBox="0 0 100 100"
+                    className="absolute top-[38px] right-[-14px] w-20 h-20 pointer-events-none z-20 overflow-visible"
                   >
                     <defs>
-                      <radialGradient id="ftSprayGrad" cx="50%" cy="50%" r="50%">
+                      <radialGradient id="ftSprayGrad2" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#D8E600" stopOpacity="0.95" />
-                        <stop offset="50%" stopColor="#35D0BA" stopOpacity="0.7" />
+                        <stop offset="50%" stopColor="#35D0BA" stopOpacity="0.75" />
+                        <stop offset="85%" stopColor="#1D2F8C" stopOpacity="0.4" />
                         <stop offset="100%" stopColor="#1D2F8C" stopOpacity="0" />
                       </radialGradient>
                     </defs>
                     <g className="footer-sneak-mist">
-                      <circle cx="35" cy="45" r="10" fill="url(#ftSprayGrad)" />
-                      <circle cx="44" cy="38" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.5" />
-                      <circle cx="40" cy="32" r="2" fill="#35D0BA" />
-                      <circle cx="50" cy="46" r="2" fill="#FFEA00" />
+                      {/* Nube principal que sale de la boquilla hacia arriba/afuera */}
+                      <circle cx="28" cy="58" r="9" fill="url(#ftSprayGrad2)" />
+                      <circle cx="38" cy="48" r="13" fill="url(#ftSprayGrad2)" />
+                      {/* Gotas y chispas de pintura nítidas */}
+                      <circle cx="48" cy="40" r="2.5" fill="#D8E600" stroke="#000" strokeWidth="0.5" />
+                      <circle cx="42" cy="32" r="2" fill="#35D0BA" stroke="#000" strokeWidth="0.5" />
+                      <circle cx="54" cy="46" r="2.2" fill="#FFEA00" />
                     </g>
                   </svg>
 

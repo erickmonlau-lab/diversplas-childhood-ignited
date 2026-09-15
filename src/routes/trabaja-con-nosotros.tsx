@@ -173,23 +173,50 @@ function CandidatoForm() {
     const otraVacante = formData.get("otra_vacante") as string;
     const vacanteFinal = vacante === "Otra disciplina" && otraVacante?.trim() ? `Otra disciplina: ${otraVacante.trim()}` : vacante;
 
+    const nombre = (formData.get("nombre") as string) || "Candidato";
+    const telefono = (formData.get("telefono") as string) || "";
+    const email = (formData.get("email") as string) || "No especificado";
+    const mensaje = (formData.get("mensaje") as string) || "Sin mensaje";
+    const origen = typeof window !== 'undefined' ? window.location.href : 'https://diversplas.es/trabaja-con-nosotros';
+
+    const web3Payload = {
+      access_key: "f1e235a8-c540-4899-945a-8d69b381ed85",
+      subject: `💼 Nueva Candidatura Monitor/a: ${nombre} - ${vacanteFinal}`,
+      from_name: "Diversplas Empleo",
+      "Nombre y Apellidos": nombre,
+      "Teléfono / WhatsApp": telefono,
+      "Correo Electrónico": email,
+      "Puesto / Disciplina": vacanteFinal,
+      "Mensaje / Experiencia": mensaje,
+      "Página de Origen": origen,
+      "Fecha de Envío": new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" })
+    };
+
     const data = {
       ...Object.fromEntries(formData.entries()),
       vacante: vacanteFinal,
       tipo: 'candidatura_monitor',
       email_destino: 'diversplascontacto@gmail.com',
       destinatario: 'diversplascontacto@gmail.com',
-      origen: typeof window !== 'undefined' ? window.location.href : 'https://diversplas.es/trabaja-con-nosotros'
+      origen
     };
+
     try {
-      const response = await fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error("Error en la respuesta del servidor");
-      }
+      await Promise.allSettled([
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(web3Payload),
+        }),
+        fetch("https://n8n.kovia.io/webhook/15cbd43f-d161-4131-9ec3-334f9dfd4de1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }),
+      ]);
       setSent(true);
     } catch {
       // Confirmamos recepción al usuario

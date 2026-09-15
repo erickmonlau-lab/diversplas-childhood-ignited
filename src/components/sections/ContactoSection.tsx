@@ -20,9 +20,9 @@ function ContactForm() {
     const fecha = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
 
     const payload = {
-      _subject: `🏫 Solicitud de Centro/AFA: ${centro} - ${motivo} (${responsable})`,
-      _template: "table",
-      _captcha: "false",
+      access_key: "f1e235a8-c540-4899-945a-8d69b381ed85",
+      subject: `🏫 Solicitud de Centro/AFA: ${centro} - ${motivo} (${responsable})`,
+      from_name: "Diversplas Web",
       "Centro Educativo / AFA": centro,
       "Persona de Contacto / Cargo": responsable,
       "Teléfono / WhatsApp de Contacto": telefono,
@@ -34,9 +34,9 @@ function ContactForm() {
     };
 
     try {
-      // Envío directo al correo diversplascontacto@gmail.com formateado en tabla HTML
+      // Envío garantizado a Web3Forms y respaldo secundario
       await Promise.allSettled([
-        fetch("https://formsubmit.co/ajax/diversplascontacto@gmail.com", {
+        fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

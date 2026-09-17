@@ -358,9 +358,13 @@ export function Footer() {
           </div>
 
           {/* Fila inferior: Redes sociales y el personaje con la píldora de copyright */}
-          <div className="border-t-2 border-black pt-8 flex flex-col sm:flex-row justify-between items-center gap-8 overflow-visible">
+          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-8 overflow-visible relative">
+            {/* Línea divisoria decorativa detrás de los elementos excepto la mascota */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-black pointer-events-none hidden sm:block" />
+            <div className="w-full h-[2px] bg-black sm:hidden" />
+
             {/* Canales de Contacto Directo */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 relative z-10 bg-white sm:pr-4">
               <span className="text-xs font-black uppercase text-black/70 mr-1 tracking-wider">Contacto rápido:</span>
               <a
                 className="rounded-full border-2 border-black h-10 w-10 inline-flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] hover:scale-105"
@@ -398,7 +402,7 @@ export function Footer() {
             </div>
 
             {/* Zona Derecha: Créditos con el personaje y spray */}
-            <div className="flex items-center overflow-visible">
+            <div className="flex items-center overflow-visible relative z-20">
               <div className="relative pt-24 overflow-visible">
                 {/* Animación: sin flotar arriba/abajo, balanceo sutil de lado a lado como incómodo 'haciéndose el inocente' */}
                 <style>{`

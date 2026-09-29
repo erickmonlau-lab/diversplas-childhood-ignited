@@ -225,7 +225,7 @@ export function Footer() {
       </div>
 
       {/* Footer Principal: Estructura en Columnas Limpias y Marca */}
-      <div className="bg-white pt-14 pb-12 px-6 relative z-30 overflow-visible border-t border-black/10">
+      <div className="bg-white pt-14 pb-24 md:pb-12 px-6 relative z-30 overflow-visible border-t border-black/10">
         <div className="mx-auto max-w-[1400px]">
           {/* Fila superior: Columnas de información y navegación */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16">
@@ -358,7 +358,7 @@ export function Footer() {
           </div>
 
           {/* Fila inferior: Redes sociales y el personaje con la píldora de copyright */}
-          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-8 overflow-visible relative">
+          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-28 sm:gap-8 overflow-visible relative">
             {/* Canales de Contacto Directo */}
             <div className="flex items-center gap-3 relative z-10">
               <span className="text-xs font-black uppercase text-black/70 mr-1 tracking-wider">Contacto rápido:</span>

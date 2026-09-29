@@ -79,9 +79,17 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
         </p>
 
         {/* CTAs - B2B Directo */}
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-2xl">
-          <a href="#contacto" className="group inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-[#D8E600] text-black px-4 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#c8d500] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center whitespace-nowrap" style={btnStyle}>
-            SOLICITAR PROPUESTA PARA TU CENTRO
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-xl">
+          <a
+            href="#contacto"
+            className="group inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-[#D8E600] text-black px-6 sm:px-8 py-3.5 sm:py-4 font-extrabold border-2 border-black hover:bg-[#c8d500] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center leading-tight"
+            style={{
+              fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              fontWeight: 800,
+              letterSpacing: "0.02em",
+            }}
+          >
+            <span>SOLICITAR PROPUESTA PARA TU CENTRO</span>
             <span className="transition-transform group-hover:translate-x-1 inline-flex items-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="9" fill="white" stroke="currentColor" strokeWidth="2"/>
@@ -89,7 +97,17 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
               </svg>
             </span>
           </a>
-          <a href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-4 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center whitespace-nowrap" style={btnStyle}>
+          <a
+            href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-6 sm:px-8 py-3.5 sm:py-4 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center leading-tight"
+            style={{
+              fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              fontWeight: 800,
+              letterSpacing: "0.02em",
+            }}
+          >
             CONTACTAR COORDINACIÓN
           </a>
         </div>

@@ -58,9 +58,9 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
       <div className="relative z-10 text-center px-4 sm:px-6 min-[1200px]:px-8 max-w-4xl mx-auto w-full flex flex-col items-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full border-2 border-black shadow-[3px_3px_0_0_#000] bg-[#D8E600] mb-5 sm:mb-8 max-w-full">
-          <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#1D2F8C] flex-shrink-0 animate-pulse" />
-          <span className="font-extrabold text-[10.5px] sm:text-sm md:text-base tracking-normal text-black uppercase" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+        <div className="inline-flex items-center gap-1.5 sm:gap-3 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full border-2 border-black shadow-[3px_3px_0_0_#000] bg-[#D8E600] mb-5 sm:mb-8 whitespace-nowrap">
+          <span className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#1D2F8C] flex-shrink-0 animate-pulse" />
+          <span className="font-extrabold text-[10px] sm:text-sm md:text-base tracking-normal text-black uppercase" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
             Servicio Exclusivo para Colegios y AFAs · +20 Años
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
 
         {/* CTAs - B2B Directo */}
         <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-2xl">
-          <a href="#contacto" className="group inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-[#D8E600] text-black px-5 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#c8d500] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center" style={btnStyle}>
+          <a href="#contacto" className="group inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-[#D8E600] text-black px-4 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#c8d500] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center whitespace-nowrap" style={btnStyle}>
             SOLICITAR PROPUESTA PARA TU CENTRO
             <span className="transition-transform group-hover:translate-x-1 inline-flex items-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -89,7 +89,7 @@ export default function Hero({ city = "Barcelona y área metropolitana", citySho
               </svg>
             </span>
           </a>
-          <a href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-5 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center" style={btnStyle}>
+          <a href="https://wa.me/34657117426?text=Hola%2C%20somos%20un%20colegio%20%2F%20AFA%20y%20nos%20gustar%C3%ADa%20informaci%C3%B3n%20para%20nuestro%20centro" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1D2F8C] text-white px-4 sm:px-8 py-3 sm:py-4.5 font-extrabold border-2 border-black hover:bg-[#3055C7] transition-all uppercase shadow-[4px_4px_0_0_#000] w-full sm:w-auto hover:scale-[1.02] text-xs sm:text-base text-center whitespace-nowrap" style={btnStyle}>
             CONTACTAR COORDINACIÓN
           </a>
         </div>
